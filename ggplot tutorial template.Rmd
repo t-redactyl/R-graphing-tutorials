@@ -1,0 +1,130 @@
+---
+title: "ggplot2 tutorial outline"
+output: html_document
+---
+
+My thinking is that the tutorial starts in each section with a really polished looking graph of each type (or several) and then breaks down the steps to build that graph from the most structure up. We could also include alternative "looks" for these graphs after explaining how to build the first example if we wanted to extend the material further.
+
+I'll include in this template an example graph from your Chile-China trade analysis or from my blog.
+
+```{r setup_to_run_Mauricios_plots}
+setwd("/Users/pacha/pachamaltese.github.io/stats/trade-chile-china/")
+library(XLConnect)
+library(rCharts)
+library(ggplot2)
+library(grid)
+library(gridExtra)
+library(xkcd)
+library(RColorBrewer)
+library(scales)
+library(plyr)
+library(cowplot)
+
+file <- paste0(getwd(),"/datos-TLC-Chile-China.xlsx")
+
+data <- readWorksheetFromFile(file, sheet = "Sheet1", region = "A3:K12", header = TRUE)
+data <- as.data.frame(data)
+
+data2 <- readWorksheetFromFile(file, sheet = "Sheet1", region = "A16:F25", header = TRUE)
+data2 <- as.data.frame(data2)
+
+data3 <- readWorksheetFromFile(file, sheet = "Sheet1", region = "A28:C33", header = TRUE)
+data3 <- as.data.frame(data3)
+data3$pais <- factor(data3$pais, levels = c("china","eeuu","ue","japon","corea"), 
+                     labels = c("china","us","eu","japan","korea"))
+
+data4 <- readWorksheetFromFile(file, sheet = "Sheet1", region = "A37:E55", header = TRUE)
+data4 <- as.data.frame(data4)
+data4$producto <- factor(data4$producto, levels = c("cobre","otros"), 
+                         labels = c("copper","pulp wood, fruit, salmon and others"))
+data4 <- ddply(data4, .(anio), transform, pos = cumsum(porcentaje) - (0.5 * porcentaje))
+data4 <- ddply(data4, .(anio), transform, pos2 = cumsum(expo) - (0.5 * expo))
+
+data5 <- readWorksheetFromFile(file, sheet = "Sheet1", region = "A58:G67", header = TRUE)
+data5 <- as.data.frame(data5)
+
+data6 <- readWorksheetFromFile(file, sheet = "Sheet1", region = "A70:C115", header = TRUE)
+data6 <- as.data.frame(data6)
+data6$producto <- factor(data6$producto, 
+                         levels=c("frutas",	"alimentosprocesados",	"vinoembotellado",	"salmon",
+                                  "forestalymuebles"), 
+                         labels=c("fruit",	"processed food",	"bottled wine",	"salmon",	
+                                  "forestry and\nwood furniture"))
+
+### XKCD theme
+theme_xkcd <- theme(
+  panel.background = element_rect(fill="white"), 
+  panel.grid = element_line(colour="white")
+)
+```
+
+## Line and area plots
+
+### Line plots
+
+Example plot:
+```{r line_plot_example}
+p1 <- ggplot() + geom_line(aes(y = expocc, x = anio, colour = "expocc"), size=1.5, data = data,
+                           stat="identity") + geom_line(aes(y = impocc, x = anio, colour = "impocc"),
+                                                        size=1.5, data = data, stat="identity") 
+p1 <- p1 + ylab("USD million") + xlab("Year") + ylab("USD Million") + 
+    scale_x_continuous(breaks=seq(2000,2014,2)) + scale_y_continuous(breaks=seq(0,20000,5000)) + 
+    expand_limits(y=c(5000,20000)) + theme_xkcd()
+p1 <- p1 + scale_color_manual(labels = c("Exports", "Imports"), values = c("#4169e1", "#000080"))
+p1 <- p1 + theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank(),
+                 axis.line = element_line(size=1.5)) + ggtitle("Trade Chile-China") + 
+    theme(plot.title=element_text(size=20, family="xkcd-Regular"), 
+          text=element_text(size=18, family="xkcd-Regular"))
+p1
+```
+
+### Area plots
+
+Example plot:
+```{r area_plot_example}
+p16 <- ggplot() + geom_area(aes(y = expo, x = anio, fill = producto), data = data6, stat="identity") 
+p16 <- p16 + ylab("USD million") + xlab("Year") + scale_x_continuous(breaks=seq(2000,2014,2)) + 
+    scale_y_continuous(breaks=seq(0,1600,400)) + theme_xkcd()
+#p16 <- p16 + scale_fill_manual(values=cbPalette)
+p16 <- p16 + scale_fill_brewer(palette="Paired")
+p16 <- p16 + theme(legend.position="bottom", legend.direction="horizontal", 
+                   legend.title = element_blank(), axis.line = element_line(size=1.5)) + 
+    ggtitle("no copper nor pulp wood exports to China") + 
+    theme(plot.title=element_text(size=20, family="xkcd-Regular"), 
+          text=element_text(size=18, family="xkcd-Regular"))
+```
+
+## Bar charts
+
+### Bar charts
+
+```{r bar_chart_example}
+p9 <- ggplot() + geom_bar(aes(y = porcentaje, x = pais, fill = pais), data = data3, stat="identity")
+p9 <- p9 + scale_fill_manual(values=cbPalette2) + 
+    geom_text(data=data3, aes(x = pais, y = (porcentaje + 2), label = paste0(porcentaje,"%")), 
+              colour="black", family="xkcd-Regular", size = 5)
+p9 <- p9 + scale_y_continuous(breaks=seq(0,25,5), labels = dollar_format(suffix = "%", prefix = "")) + 
+    expand_limits(y=c(0,25)) + labs(x="",y="Percentage")  + theme_xkcd()
+p9 <- p9 + theme(legend.position="none", legend.title = element_blank(), 
+                 axis.line = element_line(size=1.5)) + ggtitle("Leading export markets in 2014") +
+    theme(plot.title=element_text(size=20, family="xkcd-Regular"), 
+          text=element_text(size=18, family="xkcd-Regular"), axis.text.x=element_text(colour="black"))
+#p9
+
+### Stacked bar charts
+
+## Histograms and function plots
+
+## Histograms
+
+## Kdensity plots
+
+## Plotting functions
+
+## Customisation
+
+### Changing your colours
+
+### Formatting the legend
+
+### Adding lines
