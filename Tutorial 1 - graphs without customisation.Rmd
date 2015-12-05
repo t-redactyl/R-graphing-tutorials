@@ -1,0 +1,20 @@
+---
+title: "Creating basic graphs in R"
+output: html_document
+---
+
+This tutorial will demonstrate how to create graphs in ggplot2. It will demonstrate the variety of graphs you can make without further customisation.
+
+## List of graphs:
+* Scatterplot
+* Weighted scatterplot
+* Linear regression plot
+* Lowess curve plot
+* Line graph
+* Area graph
+* Bar graph
+* Stacked bar graph
+* Box plot
+* Histogram
+* Density plot
+* Function curve
