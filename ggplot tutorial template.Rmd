@@ -5,7 +5,7 @@ output: html_document
 
 My thinking is that the tutorial starts in each section with a really polished looking graph of each type (or several) and then breaks down the steps to build that graph from the most structure up. We could also include alternative "looks" for these graphs after explaining how to build the first example if we wanted to extend the material further.
 
-I'll include in this template an example graph from your Chile-China trade analysis or from my blog.
+I'll include in this template an example graph from your Chile-China trade analysis or from my blog/other projects.
 
 ```{r setup_to_run_Mauricios_plots}
 setwd("/Users/pacha/pachamaltese.github.io/stats/trade-chile-china/")
@@ -136,22 +136,24 @@ p10 <- p10 + theme(legend.position="bottom", legend.direction="horizontal",
 
 ## Histograms
 
-Histograms: http://t-redactyl.github.io/blog/2015/09/A-Gentle-Introduction-to-the-Standard-Error-of-the-Mean.html
+There are a few histograms on this post on my blog: http://t-redactyl.github.io/blog/2015/09/A-Gentle-Introduction-to-the-Standard-Error-of-the-Mean.html
 
 ## Density plots
 
-Density plots: There are 6 towards the bottom of http://t-redactyl.github.io/Practical-Machine-Learning-Report/Practical_Machine_Learning_Report.html
+There are about 6 density plots towards the bottom of my Practical Machine Learning assignment: http://t-redactyl.github.io/Practical-Machine-Learning-Report/Practical_Machine_Learning_Report.html
 
 ## Plotting functions
 
-Function plots: http://t-redactyl.github.io/blog/2015/09/two-group-hypothesis-testing-independent-samples-t-tests.html
+There are a couple of function plots towards the bottom of this blog post: http://t-redactyl.github.io/blog/2015/09/two-group-hypothesis-testing-independent-samples-t-tests.html
 
 ## Customisation
 
-The customisation options could be presented with each plot and then summarised again separately.
+Different customisation options could be presented with each plot and then summarised again separately. Here are a few I have thought of from your and my work.
 
 ### Changing your colours
 
 ### Formatting the legend
 
 ### Adding lines
+
+### Changing your font
