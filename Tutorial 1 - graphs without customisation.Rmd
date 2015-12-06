@@ -37,7 +37,7 @@ p10
 ```{r, cache=TRUE}
 library(plyr)
 stackedchart.data <- as.data.frame(stackedchart.data)
-stackedchart.data$product <- factor(stackedchart.data$product, levels = c("cobre","otros"), labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
+stackedchart.data$product <- factor(stackedchart.data$product, levels = c("copper","others"), labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
 stackedchart.data <- ddply(stackedchart.data, .(year), transform, pos = cumsum(percentage) - (0.5 * percentage))
 stackedchart.data <- ddply(stackedchart.data, .(year), transform, pos2 = cumsum(export) - (0.5 * export))
 
