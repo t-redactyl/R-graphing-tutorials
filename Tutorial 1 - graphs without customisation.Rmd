@@ -69,12 +69,6 @@ p10
 ```
 
 ```{r, cache=TRUE}
-fill <- c("#56B4E9", "#E69F00")
-p10 <- p10 + scale_fill_manual(values=fill)
-p10
-```
-
-```{r, cache=TRUE}
 p10 <- ggplot() + 
   geom_bar(aes(y = percentage, x = year, fill = product), data = stackedchart.data, stat="identity") + 
   geom_text(data=stackedchart.data, aes(x = year, y = pos, label = paste0(percentage,"%")), colour="black", family="AdobeHeitiStd-Regular", size = 5) + 
