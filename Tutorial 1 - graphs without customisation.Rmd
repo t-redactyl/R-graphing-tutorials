@@ -112,6 +112,8 @@ p9
 # install.packages('ggthemes', dependencies = TRUE)
 library(ggthemes)
 library(extrafont)
+#font_import(pattern="[O/o]fficina")
+#fonts()
 
 p9 <- ggplot() + theme_economist() + scale_fill_economist() +   theme(plot.title=element_text(family="OfficinaSanITC-Book"), text=element_text(family="OfficinaSanITC-Book")) +
   geom_bar(aes(y = export, x = year, fill = product), data = barcharts.data, stat="identity") + 
@@ -125,6 +127,9 @@ p9
 
 ### Creating an XKCD style chart
 ```{r, cache=TRUE}
+#font_import(pattern="[X/x]kcd")
+#fonts()
+
 fill2 <- c("#56B4E9", "#F0E442")
 p9 <- ggplot() + 
   geom_bar(aes(y = export, x = year, fill = product), data = barcharts.data, stat="identity") + 
@@ -235,12 +240,11 @@ p10
 
 ### Using 'The Economist' theme 
 ```{r, cache=TRUE}
-# install.packages('ggthemes', dependencies = TRUE)
+#install.packages('ggthemes', dependencies = TRUE)
 library(ggthemes)
 library(extrafont)
-library(cowplot)
-library(grid)
-
+#font_import(pattern="[O/o]fficina")
+#fonts()
 p10 <- ggplot() + theme_economist() + scale_fill_economist() +   theme(plot.title=element_text(family="OfficinaSanITC-Book"), text=element_text(family="OfficinaSanITC-Book")) +
   geom_bar(aes(y = percentage, x = year, fill = product), data = barcharts.data, stat="identity") + 
   geom_text(data=barcharts.data, aes(x = year, y = pos, label = paste0(percentage,"%")), colour="white", family="OfficinaSanITC-Book", size = 5, show_guide = F) + 
@@ -254,6 +258,9 @@ p10
 
 ### Creating an XKCD style chart
 ```{r, cache=TRUE}
+#font_import(pattern="[X/x]kcd")
+#fonts()
+
 p10 <- ggplot() + 
   geom_bar(aes(y = percentage, x = year, fill = product), data = barcharts.data, stat="identity") + 
   geom_text(data=barcharts.data, aes(x = year, y = pos, label = paste0(percentage,"%")), colour="black", family="xkcd-Regular", size = 5, show_guide = F) + 
