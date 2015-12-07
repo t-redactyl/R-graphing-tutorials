@@ -1,7 +1,15 @@
 ---
 title: "Creating basic graphs in R"
-output: html_document
+author: "Jodie Burchell ／／ Mauricio Vargas Sepúlveda 帕夏"
+date: "`r Sys.Date()`"
+output: 
+      rmarkdown::html_vignette
 ---
+
+```{r setup, cache = FALSE, echo = FALSE, message = FALSE, warning = FALSE, tidy = FALSE}
+knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, fig.width=6, fig.height=5, tidy = F, cache.path = '.cache/', fig.path = 'fig/')
+```
+
 
 This tutorial will demonstrate how to create graphs in ggplot2. It will demonstrate the variety of graphs you can make without further customisation.
 
@@ -21,59 +29,72 @@ This tutorial will demonstrate how to create graphs in ggplot2. It will demonstr
 
 ## Stacked bar graph
 
+### Basic graph
 ```{r, cache=TRUE}
+barcharts.data <- read.csv("barcharts.csv")
+
 library(ggplot2)
 
-barcharts.data <- read.csv("barcharts.csv")
 p9 <- ggplot() + geom_bar(aes(y = export, x = year, fill = product), data = barcharts.data, stat="identity")
 p9
 ```
 
+### Adding data labels
 ```{r, cache=TRUE}
 p9 <- p9 + geom_text(data=barcharts.data, aes(x = year, y = export, label = export, size=4))
 p9
 ```
 
-```{r, cache=TRUE}
-p9 <- ggplot() + 
-  geom_bar(aes(y = export, x = year, fill = product), data = barcharts.data, stat="identity") +
-  geom_text(data=barcharts.data, aes(x = year, y = export, label = export, size=4), show_guide = F)
-p9
-```
-
+### Customizing data labels position
 ```{r, cache=TRUE}
 library(plyr)
-barcharts.data <- as.data.frame(barcharts.data)
-barcharts.data$product <- factor(barcharts.data$product, levels = c("copper","others"), labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
 barcharts.data <- ddply(barcharts.data, .(year), transform, pos = cumsum(export) - (0.5 * export))
 
-p9 <- ggplot() + geom_bar(aes(y = export, x = year, fill = product), data = barcharts.data, stat="identity")
+p9 <- ggplot() + geom_bar(aes(y = export, x = year, fill = product), data = barcharts.data, stat="identity") 
 p9 <- p9 + geom_text(data=barcharts.data, aes(x = year, y = pos, label = export, size=4), show_guide = F)
 p9
 ```
 
+### Customizing legend position
 ```{r, cache=TRUE}
+library(plyr)
+barcharts.data <- ddply(barcharts.data, .(year), transform, pos = cumsum(export) - (0.5 * export))
+
 p9 <- p9 + theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank())
 p9
 ```
 
+### Changing variables display
+```{r, cache=TRUE}
+barcharts.data <- as.data.frame(barcharts.data)
+barcharts.data$product <- factor(barcharts.data$product, levels = c("copper","others"), labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
+
+p9 <- ggplot() + geom_bar(aes(y = export, x = year, fill = product), data = barcharts.data, stat="identity") 
+p9 <- p9 + geom_text(data=barcharts.data, aes(x = year, y = pos, label = export, size=4), show_guide = F) +   theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank())
+p9
+```
+
+### Adjusting x-axis scale
 ```{r, cache=TRUE}
 library(scales)
 p9 <- p9 + scale_x_continuous(breaks=seq(2006,2014,1))
 p9
 ```
 
+### Adjusting axis labels & adding title
 ```{r, cache=TRUE}
-p9 <- p9 + labs(x="Year", y="USD million") + ggtitle("Composition of Exports to China ($)") 
+p9 <- p9 + ggtitle("Composition of Exports to China ($)") + labs(x="Year", y="USD million") 
 p9
 ```
 
+### Adjusting color palette
 ```{r, cache=TRUE}
-fill <- c("#56B4E9", "#F0E442")
+fill <- c("#5F9EA0", "#E1B378")
 p9 <- p9 + scale_fill_manual(values=fill)
 p9
 ```
 
+### Using white theme
 ```{r, cache=TRUE}
 p9 <- ggplot() + theme_bw() +
   geom_bar(aes(y = export, x = year, fill = product), data = barcharts.data, stat="identity") + 
@@ -86,6 +107,40 @@ p9 <- ggplot() + theme_bw() +
 p9
 ```
 
+### Using 'The Economist' theme 
+```{r, cache=TRUE}
+# install.packages('ggthemes', dependencies = TRUE)
+library(ggthemes)
+library(extrafont)
+
+p9 <- ggplot() + theme_economist() + scale_fill_economist() +   theme(plot.title=element_text(family="OfficinaSanITC-Book"), text=element_text(family="OfficinaSanITC-Book")) +
+  geom_bar(aes(y = export, x = year, fill = product), data = barcharts.data, stat="identity") + 
+  geom_text(data=barcharts.data, aes(x = year, y = pos, label = export), colour="white", size = 4, family = "OfficinaSanITC-Book", show_guide = F) + 
+  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  labs(x="Year", y="USD million") + 
+  ggtitle("Composition of Exports to China ($)")
+p9
+```
+
+### Creating an XKCD style chart
+```{r, cache=TRUE}
+fill2 <- c("#56B4E9", "#F0E442")
+p9 <- ggplot() + 
+  geom_bar(aes(y = export, x = year, fill = product), data = barcharts.data, stat="identity") + 
+  geom_text(data=barcharts.data, aes(x = year, y = pos, label = export), colour="black", family="xkcd-Regular", size = 4, show_guide = F) + 
+  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  labs(x="Year", y="USD million") + 
+  ggtitle("Composition of Exports to China ($)") + 
+  scale_fill_manual(values=fill2) + 
+  theme(axis.line = element_line(size=1)) + 
+  theme(axis.line = element_line(colour = "black"), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.border = element_blank(), panel.background = element_blank()) + 
+  theme(plot.title=element_text(family="xkcd-Regular"), text=element_text(family="xkcd-Regular"), axis.text.x=element_text(colour="black", size = 10), axis.text.y=element_text(colour="black", size = 10)) 
+p9
+```
+
+### Creating your own theme
 ```{r, cache=TRUE}
 p9 <- ggplot() + 
   geom_bar(aes(y = export, x = year, fill = product), data = barcharts.data, stat="identity") + 
@@ -97,60 +152,31 @@ p9 <- ggplot() +
   scale_fill_manual(values=fill) + 
   theme(axis.line = element_line(size=1)) + 
   theme(axis.line = element_line(colour = "black"), panel.grid.major = element_line(colour = "#d3d3d3"), panel.grid.minor = element_blank(), panel.border = element_blank(), panel.background = element_blank()) + 
-  theme(plot.title=element_text(family="AdobeHeitiStd-Regular"), text=element_text(family="AdobeHeitiStd-Regular"), axis.text.x=element_text(colour="black"), axis.text.y=element_text(colour="black")) 
-p9
-```
-
-```{r, cache=TRUE}
-p9 <- ggplot() + 
-  geom_bar(aes(y = export, x = year, fill = product), data = barcharts.data, stat="identity") + 
-  geom_text(data=barcharts.data, aes(x = year, y = pos, label = export), colour="black", family="xkcd-Regular", size = 4, show_guide = F) + 
-  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank()) + 
-  scale_x_continuous(breaks=seq(2006,2014,1)) + 
-  labs(x="Year", y="USD million") + 
-  ggtitle("Composition of Exports to China ($)") + 
-  scale_fill_manual(values=fill) + 
-  theme(axis.line = element_line(size=1)) + 
-  theme(axis.line = element_line(colour = "black"), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.border = element_blank(), panel.background = element_blank()) + 
-  theme(plot.title=element_text(family="xkcd-Regular"), text=element_text(family="xkcd-Regular"), axis.text.x=element_text(colour="black"), axis.text.y=element_text(colour="black")) 
-p9
-```
-
-```{r, cache=TRUE}
-# install.packages('ggthemes', dependencies = TRUE)
-library(ggthemes)
-library(extrafont)
-
-fill <- c("#5b92a7", "#aaa9ac")
-p9 <- ggplot() + theme_economist() + scale_fill_economist() +   theme(plot.title=element_text(family="OfficinaSanITC-Book"), text=element_text(family="OfficinaSanITC-Book")) +
-  geom_bar(aes(y = export, x = year, fill = product), data = barcharts.data, stat="identity") + 
-  geom_text(data=barcharts.data, aes(x = year, y = pos, label = export), colour="white", size = 4, family = "OfficinaSanITC-Book", show_guide = F) + 
-  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank()) + 
-  scale_x_continuous(breaks=seq(2006,2014,1)) + 
-  labs(x="Year", y="USD million") + 
-  ggtitle("Composition of Exports to China ($)")
+  theme(plot.title=element_text(family="AdobeHeitiStd-Regular"), text=element_text(family="AdobeHeitiStd-Regular"), axis.text.x=element_text(colour="black", size = 10), axis.text.y=element_text(colour="black", size = 10)) 
 p9
 ```
 
 ## Stacked bar graph
 
+### Basic graph
 ```{r, cache=TRUE}
+barcharts.data <- read.csv("barcharts.csv")
+
 library(ggplot2)
 
-barcharts.data <- read.csv("barcharts.csv")
 p10 <- ggplot() + geom_bar(aes(y = percentage, x = year, fill = product), data = barcharts.data, stat="identity")
 p10
 ```
 
+### Adding data labels
 ```{r, cache=TRUE}
 p10 <- p10 + geom_text(data=barcharts.data, aes(x = year, y = percentage, label = paste0(percentage,"%")), show_guide = F)
 p10
 ```
 
+### Customizing data labels position
 ```{r, cache=TRUE}
 library(plyr)
-barcharts.data <- as.data.frame(barcharts.data)
-barcharts.data$product <- factor(barcharts.data$product, levels = c("copper","others"), labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
 barcharts.data <- ddply(barcharts.data, .(year), transform, pos = cumsum(percentage) - (0.5 * percentage))
 
 p10 <- ggplot() + geom_bar(aes(y = percentage, x = year, fill = product), data = barcharts.data, stat="identity")
@@ -158,44 +184,75 @@ p10 <- p10 + geom_text(data=barcharts.data, aes(x = year, y = pos, label = paste
 p10
 ```
 
+### Customizing legend position
 ```{r, cache=TRUE}
 p10 <- p10 + theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank())
 p10
 ```
 
+### Changing variables display
+```{r, cache=TRUE}
+barcharts.data <- as.data.frame(barcharts.data)
+barcharts.data$product <- factor(barcharts.data$product, levels = c("copper","others"), labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
+
+p10 <- ggplot() + geom_bar(aes(y = percentage, x = year, fill = product), data = barcharts.data, stat="identity") + geom_text(data=barcharts.data, aes(x = year, y = pos, label = paste0(percentage,"%")), show_guide = F) + theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank())
+p10
+```
+
+### Adjusting x-axis scale
 ```{r, cache=TRUE}
 library(scales)
-p10 <- p10 + scale_x_continuous(breaks=seq(2006,2014,1)) + scale_y_continuous(labels = dollar_format(suffix = "%", prefix = ""))
+p10 <- p10 + scale_x_continuous(breaks=seq(2006,2014,1))
 p10
 ```
 
+### Adjusting axis, title & units
 ```{r, cache=TRUE}
-p10 <- p10 + labs(x="Year", y="Percentage") + ggtitle("Composition of Exports to China (%)") 
+p10 <- p10 + labs(x="Year", y="Percentage") + scale_y_continuous(labels = dollar_format(suffix = "%", prefix = "")) +
+  ggtitle("Composition of Exports to China (%)") 
 p10
 ```
 
+### Adjusting color palette
 ```{r, cache=TRUE}
-fill <- c("#56B4E9", "#F0E442")
+fill <- c("#5F9EA0", "#E1B378")
 p10 <- p10 + scale_fill_manual(values=fill)
 p10
 ```
 
+### Using white theme
 ```{r, cache=TRUE}
-p10 <- ggplot() + 
+p10 <- ggplot() + theme_bw() +
   geom_bar(aes(y = percentage, x = year, fill = product), data = barcharts.data, stat="identity") + 
-  geom_text(data=barcharts.data, aes(x = year, y = pos, label = paste0(percentage,"%")), colour="black", family="AdobeHeitiStd-Regular", size = 5, show_guide = F) + 
+  geom_text(data=barcharts.data, aes(x = year, y = pos, label = paste0(percentage,"%")), size = 5, show_guide = F) + 
   theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank()) + 
   scale_x_continuous(breaks=seq(2006,2014,1)) + 
   scale_y_continuous(labels = dollar_format(suffix = "%", prefix = "")) + 
   labs(x="Year", y="Percentage") + 
-  ggtitle("Composition of Exports to China (%)") + 
-  scale_fill_manual(values=fill) + 
-  theme(axis.line = element_line(size=1)) + 
-  theme(axis.line = element_line(colour = "black"), panel.grid.major = element_line(colour = "#d3d3d3"), panel.grid.minor = element_blank(), panel.border = element_blank(), panel.background = element_blank()) + 
-  theme(plot.title=element_text(family="AdobeHeitiStd-Regular"), text=element_text(family="AdobeHeitiStd-Regular"), axis.text.x=element_text(colour="black"), axis.text.y=element_text(colour="black")) 
+  ggtitle("Composition of Exports to China (%)")
 p10
 ```
 
+### Using 'The Economist' theme 
+```{r, cache=TRUE}
+# install.packages('ggthemes', dependencies = TRUE)
+library(ggthemes)
+library(extrafont)
+library(cowplot)
+library(grid)
+
+p10 <- ggplot() + theme_economist() + scale_fill_economist() +   theme(plot.title=element_text(family="OfficinaSanITC-Book"), text=element_text(family="OfficinaSanITC-Book")) +
+  geom_bar(aes(y = percentage, x = year, fill = product), data = barcharts.data, stat="identity") + 
+  geom_text(data=barcharts.data, aes(x = year, y = pos, label = paste0(percentage,"%")), colour="white", family="OfficinaSanITC-Book", size = 5, show_guide = F) + 
+  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  scale_y_continuous(labels = dollar_format(suffix = "%", prefix = "")) + 
+  labs(x="Year", y="Percentage") + 
+  ggtitle("Composition of Exports to China (%)")
+p10
+```
+
+### Creating an XKCD style chart
 ```{r, cache=TRUE}
 p10 <- ggplot() + 
   geom_bar(aes(y = percentage, x = year, fill = product), data = barcharts.data, stat="identity") + 
@@ -208,12 +265,23 @@ p10 <- ggplot() +
   scale_fill_manual(values=fill) + 
   theme(axis.line = element_line(size=1)) + 
   theme(axis.line = element_line(colour = "black"), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.border = element_blank(), panel.background = element_blank()) + 
-  theme(plot.title=element_text(family="xkcd-Regular"), text=element_text(family="xkcd-Regular"), axis.text.x=element_text(colour="black"), axis.text.y=element_text(colour="black")) 
+  theme(plot.title=element_text(family="xkcd-Regular"), text=element_text(family="xkcd-Regular"), axis.text.x=element_text(colour="black", size = 10), axis.text.y=element_text(colour="black", size = 10)) 
 p10
 ```
 
-
-
-
-
-
+### Creating your own theme
+```{r, cache=TRUE}
+p10 <- ggplot() + 
+  geom_bar(aes(y = percentage, x = year, fill = product), data = barcharts.data, stat="identity") + 
+  geom_text(data=barcharts.data, aes(x = year, y = pos, label = paste0(percentage,"%")), colour="black", family="AdobeHeitiStd-Regular", size = 5, show_guide = F) + 
+  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  scale_y_continuous(labels = dollar_format(suffix = "%", prefix = "")) + 
+  labs(x="Year", y="Percentage") + 
+  ggtitle("Composition of Exports to China (%)") + 
+  scale_fill_manual(values=fill) + 
+  theme(axis.line = element_line(size=1)) + 
+  theme(axis.line = element_line(colour = "black"), panel.grid.major = element_line(colour = "#d3d3d3"), panel.grid.minor = element_blank(), panel.border = element_blank(), panel.background = element_blank()) + 
+  theme(plot.title=element_text(family="AdobeHeitiStd-Regular"), text=element_text(family="AdobeHeitiStd-Regular"), axis.text.x=element_text(colour="black", size = 10), axis.text.y=element_text(colour="black", size = 10)) 
+p10
+```
