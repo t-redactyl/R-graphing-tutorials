@@ -1,7 +1,6 @@
 base
 ggplot2
-plyr
 scales
 ggthemes
 extrafont
-cowplot
+plyr
