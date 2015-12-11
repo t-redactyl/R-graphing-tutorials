@@ -1,0 +1,61 @@
+---
+title: "Histograms"
+output: html_document
+---
+
+```{r load_in_data}
+rm(list = ls())
+library(datasets)
+data(airquality)
+nrow(airquality)
+```
+
+```{r basic_plot}
+g1 <- ggplot(airquality, aes(x = Ozone)) +
+        geom_histogram()
+g1
+```
+
+```{r frequency_plot}
+g2 <- ggplot(airquality, aes(x = Ozone)) +
+        geom_histogram(aes(y = ..count..))
+g2
+```
+
+```{r adjust_binwidth}
+g3 <- ggplot(airquality, aes(x = Ozone)) +
+        geom_histogram(aes(y = ..count..), binwidth = 5)
+g3
+```
+
+```{r changing_axis_labels_1}
+g4 <- g3 + scale_x_continuous(name = "Mean ozone in parts per billion") +
+        scale_y_continuous(name = "Count")
+g4
+```
+
+```{r changing_axis_labels_2}
+g5 <- g3 + scale_x_continuous(name = "Mean ozone in\nparts per billion") +
+        scale_y_continuous(name = "Count")
+g5
+```
+
+```{r changing_ticks}
+g6 <- g3 + scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                              breaks = seq(0, 175, 25),
+                              limits=c(0, 175)) +
+        scale_y_continuous(name = "Count")
+g6
+``` 
+
+```{r adding_title}
+
+```
+
+- Changing fill colour
+- Changing line colour
+- Size and style of text
+- Multiple histograms (same plot)
+- Customising legend
+- Multiple plots (panel)
+
