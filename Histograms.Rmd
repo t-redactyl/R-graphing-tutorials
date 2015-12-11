@@ -6,52 +6,78 @@ output: html_document
 ```{r load_in_data}
 rm(list = ls())
 library(datasets)
+library(ggplot2)
+
 data(airquality)
-nrow(airquality)
 ```
 
 ```{r basic_plot}
-g1 <- ggplot(airquality, aes(x = Ozone)) +
-        geom_histogram()
-g1
+ggplot(airquality, aes(x = Ozone)) + 
+    geom_histogram()
 ```
 
 ```{r frequency_plot}
-g2 <- ggplot(airquality, aes(x = Ozone)) +
-        geom_histogram(aes(y = ..count..))
-g2
+ggplot(airquality, aes(x = Ozone)) + 
+    geom_histogram(aes(y = ..count..))
+
 ```
 
 ```{r adjust_binwidth}
-g3 <- ggplot(airquality, aes(x = Ozone)) +
-        geom_histogram(aes(y = ..count..), binwidth = 5)
-g3
+ggplot(airquality, aes(x = Ozone)) + 
+    geom_histogram(aes(y = ..count..), binwidth = 5)
+
 ```
 
 ```{r changing_axis_labels_1}
-g4 <- g3 + scale_x_continuous(name = "Mean ozone in parts per billion") +
-        scale_y_continuous(name = "Count")
-g4
+ggplot(airquality, aes(x = Ozone)) + 
+    geom_histogram(aes(y = ..count..), binwidth = 5) +
+    scale_x_continuous(name = "Mean ozone in parts per billion") +
+    scale_y_continuous(name = "Count")
 ```
 
 ```{r changing_axis_labels_2}
-g5 <- g3 + scale_x_continuous(name = "Mean ozone in\nparts per billion") +
-        scale_y_continuous(name = "Count")
-g5
+ggplot(airquality, aes(x = Ozone)) + 
+    geom_histogram(aes(y = ..count..), binwidth = 5) +
+    scale_x_continuous(name = "Mean ozone in\nparts per billion") +
+    scale_y_continuous(name = "Count")
 ```
 
 ```{r changing_ticks}
-g6 <- g3 + scale_x_continuous(name = "Mean ozone in\nparts per billion",
+ggplot(airquality, aes(x = Ozone)) + 
+    geom_histogram(aes(y = ..count..), binwidth = 5) +
+    scale_x_continuous(name = "Mean ozone in\nparts per billion",
                               breaks = seq(0, 175, 25),
                               limits=c(0, 175)) +
-        scale_y_continuous(name = "Count")
-g6
+    scale_y_continuous(name = "Count")
 ``` 
 
 ```{r adding_title}
+ggplot(airquality, aes(x = Ozone)) + 
+    geom_histogram(aes(y = ..count..), binwidth = 5) +
+    scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                              breaks = seq(0, 175, 25),
+                              limits=c(0, 175)) +
+    scale_y_continuous(name = "Count") +
+    ggtitle("Frequency histogram of mean ozone")
 
 ```
 
+```{r changing_fill}
+ggplot(airquality, aes(x = Ozone)) + 
+    geom_histogram(aes(y = ..count..), binwidth = 5,
+                   colour = "darkblue", fill = "white") +
+    scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                              breaks = seq(0, 175, 25),
+                              limits=c(0, 175)) +
+    scale_y_continuous(name = "Count") +
+    ggtitle("Frequency histogram of mean ozone")
+```
+
+```{r theme_1}
+
+```
+
+- Changing themes
 - Changing fill colour
 - Changing line colour
 - Size and style of text
