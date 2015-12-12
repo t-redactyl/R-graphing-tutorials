@@ -1,5 +1,6 @@
 ---
-title: "Histograms"
+title: "Creating histograms in R using ggplot2"
+author: "Jodie Burchell ／／ Mauricio Vargas Sepúlveda 帕夏"
 output: html_document
 ---
 
@@ -7,8 +8,9 @@ output: html_document
 knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, fig.width=6, fig.height=5, tidy = F, cache.path = '.cache/', fig.path = 'fig/')
 ```
 
-Using the [airquality dataset](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/airquality.html) from R.
+In this tutorial we will demonstrate some of the many options the `ggplot2` package has for creating and customising histograms. We will use R's [airquality dataset](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/airquality.html) in the `datasets` package.
 
+The first thing to do is load in the data, as below:
 
 ```{r load_in_data}
 rm(list = ls())
@@ -18,22 +20,65 @@ library(ggplot2)
 data(airquality)
 ```
 
+In this tutorial, we will work towards creating the histogram below. We will take you from a basic histogram and explain all customisations we add to the code step-by-step.
+
+```{r final_graph, echo = FALSE}
+library(RColorBrewer)
+
+airquality_trimmed <- airquality[which(airquality$Month == 5 | 
+                                       airquality$Month == 7), ]
+airquality_trimmed$Month.f <- factor(airquality_trimmed$Month, 
+                                     labels = c("May", "July"))
+
+ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) + 
+    geom_histogram(aes(y = ..count..), binwidth = 10,
+                   position="identity", alpha=0.6) +
+    scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                              breaks = seq(0, 175, 25),
+                              limits=c(0, 175)) +
+    scale_y_continuous(name = "Count") +
+    ggtitle("Frequency histogram of mean ozone") +
+    theme_bw() +
+    theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+                text = element_text(size = 12, family = "Tahoma"),
+          legend.position = "bottom") +
+    scale_fill_brewer(palette="Accent") +
+    labs(fill="Month")
+```
+
+## Basic histogram
+
+In order to create the basic ggplot, we pass the `airquality` to the data argument, and specify that our x axis plots the `Ozone` variable. We then instruct ggplot to render a histogram by adding the `geom_histogram()` option.
+
 ```{r basic_plot}
 ggplot(airquality, aes(x = Ozone)) + 
-    geom_histogram()
+                geom_histogram()
+
 ```
+
+## Changing from density to frequency
+
+To change the y-axis from density to frequency, we add the `aes(y = ..count..)` option to `geom_histogram`.
 
 ```{r frequency_plot}
 ggplot(airquality, aes(x = Ozone)) + 
     geom_histogram(aes(y = ..count..))
-
 ```
+
+## Adjusting binwidth
+
+To change the binwidth, we add a `binwidth` argument to `geom_histogram`. In this case, we will make binwidth 5 units of the `Ozone` variable.
 
 ```{r adjust_binwidth}
 ggplot(airquality, aes(x = Ozone)) + 
     geom_histogram(aes(y = ..count..), binwidth = 5)
-
 ```
+
+## Customising axis labels
+
+### Single line labels
+
+In order to change the axis labels, we have a couple of options. In this case, we have used the `scale_x_continuous` and `scale_y_continuous` options, as these have further customisation options for the axes we will use below. In each, we add the desired name to the `name` argument as a string.
 
 ```{r changing_axis_labels_1}
 ggplot(airquality, aes(x = Ozone)) + 
@@ -42,12 +87,20 @@ ggplot(airquality, aes(x = Ozone)) +
     scale_y_continuous(name = "Count")
 ```
 
+### Multiline labels
+
+ggplot also allows for the use of multiline names (in both axes and titles). Here, we've changed the x-axis label so that it goes over two lines using the `\n` character to break the line.
+
 ```{r changing_axis_labels_2}
 ggplot(airquality, aes(x = Ozone)) + 
     geom_histogram(aes(y = ..count..), binwidth = 5) +
     scale_x_continuous(name = "Mean ozone in\nparts per billion") +
     scale_y_continuous(name = "Count")
 ```
+
+## Changing axis ticks
+
+The next thing we will change is the axis ticks. Let's make the x-axis ticks appear at every 25 units rather than 50 using the `breaks = seq(0, 175, 25)` argument in `scale_x_continuous`. (The `seq` function is a base R function that indicates the start and endpoints and the units to increment by respectively. See `help(seq)` for more information.) We ensure that the x-axis begins and ends where we want by also adding the argument `limits = c(0, 175)` to `scale_x_continuous`.
 
 ```{r changing_ticks}
 ggplot(airquality, aes(x = Ozone)) + 
@@ -58,6 +111,10 @@ ggplot(airquality, aes(x = Ozone)) +
     scale_y_continuous(name = "Count")
 ``` 
 
+## Adding a title
+
+To add a title, we include the option `ggtitle` and include the name of the graph as a string argument.
+
 ```{r adding_title}
 ggplot(airquality, aes(x = Ozone)) + 
     geom_histogram(aes(y = ..count..), binwidth = 5) +
@@ -66,12 +123,17 @@ ggplot(airquality, aes(x = Ozone)) +
                               limits=c(0, 175)) +
     scale_y_continuous(name = "Count") +
     ggtitle("Frequency histogram of mean ozone")
-
 ```
 
+## Changing the colour of the bars
+
+### By colour name
+
+To change the line and fill colours of the bars, we add a valid colour to the `colour` and `fill` arguments in `geom_histogram` (note that I assigned these colours to variables outside of the plot to make it easier to change them). A list of valid colours is [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf).
+
 ```{r changing_fill_1}
-barfill <- "white"
-barlines <- "darkblue"
+barfill <- "gold1"
+barlines <- "goldenrod2"
 
 ggplot(airquality, aes(x = Ozone)) + 
     geom_histogram(aes(y = ..count..), binwidth = 5,
@@ -82,6 +144,10 @@ ggplot(airquality, aes(x = Ozone)) +
     scale_y_continuous(name = "Count") +
     ggtitle("Frequency histogram of mean ozone")
 ```
+
+### By HEX code
+
+If you want to go beyond the options in the list above, you can also specify exact HEX colours by including them as a string preceded by a hash, e.g., "#FFFFFF". Below, we have called two shades of blue for the fill and lines using their HEX codes.
 
 ```{r changing_fill_2}
 barfill <- "#4271AE"
@@ -97,6 +163,10 @@ ggplot(airquality, aes(x = Ozone)) +
     ggtitle("Frequency histogram of mean ozone")
 ```
 
+### Colour gradients
+
+You can also add a gradient to your colour scheme that varies according to the frequency of the values. Below is the default gradient colour scheme. In order to do this, you can see we have changed the `aes(y = ..count..)` argument in `geom_histogram` to `aes(fill = ..count..)`. 
+
 ```{r gradient_colors_1}
 ggplot(airquality, aes(x = Ozone)) + 
     geom_histogram(aes(fill = ..count..), binwidth = 5) +
@@ -106,6 +176,8 @@ ggplot(airquality, aes(x = Ozone)) +
     scale_y_continuous(name = "Count") +
     ggtitle("Frequency histogram of mean ozone")
 ```
+
+You can customise the gradient by changing the anchoring colours for high and low. To do so, we have added the option `scale_fill_gradient` to the plot with the arguments `Count` (the name of the legend), `low` (the colour for the least frequent values) and `high` (the colour for the most frequent values).
 
 ```{r gradient_colors_2}
 ggplot(airquality, aes(x = Ozone)) + 
@@ -117,6 +189,14 @@ ggplot(airquality, aes(x = Ozone)) +
     ggtitle("Frequency histogram of mean ozone") +
     scale_fill_gradient("Count", low = "blue", high = "red")
 ```
+
+## Overall customisation using themes
+
+In order to change elements such as the font type and size, background colour, legend position, axis width and more, we need to use themes. 
+
+### Using ggplot2 themes
+
+One way to use themes is to apply those that other people have built. Below we use the 'white' theme that comes with `ggplot2` by adding the option `theme_bw()` to our graph. You can see it changes the background to white and adds a border to the graph area.
 
 ```{r themes_white}
 barfill <- "#4271AE"
@@ -133,9 +213,12 @@ ggplot(airquality, aes(x = Ozone)) +
     theme_bw()
 ```
 
-```{r theme_fivethirtyeight}
+### Using ggthemes
+
+There are a wider range of pre-built themes available as part of the `ggthemes` package (more information on these [here](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html)). Below I've applied `theme_economist()`, which approximates graphs in the Economist magazine.
+
+```{r theme_economist}
 library(ggthemes)
-library(extrafont)
 
 barfill <- "#4271AE"
 barlines <- "#1F3552"
@@ -143,21 +226,21 @@ barlines <- "#1F3552"
 ggplot(airquality, aes(x = Ozone)) + 
     geom_histogram(aes(y = ..count..), binwidth = 5,
                    colour = barlines, fill = barfill) +
-    scale_color_fivethirtyeight() + 
-    theme_fivethirtyeight() +
     scale_x_continuous(name = "Mean ozone in\nparts per billion",
                               breaks = seq(0, 175, 25),
                               limits=c(0, 175)) +
     scale_y_continuous(name = "Count") +
-    ggtitle("Frequency histogram of mean ozone")
+    ggtitle("Frequency histogram of mean ozone") +
+    theme_economist()
 ```
 
-These instructions are taken from [here](https://www.google.com.au/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwiWzafchdPJAhVBpJQKHe_LDT8QFggbMAA&url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fxkcd%2Fvignettes%2Fxkcd-intro.pdf&usg=AFQjCNE-KciGY14e-Q1buYIVmTFC0ht__Q&sig2=DZUwkvIHwfNWtTtkcz94jg). 
+### Making your own theme
 
+Of course, you may want to create your own themes as well. ggplots allows for a very high degree of customisation, including allowing you to use imported fonts. Below is an example of a theme Mauricio was able to create which mimics the visual style of [XKCD](http://xkcd.com/). In order to create this chart, you first need to import the xkcd font, install it on your machine and load it into R using the `extrafont` package.
+These instructions are taken from [here](https://www.google.com.au/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwiWzafchdPJAhVBpJQKHe_LDT8QFggbMAA&url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fxkcd%2Fvignettes%2Fxkcd-intro.pdf&usg=AFQjCNE-KciGY14e-Q1buYIVmTFC0ht__Q&sig2=DZUwkvIHwfNWtTtkcz94jg):
 
-{r importing_font_xkcd}
+```{r importing_font_xkcd, eval = FALSE}
 library(extrafont)
-library(ggplot2)
 
 download.file("http://simonsoftware.se/other/xkcd.ttf", 
               dest="xkcd.ttf", mode="wb")
@@ -165,14 +248,18 @@ system("mkdir ~/.fonts")
 system("cp xkcd.ttf  ~/.fonts")
 font_import(paths = "~/.fonts", pattern="[X/x]kcd")
 fonts()
-
 loadfonts()
+```
 
+Now that the font is loaded, you now need to customise the theme options. You can see this has been done outside the graph in a variable called `theme_xkcd`, however, you could do this as a `theme` option inside the plot as well. In this case, the graph background and grids have been made white, the axis lines have been thickened, and the font for both the title and the axes has been changed to the imported xkcd font.
 
 ```{r own_theme}
 theme_xkcd <- theme(
   panel.background = element_rect(fill="white"), 
-  panel.grid = element_line(colour="white")
+  panel.grid = element_line(colour="white"),
+  axis.line = element_line(size=1.5),
+  plot.title=element_text(size=20, family="xkcd-Regular"), 
+  text=element_text(size=18, family="xkcd-Regular")
 )
 
 ggplot(airquality, aes(x = Ozone)) + 
@@ -182,17 +269,15 @@ ggplot(airquality, aes(x = Ozone)) +
                               breaks = seq(0, 175, 25),
                               limits=c(0, 175)) +
     scale_y_continuous(name = "Count") +
-    theme_xkcd +
-    theme(legend.position = "bottom", legend.direction="horizontal", 
-          legend.title = element_blank(), axis.line = element_line(size=1.5)) + 
-          ggtitle("Frequency histogram of mean ozone") + 
-          theme(plot.title=element_text(size=20, family="xkcd-Regular"), 
-                text=element_text(size=18, family="xkcd-Regular"))
+    ggtitle("Frequency histogram of mean ozone") + 
+    theme_xkcd
 ```
 
-Let's go back to our white themed graph going forward, but let's change the font to 
+## Adding lines
 
-We can now add some lines. Let's say that
+Let's go back to our white themed graph going forward, but let's change the font to Tahoma. As you can see, we did this by changing the theme back to `theme_bw()`, and then adding a `theme` option. To change the font of the title, we've added the `plot.title = element_text(size = 14, family = "Tahoma", face = "bold")` arguments to `theme`, which tells R to change the plot title to Tahoma, size 14 and bold. Similarly, to change the plot font, we added the `text = element_text(size = 12, family = "Tahoma")` argument to `theme`, which tells R to change the axis fonts to Tahoma, size 12.
+
+Let's say that we want to add a cutoff value to the chart (75 parts of ozone per billion). We add the `geom_vline` option to the chart, and specify where it goes on the x-axis using the `xintercept` argument. We can customise how it looks using the `colour` and `linetype` arguments in `geom_vline`. (In the the same way, horizontal lines can be added using the `geom_hline`.)
 
 ```{r lines}
 barfill <- "#4271AE"
@@ -207,13 +292,19 @@ ggplot(airquality, aes(x = Ozone)) +
     scale_y_continuous(name = "Count") +
     ggtitle("Frequency histogram of mean ozone") +
     theme_bw() +
-    theme(plot.title = element_text(size = 16, family = "Tahoma", face = "bold"), 
-                text = element_text(size = 14, family = "Tahoma")) +
+    theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+                text = element_text(size = 12, family = "Tahoma")) +
     geom_vline(xintercept = 75, size = 1, colour = "#FF3721", 
                linetype = "dashed")
 ```
 
-Horizontal lines can be added using `geom_hline(yintercept = n)`
+## Multiple histograms
+
+You can also easily create multiple histograms by the levels of another variable. There are two options, in separate (panel) plots, or in the same plot.
+
+### Panel plots
+
+We first need to do a little data wrangling. In order to make the graphs a bit clearer, we've kept only months "5" (May) and "7" (July) in a new dataset `airquality_trimmed`. We also need to create
 
 ```{r multiple_histograms_panels}
 airquality_trimmed <- airquality[which(airquality$Month == 5 | 
@@ -230,8 +321,8 @@ ggplot(airquality_trimmed, aes(x = Ozone)) +
     scale_y_continuous(name = "Count") +
     ggtitle("Frequency histogram of mean ozone") +
     theme_bw() +
-    theme(plot.title = element_text(size = 16, family = "Tahoma", face = "bold"), 
-                text = element_text(size = 14, family = "Tahoma")) +
+    theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+                text = element_text(size = 12, family = "Tahoma")) +
     facet_grid(. ~ Month.f, scales = "free")
 ```
 
@@ -249,8 +340,8 @@ ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) +
     scale_y_continuous(name = "Count") +
     ggtitle("Frequency histogram of mean ozone") +
     theme_bw() +
-    theme(plot.title = element_text(size = 16, family = "Tahoma", face = "bold"), 
-                text = element_text(size = 14, family = "Tahoma")) +
+    theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+                text = element_text(size = 12, family = "Tahoma")) +
     scale_fill_brewer(palette="Accent")
 ```
 
@@ -264,8 +355,8 @@ ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) +
     scale_y_continuous(name = "Count") +
     ggtitle("Frequency histogram of mean ozone") +
     theme_bw() +
-    theme(plot.title = element_text(size = 16, family = "Tahoma", face = "bold"), 
-                text = element_text(size = 14, family = "Tahoma"),
+    theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+                text = element_text(size = 12, family = "Tahoma"),
           legend.position = "bottom") +
     scale_fill_brewer(palette="Accent") +
     labs(fill="Month")
