@@ -6,12 +6,16 @@ output:
       rmarkdown::html_vignette
 ---
 
-```{r setup, cache = FALSE, echo = FALSE, message = FALSE, warning = FALSE, tidy = FALSE}
-knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, fig.width=6, fig.height=5, tidy = F, cache.path = '.cache/', fig.path = 'fig/')
+```{r setup, cache = FALSE, echo = FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, fig.width=6, fig.height=5, tidy = F, cache.path = '.cache/', fig.path = 'fig/', tidy = FALSE)
 ```
 
 
 This tutorial will demonstrate how to create graphs in ggplot2. It will demonstrate the variety of graphs you can make without further customisation.
+
+The idea is that you can re-build each plot on your own. Each different plot is self-contained and you can read the full tutorial or going to a particular plot instead.
+
+Here we are presenting a dataset made by ourselves with data taken from the Central Bank of Chile (BCCh), Chile Customs (ADUANA) and the General Directorate of International Economic Relations (DIRECON).
 
 ## List of graphs:
 * Scatterplot
@@ -27,7 +31,7 @@ This tutorial will demonstrate how to create graphs in ggplot2. It will demonstr
 * Density plot
 * Function curve
 
-## Linear regression plot
+## Single linear regression plot
 
 ### Basic plot
 ```{r, cache=TRUE}
@@ -54,16 +58,27 @@ p6 <- ggplot() + geom_point(aes(y = export, x = year), data = charts.data) +
 p6
 ```
 
+### Modifying trend line (linear $\rightarrow$ quadratic trend line)
+```{r, cache=TRUE}
+p6 <- ggplot() + geom_point(aes(y = export, x = year), data = charts.data) +
+  geom_smooth(aes(y = export, x = year), data = charts.data, method = 'lm', 
+              formula = y ~ poly(x, 2))
+p6
+```
+
 ### Modifying trend line (confidende interval $\rightarrow$ no confidence interval shown)
 ```{r, cache=TRUE}
-p6 <- ggplot() + geom_point(aes(y = export, x = year), data = charts.data) + geom_smooth(aes(y = export, x = year), data = charts.data, method = 'lm', se = FALSE)
+p6 <- ggplot() + geom_point(aes(y = export, x = year), data = charts.data) + 
+  geom_smooth(aes(y = export, x = year), data = charts.data, method = 'lm', 
+              formula = y ~ poly(x, 2), se = FALSE)
 p6
 ```
 
 ### Adjusting axis and adding title
 ```{r, cache=TRUE}
-p6 <- ggplot() + geom_point(aes(y = export, x = year), data = charts.data) +
-  geom_smooth(aes(y = export, x = year), data = charts.data, method = 'lm', se = FALSE) +
+p6 <- ggplot() + geom_point(aes(y = export, x = year), data = charts.data) + 
+  geom_smooth(aes(y = export, x = year), data = charts.data, method = 'lm', 
+              formula = y ~ poly(x, 2), se = FALSE) +
   scale_x_continuous(breaks=seq(2006,2014,1)) +
   ggtitle("Copper exports to China ($)") + labs(x="Year", y="USD million") 
 p6
@@ -72,10 +87,81 @@ p6
 ### Adjusting aesthetics
 
 ```{r, cache=TRUE}
-p6 <- ggplot() + geom_point(aes(y = export, x = year, size = export, colour = 'red'), data = charts.data, fill = 'red', show_guide = FALSE) +
-  geom_smooth(aes(y = export, x = year), data = charts.data, method = 'lm', se = FALSE, colour = 'blue', size = 1.5) +
+p6 <- ggplot() + geom_point(aes(y = export, x = year), size = 4, colour = 'red', 
+                            fill = 'red', data = charts.data) +
+  geom_smooth(aes(y = export, x = year), data = charts.data, method = 'lm', 
+              formula = y ~ poly(x, 2), se = FALSE, colour = 'blue', size = 1.5) +
+  scale_x_continuous(breaks=seq(2006,2014,1)) +
+  ggtitle("Copper exports to China ($)") + labs(x="Year", y="USD million")
+p6
+```
+
+## Double linear regression plot
+
+### Basic plot
+```{r, cache=TRUE}
+charts.data <- read.csv("charts.csv")
+
+library(ggplot2)
+
+p6 <- ggplot() + geom_point(aes(y = export, x = year, group = product), data = charts.data)
+p6
+```
+
+### Adding trend line
+```{r, cache=TRUE}
+p6 <- ggplot() + geom_point(aes(y = export, x = year, group = product), data = charts.data) +
+  geom_smooth(aes(y = export, x = year, group = product), data = charts.data)
+p6
+```
+
+### Modifying trend line (non-linear $\rightarrow$ linear trend line)
+```{r, cache=TRUE}
+p6 <- ggplot() + geom_point(aes(y = export, x = year, group = product), data = charts.data) +
+  geom_smooth(aes(y = export, x = year, group = product), data = charts.data, method = 'lm')
+p6
+```
+
+### Modifying trend line (linear $\rightarrow$ quadratic trend line)
+```{r, cache=TRUE}
+p6 <- ggplot() + geom_point(aes(y = export, x = year, group = product), data = charts.data) +
+  geom_smooth(aes(y = export, x = year, group = product), data = charts.data, method = 'lm', 
+              formula = y ~ poly(x, 2))
+p6
+```
+
+### Modifying trend line (confidende interval $\rightarrow$ no confidence interval shown)
+```{r, cache=TRUE}
+p6 <- ggplot() + geom_point(aes(y = export, x = year, group = product), data = charts.data) +
+  geom_smooth(aes(y = export, x = year, group = product), data = charts.data, method = 'lm', 
+              formula = y ~ poly(x, 2), se = FALSE)
+p6
+```
+
+### Adjusting axis, adding legends and title
+```{r, cache=TRUE}
+p6 <- ggplot() + geom_point(aes(y = export, x = year, group = product, 
+                                colour = factor(product)), data = charts.data) +
+  geom_smooth(aes(y = export, x = year, group = product, colour = factor(product)), 
+              data = charts.data, method = 'lm', formula = y ~ poly(x, 2), se = FALSE) +
   scale_x_continuous(breaks=seq(2006,2014,1)) +
   ggtitle("Copper exports to China ($)") + labs(x="Year", y="USD million") 
+p6
+```
+
+### Adjusting aesthetics
+```{r, cache=TRUE}
+charts.data$product <- factor(charts.data$product, levels = c("copper","others"), 
+                              labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
+
+p6 <- ggplot() + geom_point(aes(y = export, x = year, group = product, colour = factor(product), 
+                                shape = factor(product)), size = 4, data = charts.data) +
+  geom_smooth(aes(y = export, x = year, group = product, colour = factor(product)), 
+              data = charts.data, method = 'lm', formula = y ~ poly(x, 2), se = FALSE, 
+              size = 1.5) +
+  scale_x_continuous(breaks=seq(2006,2014,1)) +
+  ggtitle("Exports to China ($)") + labs(x="Year", y="USD million") +
+  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank())
 p6
 ```
 
@@ -87,7 +173,8 @@ charts.data <- read.csv("charts.csv")
 
 library(ggplot2)
 
-p7 <- ggplot() + geom_line(aes(y = export, x = year, colour = product), data = charts.data, stat="identity")
+p7 <- ggplot() + geom_line(aes(y = export, x = year, colour = product), data = charts.data, 
+                           stat="identity")
 p7
 ```
 
@@ -97,16 +184,20 @@ charts.data <- read.csv("charts.csv")
 
 library(ggplot2)
 
-p7 <- ggplot() + geom_line(aes(y = export, x = year, colour = product), size=1.5, data = charts.data, stat="identity")
+p7 <- ggplot() + geom_line(aes(y = export, x = year, colour = product), size=1.5, 
+                           data = charts.data, stat="identity")
 p7
 ```
 
 ### Changing variables display
 ```{r, cache=TRUE}
 charts.data <- as.data.frame(charts.data)
-charts.data$product <- factor(charts.data$product, levels = c("copper","others"), labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
+charts.data$product <- factor(charts.data$product, levels = c("copper","others"), 
+                              labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
 
-p7 <- ggplot() + geom_line(aes(y = export, x = year, colour = product), size=1.5, data = charts.data, stat="identity") + theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank())
+p7 <- ggplot() + geom_line(aes(y = export, x = year, colour = product), size=1.5, 
+                           data = charts.data, stat="identity") +
+  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank())
 p7
 ```
 
@@ -133,8 +224,10 @@ p7
 ### Using white theme
 ```{r, cache=TRUE}
 p7 <- ggplot() + theme_bw() +
-  geom_line(aes(y = export, x = year, colour = product), size=1.5, data = charts.data, stat="identity") + 
-  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank()) + 
+  geom_line(aes(y = export, x = year, colour = product), size=1.5, data = charts.data, 
+            stat="identity") + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
   scale_x_continuous(breaks=seq(2006,2014,1)) + 
   labs(x="Year", y="USD million") + 
   ggtitle("Composition of Exports to China ($)") + 
@@ -150,9 +243,13 @@ library(extrafont)
 #font_import(pattern="[O/o]fficina")
 #fonts()
 
-p7 <- ggplot() + theme_economist() + scale_colour_economist() +   theme(plot.title=element_text(family="OfficinaSanITC-Book"), text=element_text(family="OfficinaSanITC-Book")) +
-  geom_line(aes(y = export, x = year, colour = product), size=1.5, data = charts.data, stat="identity") + 
-  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank()) + 
+p7 <- ggplot() + theme_economist() + scale_colour_economist() +
+  theme(plot.title=element_text(family="OfficinaSanITC-Book"),
+        text=element_text(family="OfficinaSanITC-Book")) +
+  geom_line(aes(y = export, x = year, colour = product), size=1.5, data = charts.data, 
+            stat="identity") + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
   scale_x_continuous(breaks=seq(2006,2014,1)) + 
   labs(x="Year", y="USD million") + 
   ggtitle("Composition of Exports to China ($)")
@@ -166,9 +263,13 @@ library(ggthemes)
 library(extrafont)
 #font_import(pattern="[A/a]tlas")
 #fonts()
-p7 <- ggplot() + theme_fivethirtyeight() + scale_colour_fivethirtyeight() +   theme(plot.title=element_text(family="Atlas Grotesk Medium"), text=element_text(family="Atlas Grotesk Light")) +
-  geom_line(aes(y = export, x = year, colour = product), size=1.5, data = charts.data, stat="identity") + 
-  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank()) + 
+p7 <- ggplot() + theme_fivethirtyeight() + scale_colour_fivethirtyeight() +
+  theme(plot.title=element_text(family="Atlas Grotesk Medium"), 
+        text=element_text(family="Atlas Grotesk Light")) +
+  geom_line(aes(y = export, x = year, colour = product), size=1.5, data = charts.data, 
+            stat="identity") + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
   scale_x_continuous(breaks=seq(2006,2014,1)) + 
   labs(x="Year", y="USD million") + 
   ggtitle("Composition of Exports to China ($)")
@@ -178,15 +279,22 @@ p7
 ### Creating your own theme
 ```{r, cache=TRUE}
 p7 <- ggplot() + 
-  geom_line(aes(y = export, x = year, colour = product), size=1.5, data = charts.data, stat="identity") + 
-  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank()) + 
+  geom_line(aes(y = export, x = year, colour = product), size=1.5, data = charts.data, 
+            stat="identity") + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
   scale_x_continuous(breaks=seq(2006,2014,1)) + 
   labs(x="Year", y="USD million") + 
   ggtitle("Composition of Exports to China ($)") + 
   scale_colour_manual(values=colour) + 
   theme(axis.line = element_line(size=1)) + 
-  theme(axis.line = element_line(colour = "black"), panel.grid.major = element_line(colour = "#d3d3d3"), panel.grid.minor = element_blank(), panel.border = element_blank(), panel.background = element_blank()) + 
-  theme(plot.title=element_text(family="AdobeHeitiStd-Regular"), text=element_text(family="AdobeHeitiStd-Regular"), axis.text.x=element_text(colour="black", size = 10), axis.text.y=element_text(colour="black", size = 10)) 
+  theme(axis.line = element_line(colour = "black"), 
+        panel.grid.major = element_line(colour = "#d3d3d3"), panel.grid.minor = element_blank(), 
+        panel.border = element_blank(), panel.background = element_blank()) + 
+  theme(plot.title=element_text(family="AdobeHeitiStd-Regular"), 
+        text=element_text(family="AdobeHeitiStd-Regular"), 
+        axis.text.x=element_text(colour="black", size = 10), 
+        axis.text.y=element_text(colour="black", size = 10)) 
 p7
 ```
 
@@ -198,7 +306,8 @@ charts.data <- read.csv("charts.csv")
 
 library(ggplot2)
 
-p8 <- ggplot() + geom_area(aes(y = export, x = year, fill = product), data = charts.data, stat="identity")
+p8 <- ggplot() + geom_area(aes(y = export, x = year, fill = product), data = charts.data, 
+                           stat="identity")
 p8
 ```
 
@@ -207,16 +316,21 @@ p8
 library(plyr)
 charts.data <- ddply(charts.data, .(year), transform, pos = cumsum(export) - (0.5 * export))
 
-p8 <- p8 + theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank())
+p8 <- p8 + theme(legend.position="bottom", legend.direction="horizontal", 
+                 legend.title = element_blank())
 p8
 ```
 
 ### Changing variables display
 ```{r, cache=TRUE}
 charts.data <- as.data.frame(charts.data)
-charts.data$product <- factor(charts.data$product, levels = c("copper","others"), labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
+charts.data$product <- factor(charts.data$product, levels = c("copper","others"), 
+                              labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
 
-p8 <- ggplot() + geom_area(aes(y = export, x = year, fill = product), data = charts.data, stat="identity") + theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank())
+p8 <- ggplot() + geom_area(aes(y = export, x = year, fill = product), data = charts.data,
+                           stat="identity") + theme(legend.position="bottom",
+                                                    legend.direction="horizontal",
+                                                    legend.title = element_blank())
 p8
 ```
 
@@ -243,8 +357,10 @@ p8
 ### Using white theme
 ```{r, cache=TRUE}
 p8 <- ggplot() + theme_bw() +
-  geom_area(aes(y = export, x = year, fill = product), data = charts.data, stat="identity") + 
-  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank()) + 
+  geom_area(aes(y = export, x = year, fill = product), data = charts.data, 
+            stat="identity") + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
   scale_x_continuous(breaks=seq(2006,2014,1)) + 
   labs(x="Year", y="USD million") + 
   ggtitle("Composition of Exports to China ($)") + 
@@ -260,9 +376,12 @@ library(extrafont)
 #font_import(pattern="[O/o]fficina")
 #fonts()
 
-p8 <- ggplot() + theme_economist() + scale_fill_economist() +   theme(plot.title=element_text(family="OfficinaSanITC-Book"), text=element_text(family="OfficinaSanITC-Book")) +
+p8 <- ggplot() + theme_economist() + scale_fill_economist() +
+  theme(plot.title=element_text(family="OfficinaSanITC-Book"),
+        text=element_text(family="OfficinaSanITC-Book")) +
   geom_area(aes(y = export, x = year, fill = product), data = charts.data, stat="identity") + 
-  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank()) + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
   scale_x_continuous(breaks=seq(2006,2014,1)) + 
   labs(x="Year", y="USD million") + 
   ggtitle("Composition of Exports to China ($)")
@@ -276,9 +395,13 @@ library(ggthemes)
 library(extrafont)
 #font_import(pattern="[A/a]tlas")
 #fonts()
-p8 <- ggplot() + theme_fivethirtyeight() + scale_fill_fivethirtyeight() +   theme(plot.title=element_text(family="Atlas Grotesk Medium"), text=element_text(family="Atlas Grotesk Light")) +
-  geom_area(aes(y = export, x = year, fill = product), data = charts.data, stat="identity") + 
-  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank()) + 
+p8 <- ggplot() + theme_fivethirtyeight() + scale_fill_fivethirtyeight() +
+  theme(plot.title=element_text(family="Atlas Grotesk Medium"), 
+        text=element_text(family="Atlas Grotesk Light")) +
+  geom_area(aes(y = export, x = year, fill = product), data = charts.data, 
+            stat="identity") + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
   scale_x_continuous(breaks=seq(2006,2014,1)) + 
   labs(x="Year", y="USD million") + 
   ggtitle("Composition of Exports to China ($)")
@@ -288,15 +411,22 @@ p8
 ### Creating your own theme
 ```{r, cache=TRUE}
 p8 <- ggplot() + 
-  geom_area(aes(y = export, x = year, fill = product), data = charts.data, stat="identity") + 
-  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank()) + 
+  geom_area(aes(y = export, x = year, fill = product), data = charts.data, 
+            stat="identity") + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
   scale_x_continuous(breaks=seq(2006,2014,1)) + 
   labs(x="Year", y="USD million") + 
   ggtitle("Composition of Exports to China ($)") + 
   scale_fill_manual(values=fill) + 
   theme(axis.line = element_line(size=1)) + 
-  theme(axis.line = element_line(colour = "black"), panel.grid.major = element_line(colour = "#d3d3d3"), panel.grid.minor = element_blank(), panel.border = element_blank(), panel.background = element_blank()) + 
-  theme(plot.title=element_text(family="AdobeHeitiStd-Regular"), text=element_text(family="AdobeHeitiStd-Regular"), axis.text.x=element_text(colour="black", size = 10), axis.text.y=element_text(colour="black", size = 10)) 
+  theme(axis.line = element_line(colour = "black"), 
+        panel.grid.major = element_line(colour = "#d3d3d3"), panel.grid.minor = element_blank(), 
+        panel.border = element_blank(), panel.background = element_blank()) + 
+  theme(plot.title=element_text(family="AdobeHeitiStd-Regular"), 
+        text=element_text(family="AdobeHeitiStd-Regular"), 
+        axis.text.x=element_text(colour="black", size = 10), 
+        axis.text.y=element_text(colour="black", size = 10)) 
 p8
 ```
 
@@ -308,7 +438,8 @@ charts.data <- read.csv("charts.csv")
 
 library(ggplot2)
 
-p9 <- ggplot() + geom_bar(aes(y = export, x = year, fill = product), data = charts.data, stat="identity")
+p9 <- ggplot() + geom_bar(aes(y = export, x = year, fill = product), data = charts.data, 
+                          stat="identity")
 p9
 ```
 
@@ -323,7 +454,8 @@ p9
 library(plyr)
 charts.data <- ddply(charts.data, .(year), transform, pos = cumsum(export) - (0.5 * export))
 
-p9 <- ggplot() + geom_bar(aes(y = export, x = year, fill = product), data = charts.data, stat="identity") 
+p9 <- ggplot() + geom_bar(aes(y = export, x = year, fill = product), data = charts.data, 
+                          stat="identity") 
 p9 <- p9 + geom_text(data=charts.data, aes(x = year, y = pos, label = export), size=4)
 p9
 ```
@@ -333,17 +465,22 @@ p9
 library(plyr)
 charts.data <- ddply(charts.data, .(year), transform, pos = cumsum(export) - (0.5 * export))
 
-p9 <- p9 + theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank())
+p9 <- p9 + theme(legend.position="bottom", legend.direction="horizontal", 
+                 legend.title = element_blank())
 p9
 ```
 
 ### Changing variables display
 ```{r, cache=TRUE}
 charts.data <- as.data.frame(charts.data)
-charts.data$product <- factor(charts.data$product, levels = c("copper","others"), labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
+charts.data$product <- factor(charts.data$product, levels = c("copper","others"), 
+                              labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
 
-p9 <- ggplot() + geom_bar(aes(y = export, x = year, fill = product), data = charts.data, stat="identity") 
-p9 <- p9 + geom_text(data=charts.data, aes(x = year, y = pos, label = export, size=4), show_guide = F) +   theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank())
+p9 <- ggplot() + geom_bar(aes(y = export, x = year, fill = product), data = charts.data, 
+                          stat="identity") 
+p9 <- p9 + geom_text(data=charts.data, aes(x = year, y = pos, label = export, size=4), 
+                     show_guide = F) + 
+  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank())
 p9
 ```
 
@@ -372,7 +509,8 @@ p9
 p9 <- ggplot() + theme_bw() +
   geom_bar(aes(y = export, x = year, fill = product), data = charts.data, stat="identity") + 
   geom_text(data=charts.data, aes(x = year, y = pos, label = export, size=4), show_guide = F) + 
-  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank()) + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
   scale_x_continuous(breaks=seq(2006,2014,1)) + 
   labs(x="Year", y="USD million") + 
   ggtitle("Composition of Exports to China ($)") + 
@@ -388,10 +526,15 @@ library(extrafont)
 #font_import(pattern="[O/o]fficina")
 #fonts()
 
-p9 <- ggplot() + theme_economist() + scale_fill_economist() +   theme(plot.title=element_text(family="OfficinaSanITC-Book"), text=element_text(family="OfficinaSanITC-Book")) +
-  geom_bar(aes(y = export, x = year, fill = product), data = charts.data, stat="identity") + 
-  geom_text(data=charts.data, aes(x = year, y = pos, label = export), colour="white", size = 4, family = "OfficinaSanITC-Book", show_guide = F) + 
-  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank()) + 
+p9 <- ggplot() + theme_economist() + scale_fill_economist() +
+  theme(plot.title=element_text(family="OfficinaSanITC-Book"), 
+        text=element_text(family="OfficinaSanITC-Book")) +
+  geom_bar(aes(y = export, x = year, fill = product), data = charts.data, 
+           stat="identity") + 
+  geom_text(data=charts.data, aes(x = year, y = pos, label = export), colour="white", size = 4,
+            family = "OfficinaSanITC-Book", show_guide = F) + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
   scale_x_continuous(breaks=seq(2006,2014,1)) + 
   labs(x="Year", y="USD million") + 
   ggtitle("Composition of Exports to China ($)")
@@ -405,10 +548,15 @@ library(ggthemes)
 library(extrafont)
 #font_import(pattern="[A/a]tlas")
 #fonts()
-p9 <- ggplot() + theme_fivethirtyeight() + scale_fill_fivethirtyeight() +   theme(plot.title=element_text(family="Atlas Grotesk Medium"), text=element_text(family="Atlas Grotesk Light")) +
-  geom_bar(aes(y = export, x = year, fill = product), data = charts.data, stat="identity") + 
-  geom_text(data=charts.data, aes(x = year, y = pos, label = export), colour="white", size = 3.5, family = "Atlas Grotesk Medium", show_guide = F) + 
-  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank()) + 
+p9 <- ggplot() + theme_fivethirtyeight() + scale_fill_fivethirtyeight() + 
+  theme(plot.title=element_text(family="Atlas Grotesk Medium"), 
+        text=element_text(family="Atlas Grotesk Light")) +
+  geom_bar(aes(y = export, x = year, fill = product), data = charts.data, 
+           stat="identity") + 
+  geom_text(data=charts.data, aes(x = year, y = pos, label = export), colour="white", size = 3.5,
+            family = "Atlas Grotesk Medium", show_guide = F) + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
   scale_x_continuous(breaks=seq(2006,2014,1)) + 
   labs(x="Year", y="USD million") + 
   ggtitle("Composition of Exports to China ($)")
@@ -419,15 +567,22 @@ p9
 ```{r, cache=TRUE}
 p9 <- ggplot() + 
   geom_bar(aes(y = export, x = year, fill = product), data = charts.data, stat="identity") + 
-  geom_text(data=charts.data, aes(x = year, y = pos, label = export), colour="black", family="AdobeHeitiStd-Regular", size = 4, show_guide = F) + 
-  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank()) + 
+  geom_text(data=charts.data, aes(x = year, y = pos, label = export), colour="black", 
+            family="AdobeHeitiStd-Regular", size = 4, show_guide = F) + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
   scale_x_continuous(breaks=seq(2006,2014,1)) + 
   labs(x="Year", y="USD million") + 
   ggtitle("Composition of Exports to China ($)") + 
   scale_fill_manual(values=fill) + 
   theme(axis.line = element_line(size=1)) + 
-  theme(axis.line = element_line(colour = "black"), panel.grid.major = element_line(colour = "#d3d3d3"), panel.grid.minor = element_blank(), panel.border = element_blank(), panel.background = element_blank()) + 
-  theme(plot.title=element_text(family="AdobeHeitiStd-Regular"), text=element_text(family="AdobeHeitiStd-Regular"), axis.text.x=element_text(colour="black", size = 10), axis.text.y=element_text(colour="black", size = 10)) 
+  theme(axis.line = element_line(colour = "black"), 
+        panel.grid.major = element_line(colour = "#d3d3d3"), panel.grid.minor = element_blank(), 
+        panel.border = element_blank(), panel.background = element_blank()) + 
+  theme(plot.title=element_text(family="AdobeHeitiStd-Regular"), 
+        text=element_text(family="AdobeHeitiStd-Regular"), 
+        axis.text.x=element_text(colour="black", size = 10), 
+        axis.text.y=element_text(colour="black", size = 10)) 
 p9
 ```
 
@@ -439,38 +594,49 @@ charts.data <- read.csv("charts.csv")
 
 library(ggplot2)
 
-p10 <- ggplot() + geom_bar(aes(y = percentage, x = year, fill = product), data = charts.data, stat="identity")
+p10 <- ggplot() + geom_bar(aes(y = percentage, x = year, fill = product), data = charts.data, 
+                           stat="identity")
 p10
 ```
 
 ### Adding data labels
 ```{r, cache=TRUE}
-p10 <- p10 + geom_text(data=charts.data, aes(x = year, y = percentage, label = paste0(percentage,"%")), size=4)
+p10 <- p10 + geom_text(data=charts.data, aes(x = year, y = percentage, 
+                                             label = paste0(percentage,"%")), size=4)
 p10
 ```
 
 ### Adjusting data labels position
 ```{r, cache=TRUE}
 library(plyr)
-charts.data <- ddply(charts.data, .(year), transform, pos = cumsum(percentage) - (0.5 * percentage))
+charts.data <- ddply(charts.data, .(year), 
+                     transform, pos = cumsum(percentage) - (0.5 * percentage))
 
-p10 <- ggplot() + geom_bar(aes(y = percentage, x = year, fill = product), data = charts.data, stat="identity")
-p10 <- p10 + geom_text(data=charts.data, aes(x = year, y = pos, label = paste0(percentage,"%")), size=4)
+p10 <- ggplot() + geom_bar(aes(y = percentage, x = year, fill = product), data = charts.data, 
+                           stat="identity")
+p10 <- p10 + geom_text(data=charts.data, aes(x = year, y = pos, label = paste0(percentage,"%")), 
+                       size=4)
 p10
 ```
 
 ### Adjusting legend position
 ```{r, cache=TRUE}
-p10 <- p10 + theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank())
+p10 <- p10 + theme(legend.position="bottom", legend.direction="horizontal", 
+                   legend.title = element_blank())
 p10
 ```
 
 ### Changing variables display
 ```{r, cache=TRUE}
 charts.data <- as.data.frame(charts.data)
-charts.data$product <- factor(charts.data$product, levels = c("copper","others"), labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
+charts.data$product <- factor(charts.data$product, levels = c("copper","others"), 
+                              labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
 
-p10 <- ggplot() + geom_bar(aes(y = percentage, x = year, fill = product), data = charts.data, stat="identity") + geom_text(data=charts.data, aes(x = year, y = pos, label = paste0(percentage,"%")), size=4) + theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank())
+p10 <- ggplot() + geom_bar(aes(y = percentage, x = year, fill = product), data = charts.data, 
+                           stat="identity") + 
+  geom_text(data=charts.data, aes(x = year, y = pos, 
+                                  label = paste0(percentage,"%")), size=4) +
+  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank())
 p10
 ```
 
@@ -483,7 +649,8 @@ p10
 
 ### Adjusting axis, title & units
 ```{r, cache=TRUE}
-p10 <- p10 + labs(x="Year", y="Percentage") + scale_y_continuous(labels = dollar_format(suffix = "%", prefix = "")) +
+p10 <- p10 + labs(x="Year", y="Percentage") + 
+  scale_y_continuous(labels = dollar_format(suffix = "%", prefix = "")) +
   ggtitle("Composition of Exports to China (%)") 
 p10
 ```
@@ -500,7 +667,8 @@ p10
 p10 <- ggplot() + theme_bw() +
   geom_bar(aes(y = percentage, x = year, fill = product), data = charts.data, stat="identity") + 
   geom_text(data=charts.data, aes(x = year, y = pos, label = paste0(percentage,"%")), size=4) + 
-  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank()) + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
   scale_x_continuous(breaks=seq(2006,2014,1)) + 
   scale_y_continuous(labels = dollar_format(suffix = "%", prefix = "")) + 
   labs(x="Year", y="Percentage") + 
@@ -515,10 +683,14 @@ library(ggthemes)
 library(extrafont)
 #font_import(pattern="[O/o]fficina")
 #fonts()
-p10 <- ggplot() + theme_economist() + scale_fill_economist() +   theme(plot.title=element_text(family="OfficinaSanITC-Book"), text=element_text(family="OfficinaSanITC-Book")) +
+p10 <- ggplot() + theme_economist() + scale_fill_economist() + 
+  theme(plot.title=element_text(family="OfficinaSanITC-Book"), 
+        text=element_text(family="OfficinaSanITC-Book")) +
   geom_bar(aes(y = percentage, x = year, fill = product), data = charts.data, stat="identity") + 
-  geom_text(data=charts.data, aes(x = year, y = pos, label = paste0(percentage,"%")), colour="white", family="OfficinaSanITC-Book", size=4) + 
-  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank()) + 
+  geom_text(data=charts.data, aes(x = year, y = pos, label = paste0(percentage,"%")), 
+            colour="white", family="OfficinaSanITC-Book", size=4) + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
   scale_x_continuous(breaks=seq(2006,2014,1)) + 
   scale_y_continuous(labels = dollar_format(suffix = "%", prefix = "")) + 
   labs(x="Year", y="Percentage") + 
@@ -533,10 +705,14 @@ library(ggthemes)
 library(extrafont)
 #font_import(pattern="[A/a]tlas")
 #fonts()
-p10 <- ggplot() + theme_fivethirtyeight() + scale_fill_fivethirtyeight() +   theme(plot.title=element_text(family="Atlas Grotesk Medium"), text=element_text(family="Atlas Grotesk Light")) +
+p10 <- ggplot() + theme_fivethirtyeight() + scale_fill_fivethirtyeight() +   
+  theme(plot.title=element_text(family="Atlas Grotesk Medium"), 
+        text=element_text(family="Atlas Grotesk Light")) +
   geom_bar(aes(y = percentage, x = year, fill = product), data = charts.data, stat="identity") + 
-  geom_text(data=charts.data, aes(x = year, y = pos, label = paste0(percentage,"%")), colour="white", family="Atlas Grotesk Medium", size=4) + 
-  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank()) + 
+  geom_text(data=charts.data, aes(x = year, y = pos, label = paste0(percentage,"%")), 
+            colour="white", family="Atlas Grotesk Medium", size=4) + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
   scale_x_continuous(breaks=seq(2006,2014,1)) + 
   scale_y_continuous(labels = dollar_format(suffix = "%", prefix = "")) + 
   labs(x="Year", y="Percentage") + 
@@ -548,15 +724,22 @@ p10
 ```{r, cache=TRUE}
 p10 <- ggplot() + 
   geom_bar(aes(y = percentage, x = year, fill = product), data = charts.data, stat="identity") + 
-  geom_text(data=charts.data, aes(x = year, y = pos, label = paste0(percentage,"%")), colour="black", family="AdobeHeitiStd-Regular", size=4) + 
-  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank()) + 
+  geom_text(data=charts.data, aes(x = year, y = pos, label = paste0(percentage,"%")), 
+            colour="black", family="AdobeHeitiStd-Regular", size=4) + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
   scale_x_continuous(breaks=seq(2006,2014,1)) + 
   scale_y_continuous(labels = dollar_format(suffix = "%", prefix = "")) + 
   labs(x="Year", y="Percentage") + 
   ggtitle("Composition of Exports to China (%)") + 
   scale_fill_manual(values=fill) + 
   theme(axis.line = element_line(size=1)) + 
-  theme(axis.line = element_line(colour = "black"), panel.grid.major = element_line(colour = "#d3d3d3"), panel.grid.minor = element_blank(), panel.border = element_blank(), panel.background = element_blank()) + 
-  theme(plot.title=element_text(family="AdobeHeitiStd-Regular"), text=element_text(family="AdobeHeitiStd-Regular"), axis.text.x=element_text(colour="black", size = 10), axis.text.y=element_text(colour="black", size = 10)) 
+  theme(axis.line = element_line(colour = "black"), 
+        panel.grid.major = element_line(colour = "#d3d3d3"), panel.grid.minor = element_blank(), 
+        panel.border = element_blank(), panel.background = element_blank()) + 
+  theme(plot.title=element_text(family="AdobeHeitiStd-Regular"), 
+        text=element_text(family="AdobeHeitiStd-Regular"), 
+        axis.text.x=element_text(colour="black", size = 10), 
+        axis.text.y=element_text(colour="black", size = 10)) 
 p10
 ```
