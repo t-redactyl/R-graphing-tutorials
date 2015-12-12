@@ -3,6 +3,13 @@ title: "Histograms"
 output: html_document
 ---
 
+```{r setup, cache = FALSE, echo = FALSE, message = FALSE, warning = FALSE, tidy = FALSE}
+knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, fig.width=6, fig.height=5, tidy = F, cache.path = '.cache/', fig.path = 'fig/')
+```
+
+Using the [airquality dataset](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/airquality.html) from R.
+
+
 ```{r load_in_data}
 rm(list = ls())
 library(datasets)
@@ -90,6 +97,27 @@ ggplot(airquality, aes(x = Ozone)) +
     ggtitle("Frequency histogram of mean ozone")
 ```
 
+```{r gradient_colors_1}
+ggplot(airquality, aes(x = Ozone)) + 
+    geom_histogram(aes(fill = ..count..), binwidth = 5) +
+    scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                              breaks = seq(0, 175, 25),
+                              limits=c(0, 175)) +
+    scale_y_continuous(name = "Count") +
+    ggtitle("Frequency histogram of mean ozone")
+```
+
+```{r gradient_colors_2}
+ggplot(airquality, aes(x = Ozone)) + 
+    geom_histogram(aes(fill = ..count..), binwidth = 5) +
+    scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                              breaks = seq(0, 175, 25),
+                              limits=c(0, 175)) +
+    scale_y_continuous(name = "Count") +
+    ggtitle("Frequency histogram of mean ozone") +
+    scale_fill_gradient("Count", low = "blue", high = "red")
+```
+
 ```{r themes_white}
 barfill <- "#4271AE"
 barlines <- "#1F3552"
@@ -109,35 +137,138 @@ ggplot(airquality, aes(x = Ozone)) +
 library(ggthemes)
 library(extrafont)
 
+barfill <- "#4271AE"
+barlines <- "#1F3552"
+
 ggplot(airquality, aes(x = Ozone)) + 
-    geom_histogram(aes(y = ..count..), binwidth = 5) +
+    geom_histogram(aes(y = ..count..), binwidth = 5,
+                   colour = barlines, fill = barfill) +
+    scale_color_fivethirtyeight() + 
+    theme_fivethirtyeight() +
     scale_x_continuous(name = "Mean ozone in\nparts per billion",
                               breaks = seq(0, 175, 25),
                               limits=c(0, 175)) +
     scale_y_continuous(name = "Count") +
-    ggtitle("Frequency histogram of mean ozone") +
-    scale_color_fivethirtyeight() + 
-    theme_fivethirtyeight()
+    ggtitle("Frequency histogram of mean ozone")
 ```
 
-```{r importing_fonts}
-library(ggthemes)
+These instructions are taken from [here](https://www.google.com.au/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwiWzafchdPJAhVBpJQKHe_LDT8QFggbMAA&url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fxkcd%2Fvignettes%2Fxkcd-intro.pdf&usg=AFQjCNE-KciGY14e-Q1buYIVmTFC0ht__Q&sig2=DZUwkvIHwfNWtTtkcz94jg). 
+
+
+{r importing_font_xkcd}
 library(extrafont)
+library(ggplot2)
+
+download.file("http://simonsoftware.se/other/xkcd.ttf", 
+              dest="xkcd.ttf", mode="wb")
+system("mkdir ~/.fonts")
+system("cp xkcd.ttf  ~/.fonts")
+font_import(paths = "~/.fonts", pattern="[X/x]kcd")
+fonts()
+
+loadfonts()
+
+
+```{r own_theme}
+theme_xkcd <- theme(
+  panel.background = element_rect(fill="white"), 
+  panel.grid = element_line(colour="white")
+)
 
 ggplot(airquality, aes(x = Ozone)) + 
-    geom_histogram(aes(y = ..count..), binwidth = 5) +
+    geom_histogram(aes(y = ..count..), binwidth = 10,
+                   colour = "black", fill = "white") +
+    scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                              breaks = seq(0, 175, 25),
+                              limits=c(0, 175)) +
+    scale_y_continuous(name = "Count") +
+    theme_xkcd +
+    theme(legend.position = "bottom", legend.direction="horizontal", 
+          legend.title = element_blank(), axis.line = element_line(size=1.5)) + 
+          ggtitle("Frequency histogram of mean ozone") + 
+          theme(plot.title=element_text(size=20, family="xkcd-Regular"), 
+                text=element_text(size=18, family="xkcd-Regular"))
+```
+
+Let's go back to our white themed graph going forward, but let's change the font to 
+
+We can now add some lines. Let's say that
+
+```{r lines}
+barfill <- "#4271AE"
+barlines <- "#1F3552"
+
+ggplot(airquality, aes(x = Ozone)) + 
+    geom_histogram(aes(y = ..count..), binwidth = 5,
+                   colour = barlines, fill = barfill) +
     scale_x_continuous(name = "Mean ozone in\nparts per billion",
                               breaks = seq(0, 175, 25),
                               limits=c(0, 175)) +
     scale_y_continuous(name = "Count") +
     ggtitle("Frequency histogram of mean ozone") +
-    scale_color_fivethirtyeight() + 
-    theme_fivethirtyeight()
+    theme_bw() +
+    theme(plot.title = element_text(size = 16, family = "Tahoma", face = "bold"), 
+                text = element_text(size = 14, family = "Tahoma")) +
+    geom_vline(xintercept = 75, size = 1, colour = "#FF3721", 
+               linetype = "dashed")
 ```
 
-- Changing themes
-- Adding lines (horizontal and vertical)
-- Multiple histograms (same plot)
-- Customising legend
-- Multiple plots (panel)
+Horizontal lines can be added using `geom_hline(yintercept = n)`
+
+```{r multiple_histograms_panels}
+airquality_trimmed <- airquality[which(airquality$Month == 5 | 
+                                       airquality$Month == 7), ]
+airquality_trimmed$Month.f <- factor(airquality_trimmed$Month, 
+                                     labels = c("May", "July"))
+
+ggplot(airquality_trimmed, aes(x = Ozone)) + 
+    geom_histogram(aes(y = ..count..), binwidth = 10,
+                   colour = barlines, fill = barfill) +
+    scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                              breaks = seq(0, 175, 25),
+                              limits=c(0, 175)) +
+    scale_y_continuous(name = "Count") +
+    ggtitle("Frequency histogram of mean ozone") +
+    theme_bw() +
+    theme(plot.title = element_text(size = 16, family = "Tahoma", face = "bold"), 
+                text = element_text(size = 14, family = "Tahoma")) +
+    facet_grid(. ~ Month.f, scales = "free")
+```
+
+http://moderndata.plot.ly/create-colorful-graphs-in-r-with-rcolorbrewer-and-plotly/
+
+```{r multiple_histograms_same_plot}
+library(RColorBrewer)
+
+ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) + 
+    geom_histogram(aes(y = ..count..), binwidth = 10,
+                   position="identity", alpha=0.6) +
+    scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                              breaks = seq(0, 175, 25),
+                              limits=c(0, 175)) +
+    scale_y_continuous(name = "Count") +
+    ggtitle("Frequency histogram of mean ozone") +
+    theme_bw() +
+    theme(plot.title = element_text(size = 16, family = "Tahoma", face = "bold"), 
+                text = element_text(size = 14, family = "Tahoma")) +
+    scale_fill_brewer(palette="Accent")
+```
+
+```{r legend_formatting}
+ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) + 
+    geom_histogram(aes(y = ..count..), binwidth = 10,
+                   position="identity", alpha=0.6) +
+    scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                              breaks = seq(0, 175, 25),
+                              limits=c(0, 175)) +
+    scale_y_continuous(name = "Count") +
+    ggtitle("Frequency histogram of mean ozone") +
+    theme_bw() +
+    theme(plot.title = element_text(size = 16, family = "Tahoma", face = "bold"), 
+                text = element_text(size = 14, family = "Tahoma"),
+          legend.position = "bottom") +
+    scale_fill_brewer(palette="Accent") +
+    labs(fill="Month")
+```
+
 
