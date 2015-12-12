@@ -20,7 +20,7 @@ library(ggplot2)
 data(airquality)
 ```
 
-In this tutorial, we will work towards creating the histogram below. We will take you from a basic histogram and explain all customisations we add to the code step-by-step.
+In this tutorial, we will work towards creating the histogram below. We will take you from a basic histogram and explain all the customisations we add to the code step-by-step.
 
 ```{r final_graph, echo = FALSE}
 library(RColorBrewer)
@@ -48,7 +48,7 @@ ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) +
 
 ## Basic histogram
 
-In order to create the basic ggplot, we pass the `airquality` to the data argument, and specify that our x axis plots the `Ozone` variable. We then instruct ggplot to render a histogram by adding the `geom_histogram()` option.
+In order to initialise a plot we tell ggplot that `airquality` is our data, and specify that our x axis plots the `Ozone` variable. We then instruct ggplot to render this as a histogram by adding the `geom_histogram()` option.
 
 ```{r basic_plot}
 ggplot(airquality, aes(x = Ozone)) + 
@@ -302,9 +302,11 @@ ggplot(airquality, aes(x = Ozone)) +
 
 You can also easily create multiple histograms by the levels of another variable. There are two options, in separate (panel) plots, or in the same plot.
 
-### Panel plots
+### In panel plots
 
-We first need to do a little data wrangling. In order to make the graphs a bit clearer, we've kept only months "5" (May) and "7" (July) in a new dataset `airquality_trimmed`. We also need to create
+We first need to do a little data wrangling. In order to make the graphs a bit clearer, we've kept only months "5" (May) and "7" (July) in a new dataset `airquality_trimmed`. We also need to convert this variable into either a character or factor variable. We have created a new factor variable `Month.f`.
+
+In order to produce a panel plot by month, we add the `facet_grid(. ~ Month.f)` option to the plot. The additional `scale = free` argument in `facet_grid` means that the y-axes of each plot do not need to be the same.
 
 ```{r multiple_histograms_panels}
 airquality_trimmed <- airquality[which(airquality$Month == 5 | 
@@ -326,7 +328,9 @@ ggplot(airquality_trimmed, aes(x = Ozone)) +
     facet_grid(. ~ Month.f, scales = "free")
 ```
 
-http://moderndata.plot.ly/create-colorful-graphs-in-r-with-rcolorbrewer-and-plotly/
+### In the same plot
+
+In order to plot the two months in the same plot, we add several things. Firstly, in the `ggplot` function, we add a `fill = Month.f` argument to `aes`. Secondly, in order to more clearly see the graph, we add two arguments to the `geom_histogram` option, `position = "identity"` and `alpha = 0.6`. This controls the position and transparency of the curves respectively. Finally, you can customise the colours of the histograms by adding the `scale_fill_brewer` to the plot from the `RColorBrewer` package. [This](http://moderndata.plot.ly/create-colorful-graphs-in-r-with-rcolorbrewer-and-plotly/) blog post describes the available packages.
 
 ```{r multiple_histograms_same_plot}
 library(RColorBrewer)
@@ -344,6 +348,10 @@ ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) +
                 text = element_text(size = 12, family = "Tahoma")) +
     scale_fill_brewer(palette="Accent")
 ```
+
+## Formatting the legend
+
+Finally, we can format the legend. Firstly, we can change the position by adding the `legend.position = "bottom"` argument to the `theme` option, which moves the legend under the plot. Secondly, we can fix the title by adding the `labs(fill="Month")` option to the plot.
 
 ```{r legend_formatting}
 ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) + 
