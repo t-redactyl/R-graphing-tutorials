@@ -6,10 +6,12 @@ setwd("/Users/pacha/R-graphing-tutorials/")
 ```{r, cache=TRUE}
 charts.data <- read.csv("charts.csv")
 charts.data <- charts.data[charts.data$product == "copper",]
+charts.data$year <- as.numeric(charts.data$year)
+charts.data$export <- as.numeric(charts.data$export)
 
 library(ggplot2)
 
-p6 <- ggplot() + geom_point(aes(y = export, x = year), shape=1, data = charts.data)
+p6 <- ggplot() + geom_point(aes(y = export, x = year), shape=1, data = charts.data) + geom_smooth()
 p6
 ```
 

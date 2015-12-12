@@ -16,7 +16,7 @@ This tutorial will demonstrate how to create graphs in ggplot2. It will demonstr
 ## List of graphs:
 * Scatterplot
 * Weighted scatterplot
-* Linear regression plot
+* Linear regression plot OK
 * Lowess curve plot
 * Line graph OK
 * Area graph OK
@@ -27,7 +27,57 @@ This tutorial will demonstrate how to create graphs in ggplot2. It will demonstr
 * Density plot
 * Function curve
 
+## Linear regression plot
 
+### Basic plot
+```{r, cache=TRUE}
+charts.data <- read.csv("charts.csv")
+charts.data <- charts.data[charts.data$product == "copper",]
+
+library(ggplot2)
+
+p6 <- ggplot() + geom_point(aes(y = export, x = year), data = charts.data)
+p6
+```
+
+### Adding trend line
+```{r, cache=TRUE}
+p6 <- ggplot() + geom_point(aes(y = export, x = year), data = charts.data) +
+  geom_smooth(aes(y = export, x = year), data = charts.data)
+p6
+```
+
+### Modifying trend line (non-linear $\rightarrow$ linear trend line)
+```{r, cache=TRUE}
+p6 <- ggplot() + geom_point(aes(y = export, x = year), data = charts.data) +
+  geom_smooth(aes(y = export, x = year), data = charts.data, method = 'lm')
+p6
+```
+
+### Modifying trend line (confidende interval $\rightarrow$ no confidence interval shown)
+```{r, cache=TRUE}
+p6 <- ggplot() + geom_point(aes(y = export, x = year), data = charts.data) + geom_smooth(aes(y = export, x = year), data = charts.data, method = 'lm', se = FALSE)
+p6
+```
+
+### Adjusting axis and adding title
+```{r, cache=TRUE}
+p6 <- ggplot() + geom_point(aes(y = export, x = year), data = charts.data) +
+  geom_smooth(aes(y = export, x = year), data = charts.data, method = 'lm', se = FALSE) +
+  scale_x_continuous(breaks=seq(2006,2014,1)) +
+  ggtitle("Copper exports to China ($)") + labs(x="Year", y="USD million") 
+p6
+```
+
+### Adjusting aesthetics
+
+```{r, cache=TRUE}
+p6 <- ggplot() + geom_point(aes(y = export, x = year, size = export, colour = 'red'), data = charts.data, fill = 'red', show_guide = FALSE) +
+  geom_smooth(aes(y = export, x = year), data = charts.data, method = 'lm', se = FALSE, colour = 'blue', size = 1.5) +
+  scale_x_continuous(breaks=seq(2006,2014,1)) +
+  ggtitle("Copper exports to China ($)") + labs(x="Year", y="USD million") 
+p6
+```
 
 ## Line graph
 
