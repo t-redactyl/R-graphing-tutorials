@@ -255,12 +255,16 @@ Now that the font is loaded, you now need to customise the theme options. You ca
 
 ```{r own_theme}
 theme_xkcd <- theme(
-  panel.background = element_rect(fill="white"), 
-  panel.grid = element_line(colour="white"),
-  axis.line = element_line(size=1.5),
-  plot.title=element_text(size=20, family="xkcd-Regular"), 
-  text=element_text(size=18, family="xkcd-Regular")
-)
+    axis.line = element_line(size=1, colour = "black"), 
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(), 
+    panel.border = element_blank(), 
+    panel.background = element_blank(),
+    plot.title=element_text(size = 20, family="xkcd-Regular"), 
+    text=element_text(size = 16, family="xkcd-Regular"), 
+    axis.text.x=element_text(colour="black", size = 12), 
+    axis.text.y=element_text(colour="black", size = 12)
+) 
 
 ggplot(airquality, aes(x = Ozone)) + 
     geom_histogram(aes(y = ..count..), binwidth = 10,
