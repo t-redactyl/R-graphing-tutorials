@@ -1,6 +1,6 @@
 base
 ggplot2
-scales
 ggthemes
 extrafont
+scales
 plyr
