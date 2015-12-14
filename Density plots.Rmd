@@ -30,30 +30,30 @@ In this tutorial, we will work towards creating the histogram below. We will tak
 ```{r final_graph, echo = FALSE}
 library(RColorBrewer)
 
-airquality_trimmed <- airquality[which(airquality$Month == 5 | 
+airquality_trimmed <- airquality[which(airquality$Month == 5 |
+                                       airquality$Month == 6 |
                                        airquality$Month == 7), ]
 airquality_trimmed$Month.f <- factor(airquality_trimmed$Month, 
-                                     labels = c("May", "July"))
+                                     labels = c("May", "June", "July"))
 
-ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) + 
-    geom_histogram(aes(y = ..count..), binwidth = 10,
-                   position="identity", alpha=0.6) +
+ggplot(airquality_trimmed, aes(x = Ozone, colour = Month.f)) + 
+    geom_density(position="identity", fill = NA, size = 1) +
     scale_x_continuous(name = "Mean ozone in\nparts per billion",
-                              breaks = seq(0, 175, 25),
-                              limits=c(0, 175)) +
+                              breaks = seq(0, 200, 25),
+                              limits=c(0, 200)) +
     scale_y_continuous(name = "Count") +
     ggtitle("Frequency histogram of mean ozone") +
     theme_bw() +
     theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
                 text = element_text(size = 12, family = "Tahoma"),
-          legend.position = "bottom") +
-    scale_fill_brewer(palette="Accent") +
+           legend.position = "bottom") +
+    scale_colour_brewer(palette="Accent") +
     labs(fill="Month")
 ```
 
-## Basic histogram
+## Basic density plot
 
-In order to initialise a plot we tell ggplot that `airquality` is our data, and specify that our x axis plots the `Ozone` variable. We then instruct ggplot to render this as a histogram by adding the `geom_histogram()` option.
+In order to initialise a plot we tell ggplot that `airquality` is our data, and specify that our x axis plots the `Ozone` variable. We then instruct ggplot to render this as a density plot by adding the `geom_density()` option.
 
 ```{r basic_plot}
 ggplot(airquality, aes(x = Ozone)) + 
@@ -86,7 +86,7 @@ ggplot(airquality, aes(x = Ozone)) +
 
 ## Changing axis ticks
 
-The next thing we will change is the axis ticks. Let's make the x-axis ticks appear at every 25 units rather than 50 using the `breaks = seq(0, 175, 25)` argument in `scale_x_continuous`. (The `seq` function is a base R function that indicates the start and endpoints and the units to increment by respectively. See `help(seq)` for more information.) We ensure that the x-axis begins and ends where we want by also adding the argument `limits = c(0, 175)` to `scale_x_continuous`.
+The next thing we will change is the axis ticks. Let's make the x-axis ticks appear at every 25 units rather than 50 using the `breaks = seq(0, 200, 25)` argument in `scale_x_continuous`. (The `seq` function is a base R function that indicates the start and endpoints and the units to increment by respectively. See `help(seq)` for more information.) We ensure that the x-axis begins and ends where we want by also adding the argument `limits = c(0, 200)` to `scale_x_continuous`.
 
 ```{r changing_ticks}
 ggplot(airquality, aes(x = Ozone)) + 
@@ -149,15 +149,12 @@ ggplot(airquality, aes(x = Ozone)) +
 
 ### Colour transparency
 
-You can also add a gradient to your colour scheme that varies according to the frequency of the values. Below is the default gradient colour scheme. In order to do this, you can see we have changed the `aes(y = ..count..)` argument in `geom_histogram` to `aes(fill = ..count..)`. 
+You can also specify the degree of transparency in the density fill area using the argument `alpha` in `geom_density`. This ranges from 0 to 1.
 
 ```{r transparency}
-fill <- "#4271AE"
-line <- "#1F3552"
-
 ggplot(airquality, aes(x = Ozone)) + 
     geom_density(fill = fill, colour = line,
-                 alpha = 0.7) +
+                 alpha = 0.6) +
     scale_x_continuous(name = "Mean ozone in\nparts per billion",
                               breaks = seq(0, 200, 25),
                               limits=c(0, 200)) +
@@ -174,12 +171,9 @@ In order to change elements such as the font type and size, background colour, l
 One way to use themes is to apply those that other people have built. Below we use the 'white' theme that comes with `ggplot2` by adding the option `theme_bw()` to our graph. You can see it changes the background to white and adds a border to the graph area.
 
 ```{r themes_white}
-fill <- "#4271AE"
-line <- "#1F3552"
-
 ggplot(airquality, aes(x = Ozone)) + 
     geom_density(fill = fill, colour = line,
-                 alpha = 0.7) +
+                 alpha = 0.6) +
     scale_x_continuous(name = "Mean ozone in\nparts per billion",
                               breaks = seq(0, 200, 25),
                               limits=c(0, 200)) +
@@ -195,12 +189,9 @@ There are a wider range of pre-built themes available as part of the `ggthemes` 
 ```{r theme_economist}
 library(ggthemes)
 
-fill <- "#4271AE"
-line <- "#1F3552"
-
 ggplot(airquality, aes(x = Ozone)) + 
     geom_density(fill = fill, colour = line,
-                 alpha = 0.7) +
+                 alpha = 0.6) +
     scale_x_continuous(name = "Mean ozone in\nparts per billion",
                               breaks = seq(0, 200, 25),
                               limits=c(0, 200)) +
@@ -226,7 +217,7 @@ fonts()
 loadfonts()
 ```
 
-Now that the font is loaded, you now need to customise the theme options. You can see this has been done outside the graph in a variable called `theme_xkcd`, however, you could do this as a `theme` option inside the plot as well. In this case, the graph background and grids have been made white, the axis lines have been thickened, and the font for both the title and the axes has been changed to the imported xkcd font.
+Now that the font is loaded, you now need to customise the theme options. You can see this has been done outside the graph in a variable called `theme_xkcd`, however, you could do this as a `theme` option inside the plot as well. In this case, the graph background and grids have been made white, the axis lines have been thickened, and the font for both the title and the axes has been changed to the imported xkcd font. I have also changed the density line to black and the fill to white. Finally, I thickened the density line using the `size` argument in the `geom_density` option.
 
 ```{r own_theme}
 theme_xkcd <- theme(
@@ -246,7 +237,7 @@ line <- "black"
 
 ggplot(airquality, aes(x = Ozone)) + 
     geom_density(fill = fill, colour = line,
-                 alpha = 0.7, size = 1) +
+                 size = 1) +
     scale_x_continuous(name = "Mean ozone in\nparts per billion",
                               breaks = seq(0, 200, 25),
                               limits=c(0, 200)) +
@@ -267,7 +258,7 @@ line <- "#1F3552"
 
 ggplot(airquality, aes(x = Ozone)) + 
     geom_density(fill = fill, colour = line,
-                 alpha = 0.7) +
+                 alpha = 0.6) +
     scale_x_continuous(name = "Mean ozone in\nparts per billion",
                               breaks = seq(0, 200, 25),
                               limits=c(0, 200)) +
@@ -282,7 +273,7 @@ ggplot(airquality, aes(x = Ozone)) +
 
 ## Multiple densities
 
-You can also easily create multiple density plots by the levels of another variable. There are two options, in separate (panel) plots, or in the same plot.
+You can also easily create multiple density plots by the levels of another variable. There are two options, in separate (panel) plots, or in the same plot. There are also a couple of variations on these we'll discuss below.
 
 ### In panel plots
 
@@ -297,13 +288,9 @@ airquality_trimmed <- airquality[which(airquality$Month == 5 |
 airquality_trimmed$Month.f <- factor(airquality_trimmed$Month, 
                                      labels = c("May", "June", "July"))
 
-
-fill <- "#4271AE"
-line <- "#1F3552"
-
 ggplot(airquality_trimmed, aes(x = Ozone)) + 
     geom_density(fill = fill, colour = line,
-                 alpha = 0.7) +
+                 alpha = 0.6) +
     scale_x_continuous(name = "Mean ozone in\nparts per billion",
                               breaks = seq(0, 200, 25),
                               limits=c(0, 200)) +
@@ -313,26 +300,18 @@ ggplot(airquality_trimmed, aes(x = Ozone)) +
     theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
                 text = element_text(size = 12, family = "Tahoma")) +
     facet_grid(. ~ Month.f)
-
 ```
 
 ### Volcano plots
 
+An alternative to a panel plot is the volcano plot. This plot swaps the axes (so the variable of interest is on the y-axis and the density is on the x-axis), and reflects the density. In order to create this plot, we replace `geom_density` with `stat_density`, and include the arguments `aes(ymax = ..density..,  ymin = -..density..)` and `geom = "ribbon"` to create a density plot, the usual `fill`, `colour` and `alpha` arguments, and `position = "identity"`. We also need to add a `coord_flip()` option to the plot.
+
 ```{r multiple_histograms_volcano}
-airquality_trimmed <- airquality[which(airquality$Month == 5 |
-                                       airquality$Month == 6 |
-                                       airquality$Month == 7), ]
-airquality_trimmed$Month.f <- factor(airquality_trimmed$Month, 
-                                     labels = c("May", "June", "July"))
-
-
-fill <- "#4271AE"
-line <- "#1F3552"
-
 ggplot(airquality_trimmed, aes(x = Ozone)) + 
     stat_density(aes(ymax = ..density..,  ymin = -..density..),
-                 fill = fill, colour = line, alpha = 0.7,
-                 geom = "ribbon", position = "identity") +
+                 geom = "ribbon", 
+                 fill = fill, colour = line, alpha = 0.6,
+                 position = "identity") +
     scale_x_continuous(name = "Mean ozone in\nparts per billion",
                               breaks = seq(0, 200, 25),
                               limits=c(0, 200)) +
@@ -347,17 +326,16 @@ ggplot(airquality_trimmed, aes(x = Ozone)) +
 
 ### In the same plot
 
-In order to plot the two months in the same plot, we add several things. Firstly, in the `ggplot` function, we add a `fill = Month.f` argument to `aes`. Secondly, in order to more clearly see the graph, we add two arguments to the `geom_histogram` option, `position = "identity"` and `alpha = 0.6`. This controls the position and transparency of the curves respectively. Finally, you can customise the colours of the histograms by adding the `scale_fill_brewer` to the plot from the `RColorBrewer` package. [This](http://moderndata.plot.ly/create-colorful-graphs-in-r-with-rcolorbrewer-and-plotly/) blog post describes the available packages.
+In order to plot the three months in the same plot, we add several things. Firstly, in the `ggplot` function, we add a `fill = Month.f` argument to `aes`. Secondly, in order to more clearly see the graph, we add the argument `position = "identity"` to the `geom_density` option. This controls the position of the curves respectively. Finally, you can customise the colours of the histograms by adding the `scale_fill_brewer` to the plot from the `RColorBrewer` package. [This](http://moderndata.plot.ly/create-colorful-graphs-in-r-with-rcolorbrewer-and-plotly/) blog post describes the available packages.
 
 ```{r multiple_histograms_same_plot}
 library(RColorBrewer)
 
 ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) + 
-    geom_density(aes(y = ..count..), binwidth = 10,
-                   position="identity", alpha=0.6) +
+    geom_density(position="identity", alpha=0.6) +
     scale_x_continuous(name = "Mean ozone in\nparts per billion",
-                              breaks = seq(0, 175, 25),
-                              limits=c(0, 175)) +
+                              breaks = seq(0, 200, 25),
+                              limits=c(0, 200)) +
     scale_y_continuous(name = "Count") +
     ggtitle("Frequency histogram of mean ozone") +
     theme_bw() +
@@ -368,24 +346,57 @@ ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) +
 
 ### Stacked densities
 
+These densities are a little hard to see. One way we can make it easier to see them is to stack the densities on top of each other. To do so, we swap `position = "stack"` for `position = "identity"` in `geom_density`.
+
+```{r multiple_histograms_stacked}
+ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) + 
+    geom_density(position = "stack", alpha = 0.6) +
+    scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                              breaks = seq(0, 200, 25),
+                              limits=c(0, 200)) +
+    scale_y_continuous(name = "Count") +
+    ggtitle("Frequency histogram of mean ozone") +
+    theme_bw() +
+    theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+                text = element_text(size = 12, family = "Tahoma")) +
+    scale_fill_brewer(palette="Accent")
+```
+
+### Just the lines
+
+Another way to make it a little easier to see the densities by dropping out the fill. To do this need a few changes. We need to swap the option `fill = Month.f` in `ggplot` for `colour = Month.f`. We add the `fill = NA` to `geom_density`, and we've also added `size = 1` to make it easier to see the lines. Finally, we change the `scale_fill_brewer()` option for `scale_colour_brewer()`.
+
+```{r multiple_histograms_lines_only}
+ggplot(airquality_trimmed, aes(x = Ozone, colour = Month.f)) + 
+    geom_density(position="identity", fill = NA, size = 1) +
+    scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                              breaks = seq(0, 200, 25),
+                              limits=c(0, 200)) +
+    scale_y_continuous(name = "Count") +
+    ggtitle("Frequency histogram of mean ozone") +
+    theme_bw() +
+    theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+                text = element_text(size = 12, family = "Tahoma")) +
+    scale_colour_brewer(palette="Accent")
+```
+
 ## Formatting the legend
 
 Finally, we can format the legend. Firstly, we can change the position by adding the `legend.position = "bottom"` argument to the `theme` option, which moves the legend under the plot. Secondly, we can fix the title by adding the `labs(fill="Month")` option to the plot.
 
 ```{r legend_formatting}
-ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) + 
-    geom_histogram(aes(y = ..count..), binwidth = 10,
-                   position="identity", alpha=0.6) +
+ggplot(airquality_trimmed, aes(x = Ozone, colour = Month.f)) + 
+    geom_density(position="identity", fill = NA, size = 1) +
     scale_x_continuous(name = "Mean ozone in\nparts per billion",
-                              breaks = seq(0, 175, 25),
-                              limits=c(0, 175)) +
+                              breaks = seq(0, 200, 25),
+                              limits=c(0, 200)) +
     scale_y_continuous(name = "Count") +
     ggtitle("Frequency histogram of mean ozone") +
     theme_bw() +
     theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
                 text = element_text(size = 12, family = "Tahoma"),
-          legend.position = "bottom") +
-    scale_fill_brewer(palette="Accent") +
+           legend.position = "bottom") +
+    scale_colour_brewer(palette="Accent") +
     labs(fill="Month")
 ```
 
