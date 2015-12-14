@@ -1,5 +1,5 @@
 ---
-title: "Creating histograms in R using ggplot2"
+title: "Creating line plots in R using ggplot2"
 author: 
   - Jodie Burchell
   - Mauricio Vargas Sepúlveda 帕夏
@@ -13,7 +13,7 @@ output:
 knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, fig.width=6, fig.height=5, tidy = F, cache.path = '.cache/', fig.path = 'Line/')
 ```
 
-In this tutorial we will demonstrate some of the many options the `ggplot2` package has for creating and customising histograms. We will use an international trade [dataset](http://insert.url) made by ourselves from different sources (Chile Customs, Central Bank of Chile and General Directorate of International Economic Relations).
+In this tutorial we will demonstrate some of the many options the `ggplot2` package has for creating and customising line plots. We will use an international trade [dataset](http://insert.url) made by ourselves from different sources (Chile Customs, Central Bank of Chile and General Directorate of International Economic Relations).
 
 The first thing to do is load in the data and libraries, as below:
 ```{r load_in_data, cache=TRUE}
@@ -70,7 +70,7 @@ p7
 ```
 
 ## Basic graph
-In order to initialise a plot we tell ggplot that `charts.data` is our data, and specify the variables on each axis. We then instruct ggplot to render this as a histogram by adding the `geom_line` command.
+In order to initialise a plot we tell ggplot that `charts.data` is our data, and specify the variables on each axis. We then instruct ggplot to render this as a line plot by adding the `geom_line` command.
 
 ```{r line1, cache=TRUE, tidy=TRUE}
 p7 <- ggplot() + geom_line(aes(y = export, x = year, colour = product), 
@@ -87,7 +87,7 @@ p7
 ```
 
 ## Changing variables display
-To change the variables displayed name, we need to re-factor our data labels in `charts.data` data frame. Then we move the legend to the bottom using `theme` command.
+To change the variables displayed name, we need to re-factor our data labels in `charts.data` data frame. Then we move the legend to the bottom using the `theme` command.
 ```{r line3, cache=TRUE}
 charts.data <- as.data.frame(charts.data)
 charts.data$product <- factor(charts.data$product, levels = c("copper","others"), 
@@ -100,7 +100,7 @@ p7
 ```
 
 ## Adjusting x-axis scale
-To change the axis tick marks, we use `scale_x_continuous` and/or `scale_y_continuous` command.
+To change the axis tick marks, we use the `scale_x_continuous` and/or `scale_y_continuous` commands.
 
 ```{r line4, cache=TRUE}
 p7 <- p7 + scale_x_continuous(breaks=seq(2006,2014,1))
@@ -108,14 +108,14 @@ p7
 ```
 
 ## Adjusting axis labels & adding title
-To add a title, we include the option `ggtitle` and include the name of the graph as a string argument, and to change the axis names we use `ggtitle` command.
+To add a title, we include the option `ggtitle` and include the name of the graph as a string argument, and to change the axis names we use the `labs` command.
 ```{r line5, cache=TRUE}
 p7 <- p7 + ggtitle("Composition of Exports to China ($)") + labs(x="Year", y="USD million") 
 p7
 ```
 
 ## Adjusting color palette
-To change the colours, we use `scale_colour_manual` command.
+To change the colours, we use the `scale_colour_manual` command.
 ```{r line6, cache=TRUE}
 colour <- c("#5F9EA0", "#E1B378")
 p7 <- p7 + scale_colour_manual(values=colour)
@@ -170,7 +170,7 @@ p7
 ```
 
 ## Creating an XKCD style chart
-Of course, you may want to create your own themes as well. `ggplot2` allows for a very high degree of customisation, including allowing you to use imported fonts. Below is an example of a theme I able to create which mimics the visual style of [XKCD](http://xkcd.com/). In order to create this chart, you first need to import the XKCD font, install it on your machine and load it into R using the `extrafont` package.
+Of course, you may want to create your own themes as well. `ggplot2` allows for a very high degree of customisation, including allowing you to use imported fonts. Below is an example of a theme I was able to create which mimics the visual style of [XKCD](http://xkcd.com/). In order to create this chart, you first need to import the XKCD font, install it on your machine and load it into R using the `extrafont` package.
 These instructions are taken from [here](https://www.google.com.au/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwiWzafchdPJAhVBpJQKHe_LDT8QFggbMAA&url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fxkcd%2Fvignettes%2Fxkcd-intro.pdf&usg=AFQjCNE-KciGY14e-Q1buYIVmTFC0ht__Q&sig2=DZUwkvIHwfNWtTtkcz94jg):
 ```{r line10, cache=TRUE}
 #font_import(pattern="[X/x]kcd")
@@ -198,7 +198,7 @@ p8
 ```
 
 ## Creating your own theme
-As before, you can modify your plots a lot as `ggplot2` allows many customisation. Here we present out original result shown at the top of page. 
+As before, you can modify your plots a lot as `ggplot2` allows many customisations. Here we present our original result shown at the top of page. 
 ```{r line11, cache=TRUE}
 fill <- c("#40b8d0", "#b2d183")
 
