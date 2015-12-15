@@ -65,7 +65,7 @@ p1
 ## Basic graph
 In order to initialise a plot we tell ggplot that `charts.data` is our data, and specify the variables on each axis. We then instruct ggplot to render this as a line plot by adding the `geom_line` command.
 
-```{r line1, cache=TRUE, tidy=TRUE}
+```{r line1, cache=TRUE}
 p1 <- ggplot() + geom_line(aes(y = export, x = year, colour = product), 
                            data = charts.data, stat="identity")
 p1
@@ -135,40 +135,6 @@ p1 <- ggplot() + theme_bw() +
 p1
 ```
 
-## Using 'The Economist' theme 
-There are a wider range of pre-built themes available as part of the `ggthemes` package (more information on these [here](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html)). Below we've applied `theme_economist()`, which approximates graphs in the Economist magazine. It is also important that the font change argument inside `theme` is optional and it's only to obtain a more similar result compared to the original.
-
-```{r line8, cache=TRUE, eval = FALSE}
-p1 <- ggplot() + theme_economist() + scale_colour_economist() +
-  theme(plot.title=element_text(family="OfficinaSanITC-Book"),
-        text=element_text(family="OfficinaSanITC-Book")) +
-  geom_line(aes(y = export, x = year, colour = product), size=1.5, data = charts.data, 
-            stat="identity") + 
-  theme(legend.position="bottom", legend.direction="horizontal", 
-        legend.title = element_blank()) + 
-  scale_x_continuous(breaks=seq(2006,2014,1)) + 
-  labs(x="Year", y="USD million") + 
-  ggtitle("Composition of Exports to China ($)")
-p1
-```
-
-## Using 'Five Thirty Eight' theme 
-Below we've applied `theme_fivethirtyeight()`, which approximates graphs in the nice [FiveThirtyEight](http://fivethirtyeight.com/) website. Again, it is also important that the font change is optional and it's only to obtain a more similar result compared to the original.
-
-```{r line9, cache=TRUE}
-p1 <- ggplot() + theme_fivethirtyeight() + scale_colour_fivethirtyeight() +
-  theme(plot.title=element_text(family="Atlas Grotesk Medium"), 
-        text=element_text(family="Atlas Grotesk Light")) +
-  geom_line(aes(y = export, x = year, colour = product), size=1.5, data = charts.data, 
-            stat="identity") + 
-  theme(legend.position="bottom", legend.direction="horizontal", 
-        legend.title = element_blank()) + 
-  scale_x_continuous(breaks=seq(2006,2014,1)) + 
-  labs(x="Year", y="USD million") + 
-  ggtitle("Composition of Exports to China ($)")
-p1
-```
-
 ## Creating an XKCD style chart
 Of course, you may want to create your own themes as well. `ggplot2` allows for a very high degree of customisation, including allowing you to use imported fonts. Below is an example of a theme Mauricio was able to create which mimics the visual style of [XKCD](http://xkcd.com/). In order to create this chart, you first need to import the XKCD font, install it on your machine and load it into R using the `extrafont` package.
 These instructions are taken from [here](https://www.google.com.au/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwiWzafchdPJAhVBpJQKHe_LDT8QFggbMAA&url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fxkcd%2Fvignettes%2Fxkcd-intro.pdf&usg=AFQjCNE-KciGY14e-Q1buYIVmTFC0ht__Q&sig2=DZUwkvIHwfNWtTtkcz94jg):
@@ -209,11 +175,45 @@ p1 <- ggplot() +
 p1
 ```
 
+## Using 'The Economist' theme 
+There are a wider range of pre-built themes available as part of the `ggthemes` package (more information on these [here](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html)). Below we've applied `theme_economist()`, which approximates graphs in the Economist magazine. It is also important that the font change argument inside `theme` is optional and it's only to obtain a more similar result compared to the original.
+
+```{r line8, cache=TRUE}
+p1 <- ggplot() + theme_economist() + scale_colour_economist() +
+  theme(plot.title=element_text(family="OfficinaSanITC-Book"),
+        text=element_text(family="OfficinaSanITC-Book")) +
+  geom_line(aes(y = export, x = year, colour = product), size=1.5, data = charts.data, 
+            stat="identity") + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  labs(x="Year", y="USD million") + 
+  ggtitle("Composition of Exports to China ($)")
+p1
+```
+
+## Using 'Five Thirty Eight' theme 
+Below we've applied `theme_fivethirtyeight()`, which approximates graphs in the nice [FiveThirtyEight](http://fivethirtyeight.com/) website. Again, it is also important that the font change is optional and it's only to obtain a more similar result compared to the original.
+
+```{r line9, cache=TRUE}
+p1 <- ggplot() + theme_fivethirtyeight() + scale_colour_fivethirtyeight() +
+  theme(plot.title=element_text(family="Atlas Grotesk Medium"), 
+        text=element_text(family="Atlas Grotesk Light")) +
+  geom_line(aes(y = export, x = year, colour = product), size=1.5, data = charts.data, 
+            stat="identity") + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  labs(x="Year", y="USD million") + 
+  ggtitle("Composition of Exports to China ($)")
+p1
+```
+
 ## Creating your own theme
 As before, you can modify your plots a lot as `ggplot2` allows many customisations. Here we present our original result shown at the top of page.
 
 ```{r line11, cache=TRUE}
-fill <- c("#40b8d0", "#b2d183")
+colour <- c("#40b8d0", "#b2d183")
 
 p1 <- ggplot() + 
   geom_line(aes(y = export, x = year, colour = product), size=1.5, data = charts.data, 
