@@ -176,9 +176,9 @@ p1
 ```
 
 ## Using 'The Economist' theme 
-There are a wider range of pre-built themes available as part of the `ggthemes` package (more information on these [here](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html)). Below we've applied `theme_economist()`, which approximates graphs in the Economist magazine. It is also important that the font change argument inside `theme` is optional and it's only to obtain a more similar result compared to the original. For an exact result you need 'Officina Sans'which is a commercial font and is available [here](http://www.myfonts.com/fonts/itc/officina-sans/).
+There are a wider range of pre-built themes available as part of the `ggthemes` package (more information on these [here](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html)). Below we've applied `theme_economist()`, which approximates graphs in the Economist magazine. It is also important that the font change argument inside `theme` is optional and it's only to obtain a more similar result compared to the original. For an exact result you need 'Officina Sans' which is a commercial font and is available [here](http://www.myfonts.com/fonts/itc/officina-sans/).
 
-```{r line8, cache=TRUE}
+```{r line8, cache=TRUE, eval=FALSE}
 p1 <- ggplot() + theme_economist() + scale_colour_economist() +
   theme(plot.title=element_text(family="OfficinaSanITC-Book"),
         text=element_text(family="OfficinaSanITC-Book")) +
@@ -195,7 +195,7 @@ p1
 ## Using 'Five Thirty Eight' theme 
 Below we've applied `theme_fivethirtyeight()`, which approximates graphs in the nice [FiveThirtyEight](http://fivethirtyeight.com/) website. Again, it is also important that the font change is optional and it's only to obtain a more similar result compared to the original. For an exact result you need 'Atlas Grotesk' which is a commercial font and is available [here](https://commercialtype.com/catalog/atlas).
 
-```{r line9, cache=TRUE}
+```{r line9, cache=TRUE, eval=FALSE}
 p1 <- ggplot() + theme_fivethirtyeight() + scale_colour_fivethirtyeight() +
   theme(plot.title=element_text(family="Atlas Grotesk Medium"), 
         text=element_text(family="Atlas Grotesk Light")) +
