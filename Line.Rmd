@@ -15,7 +15,7 @@ knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.ali
 
 I recently teamed up with [Mauricio Vargas Sepúlveda](http://pachamaltese.github.io/) to create some graphing tutorials in R. In the coming weeks, we will be publishing a series of tutorials on how to use the `ggplot2` package to create beautiful and informative data visualisations. Each tutorial will explain how to create a different type of plot, and will take you step-by-step from a basic plot to a highly customised graph.
 
-In this first tutorial, we will demonstrate some of the many options the `ggplot2` package has for creating and customising line plots. We will use an international trade [dataset](https://github.com/t-redactyl/R-graphing-tutorials/blob/master/charts.csv) made by ourselves from different sources (Chile Customs, Central Bank of Chile and General Directorate of International Economic Relations).
+In this first tutorial, we will demonstrate some of the many options the `ggplot2` package has for creating and customising line plots. We will use an international trade [dataset](http://pachamaltese.github.io/stats/trade-chile-china/copper-data-for-tutorial.csv) made by ourselves from different sources (Chile Customs, Central Bank of Chile and General Directorate of International Economic Relations).
 
 The first thing to do is load in the data and libraries, as below:
 
