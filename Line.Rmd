@@ -24,7 +24,7 @@ library(ggplot2)
 library(ggthemes)
 library(extrafont)
 
-charts.data <- read.csv("charts.csv")
+charts.data <- read.csv("copper-data-for-tutorial.csv")
 ```
 
 In this tutorial, we will work towards creating the line plot below. We will take you from a basic line plot and explain all the customisations we add to the code step-by-step.
@@ -35,7 +35,7 @@ library(ggplot2)
 library(ggthemes)
 library(extrafont)
 
-charts.data.2 <- read.csv("charts.csv")
+charts.data.2 <- read.csv("copper-data-for-tutorial.csv")
 charts.data.2 <- as.data.frame(charts.data.2)
 charts.data.2$product <- factor(charts.data.2$product, levels = c("copper","others"), 
                               labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
