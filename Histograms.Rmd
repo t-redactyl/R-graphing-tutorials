@@ -13,7 +13,7 @@ output:
 knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, fig.width=6, fig.height=5, tidy = F, cache.path = '.cache/', fig.path = 'Histograms/')
 ```
 
-In this tutorial we will demonstrate some of the many options the `ggplot2` package has for creating and customising histograms. We will use R's [airquality dataset](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/airquality.html) in the `datasets` package.
+This is the second tutorial in a series on using `ggplot2` I am creating with [Jodie Burchell](http://t-redactyl.github.io/). In this tutorial we will demonstrate some of the many options the `ggplot2` package has for creating and customising histograms. We will use R's [airquality dataset](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/airquality.html) in the `datasets` package.
 
 The first thing to do is load in the data, as below:
 
@@ -61,9 +61,23 @@ ggplot(airquality, aes(x = Ozone)) +
 
 ```
 
+## Adding a normal density curve
+
+We can overlay a normal density function curve on top of our histogram to see how closely (or not) it fits a normal distribution. In this case, we can see it deviates from a normal distribution, showing marked positive skew. In order to overlay the function curve, we add the option `stat_function(fun = dnorm`, and specify the shape using the `mean = mean(airquality$Ozone)` and `sd = sd(airquality$Ozone)` arguments. If you have missing data like we did, make sure you pass the `na.rm = TRUE` argument to the mean and sd parameters. Finally, you can change the colour using the `colour = "red"` argument. We will discuss how to customise colours further below.
+
+One further change we must make to display the normal curve correctly is adding `aes(y = ..density..)` to the `geom_histogram` option. Note that the normal density curve will not work if you are using the frequency rather than the density, which we are changing in our next step.  
+
+```{r normal_density_curve}
+ggplot(airquality, aes(x = Ozone)) + 
+    geom_histogram(aes(y = ..density..)) +
+    stat_function(fun = dnorm, colour = "red", 
+                 arg = list(mean = mean(airquality$Ozone, na.rm = TRUE), 
+                            sd = sd(airquality$Ozone, na.rm = TRUE)))
+```
+
 ## Changing from density to frequency
 
-To change the y-axis from density to frequency, we add the `aes(y = ..count..)` option to `geom_histogram`.
+Let's go back to the basic plot and lose the function curve. To change the y-axis from density to frequency, we add the `aes(y = ..count..)` option to `geom_histogram`.
 
 ```{r frequency_plot}
 ggplot(airquality, aes(x = Ozone)) + 
