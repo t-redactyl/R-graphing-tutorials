@@ -3,7 +3,7 @@ title: "Creating plots in R using ggplot2 - part 1: line plots"
 author: 
   - Jodie Burchell
   - Mauricio Vargas Sepúlveda 帕夏
-date: "`r Sys.Date()`"
+date: "2015-12-14"
 output: 
       rmarkdown::html_vignette:
         css: css/entries.css
