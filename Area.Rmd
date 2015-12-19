@@ -13,7 +13,7 @@ output:
 knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, fig.width=6, fig.height=5, tidy = F, cache.path = '.cache/', fig.path = 'Area/')
 ```
 
-In this second tutorial, we will demonstrate some of the many options the `ggplot2` package has for creating and customising area plots. We will use the same [dataset](http://pachamaltese.github.io/stats/trade-chile-china/copper-data-for-tutorial.csv ) from the [first](http://t-redactyl.github.io/blog/2015/12/creating-plots-in-r-using-ggplot2-part-1-line-plots.html) post.
+In this second tutorial I am doing with [Mauricio Vargas Sepúlveda](http://pachamaltese.github.io/), we will demonstrate some of the many options the `ggplot2` package has for creating and customising area plots. We will use the same [dataset](http://pachamaltese.github.io/stats/trade-chile-china/copper-data-for-tutorial.csv) from the [first](http://t-redactyl.github.io/blog/2015/12/creating-plots-in-r-using-ggplot2-part-1-line-plots.html) post.
 
 The first thing to do is load in the data and libraries, as below:
 
@@ -40,7 +40,7 @@ charts.data.2$product <- factor(charts.data.2$product, levels = c("copper","othe
 
 fill <- c("#40b8d0", "#b2d183")
 
-p8 <- ggplot() + 
+p1 <- ggplot() + 
   geom_area(aes(y = export, x = year, fill = product), data = charts.data, 
             stat="identity") + 
   theme(legend.position="bottom", legend.direction="horizontal", 
@@ -56,74 +56,77 @@ p8 <- ggplot() +
         text=element_text(family="Tahoma"), 
         axis.text.x=element_text(colour="black", size = 10), 
         axis.text.y=element_text(colour="black", size = 10)) 
-p8
+p1
 ```
 
+### Basic graph
 In order to initialise a plot we tell ggplot that `charts.data` is our data, and specify the variables on each axis. We then instruct ggplot to render this as an area plot by adding the `geom_area` command.
 
-### Basic graph
 ```{r area1, cache=TRUE}
 charts.data <- read.csv("copper-data-for-tutorial.csv")
 
-p8 <- ggplot() + geom_area(aes(y = export, x = year, fill = product), data = charts.data, 
+p1 <- ggplot() + geom_area(aes(y = export, x = year, fill = product), data = charts.data, 
                            stat="identity")
-p8
+p1
 ```
 
 ### Adjusting legend position
+To adjust the position of the legend from the default spot of right of the graph, we add the `theme` option and specify the `legend.position="bottom"` argument. We can also change the title to blank using the ` legend.title = element_blank()` argument and change the legend shape using the `legend.direction="horizontal"` argument.
+
 ```{r area2, cache=TRUE}
 charts.data <- ddply(charts.data, .(year), transform, pos = cumsum(export) - (0.5 * export))
 
-p8 <- p8 + theme(legend.position="bottom", legend.direction="horizontal", 
+p1 <- p1 + theme(legend.position="bottom", legend.direction="horizontal", 
                  legend.title = element_blank())
-p8
+p1
 ```
 
 ### Changing variables display
-To change the variables displayed name, we need to re-factor our data labels in `charts.data` data frame. Then we move the legend to the bottom using the `theme` command.
+To change the variables displayed name, we need to re-factor our data labels in `charts.data` data frame.
 
 ```{r area3, cache=TRUE}
 charts.data <- as.data.frame(charts.data)
 charts.data$product <- factor(charts.data$product, levels = c("copper","others"), 
                               labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
 
-p8 <- ggplot() + geom_area(aes(y = export, x = year, fill = product), data = charts.data,
+p1 <- ggplot() + geom_area(aes(y = export, x = year, fill = product), data = charts.data,
                            stat="identity") + theme(legend.position="bottom",
                                                     legend.direction="horizontal",
                                                     legend.title = element_blank())
-p8
+p1
 ```
 
 ### Adjusting x-axis scale
 To change the axis tick marks, we use the `scale_x_continuous` and/or `scale_y_continuous` commands.
 
 ```{r area4, cache=TRUE}
-p8 <- p8 + scale_x_continuous(breaks=seq(2006,2014,1))
-p8
+p1 <- p1 + scale_x_continuous(breaks=seq(2006,2014,1))
+p1
 ```
 
 ### Adjusting axis labels & adding title
 To add a title, we include the option `ggtitle` and include the name of the graph as a string argument, and to change the axis names we use the `labs` command.
 
 ```{r area5, cache=TRUE}
-p8 <- p8 + ggtitle("Composition of Exports to China ($)") + labs(x="Year", y="USD million") 
-p8
+p1 <- p1 + ggtitle("Composition of Exports to China ($)") + 
+            labs(x="Year", y="USD million") 
+p1
 ```
 
 ### Adjusting color palette
-To change the colours, we use the `scale_colour_manual` command.
+To change the colours, we use the `scale_colour_manual` command. Note that you can reference the specific colours you'd like to use with specific HEX codes. You can also reference colours by name, with the full list of colours recognised by R [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf).
 
 ```{r area6, cache=TRUE}
 fill <- c("#5F9EA0", "#E1B378")
-p8 <- p8 + scale_fill_manual(values=fill)
-p8
+p1 <- p1 + scale_fill_manual(values=fill)
+p1
 ```
 
-### Using white theme
-We'll start using a simple theme customisation made adding `theme_bw() ` after `ggplot()`. That theme argument can be modified to use different themes.
+### Using the white theme
+As explained in the previous post, we can also change the overall look of the site using themes. We'll start using a simple theme customisation by adding `theme_bw() ` after `ggplot()`. As you can see, we can further tweak the graph using the `theme` option, which we've used so far to change the legend.
 
 ```{r area7, cache=TRUE}
-p8 <- ggplot() + theme_bw() +
+p1 <- ggplot() + theme_bw() +
   geom_area(aes(y = export, x = year, fill = product), data = charts.data, 
             stat="identity") + 
   theme(legend.position="bottom", legend.direction="horizontal", 
@@ -132,7 +135,7 @@ p8 <- ggplot() + theme_bw() +
   labs(x="Year", y="USD million") + 
   ggtitle("Composition of Exports to China ($)") + 
   scale_fill_manual(values=fill)
-p8
+p1
 ```
 
 ### Creating an XKCD style chart
@@ -159,7 +162,7 @@ You can then create your graph:
 
 fill <- c("#56B4E9", "#F0E442")
 
-p8 <- ggplot() + 
+p1 <- ggplot() + 
   geom_area(aes(y = export, x = year, fill = product), data = charts.data, stat="identity") + 
   theme(legend.position="bottom", legend.direction="horizontal", 
         legend.title = element_blank()) + 
@@ -173,14 +176,14 @@ p8 <- ggplot() +
   theme(plot.title=element_text(family="xkcd-Regular"), text=element_text(family="xkcd-Regular"), 
         axis.text.x=element_text(colour="black", size = 10), 
         axis.text.y=element_text(colour="black", size = 10)) 
-p8
+p1
 ```
 
 ### Using 'The Economist' theme 
 There are a wider range of pre-built themes available as part of the `ggthemes` package (more information on these [here](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html)). Below we've applied `theme_economist()`, which approximates graphs in the Economist magazine. It is also important that the font change argument inside `theme` is optional and it's only to obtain a more similar result compared to the original. For an exact result you need 'Officina Sans' which is a commercial font and is available [here](http://www.myfonts.com/fonts/itc/officina-sans/).
 
 ```{r area8, cache=TRUE}
-p8 <- ggplot() + theme_economist() + scale_fill_economist() +
+p1 <- ggplot() + theme_economist() + scale_fill_economist() +
   theme(plot.title=element_text(family="OfficinaSanITC-Book"),
         text=element_text(family="OfficinaSanITC-Book")) +
   geom_area(aes(y = export, x = year, fill = product), data = charts.data, stat="identity") + 
@@ -189,14 +192,14 @@ p8 <- ggplot() + theme_economist() + scale_fill_economist() +
   scale_x_continuous(breaks=seq(2006,2014,1)) + 
   labs(x="Year", y="USD million") + 
   ggtitle("Composition of Exports to China ($)")
-p8
+p1
 ```
 
 ### Using 'Five Thirty Eight' theme
 Below we've applied `theme_fivethirtyeight()`, which approximates graphs in the nice [FiveThirtyEight](http://fivethirtyeight.com/) website. Again, it is also important that the font change is optional and it's only to obtain a more similar result compared to the original. For an exact result you need 'Atlas Grotesk' which is a commercial font and is available [here](https://commercialtype.com/catalog/atlas).
 
 ```{r area9, cache=TRUE}
-p8 <- ggplot() + theme_fivethirtyeight() + scale_fill_fivethirtyeight() +
+p1 <- ggplot() + theme_fivethirtyeight() + scale_fill_fivethirtyeight() +
   theme(plot.title=element_text(family="Atlas Grotesk Medium"), 
         text=element_text(family="Atlas Grotesk Light")) +
   geom_area(aes(y = export, x = year, fill = product), data = charts.data, 
@@ -206,7 +209,7 @@ p8 <- ggplot() + theme_fivethirtyeight() + scale_fill_fivethirtyeight() +
   scale_x_continuous(breaks=seq(2006,2014,1)) + 
   labs(x="Year", y="USD million") + 
   ggtitle("Composition of Exports to China ($)")
-p8
+p1
 ```
 
 ### Creating your own theme
@@ -215,7 +218,7 @@ As before, you can modify your plots a lot as `ggplot2` allows many customisatio
 ```{r area11, cache=TRUE}
 fill <- c("#40b8d0", "#b2d183")
 
-p8 <- ggplot() + 
+p1 <- ggplot() + 
   geom_area(aes(y = export, x = year, fill = product), data = charts.data, 
             stat="identity") + 
   theme(legend.position="bottom", legend.direction="horizontal", 
@@ -231,5 +234,5 @@ p8 <- ggplot() +
         text=element_text(family="Tahoma"), 
         axis.text.x=element_text(colour="black", size = 10), 
         axis.text.y=element_text(colour="black", size = 10)) 
-p8
+p1
 ```
