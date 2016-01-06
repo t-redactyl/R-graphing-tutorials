@@ -10,7 +10,7 @@ output:
 ---
 
 ```{r setup, cache = FALSE, echo = FALSE, message = FALSE, warning = FALSE, tidy = FALSE}
-knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, fig.width=6, fig.height=5, tidy = F, cache.path = '.cache/', fig.path = 'Histograms/')
+knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, fig.width=6, fig.height=5, tidy = F, cache.path = '.cache/', fig.path = 'Weighted scatterplots/')
 ```
 
 This is the second tutorial in a series on using `ggplot2` I am creating with [Jodie Burchell](http://t-redactyl.github.io/). In this tutorial we will demonstrate some of the many options the `ggplot2` package has for creating and customising histograms. We will use R's [airquality dataset](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/airquality.html) in the `datasets` package.
