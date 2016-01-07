@@ -10,291 +10,251 @@ output:
 ---
 
 ```{r setup, cache = FALSE, echo = FALSE, message = FALSE, warning = FALSE, tidy = FALSE}
-knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, fig.width=6, fig.height=5, tidy = F, cache.path = '.cache/', fig.path = 'Weighted scatterplots/')
+knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 96, fig.width=7.5, fig.height=5, tidy = F, cache.path = '.cache/', fig.path = 'Weighted scatterplots/')
 ```
 
-This is the sixth tutorial in a series on using `ggplot2` I am creating with [Jodie Burchell](http://t-redactyl.github.io/). In this tutorial we will demonstrate some of the many options the `ggplot2` package has for creating and customising histograms. We will use R's [airquality dataset](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/airquality.html) in the `datasets` package.
+This is the sixth tutorial in a series on using `ggplot2` I am creating with [Jodie Burchell](http://t-redactyl.github.io/). In this tutorial we will demonstrate some of the many options the `ggplot2` package has for creating and customising weighted scatterplots. These plots are also called 'balloon plots' or 'bubble plots'. We will use R's [airquality dataset](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/airquality.html) in the `datasets` package. In order to reduce the complexity of these data a little, we will only be looking at the final three months in the dataset (July, August and September).
 
 The first thing to do is load in the data, as below:
 
 ```{r load_in_data}
 rm(list = ls())
-
-library(ggplot2)
-library(ggthemes)
-library(extrafont)
-library(plyr)
-charts.data <- read.csv("copper-data-for-tutorial.csv")
-
-p1 <- ggplot() + geom_area(aes(y = export, x = year, fill = product), data = charts.data, 
-                           stat="identity")
-
-p <- ggplot(charts.data, aes(x = year, y = export, fill = product, size = sum)) +
-     geom_point(shape=21, colour="black", fill="cornsilk") + scale_size_area(max_size=15)
-
 library(datasets)
 library(ggplot2)
 data(airquality)
+```
 
-p <- ggplot(airquality, aes(x = Day, y = Ozone)) + geom_point(shape = 21)
-p <- ggplot(airquality, aes(x = Day, y = Ozone, size = Wind)) + 
-        geom_point(shape = 21)
-airquality$Month <- as.factor(airquality$Month)
-p <- ggplot(airquality, aes(x = Day, y = Ozone, size = Wind, fill = Month)) + 
-        geom_point(shape = 21)
-p <- ggplot(airquality, aes(x = Day, y = Ozone, size = Wind, fill = Month)) + 
-        geom_point(shape = 21) + 
-        scale_size_area(max_size=7)
+We will then trim the data down to the final three months and turn the `Month` variable into a labelled factor variable. We end up with a new dataset called `aq_trim`.
 
+```{r trimming_data}
 aq_trim <- airquality[which(airquality$Month == 7 |
                             airquality$Month == 8 |
                             airquality$Month == 9), ]
 aq_trim$Month <- factor(aq_trim$Month, 
                         labels = c("July", "August", "September"))
-
-airquality_trimmed <- airquality[which(airquality$Month == 5 | 
-                                       airquality$Month == 7), ]
-airquality_trimmed$Month.f <- factor(airquality_trimmed$Month, 
-                                     labels = c("May", "July"))    
-    
-p <- ggplot(charts.data, aes(x = year, y = export, fill = product, size = sum)) +
-     geom_point(shape=21, colour="black", fill="cornsilk") + scale_size_area(max_size=15)
 ```
 
-In this tutorial, we will work towards creating the histogram below. We will take you from a basic histogram and explain all the customisations we add to the code step-by-step.
+In this tutorial, we will work towards creating the weighted scatterplot below. We will take you from a basic scatterplot and explain all the customisations we add to the code step-by-step.
 
-```{r final_graph, echo = FALSE}
-library(RColorBrewer)
+```{r wscatter_finalgraph, echo = FALSE}
+library(grid)
 
-airquality_trimmed <- airquality[which(airquality$Month == 5 | 
-                                       airquality$Month == 7), ]
-airquality_trimmed$Month.f <- factor(airquality_trimmed$Month, 
-                                     labels = c("May", "July"))
+fill = c("steelblue", "yellowgreen", "violetred1")
 
-ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) + 
-    geom_histogram(aes(y = ..count..), binwidth = 10,
-                   position="identity", alpha=0.6) +
-    scale_x_continuous(name = "Mean ozone in\nparts per billion",
-                              breaks = seq(0, 175, 25),
-                              limits=c(0, 175)) +
-    scale_y_continuous(name = "Count") +
-    ggtitle("Frequency histogram of mean ozone") +
-    theme_bw() +
-    theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
-                text = element_text(size = 12, family = "Tahoma"),
-          legend.position = "bottom") +
-    scale_fill_brewer(palette="Accent") +
-    labs(fill="Month")
+p1 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind, fill = Month)) +
+        geom_point(shape = 21) +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)",
+             size = "Wind Speed (mph)", fill = "Months") +
+        scale_x_continuous(breaks = seq(1, 31, 5)) +
+        scale_size(range = c(1, 10)) +
+        scale_fill_manual(values = fill) +
+        theme(legend.position = "bottom", legend.direction = "horizontal",
+              legend.box = "horizontal",
+              legend.key.size = unit(1, "cm"),
+              axis.line = element_line(size=1, colour = "black"), 
+              panel.grid.major = element_line(colour = "#d3d3d3"), 
+              panel.grid.minor = element_blank(), 
+              panel.border = element_blank(), panel.background = element_blank(),
+              plot.title = element_text(size = 14, family = "Tahoma", face = "bold"),
+              text=element_text(family="Tahoma"), 
+              axis.text.x=element_text(colour="black", size = 9), 
+              axis.text.y=element_text(colour="black", size = 9)) 
+p1
 ```
 
-## Basic histogram
+### Basic weighted scatterplot
 
-In order to initialise a plot we tell ggplot that `airquality` is our data, and specify that our x axis plots the `Ozone` variable. We then instruct ggplot to render this as a histogram by adding the `geom_histogram()` option.
+Let's start really slowly by revisiting how to create a basic scatterplot. In order to initialise this plot we tell ggplot that `aq_trim` is our data, and specify that our x-axis plots the `Day` variable and our y-axis plots the `Ozone` variable. We then instruct ggplot to render this as a scatterplot by adding the `geom_point()` option.
 
-```{r basic_plot}
-ggplot(airquality, aes(x = Ozone)) + 
-                geom_histogram()
-
+```{r wscatter1}
+p1 <- ggplot(aq_trim, aes(x = Day, y = Ozone)) + 
+        geom_point()
+p1
 ```
 
-## Adding a normal density curve
+In order to turn this into a weighted scatterplot, we simply add the `size` argument to `ggplot(aes())`. In this case, we want to weight the points by the `Wind` variable.
 
-We can overlay a normal density function curve on top of our histogram to see how closely (or not) it fits a normal distribution. In this case, we can see it deviates from a normal distribution, showing marked positive skew. In order to overlay the function curve, we add the option `stat_function(fun = dnorm`, and specify the shape using the `mean = mean(airquality$Ozone)` and `sd = sd(airquality$Ozone)` arguments. If you have missing data like we did, make sure you pass the `na.rm = TRUE` argument to the mean and sd parameters. Finally, you can change the colour using the `colour = "red"` argument. We will discuss how to customise colours further below.
-
-One further change we must make to display the normal curve correctly is adding `aes(y = ..density..)` to the `geom_histogram` option. Note that the normal density curve will not work if you are using the frequency rather than the density, which we are changing in our next step.  
-
-```{r normal_density_curve}
-ggplot(airquality, aes(x = Ozone)) + 
-    geom_histogram(aes(y = ..density..)) +
-    stat_function(fun = dnorm, colour = "red", 
-                 arg = list(mean = mean(airquality$Ozone, na.rm = TRUE), 
-                            sd = sd(airquality$Ozone, na.rm = TRUE)))
+```{r wscatter2}
+p1 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind)) + 
+        geom_point()
+p1
 ```
 
-## Changing from density to frequency
+You can see we already have an interesting looking pattern, where days with higher wind speed tend to have lower ozone (or in other words, better air quality). Now let's make it beautiful!
 
-Let's go back to the basic plot and lose the function curve. To change the y-axis from density to frequency, we add the `aes(y = ..count..)` option to `geom_histogram`.
+### Changing the shape of the data points
 
-```{r frequency_plot}
-ggplot(airquality, aes(x = Ozone)) + 
-    geom_histogram(aes(y = ..count..))
+Perhaps we want the data points to be a different shape than a solid circle. We can change these by adding the `shape` argument to `geom_point`. An explanation of the allowed arguments for shape are described in [this article](http://sape.inf.usi.ch/quick-reference/ggplot2/shape). In this case, we will use shape 21, which is a circle that allows different colours for the outline and fill.
+
+```{r wscatter3}
+p1 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind)) + 
+        geom_point(shape = 21)
+p1
 ```
 
-## Adjusting binwidth
+### Adjusting the axis scales
 
-To change the binwidth, we add a `binwidth` argument to `geom_histogram`. In this case, we will make binwidth 5 units of the `Ozone` variable.
+To change the x-axis tick marks, we use the `scale_x_continuous` option. Similarly, to change the y-axis we use the `scale_y_continuous` option. Here we will change the x-axis to every 5 days, rather than 10, and change the range from 1 to 31 (as 0 is not a valid value for this variable).
 
-```{r adjust_binwidth}
-ggplot(airquality, aes(x = Ozone)) + 
-    geom_histogram(aes(y = ..count..), binwidth = 5)
+```{r wscatter4}
+p1 <- p1 + scale_x_continuous(breaks = seq(1, 31, 5))
+p1
 ```
 
-## Customising axis labels
+### Adjusting axis labels & adding title
 
-### Single line labels
+To add a title, we include the option `ggtitle` and include the name of the graph as a string argument. To change the axis names we add `x` and `y` arguments to the `labs` command.
 
-In order to change the axis labels, we have a couple of options. In this case, we have used the `scale_x_continuous` and `scale_y_continuous` options, as these have further customisation options for the axes we will use below. In each, we add the desired name to the `name` argument as a string.
-
-```{r changing_axis_labels_1}
-ggplot(airquality, aes(x = Ozone)) + 
-    geom_histogram(aes(y = ..count..), binwidth = 5) +
-    scale_x_continuous(name = "Mean ozone in parts per billion") +
-    scale_y_continuous(name = "Count")
+```{r wscatter5}
+p1 <- p1 + ggtitle("Air Quality in New York by Day") + 
+            labs(x = "Day of the month", y = "Ozone (ppb)") 
+p1
 ```
 
-### Multiline labels
+### Adjusting the colour palette
 
-ggplot also allows for the use of multiline names (in both axes and titles). Here, we've changed the x-axis label so that it goes over two lines using the `\n` character to break the line.
+There are a few options for adjusting the colour. The most simple is to make every point one fixed colour. You can reference colours by name, with the full list of colours recognised by R [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf). Let's try making the outline `mediumvioletred` and the fill `springgreen`.
 
-```{r changing_axis_labels_2}
-ggplot(airquality, aes(x = Ozone)) + 
-    geom_histogram(aes(y = ..count..), binwidth = 5) +
-    scale_x_continuous(name = "Mean ozone in\nparts per billion") +
-    scale_y_continuous(name = "Count")
+```{r wscatter6}
+p1 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind)) + 
+        geom_point(shape = 21, colour = "mediumvioletred", 
+                   fill = "springgreen") +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)") +
+        scale_x_continuous(breaks = seq(1, 31, 5)) 
+p1
 ```
 
-## Changing axis ticks
+You can change the colours using specific HEX codes instead. Here we have made the outline #000000 (black) and the fill "#40b8d0 (vivid cyan).
 
-The next thing we will change is the axis ticks. Let's make the x-axis ticks appear at every 25 units rather than 50 using the `breaks = seq(0, 175, 25)` argument in `scale_x_continuous`. (The `seq` function is a base R function that indicates the start and endpoints and the units to increment by respectively. See `help(seq)` for more information.) We ensure that the x-axis begins and ends where we want by also adding the argument `limits = c(0, 175)` to `scale_x_continuous`.
-
-```{r changing_ticks}
-ggplot(airquality, aes(x = Ozone)) + 
-    geom_histogram(aes(y = ..count..), binwidth = 5) +
-    scale_x_continuous(name = "Mean ozone in\nparts per billion",
-                              breaks = seq(0, 175, 25),
-                              limits=c(0, 175)) +
-    scale_y_continuous(name = "Count")
-``` 
-
-## Adding a title
-
-To add a title, we include the option `ggtitle` and include the name of the graph as a string argument.
-
-```{r adding_title}
-ggplot(airquality, aes(x = Ozone)) + 
-    geom_histogram(aes(y = ..count..), binwidth = 5) +
-    scale_x_continuous(name = "Mean ozone in\nparts per billion",
-                              breaks = seq(0, 175, 25),
-                              limits=c(0, 175)) +
-    scale_y_continuous(name = "Count") +
-    ggtitle("Frequency histogram of mean ozone")
+```{r wscatter7}
+p1 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind)) + 
+        geom_point(shape = 21, colour = "#000000", fill = "#40b8d0") +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)") +
+        scale_x_continuous(breaks = seq(1, 31, 5))
+p1
 ```
 
-## Changing the colour of the bars
+You can also change the colour of the data points according to the levels of another variable. This can be done either as a continuous gradient, or as a levels of a factor variable. Let's change the colour by the values of temperature:
 
-### By colour name
-
-To change the line and fill colours of the bars, we add a valid colour to the `colour` and `fill` arguments in `geom_histogram` (note that I assigned these colours to variables outside of the plot to make it easier to change them). A list of valid colours is [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf).
-
-```{r changing_fill_1}
-barfill <- "gold1"
-barlines <- "goldenrod2"
-
-ggplot(airquality, aes(x = Ozone)) + 
-    geom_histogram(aes(y = ..count..), binwidth = 5,
-                   colour = barlines, fill = barfill) +
-    scale_x_continuous(name = "Mean ozone in\nparts per billion",
-                              breaks = seq(0, 175, 25),
-                              limits=c(0, 175)) +
-    scale_y_continuous(name = "Count") +
-    ggtitle("Frequency histogram of mean ozone")
+```{r wscatter8}
+p1 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind, fill = Temp)) + 
+        geom_point(shape = 21) +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)") +
+        scale_x_continuous(breaks = seq(1, 31, 5))
+p1
 ```
 
-### By HEX code
+We can change the gradient's colours by adding the `scale_fill_continuous` option. The `low` and `high` arguments specify the range of colours the gradient should transition between.
 
-If you want to go beyond the options in the list above, you can also specify exact HEX colours by including them as a string preceded by a hash, e.g., "#FFFFFF". Below, we have called two shades of blue for the fill and lines using their HEX codes.
-
-```{r changing_fill_2}
-barfill <- "#4271AE"
-barlines <- "#1F3552"
-
-ggplot(airquality, aes(x = Ozone)) + 
-    geom_histogram(aes(y = ..count..), binwidth = 5,
-                   colour = barlines, fill = barfill) +
-    scale_x_continuous(name = "Mean ozone in\nparts per billion",
-                              breaks = seq(0, 175, 25),
-                              limits=c(0, 175)) +
-    scale_y_continuous(name = "Count") +
-    ggtitle("Frequency histogram of mean ozone")
+```{r wscatter9}
+p1 <-  p1 + scale_fill_continuous(low = "plum1", high = "purple4")
+p1
 ```
 
-### Colour gradients
+We can see that higher temperatures seem to have higher ozone levels. 
 
-You can also add a gradient to your colour scheme that varies according to the frequency of the values. Below is the default gradient colour scheme. In order to do this, you can see we have changed the `aes(y = ..count..)` argument in `geom_histogram` to `aes(fill = ..count..)`. 
+Let's now change the colours of the data points by a factor variable, `Month`.
 
-```{r gradient_colors_1}
-ggplot(airquality, aes(x = Ozone)) + 
-    geom_histogram(aes(fill = ..count..), binwidth = 5) +
-    scale_x_continuous(name = "Mean ozone in\nparts per billion",
-                              breaks = seq(0, 175, 25),
-                              limits=c(0, 175)) +
-    scale_y_continuous(name = "Count") +
-    ggtitle("Frequency histogram of mean ozone")
+```{r wscatter10}
+p1 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind, fill = Month)) + 
+        geom_point(shape = 21) +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)") +
+        scale_x_continuous(breaks = seq(1, 31, 5))
+p1
 ```
 
-You can customise the gradient by changing the anchoring colours for high and low. To do so, we have added the option `scale_fill_gradient` to the plot with the arguments `Count` (the name of the legend), `low` (the colour for the least frequent values) and `high` (the colour for the most frequent values).
+Again, we can change the colours of these data points, this time using `scale_fill_manual`.
 
-```{r gradient_colors_2}
-ggplot(airquality, aes(x = Ozone)) + 
-    geom_histogram(aes(fill = ..count..), binwidth = 5) +
-    scale_x_continuous(name = "Mean ozone in\nparts per billion",
-                              breaks = seq(0, 175, 25),
-                              limits=c(0, 175)) +
-    scale_y_continuous(name = "Count") +
-    ggtitle("Frequency histogram of mean ozone") +
-    scale_fill_gradient("Count", low = "blue", high = "red")
+```{r wscatter11}
+fill = c("steelblue", "yellowgreen", "violetred1")
+
+p1 <- p1 + scale_fill_manual(values = fill)
+p1
 ```
 
-## Overall customisation using themes
+### Adjusting the size of the data points
 
-In order to change elements such as the font type and size, background colour, legend position, axis width and more, we need to use themes. 
+The default size of the the data points in a weighted scatterplot is mapped to the radius of the plots. If we want the data points to be proportional to the value of the weighting variable (e.g., a wind speed of 0 mph would have a value of 0), we need to use the `scale_size_area`.
 
-### Using ggplot2 themes
-
-One way to use themes is to apply those that other people have built. Below we use the 'white' theme that comes with `ggplot2` by adding the option `theme_bw()` to our graph. You can see it changes the background to white and adds a border to the graph area.
-
-```{r themes_white}
-barfill <- "#4271AE"
-barlines <- "#1F3552"
-
-ggplot(airquality, aes(x = Ozone)) + 
-    geom_histogram(aes(y = ..count..), binwidth = 5,
-                   colour = barlines, fill = barfill) +
-    scale_x_continuous(name = "Mean ozone in\nparts per billion",
-                              breaks = seq(0, 175, 25),
-                              limits=c(0, 175)) +
-    scale_y_continuous(name = "Count") +
-    ggtitle("Frequency histogram of mean ozone") +
-    theme_bw()
+```{r wscatter12}
+p1 <- p1 + scale_size_area(max_size = 10)
+p1
 ```
 
-### Using ggthemes
+For our graph, this makes the pattern for `Wind` a little hard to see. Another way to adjust the size of the data points is to use `scale_size` and specify a desired range.
 
-There are a wider range of pre-built themes available as part of the `ggthemes` package (more information on these [here](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html)). Below I've applied `theme_economist()`, which approximates graphs in the Economist magazine.
-
-```{r theme_economist}
-library(ggthemes)
-
-barfill <- "#4271AE"
-barlines <- "#1F3552"
-
-ggplot(airquality, aes(x = Ozone)) + 
-    geom_histogram(aes(y = ..count..), binwidth = 5,
-                   colour = barlines, fill = barfill) +
-    scale_x_continuous(name = "Mean ozone in\nparts per billion",
-                              breaks = seq(0, 175, 25),
-                              limits=c(0, 175)) +
-    scale_y_continuous(name = "Count") +
-    ggtitle("Frequency histogram of mean ozone") +
-    theme_economist()
+```{r wscatter13}
+p1 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind, fill = Month)) + 
+        geom_point(shape = 21) +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)") +
+        scale_x_continuous(breaks = seq(1, 31, 5)) +
+        scale_fill_manual(values = fill) +
+        scale_size(range = c(1, 10))
+p1
 ```
 
-### Making your own theme
+### Adjusting legend position
 
-Of course, you may want to create your own themes as well. ggplots allows for a very high degree of customisation, including allowing you to use imported fonts. Below is an example of a theme Mauricio was able to create which mimics the visual style of [XKCD](http://xkcd.com/). In order to create this chart, you first need to import the xkcd font, install it on your machine and load it into R using the `extrafont` package.
+To adjust the position of the legend from the default spot of right of the graph, we add the `theme` option and specify the `legend.position = "bottom"` argument. We can also change the legend shape using the `legend.direction = "horizontal"` argument.
+
+```{r wscatter14}
+p1 <- p1 + theme(legend.position = "bottom", legend.direction = "horizontal")
+p1
+```
+
+### Changing the legend titles
+
+To change the titles of the two legends, we use the `labs` option. In order to tell ggplot2 exactly what legend you're referring to, just have a look in the `ggplot` option and see what argument you used to create the legend in the first place. In this case we used the `size` argument for "Wind" and `fill` for "Month", so we pass these to `labs` with our new titles.
+
+```{r wscatter15}
+p1 <- p1 + labs(size = "Wind Speed (mph)", fill = "Months")
+p1
+```
+
+### Creating horizontal legends
+
+It looks a little awkward having the two titles sitting on top of each other, as well as taking up unnecessary space. To place the legends next to each other, we use the `legend.box = "horizontal"` argument in `theme`. Because the boxes around the legend keys aren't even in each of the legends, this means the legends don't align properly. To fix this, we change the box size around the legend keys using `legend.key.size`. We need to load in the `grid` package to get this argument to work.
+
+```{r wscatter16}
+library(grid) 
+p1 <- p1 + theme(legend.box = "horizontal",
+                 legend.key.size = unit(1, "cm"))
+p1
+```
+
+### Using the white theme
+
+As explained in the previous posts, we can also change the overall look of the plot using themes. We'll start using a simple theme customisation by adding `theme_bw() ` after `ggplot()`. As you can see, we can further tweak the graph using the `theme` option, which we've used so far to change the legend.
+
+```{r wscatter17}
+p1 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind, fill = Month)) + 
+        geom_point(shape = 21) +
+        theme_bw() +
+        theme() +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)",
+             size = "Wind Speed (mph)", fill = "Months") +
+        scale_x_continuous(breaks = seq(1, 31, 5)) +
+        scale_fill_manual(values = fill) +
+        scale_size(range = c(1, 10)) +
+        theme(legend.position="bottom", legend.direction="horizontal",
+              legend.box = "horizontal",
+              legend.key.size = unit(1, "cm"))
+p1
+```
+
+### Creating an XKCD style chart
+
+Of course, you may want to create your own themes as well. `ggplot2` allows for a very high degree of customisation, including allowing you to use imported fonts. Below is an example of a theme Mauricio was able to create which mimics the visual style of [XKCD](http://xkcd.com/). In order to create this chart, you first need to import the XKCD font, install it on your machine and load it into R using the `extrafont` package.
 These instructions are taken from [here](https://www.google.com.au/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwiWzafchdPJAhVBpJQKHe_LDT8QFggbMAA&url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fxkcd%2Fvignettes%2Fxkcd-intro.pdf&usg=AFQjCNE-KciGY14e-Q1buYIVmTFC0ht__Q&sig2=DZUwkvIHwfNWtTtkcz94jg):
 
-```{r importing_font_xkcd, eval = FALSE}
+```{r importing_font_xkcd, eval=FALSE}
 library(extrafont)
 
 download.file("http://simonsoftware.se/other/xkcd.ttf", 
@@ -306,127 +266,84 @@ fonts()
 loadfonts()
 ```
 
-Now that the font is loaded, you now need to customise the theme options. You can see this has been done outside the graph in a variable called `theme_xkcd`, however, you could do this as a `theme` option inside the plot as well. In this case, the graph background and grids have been made white, the axis lines have been thickened, and the font for both the title and the axes has been changed to the imported xkcd font.
+You can then create your graph:
 
-```{r own_theme}
-theme_xkcd <- theme(
-    axis.line = element_line(size=1, colour = "black"), 
-    panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank(), 
-    panel.border = element_blank(), 
-    panel.background = element_blank(),
-    plot.title=element_text(size = 20, family="xkcd-Regular"), 
-    text=element_text(size = 16, family="xkcd-Regular"), 
-    axis.text.x=element_text(colour="black", size = 12), 
-    axis.text.y=element_text(colour="black", size = 12)
-) 
+```{r wscatter18, cache=TRUE}
+fill <- c("#56B4E9", "#F0E442", "violetred1")
 
-ggplot(airquality, aes(x = Ozone)) + 
-    geom_histogram(aes(y = ..count..), binwidth = 10,
-                   colour = "black", fill = "white") +
-    scale_x_continuous(name = "Mean ozone in\nparts per billion",
-                              breaks = seq(0, 175, 25),
-                              limits=c(0, 175)) +
-    scale_y_continuous(name = "Count") +
-    ggtitle("Frequency histogram of mean ozone") + 
-    theme_xkcd
+p1 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind, fill = Month)) + 
+        geom_point(shape = 21) +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)",
+             size = "Wind Speed (mph)", fill = "Months") +
+        scale_x_continuous(breaks = seq(1, 31, 5)) +
+        scale_fill_manual(values = fill) +
+        scale_size(range = c(1, 10)) +
+        theme(legend.position="bottom", legend.direction="horizontal",
+              legend.box = "horizontal",
+              legend.key.size = unit(1, "cm"),
+              axis.line = element_line(size=1, colour = "black"), 
+              panel.grid.major = element_blank(),
+              panel.grid.minor = element_blank(), 
+              panel.border = element_blank(),
+              panel.background = element_blank(),
+              plot.title=element_text(family="xkcd-Regular"), 
+              text=element_text(family="xkcd-Regular"),
+              axis.text.x=element_text(colour="black", size = 10), 
+              axis.text.y=element_text(colour="black", size = 10)) 
+p1
 ```
 
-## Adding lines
+### Using 'The Economist' theme 
 
-Let's go back to our white themed graph going forward, but let's change the font to Tahoma. As you can see, we did this by changing the theme back to `theme_bw()`, and then adding a `theme` option. To change the font of the title, we've added the `plot.title = element_text(size = 14, family = "Tahoma", face = "bold")` arguments to `theme`, which tells R to change the plot title to Tahoma, size 14 and bold. Similarly, to change the plot font, we added the `text = element_text(size = 12, family = "Tahoma")` argument to `theme`, which tells R to change the axis fonts to Tahoma, size 12.
+There are a wider range of pre-built themes available as part of the `ggthemes` package (more information on these [here](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html)). Below we've applied `theme_economist()`, which approximates graphs in the Economist magazine.
 
-Let's say that we want to add a cutoff value to the chart (75 parts of ozone per billion). We add the `geom_vline` option to the chart, and specify where it goes on the x-axis using the `xintercept` argument. We can customise how it looks using the `colour` and `linetype` arguments in `geom_vline`. (In the the same way, horizontal lines can be added using the `geom_hline`.)
-
-```{r lines}
-barfill <- "#4271AE"
-barlines <- "#1F3552"
-
-ggplot(airquality, aes(x = Ozone)) + 
-    geom_histogram(aes(y = ..count..), binwidth = 5,
-                   colour = barlines, fill = barfill) +
-    scale_x_continuous(name = "Mean ozone in\nparts per billion",
-                              breaks = seq(0, 175, 25),
-                              limits=c(0, 175)) +
-    scale_y_continuous(name = "Count") +
-    ggtitle("Frequency histogram of mean ozone") +
-    theme_bw() +
-    theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
-                text = element_text(size = 12, family = "Tahoma")) +
-    geom_vline(xintercept = 75, size = 1, colour = "#FF3721", 
-               linetype = "dashed")
+```{r wscatter19, cache=TRUE}
+p1 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind, fill = Month)) +
+        theme_economist() + 
+        scale_fill_economist() +
+        geom_point(shape = 21) +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)",
+             size = "Wind Speed (mph)", fill = "Months") +
+        scale_x_continuous(breaks = seq(1, 31, 5)) +
+        scale_size(range = c(1, 10)) +
+        theme(legend.position = "bottom", legend.direction = "horizontal",
+              legend.box = "horizontal",
+              legend.key.size = unit(1, "cm"),
+              plot.title = element_text(family="Tahoma"),
+              text = element_text(family = "Tahoma"),
+              axis.title = element_text(size = 12),
+              legend.text = element_text(size = 9),
+              legend.title=element_text(face = "bold", size = 9))
+p1
 ```
 
-## Multiple histograms
+### Creating your own theme
 
-You can also easily create multiple histograms by the levels of another variable. There are two options, in separate (panel) plots, or in the same plot.
+As before, you can modify your plots a lot as `ggplot2` allows many customisations. Here we present our original result shown at the top of page.
 
-### In panel plots
+```{r wscatter21, cache=TRUE}
+fill = c("steelblue", "yellowgreen", "violetred1")
 
-We first need to do a little data wrangling. In order to make the graphs a bit clearer, we've kept only months "5" (May) and "7" (July) in a new dataset `airquality_trimmed`. We also need to convert this variable into either a character or factor variable. We have created a new factor variable `Month.f`.
-
-In order to produce a panel plot by month, we add the `facet_grid(. ~ Month.f)` option to the plot. The additional `scale = free` argument in `facet_grid` means that the y-axes of each plot do not need to be the same.
-
-```{r multiple_histograms_panels}
-airquality_trimmed <- airquality[which(airquality$Month == 5 | 
-                                       airquality$Month == 7), ]
-airquality_trimmed$Month.f <- factor(airquality_trimmed$Month, 
-                                     labels = c("May", "July"))
-
-ggplot(airquality_trimmed, aes(x = Ozone)) + 
-    geom_histogram(aes(y = ..count..), binwidth = 10,
-                   colour = barlines, fill = barfill) +
-    scale_x_continuous(name = "Mean ozone in\nparts per billion",
-                              breaks = seq(0, 175, 25),
-                              limits=c(0, 175)) +
-    scale_y_continuous(name = "Count") +
-    ggtitle("Frequency histogram of mean ozone") +
-    theme_bw() +
-    theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
-                text = element_text(size = 12, family = "Tahoma")) +
-    facet_grid(. ~ Month.f, scales = "free")
+p1 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind, fill = Month)) +
+        geom_point(shape = 21) +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)",
+             size = "Wind Speed (mph)", fill = "Months") +
+        scale_x_continuous(breaks = seq(1, 31, 5)) +
+        scale_size(range = c(1, 10)) +
+        scale_fill_manual(values = fill) +
+        theme(legend.position = "bottom", legend.direction = "horizontal",
+              legend.box = "horizontal",
+              legend.key.size = unit(1, "cm"),
+              axis.line = element_line(size=1, colour = "black"), 
+              panel.grid.major = element_line(colour = "#d3d3d3"), 
+              panel.grid.minor = element_blank(), 
+              panel.border = element_blank(), panel.background = element_blank(),
+              plot.title = element_text(size = 14, family = "Tahoma", face = "bold"),
+              text=element_text(family="Tahoma"), 
+              axis.text.x=element_text(colour="black", size = 9), 
+              axis.text.y=element_text(colour="black", size = 9)) 
+p1
 ```
-
-### In the same plot
-
-In order to plot the two months in the same plot, we add several things. Firstly, in the `ggplot` function, we add a `fill = Month.f` argument to `aes`. Secondly, in order to more clearly see the graph, we add two arguments to the `geom_histogram` option, `position = "identity"` and `alpha = 0.6`. This controls the position and transparency of the curves respectively. Finally, you can customise the colours of the histograms by adding the `scale_fill_brewer` to the plot from the `RColorBrewer` package. [This](http://moderndata.plot.ly/create-colorful-graphs-in-r-with-rcolorbrewer-and-plotly/) blog post describes the available packages.
-
-```{r multiple_histograms_same_plot}
-library(RColorBrewer)
-
-ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) + 
-    geom_histogram(aes(y = ..count..), binwidth = 10,
-                   position="identity", alpha=0.6) +
-    scale_x_continuous(name = "Mean ozone in\nparts per billion",
-                              breaks = seq(0, 175, 25),
-                              limits=c(0, 175)) +
-    scale_y_continuous(name = "Count") +
-    ggtitle("Frequency histogram of mean ozone") +
-    theme_bw() +
-    theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
-                text = element_text(size = 12, family = "Tahoma")) +
-    scale_fill_brewer(palette="Accent")
-```
-
-## Formatting the legend
-
-Finally, we can format the legend. Firstly, we can change the position by adding the `legend.position = "bottom"` argument to the `theme` option, which moves the legend under the plot. Secondly, we can fix the title by adding the `labs(fill="Month")` option to the plot.
-
-```{r legend_formatting}
-ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) + 
-    geom_histogram(aes(y = ..count..), binwidth = 10,
-                   position="identity", alpha=0.6) +
-    scale_x_continuous(name = "Mean ozone in\nparts per billion",
-                              breaks = seq(0, 175, 25),
-                              limits=c(0, 175)) +
-    scale_y_continuous(name = "Count") +
-    ggtitle("Frequency histogram of mean ozone") +
-    theme_bw() +
-    theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
-                text = element_text(size = 12, family = "Tahoma"),
-          legend.position = "bottom") +
-    scale_fill_brewer(palette="Accent") +
-    labs(fill="Month")
-```
-
-
