@@ -44,9 +44,19 @@ p <- ggplot(airquality, aes(x = Day, y = Ozone, size = Wind, fill = Month)) +
         geom_point(shape = 21)
 p <- ggplot(airquality, aes(x = Day, y = Ozone, size = Wind, fill = Month)) + 
         geom_point(shape = 21) + 
-        scale_size_area(max_size=10)
+        scale_size_area(max_size=7)
 
+aq_trim <- airquality[which(airquality$Month == 7 |
+                            airquality$Month == 8 |
+                            airquality$Month == 9), ]
+aq_trim$Month <- factor(aq_trim$Month, 
+                        labels = c("July", "August", "September"))
 
+airquality_trimmed <- airquality[which(airquality$Month == 5 | 
+                                       airquality$Month == 7), ]
+airquality_trimmed$Month.f <- factor(airquality_trimmed$Month, 
+                                     labels = c("May", "July"))    
+    
 p <- ggplot(charts.data, aes(x = year, y = export, fill = product, size = sum)) +
      geom_point(shape=21, colour="black", fill="cornsilk") + scale_size_area(max_size=15)
 ```
