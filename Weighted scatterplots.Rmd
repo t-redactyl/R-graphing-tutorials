@@ -38,6 +38,7 @@ In this tutorial, we will work towards creating the weighted scatterplot below. 
 
 ```{r wscatter_finalgraph, echo = FALSE}
 library(grid)
+library(extrafont)
 
 fill = c("steelblue", "yellowgreen", "violetred1")
 
