@@ -1,5 +1,5 @@
 ---
-title: "Creating plots in R using ggplot2 - part 2: area plots"
+title: "Creating plots in R using ggplot2 - part 3: bar plots"
 author: 
   - Jodie Burchell
   - Mauricio Vargas Sepúlveda 帕夏
@@ -13,7 +13,7 @@ output:
 knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, fig.width=6, fig.height=5, tidy = F, cache.path = '.cache/', fig.path = 'Area/')
 ```
 
-In this third tutorial I am doing with [Mauricio Vargas Sepúlveda](http://pachamaltese.github.io/), we will demonstrate some of the many options the `ggplot2` package has for creating and customising bar plots. We will use the same [dataset](http://pachamaltese.github.io/stats/trade-chile-china/copper-data-for-tutorial.csv) from the [first](http://t-redactyl.github.io/blog/2015/12/creating-plots-in-r-using-ggplot2-part-1-line-plots.html) post.
+In this third tutorial I am doing with [Mauricio Vargas Sepúlveda](http://pachamaltese.github.io/), we will demonstrate some of the many options the ggplot2 package has for creating and customising bar plots. We will use the same [dataset](http://pachamaltese.github.io/stats/trade-chile-china/copper-data-for-tutorial.csv) from the [first](http://t-redactyl.github.io/blog/2015/12/creating-plots-in-r-using-ggplot2-part-1-line-plots.html) post.
 
 The first thing to do is load in the data and libraries, as below:
 
@@ -43,7 +43,7 @@ charts.data.2 <- ddply(charts.data.2, .(year), transform, pos = cumsum(export) -
 
 fill <- c("#40b8d0", "#b2d183")
 
-p1 <- ggplot() + 
+p3 <- ggplot() + 
   geom_bar(aes(y = export, x = year, fill = product), data = charts.data.2, stat="identity") + 
   geom_text(data=charts.data.2, aes(x = year, y = pos, label = export), colour="black", 
             family="Tahoma", size = 4, show_guide = F) + 
@@ -60,16 +60,16 @@ p1 <- ggplot() +
         text=element_text(family="Tahoma"),
         axis.text.x=element_text(colour="black", size = 10), 
         axis.text.y=element_text(colour="black", size = 10)) 
-p1
+p3
 ```
 
 ### Basic graph
 In order to initialise a plot we tell ggplot that `charts.data` is our data, and specify the variables on each axis. We then instruct ggplot to render this as an bar plot by adding the `geom_area` command.
 
 ```{r bar1, cache=TRUE}
-p1 <- ggplot() + geom_bar(aes(y = export, x = year, fill = product), data = charts.data, 
+p3 <- ggplot() + geom_bar(aes(y = export, x = year, fill = product), data = charts.data, 
                           stat="identity")
-p1
+p3
 ```
 
 ### Adding data labels
@@ -77,8 +77,8 @@ p1
 To label the bars according to some variable in the data, we add the `label` argument to the `ggplot(aes())` option. In this case, we have labelled the bars with numbers from the `export` variable.
 
 ```{r bar2, cache=TRUE}
-p1 <- p1 + geom_text(data=charts.data, aes(x = year, y = export, label = export), size=4)
-p1
+p3 <- p3 + geom_text(data=charts.data, aes(x = year, y = export, label = export), size=4)
+p3
 ```
 
 ### Adjusting data labels position
@@ -88,10 +88,10 @@ To adjust the position of the data labels from the default placement, we use the
 ```{r bar3, cache=TRUE}
 charts.data <- ddply(charts.data, .(year), transform, pos = cumsum(export) - (0.5 * export))
 
-p1 <- ggplot() + geom_bar(aes(y = export, x = year, fill = product), data = charts.data, 
+p3 <- ggplot() + geom_bar(aes(y = export, x = year, fill = product), data = charts.data, 
                           stat="identity") 
-p1 <- p1 + geom_text(data=charts.data, aes(x = year, y = pos, label = export), size=4)
-p1
+p3 <- p3 + geom_text(data=charts.data, aes(x = year, y = pos, label = export), size=4)
+p3
 ```
 
 ### Adjusting legend position
@@ -101,9 +101,9 @@ To adjust the position of the legend from the default spot of right of the graph
 ```{r bar4, cache=TRUE}
 charts.data <- ddply(charts.data, .(year), transform, pos = cumsum(export) - (0.5 * export))
 
-p1 <- p1 + theme(legend.position="bottom", legend.direction="horizontal", 
+p3 <- p3 + theme(legend.position="bottom", legend.direction="horizontal", 
                  legend.title = element_blank())
-p1
+p3
 ```
 
 ### Changing variables display
@@ -115,12 +115,12 @@ charts.data <- as.data.frame(charts.data)
 charts.data$product <- factor(charts.data$product, levels = c("copper","others"), 
                               labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
 
-p1 <- ggplot() + geom_bar(aes(y = export, x = year, fill = product), data = charts.data, 
+p3 <- ggplot() + geom_bar(aes(y = export, x = year, fill = product), data = charts.data, 
                           stat="identity") 
-p1 <- p1 + geom_text(data=charts.data, aes(x = year, y = pos, label = export, size=4), 
+p3 <- p3 + geom_text(data=charts.data, aes(x = year, y = pos, label = export, size=4), 
                      show_guide = F) + 
   theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank())
-p1
+p3
 ```
 
 ### Adjusting x-axis scale
@@ -128,8 +128,8 @@ p1
 To change the axis tick marks, we use the `scale_x_continuous` and/or `scale_y_continuous` commands.
 
 ```{r bar6, cache=TRUE}
-p1 <- p1 + scale_x_continuous(breaks=seq(2006,2014,1))
-p1
+p3 <- p3 + scale_x_continuous(breaks=seq(2006,2014,1))
+p3
 ```
 
 ### Adjusting axis labels & adding title
@@ -137,8 +137,8 @@ p1
 To add a title, we include the option `ggtitle` and include the name of the graph as a string argument, and to change the axis names we use the `labs` command.
 
 ```{r bar7, cache=TRUE}
-p1 <- p1 + ggtitle("Composition of Exports to China ($)") + labs(x="Year", y="USD million") 
-p1
+p3 <- p3 + ggtitle("Composition of Exports to China ($)") + labs(x="Year", y="USD million") 
+p3
 ```
 
 ### Adjusting color palette
@@ -147,8 +147,8 @@ To change the colours, we use the `scale_colour_manual` command. Note that you c
 
 ```{r bar8, cache=TRUE}
 fill <- c("#5F9EA0", "#E1B378")
-p1 <- p1 + scale_fill_manual(values=fill)
-p1
+p3 <- p3 + scale_fill_manual(values=fill)
+p3
 ```
 
 ### Using the white theme
@@ -156,7 +156,7 @@ p1
 As explained in the previous posts, we can also change the overall look of the graph using themes. We'll start using a simple theme customisation by adding `theme_bw() ` after `ggplot()`. As you can see, we can further tweak the graph using the `theme` option, which we've used so far to change the legend.
 
 ```{r bar9, cache=TRUE}
-p1 <- ggplot() + theme_bw() +
+p3 <- ggplot() + theme_bw() +
   geom_bar(aes(y = export, x = year, fill = product), data = charts.data, stat="identity") + 
   geom_text(data=charts.data, aes(x = year, y = pos, label = export, size=4), show_guide = F) + 
   theme(legend.position="bottom", legend.direction="horizontal", 
@@ -165,7 +165,7 @@ p1 <- ggplot() + theme_bw() +
   labs(x="Year", y="USD million") + 
   ggtitle("Composition of Exports to China ($)") + 
   scale_fill_manual(values=fill)
-p1
+p3
 ```
 
 ### Creating an XKCD style chart
@@ -193,7 +193,7 @@ You can then create your graph:
 
 fill <- c("#56B4E9", "#F0E442")
 
-p1 <- ggplot() + 
+p3 <- ggplot() + 
   geom_bar(aes(y = export, x = year, fill = product), data = charts.data, stat="identity") + 
   geom_text(data=charts.data, aes(x = year, y = pos, label = export), colour="black", 
             family="xkcd-Regular", size = 4, show_guide = F) + 
@@ -209,7 +209,7 @@ p1 <- ggplot() +
   theme(plot.title=element_text(family="xkcd-Regular"), text=element_text(family="xkcd-Regular"), 
         axis.text.x=element_text(colour="black", size = 10), 
         axis.text.y=element_text(colour="black", size = 10)) 
-p1
+p3
 ```
 
 ### Using 'The Economist' theme 
@@ -217,7 +217,7 @@ p1
 There are a wider range of pre-built themes available as part of the `ggthemes` package (more information on these [here](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html)). Below we've applied `theme_economist()`, which approximates graphs in the Economist magazine. It is also important that the font change argument inside `theme` is optional and it's only to obtain a more similar result compared to the original. For an exact result you need 'Officina Sans' which is a commercial font and is available [here](http://www.myfonts.com/fonts/itc/officina-sans/).
 
 ```{r bar10, cache=TRUE}
-p1 <- ggplot() + theme_economist() + scale_fill_economist() +
+p3 <- ggplot() + theme_economist() + scale_fill_economist() +
   theme(plot.title=element_text(family="OfficinaSanITC-Book"), 
         text=element_text(family="OfficinaSanITC-Book")) +
   geom_bar(aes(y = export, x = year, fill = product), data = charts.data, 
@@ -229,7 +229,7 @@ p1 <- ggplot() + theme_economist() + scale_fill_economist() +
   scale_x_continuous(breaks=seq(2006,2014,1)) + 
   labs(x="Year", y="USD million") + 
   ggtitle("Composition of Exports to China ($)")
-p1
+p3
 ```
 
 ### Using 'Five Thirty Eight' theme 
@@ -237,7 +237,7 @@ p1
 Below we've applied `theme_fivethirtyeight()`, which approximates graphs in the nice [FiveThirtyEight](http://fivethirtyeight.com/) website. Again, it is also important that the font change is optional and it's only to obtain a more similar result compared to the original. For an exact result you need 'Atlas Grotesk' which is a commercial font and is available [here](https://commercialtype.com/catalog/atlas).
 
 ```{r bar11, cache=TRUE}
-p1 <- ggplot() + theme_fivethirtyeight() + scale_fill_fivethirtyeight() + 
+p3 <- ggplot() + theme_fivethirtyeight() + scale_fill_fivethirtyeight() + 
   theme(plot.title=element_text(family="Atlas Grotesk Medium"), 
         text=element_text(family="Atlas Grotesk Light")) +
   geom_bar(aes(y = export, x = year, fill = product), data = charts.data, 
@@ -249,7 +249,7 @@ p1 <- ggplot() + theme_fivethirtyeight() + scale_fill_fivethirtyeight() +
   scale_x_continuous(breaks=seq(2006,2014,1)) + 
   labs(x="Year", y="USD million") + 
   ggtitle("Composition of Exports to China ($)")
-p1
+p3
 ```
 
 ### Creating your own theme
@@ -259,7 +259,7 @@ As before, you can modify your plots a lot as `ggplot2` allows many customisatio
 ```{r bar13, cache=TRUE}
 fill <- c("#40b8d0", "#b2d183")
 
-p1 <- ggplot() + 
+p3 <- ggplot() + 
   geom_bar(aes(y = export, x = year, fill = product), data = charts.data, stat="identity") + 
   geom_text(data=charts.data, aes(x = year, y = pos, label = export), colour="black", 
             family="Tahoma", size = 4, show_guide = F) + 
@@ -276,5 +276,5 @@ p1 <- ggplot() +
         text=element_text(family="Tahoma"),
         axis.text.x=element_text(colour="black", size = 10), 
         axis.text.y=element_text(colour="black", size = 10)) 
-p1
+p3
 ```

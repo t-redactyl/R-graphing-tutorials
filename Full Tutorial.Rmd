@@ -1,0 +1,2785 @@
+---
+title: "Creating plots in R using ggplot2 - Full Tutorial"
+author: 
+  - Jodie Burchell
+  - Mauricio Vargas Sepúlveda 帕夏
+date: "`r Sys.Date()`"
+output: 
+      rmarkdown::html_vignette:
+        css: css/entries.css
+---
+
+#Introduction
+
+A short time ago I teamed up with [Jodie Burchell](http://t-redactyl.io/) to create some graphing tutorials in R. We had published a series of tutorials on how to use the `ggplot2` package to create beautiful and informative data visualisations. This post gets all the previous tutorials together.
+
+We will demonstrate some of the many options the `ggplot2` package has for creating different plots. We will use an international trade [dataset](http://pachamaltese.github.io/stats/trade-chile-china/copper-data-for-tutorial.csv ) made by ourselves from different sources (Chile Customs, Central Bank of Chile and General Directorate of International Economic Relations) as well as R datasets.
+
+<!-- PART 1 --> 
+
+#Line Plots
+
+The first thing to do is load in the data and libraries, as below:
+
+```{r load_in_data9, cache=TRUE}
+library(ggplot2)
+library(ggthemes)
+library(extrafont)
+
+charts.data <- read.csv("copper-data-for-tutorial.csv")
+```
+
+In this tutorial, we will work towards creating the line plot below. We will take you from a basic line plot and explain all the customisations we add to the code step-by-step.
+
+```{r finalresult1, echo=FALSE}
+library(ggplot2)
+
+library(ggthemes)
+library(extrafont)
+
+charts.data.2 <- read.csv("copper-data-for-tutorial.csv")
+charts.data.2 <- as.data.frame(charts.data.2)
+charts.data.2$product <- factor(charts.data.2$product, levels = c("copper","others"), 
+                              labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
+
+colour <- c("#40b8d0", "#b2d183")
+
+p1 <- ggplot() + 
+  geom_line(aes(y = export, x = year, colour = product), size=1.5, data = charts.data.2, 
+            stat="identity") + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  labs(x="Year", y="USD million") + 
+  ggtitle("Composition of Exports to China ($)") + 
+  scale_colour_manual(values=colour) + 
+  theme(axis.line = element_line(size=1, colour = "black"), 
+        panel.grid.major = element_line(colour = "#d3d3d3"), panel.grid.minor = element_blank(), 
+        panel.border = element_blank(), panel.background = element_blank()) + 
+  theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+        text=element_text(family="Tahoma"),
+        axis.text.x=element_text(colour="black", size = 10), 
+        axis.text.y=element_text(colour="black", size = 10),
+        legend.key=element_rect(fill="white", colour="white")) 
+p1
+```
+
+## Basic graph
+In order to initialise a plot we tell ggplot that `charts.data` is our data, and specify the variables on each axis. We then instruct ggplot to render this as a line plot by adding the `geom_line` command.
+
+```{r line1, cache=TRUE}
+p1 <- ggplot() + geom_line(aes(y = export, x = year, colour = product), 
+                           data = charts.data, stat="identity")
+p1
+```
+
+## Adjusting line width
+To change the line width, we add a `size` argument to `geom_line`.
+
+```{r line2, cache=TRUE}
+p1 <- ggplot() + geom_line(aes(y = export, x = year, colour = product), size=1.5, 
+                           data = charts.data, stat="identity")
+p1
+```
+
+## Changing variables display
+To change the variables displayed name, we need to re-factor our data labels in `charts.data` data frame. Then we move the legend to the bottom using the `theme` command.
+
+```{r line3, cache=TRUE}
+charts.data <- as.data.frame(charts.data)
+charts.data$product <- factor(charts.data$product, levels = c("copper","others"), 
+                              labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
+
+p1 <- ggplot() + geom_line(aes(y = export, x = year, colour = product), size=1.5, 
+                           data = charts.data, stat="identity") +
+  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank())
+p1
+```
+
+## Adjusting x-axis scale
+To change the axis tick marks, we use the `scale_x_continuous` and/or `scale_y_continuous` commands.
+
+```{r line4, cache=TRUE}
+p1 <- p1 + scale_x_continuous(breaks=seq(2006,2014,1))
+p1
+```
+
+## Adjusting axis labels & adding title
+To add a title, we include the option `ggtitle` and include the name of the graph as a string argument, and to change the axis names we use the `labs` command.
+
+```{r line5, cache=TRUE}
+p1 <- p1 + ggtitle("Composition of Exports to China ($)") + labs(x="Year", y="USD million") 
+p1
+```
+
+## Adjusting color palette
+To change the colours, we use the `scale_colour_manual` command.
+
+```{r line6, cache=TRUE}
+colour <- c("#5F9EA0", "#E1B378")
+p1 <- p1 + scale_colour_manual(values=colour)
+p1
+```
+
+## Using the white theme
+We'll start using a simple theme customisation made adding `theme_bw() ` after `ggplot()`. That theme argument can be modified to use different themes.
+
+```{r line7, cache=TRUE}
+p1 <- ggplot() + theme_bw() +
+  geom_line(aes(y = export, x = year, colour = product), size=1.5, data = charts.data, 
+            stat="identity") + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  labs(x="Year", y="USD million") + 
+  ggtitle("Composition of Exports to China ($)") + 
+  scale_colour_manual(values=colour)
+p1
+```
+
+## Creating an XKCD style chart
+Of course, you may want to create your own themes as well. `ggplot2` allows for a very high degree of customisation, including allowing you to use imported fonts. Below is an example of a theme Mauricio was able to create which mimics the visual style of [XKCD](http://xkcd.com/). In order to create this chart, you first need to import the XKCD font, install it on your machine and load it into R using the `extrafont` package.
+These instructions are taken from [here](https://www.google.com.au/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwiWzafchdPJAhVBpJQKHe_LDT8QFggbMAA&url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fxkcd%2Fvignettes%2Fxkcd-intro.pdf&usg=AFQjCNE-KciGY14e-Q1buYIVmTFC0ht__Q&sig2=DZUwkvIHwfNWtTtkcz94jg):
+
+```{r importing_font_xkcd, eval=FALSE}
+library(extrafont)
+
+download.file("http://simonsoftware.se/other/xkcd.ttf", 
+              dest="xkcd.ttf", mode="wb")
+system("mkdir ~/.fonts")
+system("cp xkcd.ttf  ~/.fonts")
+font_import(paths = "~/.fonts", pattern="[X/x]kcd")
+fonts()
+loadfonts()
+```
+
+You can then create your graph:
+
+```{r line10, cache=TRUE}
+fill <- c("#56B4E9", "#ff69b4")
+
+p1 <- ggplot() + 
+  geom_line(aes(y = export, x = year, colour = product), size=1.5, data = charts.data, 
+            stat="identity") + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  labs(x="Year", y="USD million") + 
+  ggtitle("Composition of Exports to China ($)") + 
+  scale_color_manual(values=fill) + 
+  theme(axis.line = element_line(size=1, colour = "black"), panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), panel.border = element_blank(), 
+        panel.background = element_blank()) + 
+  theme(plot.title=element_text(family="xkcd-Regular"), text=element_text(family="xkcd-Regular"), 
+        axis.text.x=element_text(colour="black", size = 10), 
+        axis.text.y=element_text(colour="black", size = 10),
+        legend.key=element_rect(fill="white", colour="white")) 
+p1
+```
+
+## Using 'The Economist' theme 
+There are a wider range of pre-built themes available as part of the `ggthemes` package (more information on these [here](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html)). Below we've applied `theme_economist()`, which approximates graphs in the Economist magazine. It is also important that the font change argument inside `theme` is optional and it's only to obtain a more similar result compared to the original. For an exact result you need 'Officina Sans' which is a commercial font and is available [here](http://www.myfonts.com/fonts/itc/officina-sans/).
+
+```{r line8, cache=TRUE, eval=FALSE}
+p1 <- ggplot() + theme_economist() + scale_colour_economist() +
+  theme(plot.title=element_text(family="OfficinaSanITC-Book"),
+        text=element_text(family="OfficinaSanITC-Book")) +
+  geom_line(aes(y = export, x = year, colour = product), size=1.5, data = charts.data, 
+            stat="identity") + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  labs(x="Year", y="USD million") + 
+  ggtitle("Composition of Exports to China ($)")
+p1
+```
+
+## Using 'Five Thirty Eight' theme 
+Below we've applied `theme_fivethirtyeight()`, which approximates graphs in the nice [FiveThirtyEight](http://fivethirtyeight.com/) website. Again, it is also important that the font change is optional and it's only to obtain a more similar result compared to the original. For an exact result you need 'Atlas Grotesk' which is a commercial font and is available [here](https://commercialtype.com/catalog/atlas).
+
+```{r line9, cache=TRUE, eval=FALSE}
+p1 <- ggplot() + theme_fivethirtyeight() + scale_colour_fivethirtyeight() +
+  theme(plot.title=element_text(family="Atlas Grotesk Medium"), 
+        text=element_text(family="Atlas Grotesk Light")) +
+  geom_line(aes(y = export, x = year, colour = product), size=1.5, data = charts.data, 
+            stat="identity") + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  labs(x="Year", y="USD million") + 
+  ggtitle("Composition of Exports to China ($)")
+p1
+```
+
+## Creating your own theme
+As before, you can modify your plots a lot as `ggplot2` allows many customisations. Here we present our original result shown at the top of page.
+
+```{r line11, cache=TRUE}
+colour <- c("#40b8d0", "#b2d183")
+
+p1 <- ggplot() + 
+  geom_line(aes(y = export, x = year, colour = product), size=1.5, data = charts.data, 
+            stat="identity") + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  labs(x="Year", y="USD million") + 
+  ggtitle("Composition of Exports to China ($)") + 
+  scale_colour_manual(values=colour) + 
+  theme(axis.line = element_line(size=1, colour = "black"), 
+        panel.grid.major = element_line(colour = "#d3d3d3"), panel.grid.minor = element_blank(), 
+        panel.border = element_blank(), panel.background = element_blank()) + 
+  theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+        text=element_text(family="Tahoma"),
+        axis.text.x=element_text(colour="black", size = 10), 
+        axis.text.y=element_text(colour="black", size = 10),
+        legend.key=element_rect(fill="white", colour="white")) 
+p1
+```
+
+<!-- PART 2 --> 
+
+#Area Plots
+
+The first thing to do is load in the data and libraries, as below:
+
+```{r load_in_data2, cache=TRUE}
+library(ggplot2)
+library(ggthemes)
+library(extrafont)
+library(plyr)
+charts.data <- read.csv("copper-data-for-tutorial.csv")
+```
+
+We will take you from a basic area plot and explain all the customisations we add to the code step-by-step.
+
+```{r finalresult2, echo=FALSE}
+library(ggplot2)
+library(ggthemes)
+library(extrafont)
+
+charts.data.2 <- read.csv("copper-data-for-tutorial.csv")
+charts.data.2 <- as.data.frame(charts.data.2)
+charts.data.2$product <- factor(charts.data.2$product, levels = c("copper","others"), 
+                              labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
+
+fill <- c("#40b8d0", "#b2d183")
+
+p2 <- ggplot() + 
+  geom_area(aes(y = export, x = year, fill = product), data = charts.data.2, 
+            stat="identity") + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  labs(x="Year", y="USD million") + 
+  ggtitle("Composition of Exports to China ($)") + 
+  scale_fill_manual(values=fill) + 
+  theme(axis.line = element_line(size=1, colour = "black"), 
+        panel.grid.major = element_line(colour = "#d3d3d3"), panel.grid.minor = element_blank(), 
+        panel.border = element_blank(), panel.background = element_blank()) + 
+  theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+        text=element_text(family="Tahoma"), 
+        axis.text.x=element_text(colour="black", size = 10), 
+        axis.text.y=element_text(colour="black", size = 10)) 
+p2
+```
+
+### Basic graph
+In order to initialise a plot we tell ggplot that `charts.data` is our data, and specify the variables on each axis. We then instruct ggplot to render this as an area plot by adding the `geom_area` command.
+
+```{r area1, cache=TRUE}
+charts.data <- read.csv("copper-data-for-tutorial.csv")
+
+p2 <- ggplot() + geom_area(aes(y = export, x = year, fill = product), data = charts.data, 
+                           stat="identity")
+p2
+```
+
+### Adjusting legend position
+To adjust the position of the legend from the default spot of right of the graph, we add the `theme` option and specify the `legend.position="bottom"` argument. We can also change the title to blank using the ` legend.title = element_blank()` argument and change the legend shape using the `legend.direction="horizontal"` argument.
+
+```{r area2, cache=TRUE}
+charts.data <- ddply(charts.data, .(year), transform, pos = cumsum(export) - (0.5 * export))
+
+p2 <- p2 + theme(legend.position="bottom", legend.direction="horizontal", 
+                 legend.title = element_blank())
+p2
+```
+
+### Changing variables display
+To change the variables displayed name, we need to re-factor our data labels in `charts.data` data frame.
+
+```{r area3, cache=TRUE}
+charts.data <- as.data.frame(charts.data)
+charts.data$product <- factor(charts.data$product, levels = c("copper","others"), 
+                              labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
+
+p2 <- ggplot() + geom_area(aes(y = export, x = year, fill = product), data = charts.data,
+                           stat="identity") + theme(legend.position="bottom",
+                                                    legend.direction="horizontal",
+                                                    legend.title = element_blank())
+p2
+```
+
+### Adjusting x-axis scale
+To change the axis tick marks, we use the `scale_x_continuous` and/or `scale_y_continuous` commands.
+
+```{r area4, cache=TRUE}
+p2 <- p2 + scale_x_continuous(breaks=seq(2006,2014,1))
+p2
+```
+
+### Adjusting axis labels & adding title
+To add a title, we include the option `ggtitle` and include the name of the graph as a string argument, and to change the axis names we use the `labs` command.
+
+```{r area5, cache=TRUE}
+p2 <- p2 + ggtitle("Composition of Exports to China ($)") + 
+            labs(x="Year", y="USD million") 
+p2
+```
+
+### Adjusting color palette
+To change the colours, we use the `scale_colour_manual` command. Note that you can reference the specific colours you'd like to use with specific HEX codes. You can also reference colours by name, with the full list of colours recognised by R [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf).
+
+```{r area6, cache=TRUE}
+fill <- c("#5F9EA0", "#E1B378")
+p2 <- p2 + scale_fill_manual(values=fill)
+p2
+```
+
+### Using the white theme
+As explained in the previous post, we can also change the overall look of the site using themes. We'll start using a simple theme customisation by adding `theme_bw() ` after `ggplot()`. As you can see, we can further tweak the graph using the `theme` option, which we've used so far to change the legend.
+
+```{r area7, cache=TRUE}
+p2 <- ggplot() + theme_bw() +
+  geom_area(aes(y = export, x = year, fill = product), data = charts.data, 
+            stat="identity") + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  labs(x="Year", y="USD million") + 
+  ggtitle("Composition of Exports to China ($)") + 
+  scale_fill_manual(values=fill)
+p2
+```
+
+### Creating an XKCD style chart
+Of course, you may want to create your own themes as well. `ggplot2` allows for a very high degree of customisation, including allowing you to use imported fonts. Below is an example of a theme Mauricio was able to create which mimics the visual style of [XKCD](http://xkcd.com/). In order to create this chart, you first need to import the XKCD font, install it on your machine and load it into R using the `extrafont` package.
+These instructions are taken from [here](https://www.google.com.au/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwiWzafchdPJAhVBpJQKHe_LDT8QFggbMAA&url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fxkcd%2Fvignettes%2Fxkcd-intro.pdf&usg=AFQjCNE-KciGY14e-Q1buYIVmTFC0ht__Q&sig2=DZUwkvIHwfNWtTtkcz94jg):
+
+```{r importing_font_xkcd2, eval=FALSE}
+library(extrafont)
+
+download.file("http://simonsoftware.se/other/xkcd.ttf", 
+              dest="xkcd.ttf", mode="wb")
+system("mkdir ~/.fonts")
+system("cp xkcd.ttf  ~/.fonts")
+font_import(paths = "~/.fonts", pattern="[X/x]kcd")
+fonts()
+loadfonts()
+```
+
+You can then create your graph:
+
+```{r area10, cache=TRUE}
+#font_import(pattern="[X/x]kcd")
+#fonts()
+
+fill <- c("#56B4E9", "#F0E442")
+
+p2 <- ggplot() + 
+  geom_area(aes(y = export, x = year, fill = product), data = charts.data, stat="identity") + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  labs(x="Year", y="USD million") + 
+  ggtitle("Composition of Exports to China ($)") + 
+  scale_fill_manual(values=fill) + 
+  theme(axis.line = element_line(size=1, colour = "black"), panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), panel.border = element_blank(), 
+        panel.background = element_blank()) + 
+  theme(plot.title=element_text(family="xkcd-Regular"), text=element_text(family="xkcd-Regular"), 
+        axis.text.x=element_text(colour="black", size = 10), 
+        axis.text.y=element_text(colour="black", size = 10)) 
+p2
+```
+
+### Using 'The Economist' theme 
+There are a wider range of pre-built themes available as part of the `ggthemes` package (more information on these [here](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html)). Below we've applied `theme_economist()`, which approximates graphs in the Economist magazine. It is also important that the font change argument inside `theme` is optional and it's only to obtain a more similar result compared to the original. For an exact result you need 'Officina Sans' which is a commercial font and is available [here](http://www.myfonts.com/fonts/itc/officina-sans/).
+
+```{r area8, cache=TRUE}
+p2 <- ggplot() + theme_economist() + scale_fill_economist() +
+  theme(plot.title=element_text(family="OfficinaSanITC-Book"),
+        text=element_text(family="OfficinaSanITC-Book")) +
+  geom_area(aes(y = export, x = year, fill = product), data = charts.data, stat="identity") + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  labs(x="Year", y="USD million") + 
+  ggtitle("Composition of Exports to China ($)")
+p2
+```
+
+### Using 'Five Thirty Eight' theme
+Below we've applied `theme_fivethirtyeight()`, which approximates graphs in the nice [FiveThirtyEight](http://fivethirtyeight.com/) website. Again, it is also important that the font change is optional and it's only to obtain a more similar result compared to the original. For an exact result you need 'Atlas Grotesk' which is a commercial font and is available [here](https://commercialtype.com/catalog/atlas).
+
+```{r area9, cache=TRUE}
+p2 <- ggplot() + theme_fivethirtyeight() + scale_fill_fivethirtyeight() +
+  theme(plot.title=element_text(family="Atlas Grotesk Medium"), 
+        text=element_text(family="Atlas Grotesk Light")) +
+  geom_area(aes(y = export, x = year, fill = product), data = charts.data, 
+            stat="identity") + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  labs(x="Year", y="USD million") + 
+  ggtitle("Composition of Exports to China ($)")
+p2
+```
+
+### Creating your own theme
+As before, you can modify your plots a lot as `ggplot2` allows many customisations. Here we present our original result shown at the top of page.
+
+```{r area11, cache=TRUE}
+fill <- c("#40b8d0", "#b2d183")
+
+p2 <- ggplot() + 
+  geom_area(aes(y = export, x = year, fill = product), data = charts.data, 
+            stat="identity") + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  labs(x="Year", y="USD million") + 
+  ggtitle("Composition of Exports to China ($)") + 
+  scale_fill_manual(values=fill) + 
+  theme(axis.line = element_line(size=1, colour = "black"), 
+        panel.grid.major = element_line(colour = "#d3d3d3"), panel.grid.minor = element_blank(), 
+        panel.border = element_blank(), panel.background = element_blank()) + 
+  theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+        text=element_text(family="Tahoma"), 
+        axis.text.x=element_text(colour="black", size = 10), 
+        axis.text.y=element_text(colour="black", size = 10)) 
+p2
+```
+
+<!-- PART 3 --> 
+
+#Bar Plots
+
+The first thing to do is load in the data and libraries, as below:
+
+```{r load_in_data3, cache=TRUE}
+library(ggplot2)
+library(ggthemes)
+library(extrafont)
+library(plyr)
+library(scales)
+charts.data <- read.csv("copper-data-for-tutorial.csv")
+```
+
+We will take you from a basic bar plot and explain all the customisations we add to the code step-by-step.
+
+```{r finalresult3, echo=FALSE}
+library(ggplot2)
+library(ggthemes)
+library(extrafont)
+library(plyr)
+library(scales)
+
+charts.data.2 <- read.csv("copper-data-for-tutorial.csv")
+charts.data.2 <- as.data.frame(charts.data.2)
+charts.data.2$product <- factor(charts.data.2$product, levels = c("copper","others"), 
+                              labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
+charts.data.2 <- ddply(charts.data.2, .(year), transform, pos = cumsum(export) - (0.5 * export))
+
+fill <- c("#40b8d0", "#b2d183")
+
+p3 <- ggplot() + 
+  geom_bar(aes(y = export, x = year, fill = product), data = charts.data.2, stat="identity") + 
+  geom_text(data=charts.data.2, aes(x = year, y = pos, label = export), colour="black", 
+            family="Tahoma", size = 4, show_guide = F) + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  labs(x="Year", y="USD million") + 
+  ggtitle("Composition of Exports to China ($)") + 
+  scale_fill_manual(values=fill) + 
+  theme(axis.line = element_line(size=1, colour = "black"), 
+        panel.grid.major = element_line(colour = "#d3d3d3"), panel.grid.minor = element_blank(), 
+        panel.border = element_blank(), panel.background = element_blank()) + 
+  theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+        text=element_text(family="Tahoma"),
+        axis.text.x=element_text(colour="black", size = 10), 
+        axis.text.y=element_text(colour="black", size = 10)) 
+p3
+```
+
+### Basic graph
+In order to initialise a plot we tell ggplot that `charts.data` is our data, and specify the variables on each axis. We then instruct ggplot to render this as an bar plot by adding the `geom_area` command.
+
+```{r bar1, cache=TRUE}
+p3 <- ggplot() + geom_bar(aes(y = export, x = year, fill = product), data = charts.data, 
+                          stat="identity")
+p3
+```
+
+### Adding data labels
+
+To label the bars according to some variable in the data, we add the `label` argument to the `ggplot(aes())` option. In this case, we have labelled the bars with numbers from the `export` variable.
+
+```{r bar2, cache=TRUE}
+p3 <- p3 + geom_text(data=charts.data, aes(x = year, y = export, label = export), size=4)
+p3
+```
+
+### Adjusting data labels position
+
+To adjust the position of the data labels from the default placement, we use the `ddply` function on the data, and create a new variable called `pos`. This variable is at the centre of each bar and can be used to specify the position of the labels by assigning it to the `y` argument in `geom_text(aes())`.
+
+```{r bar3, cache=TRUE}
+charts.data <- ddply(charts.data, .(year), transform, pos = cumsum(export) - (0.5 * export))
+
+p3 <- ggplot() + geom_bar(aes(y = export, x = year, fill = product), data = charts.data, 
+                          stat="identity") 
+p3 <- p3 + geom_text(data=charts.data, aes(x = year, y = pos, label = export), size=4)
+p3
+```
+
+### Adjusting legend position
+
+To adjust the position of the legend from the default spot of right of the graph, we add the `theme` option and specify the `legend.position="bottom"` argument. We can also change the title to blank using the ` legend.title = element_blank()` argument and change the legend shape using the `legend.direction="horizontal"` argument.
+
+```{r bar4, cache=TRUE}
+charts.data <- ddply(charts.data, .(year), transform, pos = cumsum(export) - (0.5 * export))
+
+p3 <- p3 + theme(legend.position="bottom", legend.direction="horizontal", 
+                 legend.title = element_blank())
+p3
+```
+
+### Changing variables display
+
+To change the variables' displayed name, we need to re-factor our data labels in `charts.data` data frame.
+
+```{r bar5, cache=TRUE}
+charts.data <- as.data.frame(charts.data)
+charts.data$product <- factor(charts.data$product, levels = c("copper","others"), 
+                              labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
+
+p3 <- ggplot() + geom_bar(aes(y = export, x = year, fill = product), data = charts.data, 
+                          stat="identity") 
+p3 <- p3 + geom_text(data=charts.data, aes(x = year, y = pos, label = export, size=4), 
+                     show_guide = F) + 
+  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank())
+p3
+```
+
+### Adjusting x-axis scale
+
+To change the axis tick marks, we use the `scale_x_continuous` and/or `scale_y_continuous` commands.
+
+```{r bar6, cache=TRUE}
+p3 <- p3 + scale_x_continuous(breaks=seq(2006,2014,1))
+p3
+```
+
+### Adjusting axis labels & adding title
+
+To add a title, we include the option `ggtitle` and include the name of the graph as a string argument, and to change the axis names we use the `labs` command.
+
+```{r bar7, cache=TRUE}
+p3 <- p3 + ggtitle("Composition of Exports to China ($)") + labs(x="Year", y="USD million") 
+p3
+```
+
+### Adjusting color palette
+
+To change the colours, we use the `scale_colour_manual` command. Note that you can reference the specific colours you'd like to use with specific HEX codes. You can also reference colours by name, with the full list of colours recognised by R [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf).
+
+```{r bar8, cache=TRUE}
+fill <- c("#5F9EA0", "#E1B378")
+p3 <- p3 + scale_fill_manual(values=fill)
+p3
+```
+
+### Using the white theme
+
+As explained in the previous posts, we can also change the overall look of the graph using themes. We'll start using a simple theme customisation by adding `theme_bw() ` after `ggplot()`. As you can see, we can further tweak the graph using the `theme` option, which we've used so far to change the legend.
+
+```{r bar9, cache=TRUE}
+p3 <- ggplot() + theme_bw() +
+  geom_bar(aes(y = export, x = year, fill = product), data = charts.data, stat="identity") + 
+  geom_text(data=charts.data, aes(x = year, y = pos, label = export, size=4), show_guide = F) + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  labs(x="Year", y="USD million") + 
+  ggtitle("Composition of Exports to China ($)") + 
+  scale_fill_manual(values=fill)
+p3
+```
+
+### Creating an XKCD style chart
+
+Of course, you may want to create your own themes as well. `ggplot2` allows for a very high degree of customisation, including allowing you to use imported fonts. Below is an example of a theme Mauricio was able to create which mimics the visual style of [XKCD](http://xkcd.com/). In order to create this chart, you first need to import the XKCD font, install it on your machine and load it into R using the `extrafont` package.
+These instructions are taken from [here](https://www.google.com.au/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwiWzafchdPJAhVBpJQKHe_LDT8QFggbMAA&url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fxkcd%2Fvignettes%2Fxkcd-intro.pdf&usg=AFQjCNE-KciGY14e-Q1buYIVmTFC0ht__Q&sig2=DZUwkvIHwfNWtTtkcz94jg):
+
+```{r importing_font_xkcd3, eval=FALSE}
+library(extrafont)
+
+download.file("http://simonsoftware.se/other/xkcd.ttf", 
+              dest="xkcd.ttf", mode="wb")
+system("mkdir ~/.fonts")
+system("cp xkcd.ttf  ~/.fonts")
+font_import(paths = "~/.fonts", pattern="[X/x]kcd")
+fonts()
+loadfonts()
+```
+
+You can then create your graph:
+
+```{r bar12, cache=TRUE}
+#font_import(pattern="[X/x]kcd")
+#fonts()
+
+fill <- c("#56B4E9", "#F0E442")
+
+p3 <- ggplot() + 
+  geom_bar(aes(y = export, x = year, fill = product), data = charts.data, stat="identity") + 
+  geom_text(data=charts.data, aes(x = year, y = pos, label = export), colour="black", 
+            family="xkcd-Regular", size = 4, show_guide = F) + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  labs(x="Year", y="USD million") + 
+  ggtitle("Composition of Exports to China ($)") + 
+  scale_fill_manual(values=fill) + 
+  theme(axis.line = element_line(size=1, colour = "black"), 
+        panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
+        panel.border = element_blank(), panel.background = element_blank()) + 
+  theme(plot.title=element_text(family="xkcd-Regular"), text=element_text(family="xkcd-Regular"), 
+        axis.text.x=element_text(colour="black", size = 10), 
+        axis.text.y=element_text(colour="black", size = 10)) 
+p3
+```
+
+### Using 'The Economist' theme 
+
+There are a wider range of pre-built themes available as part of the `ggthemes` package (more information on these [here](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html)). Below we've applied `theme_economist()`, which approximates graphs in the Economist magazine. It is also important that the font change argument inside `theme` is optional and it's only to obtain a more similar result compared to the original. For an exact result you need 'Officina Sans' which is a commercial font and is available [here](http://www.myfonts.com/fonts/itc/officina-sans/).
+
+```{r bar10, cache=TRUE}
+p3 <- ggplot() + theme_economist() + scale_fill_economist() +
+  theme(plot.title=element_text(family="OfficinaSanITC-Book"), 
+        text=element_text(family="OfficinaSanITC-Book")) +
+  geom_bar(aes(y = export, x = year, fill = product), data = charts.data, 
+           stat="identity") + 
+  geom_text(data=charts.data, aes(x = year, y = pos, label = export), colour="white", size = 4,
+            family = "OfficinaSanITC-Book", show_guide = F) + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  labs(x="Year", y="USD million") + 
+  ggtitle("Composition of Exports to China ($)")
+p3
+```
+
+### Using 'Five Thirty Eight' theme 
+
+Below we've applied `theme_fivethirtyeight()`, which approximates graphs in the nice [FiveThirtyEight](http://fivethirtyeight.com/) website. Again, it is also important that the font change is optional and it's only to obtain a more similar result compared to the original. For an exact result you need 'Atlas Grotesk' which is a commercial font and is available [here](https://commercialtype.com/catalog/atlas).
+
+```{r bar11, cache=TRUE}
+p3 <- ggplot() + theme_fivethirtyeight() + scale_fill_fivethirtyeight() + 
+  theme(plot.title=element_text(family="Atlas Grotesk Medium"), 
+        text=element_text(family="Atlas Grotesk Light")) +
+  geom_bar(aes(y = export, x = year, fill = product), data = charts.data, 
+           stat="identity") + 
+  geom_text(data=charts.data, aes(x = year, y = pos, label = export), colour="white", size = 3.5,
+            family = "Atlas Grotesk Medium", show_guide = F) + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  labs(x="Year", y="USD million") + 
+  ggtitle("Composition of Exports to China ($)")
+p3
+```
+
+### Creating your own theme
+
+As before, you can modify your plots a lot as `ggplot2` allows many customisations. Here we present our original result shown at the top of page.
+
+```{r bar13, cache=TRUE}
+fill <- c("#40b8d0", "#b2d183")
+
+p3 <- ggplot() + 
+  geom_bar(aes(y = export, x = year, fill = product), data = charts.data, stat="identity") + 
+  geom_text(data=charts.data, aes(x = year, y = pos, label = export), colour="black", 
+            family="Tahoma", size = 4, show_guide = F) + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  labs(x="Year", y="USD million") + 
+  ggtitle("Composition of Exports to China ($)") + 
+  scale_fill_manual(values=fill) + 
+  theme(axis.line = element_line(size=1, colour = "black"), 
+        panel.grid.major = element_line(colour = "#d3d3d3"), panel.grid.minor = element_blank(), 
+        panel.border = element_blank(), panel.background = element_blank()) + 
+  theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+        text=element_text(family="Tahoma"),
+        axis.text.x=element_text(colour="black", size = 10), 
+        axis.text.y=element_text(colour="black", size = 10)) 
+p3
+```
+
+<!-- PART 4--> 
+
+#Stacked Bar Plots
+
+The first thing to do is load in the data and libraries, as below:
+
+```{r load_in_data4, cache=TRUE}
+library(ggplot2)
+library(ggthemes)
+library(extrafont)
+library(plyr)
+library(scales)
+charts.data <- read.csv("copper-data-for-tutorial.csv")
+```
+
+In this tutorial, we will work towards creating the bar plot below. We will take you from a basic stacked bar plot and explain all the customisations we add to the code step-by-step.
+
+```{r finalresult4, echo=FALSE}
+library(ggplot2)
+library(ggthemes)
+library(extrafont)
+library(plyr)
+library(scales)
+
+charts.data.2 <- read.csv("copper-data-for-tutorial.csv")
+charts.data.2 <- ddply(charts.data, .(year), 
+                     transform, pos = cumsum(percentage) - (0.5 * percentage))
+
+fill <- c("#40b8d0", "#b2d183")
+
+p4 <- ggplot() + 
+  geom_bar(aes(y = percentage, x = year, fill = product), data = charts.data.2, stat="identity") + 
+  geom_text(data=charts.data.2, aes(x = year, y = pos, label = paste0(percentage,"%")), 
+            colour="black", family="Tahoma", size=4) + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  scale_y_continuous(labels = dollar_format(suffix = "%", prefix = "")) + 
+  labs(x="Year", y="Percentage") + 
+  ggtitle("Composition of Exports to China (%)") + 
+  scale_fill_manual(values=fill) + 
+  theme(axis.line = element_line(size=1, colour = "black"), 
+        panel.grid.major = element_line(colour = "#d3d3d3"), panel.grid.minor = element_blank(), 
+        panel.border = element_blank(), panel.background = element_blank()) + 
+  theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+        text=element_text(family="Tahoma"),
+        axis.text.x=element_text(colour="black", size = 10), 
+        axis.text.y=element_text(colour="black", size = 10)) 
+p4
+```
+
+### Basic graph
+In order to initialise a plot we tell ggplot that `charts.data` is our data, and specify the variables on each axis. We then instruct ggplot to render this as a stacked bar plot by adding the `geom_bar` command.
+
+```{r bar14, cache=TRUE}
+charts.data <- read.csv("copper-data-for-tutorial.csv")
+
+p4 <- ggplot() + geom_bar(aes(y = percentage, x = year, fill = product), data = charts.data, 
+                           stat="identity")
+p4
+```
+
+### Adding data labels
+To label the bars according to some variable in the data, we add the `label` argument to the `ggplot(aes())` option. In this case, we have labelled the bars with numbers from the `export` variable.
+
+```{r bar15, cache=TRUE}
+p4 <- p4 + geom_text(data=charts.data, aes(x = year, y = percentage, 
+                                             label = paste0(percentage,"%")), size=4)
+p4
+```
+
+### Adjusting data labels position
+To adjust the position of the data labels from the default placement, we use the `ddply` function on the data, and create a new variable called `pos`. This variable is at the centre of each bar and can be used to specify the position of the labels by assigning it to the `y` argument in `geom_text(aes())`.
+
+```{r bar16, cache=TRUE}
+charts.data <- ddply(charts.data, .(year), 
+                     transform, pos = cumsum(percentage) - (0.5 * percentage))
+
+p4 <- ggplot() + geom_bar(aes(y = percentage, x = year, fill = product), data = charts.data, 
+                           stat="identity")
+p4 <- p4 + geom_text(data=charts.data, aes(x = year, y = pos, label = paste0(percentage,"%")), 
+                       size=4)
+p4
+```
+
+### Adjusting legend position
+To adjust the position of the legend from the default spot of right of the graph, we add the `theme` option and specify the `legend.position="bottom"` argument. We can also change the title to blank using the ` legend.title = element_blank()` argument and change the legend shape using the `legend.direction="horizontal"` argument.
+
+```{r bar17, cache=TRUE}
+p4 <- p4 + theme(legend.position="bottom", legend.direction="horizontal", 
+                   legend.title = element_blank())
+p4
+```
+
+### Changing variables display
+To change the variables' displayed name, we need to re-factor our data labels in `charts.data` data frame.
+
+```{r bar18, cache=TRUE}
+charts.data <- as.data.frame(charts.data)
+charts.data$product <- factor(charts.data$product, levels = c("copper","others"), 
+                              labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
+
+p4 <- ggplot() + geom_bar(aes(y = percentage, x = year, fill = product), data = charts.data, 
+                           stat="identity") + 
+  geom_text(data=charts.data, aes(x = year, y = pos, 
+                                  label = paste0(percentage,"%")), size=4) +
+  theme(legend.position="bottom", legend.direction="horizontal", legend.title = element_blank())
+p4
+```
+
+### Adjusting x-axis scale
+To change the axis tick marks, we use the `scale_x_continuous` and/or `scale_y_continuous` commands.
+
+```{r bar19, cache=TRUE}
+p4 <- p4 + scale_x_continuous(breaks=seq(2006,2014,1))
+p4
+```
+
+### Adjusting axis, title & units
+To add a title, we include the option `ggtitle` and include the name of the graph as a string argument, and to change the axis names we use the `labs` command.
+
+```{r bar20, cache=TRUE}
+p4 <- p4 + labs(x="Year", y="Percentage") + 
+  scale_y_continuous(labels = dollar_format(suffix = "%", prefix = "")) +
+  ggtitle("Composition of Exports to China (%)") 
+p4
+```
+
+### Adjusting color palette
+To change the colours, we use the `scale_colour_manual` command. Note that you can reference the specific colours you'd like to use with specific HEX codes. You can also reference colours by name, with the full list of colours recognised by R [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf).
+
+```{r bar21, cache=TRUE}
+fill <- c("#5F9EA0", "#E1B378")
+p4 <- p4 + scale_fill_manual(values=fill)
+p4
+```
+
+### Using the white theme
+As explained in the previous posts, we can also change the overall look of the graph using themes. We'll start using a simple theme customisation by adding `theme_bw() ` after `ggplot()`. As you can see, we can further tweak the graph using the `theme` option, which we've used so far to change the legend.
+
+```{r bar22, cache=TRUE}
+p4 <- ggplot() + theme_bw() +
+  geom_bar(aes(y = percentage, x = year, fill = product), data = charts.data, stat="identity") + 
+  geom_text(data=charts.data, aes(x = year, y = pos, label = paste0(percentage,"%")), size=4) + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  scale_y_continuous(labels = dollar_format(suffix = "%", prefix = "")) + 
+  labs(x="Year", y="Percentage") + 
+  ggtitle("Composition of Exports to China (%)")
+p4
+```
+
+### Creating an XKCD style chart
+Of course, you may want to create your own themes as well. `ggplot2` allows for a very high degree of customisation, including allowing you to use imported fonts. Below is an example of a theme Mauricio was able to create which mimics the visual style of [XKCD](http://xkcd.com/). In order to create this chart, you first need to import the XKCD font, install it on your machine and load it into R using the `extrafont` package.
+These instructions are taken from [here](https://www.google.com.au/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwiWzafchdPJAhVBpJQKHe_LDT8QFggbMAA&url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fxkcd%2Fvignettes%2Fxkcd-intro.pdf&usg=AFQjCNE-KciGY14e-Q1buYIVmTFC0ht__Q&sig2=DZUwkvIHwfNWtTtkcz94jg):
+
+```{r importing_font_xkcd4, eval=FALSE}
+library(extrafont)
+
+download.file("http://simonsoftware.se/other/xkcd.ttf", 
+              dest="xkcd.ttf", mode="wb")
+system("mkdir ~/.fonts")
+system("cp xkcd.ttf  ~/.fonts")
+font_import(paths = "~/.fonts", pattern="[X/x]kcd")
+fonts()
+loadfonts()
+```
+
+You can then create your graph:
+
+```{r bar25, cache=TRUE}
+#font_import(pattern="[X/x]kcd")
+#fonts()
+
+fill <- c("#56B4E9", "#F0E442")
+
+p4 <- ggplot() + 
+  geom_bar(aes(y = percentage, x = year, fill = product), data = charts.data, stat="identity") + 
+  geom_text(data=charts.data, aes(x = year, y = pos, label = paste0(percentage,"%")), 
+            colour="black", family="xkcd-Regular", size = 5, show.legend = F) + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  scale_y_continuous(labels = dollar_format(suffix = "%", prefix = "")) + 
+  labs(x="Year", y="Percentage") + 
+  ggtitle("Composition of Exports to China (%)") + 
+  scale_fill_manual(values=fill) + 
+  theme(axis.line = element_line(size=1, colour = "black"), 
+        panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
+        panel.border = element_blank(), panel.background = element_blank()) + 
+  theme(plot.title=element_text(family="xkcd-Regular"), text=element_text(family="xkcd-Regular"), 
+        axis.text.x=element_text(colour="black", size = 10), 
+        axis.text.y=element_text(colour="black", size = 10)) 
+p4
+```
+
+### Using 'The Economist' theme 
+There are a wider range of pre-built themes available as part of the `ggthemes` package (more information on these [here](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html)). Below we've applied `theme_economist()`, which approximates graphs in the Economist magazine. It is also important that the font change argument inside `theme` is optional and it's only to obtain a more similar result compared to the original. For an exact result you need 'Officina Sans' which is a commercial font and is available [here](http://www.myfonts.com/fonts/itc/officina-sans/).
+
+```{r bar23, cache=TRUE}
+p4 <- ggplot() + theme_economist() + scale_fill_economist() + 
+  theme(plot.title=element_text(family="OfficinaSanITC-Book"), 
+        text=element_text(family="OfficinaSanITC-Book")) +
+  geom_bar(aes(y = percentage, x = year, fill = product), data = charts.data, stat="identity") + 
+  geom_text(data=charts.data, aes(x = year, y = pos, label = paste0(percentage,"%")), 
+            colour="white", family="OfficinaSanITC-Book", size=4) + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  scale_y_continuous(labels = dollar_format(suffix = "%", prefix = "")) + 
+  labs(x="Year", y="Percentage") + 
+  ggtitle("Composition of Exports to China (%)")
+p4
+```
+
+### Using 'Five Thirty Eight' theme
+Below we've applied `theme_fivethirtyeight()`, which approximates graphs in the nice [FiveThirtyEight](http://fivethirtyeight.com/) website. Again, it is also important that the font change is optional and it's only to obtain a more similar result compared to the original. For an exact result you need 'Atlas Grotesk' which is a commercial font and is available [here](https://commercialtype.com/catalog/atlas).
+
+```{r bar24, cache=TRUE}
+p4 <- ggplot() + theme_fivethirtyeight() + scale_fill_fivethirtyeight() +   
+  theme(plot.title=element_text(family="Atlas Grotesk Medium"), 
+        text=element_text(family="Atlas Grotesk Light")) +
+  geom_bar(aes(y = percentage, x = year, fill = product), data = charts.data, stat="identity") + 
+  geom_text(data=charts.data, aes(x = year, y = pos, label = paste0(percentage,"%")), 
+            colour="white", family="Atlas Grotesk Medium", size=4) + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  scale_y_continuous(labels = dollar_format(suffix = "%", prefix = "")) + 
+  labs(x="Year", y="Percentage") + 
+  ggtitle("Composition of Exports to China (%)")
+p4
+```
+
+### Creating your own theme
+As before, you can modify your plots a lot as `ggplot2` allows many customisations. Here we present our original result shown at the top of page.
+
+```{r bar26, cache=TRUE}
+fill <- c("#40b8d0", "#b2d183")
+
+p4 <- ggplot() + 
+  geom_bar(aes(y = percentage, x = year, fill = product), data = charts.data, stat="identity") + 
+  geom_text(data=charts.data, aes(x = year, y = pos, label = paste0(percentage,"%")), 
+            colour="black", family="Tahoma", size=4) + 
+  theme(legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank()) + 
+  scale_x_continuous(breaks=seq(2006,2014,1)) + 
+  scale_y_continuous(labels = dollar_format(suffix = "%", prefix = "")) + 
+  labs(x="Year", y="Percentage") + 
+  ggtitle("Composition of Exports to China (%)") + 
+  scale_fill_manual(values=fill) + 
+  theme(axis.line = element_line(size=1, colour = "black"), 
+        panel.grid.major = element_line(colour = "#d3d3d3"), panel.grid.minor = element_blank(), 
+        panel.border = element_blank(), panel.background = element_blank()) + 
+  theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+        text=element_text(family="Tahoma"),
+        axis.text.x=element_text(colour="black", size = 10), 
+        axis.text.y=element_text(colour="black", size = 10)) 
+p4
+```
+
+<!-- PART 5 --> 
+
+#Scatterplots
+
+The first thing to do is load in the data, as below:
+
+```{r load_in_data5, cache=TRUE}
+library(ggplot2)
+library(ggthemes)
+library(extrafont)
+library(datasets)
+data(airquality)
+```
+
+We will then trim the data down to the final three months and turn the `Month` variable into a labelled factor variable. We end up with a new dataset called `aq_trim`.
+
+```{r trimming_data, cache=TRUE}
+aq_trim <- airquality[which(airquality$Month == 7 |
+                            airquality$Month == 8 |
+                            airquality$Month == 9), ]
+aq_trim$Month <- factor(aq_trim$Month, 
+                        labels = c("July", "August", "September"))
+```
+
+### Basic scatterplot
+
+In order to initialise a scatterplot we tell ggplot that `aq_trim` is our data, and specify that our x-axis plots the `Day` variable and our y-axis plots the `Ozone` variable. We then instruct ggplot to render this as a scatterplot by adding the `geom_point()` option.
+
+```{r scatter1, cache = TRUE}
+p5 <- ggplot(aq_trim, aes(x = Day, y = Ozone)) + 
+        geom_point()
+p5
+```
+
+### Changing the shape of the data points
+
+Perhaps we want the data points to be a different shape than a solid circle. We can change these by adding the `shape` argument to `geom_point`. An explanation of the allowed arguments for shape are described in [this article](http://sape.inf.usi.ch/quick-reference/ggplot2/shape). In this case, we will use shape 21, which is a circle that allows different colours for the outline and fill.
+
+```{r scatter2, cache = TRUE}
+p5 <- ggplot(aq_trim, aes(x = Day, y = Ozone)) + geom_point(shape = 21)
+p5
+```
+
+### Adjusting the axis scales
+
+To change the x-axis tick marks, we use the `scale_x_continuous` option. Similarly, to change the y-axis we use the `scale_y_continuous` option. Here we will change the x-axis to every 5 days, rather than 10, and change the range from 1 to 31 (as 0 is not a valid value for this variable).
+
+```{r scatter3, cache = TRUE}
+p5 <- p5 + scale_x_continuous(breaks = seq(1, 31, 5))
+p5
+```
+
+### Adjusting axis labels & adding title
+
+To add a title, we include the option `ggtitle` and include the name of the graph as a string argument. To change the axis names we add `x` and `y` arguments to the `labs` command.
+
+```{r scatter4, cache = TRUE}
+p5 <- p5 + ggtitle("Air Quality in New York by Day") + 
+            labs(x = "Day of the month", y = "Ozone (ppb)") 
+p5
+```
+
+### Adjusting the colour palette
+
+There are a few options for adjusting the colour. The most simple is to make every point one fixed colour. You can reference colours by name, with the full list of colours recognised by R [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf). Let's try making the outline `mediumvioletred` and the fill `springgreen`.
+
+```{r scatter5, cache = TRUE}
+p5 <- ggplot(aq_trim, aes(x = Day, y = Ozone)) + 
+        geom_point(shape = 21, colour = "mediumvioletred", 
+                   fill = "springgreen") +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)") +
+        scale_x_continuous(breaks = seq(1, 31, 5)) 
+p5
+```
+
+You can change the colours using specific HEX codes instead. Here we have made the outline #000000 (black) and the fill "#40b8d0 (vivid cyan).
+
+```{r scatter6, cache = TRUE}
+p5 <- ggplot(aq_trim, aes(x = Day, y = Ozone)) + 
+        geom_point(shape = 21, colour = "#000000", fill = "#40b8d0") +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)") +
+        scale_x_continuous(breaks = seq(1, 31, 5))
+p5
+```
+
+You can also change the colour of the data points according to the levels of another variable. This can be done either as a continuous gradient, or as a levels of a factor variable. Let's change the colour by the values of temperature:
+
+```{r scatter7, cache = TRUE}
+p5 <- ggplot(aq_trim, aes(x = Day, y = Ozone, fill = Temp)) + 
+        geom_point(shape = 21) +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)") +
+        scale_x_continuous(breaks = seq(1, 31, 5))
+p5
+```
+
+We can change the gradient's colours by adding the `scale_fill_continuous` option. The `low` and `high` arguments specify the range of colours the gradient should transition between.
+
+```{r scatter8, cache = TRUE}
+p5 <-  p5 + scale_fill_continuous(low = "plum1", high = "purple4")
+p5
+```
+
+We can see that higher temperatures seem to have higher ozone levels. 
+
+Let's now change the colours of the data points by a factor variable, `Month`.
+
+```{r scatter9, cache = TRUE}
+p5 <- ggplot(aq_trim, aes(x = Day, y = Ozone, fill = Month)) + 
+        geom_point(shape = 21) +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)") +
+        scale_x_continuous(breaks = seq(1, 31, 5))
+p5
+```
+
+Again, we can change the colours of these data points, this time using `scale_fill_manual`.
+
+```{r scatter10, cache = TRUE}
+fill = c("steelblue", "yellowgreen", "violetred1")
+
+p5 <- p5 + scale_fill_manual(values = fill)
+p5
+```
+
+### Adjusting legend position
+
+To adjust the position of the legend from the default spot of right of the graph, we add the `theme` option and specify the `legend.position = "bottom"` argument. We can also change the legend shape using the `legend.direction = "horizontal"` argument.
+
+```{r scatter12, cache = TRUE}
+p5 <- p5 + theme(legend.position = "bottom", legend.direction = "horizontal")
+p5
+```
+
+### Using the white theme
+
+As explained in the previous posts, we can also change the overall look of the plot using themes. We'll start using a simple theme customisation by adding `theme_bw() ` after `ggplot()`. As you can see, we can further tweak the graph using the `theme` option, which we've used so far to change the legend.
+
+```{r scatter14, cache = TRUE}
+p5 <- ggplot(aq_trim, aes(x = Day, y = Ozone, fill = Month)) + 
+        geom_point(shape = 21) +
+        theme_bw() +
+        theme() +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)", fill = "Months") +
+        scale_x_continuous(breaks = seq(1, 31, 5)) +
+        scale_fill_manual(values = fill) +
+        scale_size(range = c(1, 10)) +
+        theme(legend.position="bottom", legend.direction="horizontal")
+p5
+```
+
+### Creating an XKCD style chart
+
+Of course, you may want to create your own themes as well. `ggplot2` allows for a very high degree of customisation, including allowing you to use imported fonts. Below is an example of a theme Mauricio was able to create which mimics the visual style of [XKCD](http://xkcd.com/). In order to create this chart, you first need to import the XKCD font, install it on your machine and load it into R using the `extrafont` package.
+These instructions are taken from [here](https://www.google.com.au/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwiWzafchdPJAhVBpJQKHe_LDT8QFggbMAA&url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fxkcd%2Fvignettes%2Fxkcd-intro.pdf&usg=AFQjCNE-KciGY14e-Q1buYIVmTFC0ht__Q&sig2=DZUwkvIHwfNWtTtkcz94jg):
+
+```{r importing_font_xkcd5, eval=FALSE}
+library(extrafont)
+
+download.file("http://simonsoftware.se/other/xkcd.ttf", 
+              dest="xkcd.ttf", mode="wb")
+system("mkdir ~/.fonts")
+system("cp xkcd.ttf  ~/.fonts")
+font_import(paths = "~/.fonts", pattern="[X/x]kcd")
+fonts()
+loadfonts()
+```
+
+You can then create your graph:
+
+```{r scatter15, cache=TRUE}
+fill <- c("#56B4E9", "#F0E442", "violetred1")
+
+p5 <- ggplot(aq_trim, aes(x = Day, y = Ozone, fill = Month)) + 
+        geom_point(shape = 21) +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)", fill = "Months") +
+        scale_x_continuous(breaks = seq(1, 31, 5)) +
+        scale_fill_manual(values = fill) +
+        scale_size(range = c(1, 10)) +
+        theme(legend.position="bottom", legend.direction="horizontal",
+              axis.line = element_line(size=1, colour = "black"), 
+              panel.grid.major = element_blank(),
+              panel.grid.minor = element_blank(), 
+              panel.border = element_blank(),
+              panel.background = element_blank(),
+              plot.title=element_text(family="xkcd-Regular"), 
+              text=element_text(family="xkcd-Regular"),
+              axis.text.x=element_text(colour="black", size = 10), 
+              axis.text.y=element_text(colour="black", size = 10)) 
+p5
+```
+
+### Using 'The Economist' theme 
+
+There are a wider range of pre-built themes available as part of the `ggthemes` package (more information on these [here](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html)). Below we've applied `theme_economist()`, which approximates graphs in the Economist magazine.
+
+```{r scatter16, cache=TRUE}
+p5 <- ggplot(aq_trim, aes(x = Day, y = Ozone, fill = Month)) +
+        theme_economist() + 
+        scale_fill_economist() +
+        geom_point(shape = 21) +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)", fill = "Months") +
+        scale_x_continuous(breaks = seq(1, 31, 5)) +
+        scale_size(range = c(1, 10)) +
+        theme(legend.position = "bottom", legend.direction = "horizontal",
+              plot.title = element_text(family="Tahoma"),
+              text = element_text(family = "Tahoma"),
+              axis.title = element_text(size = 12),
+              legend.text = element_text(size = 9),
+              legend.title=element_text(face = "bold", size = 9))
+p5
+```
+
+### Creating your own theme
+
+As before, you can modify your plots a lot as `ggplot2` allows many customisations. Here we present our original result shown at the top of page.
+
+```{r scatter17, cache=TRUE}
+fill = c("steelblue", "yellowgreen", "violetred1")
+
+p5 <- ggplot(aq_trim, aes(x = Day, y = Ozone, fill = Month)) +
+        geom_point(shape = 21) +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)", fill = "Months") +
+        scale_x_continuous(breaks = seq(1, 31, 5)) +
+        scale_size(range = c(1, 10)) +
+        scale_fill_manual(values = fill) +
+        theme(legend.position = "bottom", legend.direction = "horizontal",
+              axis.line = element_line(size=1, colour = "black"), 
+              panel.grid.major = element_line(colour = "#d3d3d3"), 
+              panel.grid.minor = element_blank(), 
+              panel.border = element_blank(), panel.background = element_blank(),
+              plot.title = element_text(size = 14, family = "Tahoma", face = "bold"),
+              text=element_text(family="Tahoma"), 
+              axis.text.x=element_text(colour="black", size = 9), 
+              axis.text.y=element_text(colour="black", size = 9)) 
+p5
+```
+
+<!-- PART 6 --> 
+
+#Weighted Scatterplots
+
+The first thing to do is load in the data, as below:
+
+```{r load_in_data6, cache=TRUE}
+rm(list = ls())
+library(datasets)
+library(ggplot2)
+data(airquality)
+```
+
+We will then trim the data down to the final three months and turn the `Month` variable into a labelled factor variable. We end up with a new dataset called `aq_trim`.
+
+```{r trimming_data2, cache=TRUE}
+aq_trim <- airquality[which(airquality$Month == 7 |
+                            airquality$Month == 8 |
+                            airquality$Month == 9), ]
+aq_trim$Month <- factor(aq_trim$Month, 
+                        labels = c("July", "August", "September"))
+```
+
+In this tutorial, we will work towards creating the weighted scatterplot below. We will take you from a basic scatterplot and explain all the customisations we add to the code step-by-step.
+
+```{r wscatter_finalgraph, echo = FALSE}
+library(grid)
+library(extrafont)
+
+fill = c("steelblue", "yellowgreen", "violetred1")
+
+p6 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind, fill = Month)) +
+        geom_point(shape = 21) +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)",
+             size = "Wind Speed (mph)", fill = "Months") +
+        scale_x_continuous(breaks = seq(1, 31, 5)) +
+        scale_size(range = c(1, 10)) +
+        scale_fill_manual(values = fill) +
+        theme(legend.position = "bottom", legend.direction = "horizontal",
+              legend.box = "horizontal",
+              legend.key.size = unit(1, "cm"),
+              axis.line = element_line(size=1, colour = "black"), 
+              panel.grid.major = element_line(colour = "#d3d3d3"), 
+              panel.grid.minor = element_blank(), 
+              panel.border = element_blank(), panel.background = element_blank(),
+              plot.title = element_text(size = 14, family = "Tahoma", face = "bold"),
+              text=element_text(family="Tahoma"), 
+              axis.text.x=element_text(colour="black", size = 9), 
+              axis.text.y=element_text(colour="black", size = 9)) 
+p6
+```
+
+### Basic weighted scatterplot
+
+Let's start really slowly by revisiting how to create a basic scatterplot. In order to initialise this plot we tell ggplot that `aq_trim` is our data, and specify that our x-axis plots the `Day` variable and our y-axis plots the `Ozone` variable. We then instruct ggplot to render this as a scatterplot by adding the `geom_point()` option.
+
+```{r wscatter1}
+p6 <- ggplot(aq_trim, aes(x = Day, y = Ozone)) + 
+        geom_point()
+p6
+```
+
+In order to turn this into a weighted scatterplot, we simply add the `size` argument to `ggplot(aes())`. In this case, we want to weight the points by the `Wind` variable.
+
+```{r wscatter2}
+p6 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind)) + 
+        geom_point()
+p6
+```
+
+You can see we already have an interesting looking pattern, where days with higher wind speed tend to have lower ozone (or in other words, better air quality). Now let's make it beautiful!
+
+### Changing the shape of the data points
+
+Perhaps we want the data points to be a different shape than a solid circle. We can change these by adding the `shape` argument to `geom_point`. An explanation of the allowed arguments for shape are described in [this article](http://sape.inf.usi.ch/quick-reference/ggplot2/shape). In this case, we will use shape 21, which is a circle that allows different colours for the outline and fill.
+
+```{r wscatter3}
+p6 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind)) + 
+        geom_point(shape = 21)
+p6
+```
+
+### Adjusting the axis scales
+
+To change the x-axis tick marks, we use the `scale_x_continuous` option. Similarly, to change the y-axis we use the `scale_y_continuous` option. Here we will change the x-axis to every 5 days, rather than 10, and change the range from 1 to 31 (as 0 is not a valid value for this variable).
+
+```{r wscatter4}
+p6 <- p6 + scale_x_continuous(breaks = seq(1, 31, 5))
+p6
+```
+
+### Adjusting axis labels & adding title
+
+To add a title, we include the option `ggtitle` and include the name of the graph as a string argument. To change the axis names we add `x` and `y` arguments to the `labs` command.
+
+```{r wscatter5}
+p6 <- p6 + ggtitle("Air Quality in New York by Day") + 
+            labs(x = "Day of the month", y = "Ozone (ppb)") 
+p6
+```
+
+### Adjusting the colour palette
+
+There are a few options for adjusting the colour. The most simple is to make every point one fixed colour. You can reference colours by name, with the full list of colours recognised by R [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf). Let's try making the outline `mediumvioletred` and the fill `springgreen`.
+
+```{r wscatter6}
+p6 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind)) + 
+        geom_point(shape = 21, colour = "mediumvioletred", 
+                   fill = "springgreen") +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)") +
+        scale_x_continuous(breaks = seq(1, 31, 5)) 
+p6
+```
+
+You can change the colours using specific HEX codes instead. Here we have made the outline #000000 (black) and the fill "#40b8d0 (vivid cyan).
+
+```{r wscatter7}
+p6 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind)) + 
+        geom_point(shape = 21, colour = "#000000", fill = "#40b8d0") +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)") +
+        scale_x_continuous(breaks = seq(1, 31, 5))
+p6
+```
+
+You can also change the colour of the data points according to the levels of another variable. This can be done either as a continuous gradient, or as a levels of a factor variable. Let's change the colour by the values of temperature:
+
+```{r wscatter8}
+p6 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind, fill = Temp)) + 
+        geom_point(shape = 21) +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)") +
+        scale_x_continuous(breaks = seq(1, 31, 5))
+p6
+```
+
+We can change the gradient's colours by adding the `scale_fill_continuous` option. The `low` and `high` arguments specify the range of colours the gradient should transition between.
+
+```{r wscatter9}
+p6 <-  p6 + scale_fill_continuous(low = "plum1", high = "purple4")
+p6
+```
+
+We can see that higher temperatures seem to have higher ozone levels. 
+
+Let's now change the colours of the data points by a factor variable, `Month`.
+
+```{r wscatter10}
+p6 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind, fill = Month)) + 
+        geom_point(shape = 21) +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)") +
+        scale_x_continuous(breaks = seq(1, 31, 5))
+p6
+```
+
+Again, we can change the colours of these data points, this time using `scale_fill_manual`.
+
+```{r wscatter11}
+fill = c("steelblue", "yellowgreen", "violetred1")
+
+p6 <- p6 + scale_fill_manual(values = fill)
+p6
+```
+
+### Adjusting the size of the data points
+
+The default size of the the data points in a weighted scatterplot is mapped to the radius of the plots. If we want the data points to be proportional to the value of the weighting variable (e.g., a wind speed of 0 mph would have a value of 0), we need to use the `scale_size_area`.
+
+```{r wscatter12}
+p6 <- p6 + scale_size_area(max_size = 10)
+p6
+```
+
+For our graph, this makes the pattern for `Wind` a little hard to see. Another way to adjust the size of the data points is to use `scale_size` and specify a desired range.
+
+```{r wscatter13}
+p6 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind, fill = Month)) + 
+        geom_point(shape = 21) +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)") +
+        scale_x_continuous(breaks = seq(1, 31, 5)) +
+        scale_fill_manual(values = fill) +
+        scale_size(range = c(1, 10))
+p6
+```
+
+### Adjusting legend position
+
+To adjust the position of the legend from the default spot of right of the graph, we add the `theme` option and specify the `legend.position = "bottom"` argument. We can also change the legend shape using the `legend.direction = "horizontal"` argument.
+
+```{r wscatter14}
+p6 <- p6 + theme(legend.position = "bottom", legend.direction = "horizontal")
+p6
+```
+
+### Changing the legend titles
+
+To change the titles of the two legends, we use the `labs` option. In order to tell ggplot2 exactly what legend you're referring to, just have a look in the `ggplot` option and see what argument you used to create the legend in the first place. In this case we used the `size` argument for "Wind" and `fill` for "Month", so we pass these to `labs` with our new titles.
+
+```{r wscatter15}
+p6 <- p6 + labs(size = "Wind Speed (mph)", fill = "Months")
+p6
+```
+
+### Creating horizontal legends
+
+It looks a little awkward having the two titles sitting on top of each other, as well as taking up unnecessary space. To place the legends next to each other, we use the `legend.box = "horizontal"` argument in `theme`. Because the boxes around the legend keys aren't even in each of the legends, this means the legends don't align properly. To fix this, we change the box size around the legend keys using `legend.key.size`. We need to load in the `grid` package to get this argument to work.
+
+```{r wscatter16}
+library(grid) 
+p6 <- p6 + theme(legend.box = "horizontal",
+                 legend.key.size = unit(1, "cm"))
+p6
+```
+
+### Using the white theme
+
+As explained in the previous posts, we can also change the overall look of the plot using themes. We'll start using a simple theme customisation by adding `theme_bw() ` after `ggplot()`. As you can see, we can further tweak the graph using the `theme` option, which we've used so far to change the legend.
+
+```{r wscatter17}
+p6 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind, fill = Month)) + 
+        geom_point(shape = 21) +
+        theme_bw() +
+        theme() +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)",
+             size = "Wind Speed (mph)", fill = "Months") +
+        scale_x_continuous(breaks = seq(1, 31, 5)) +
+        scale_fill_manual(values = fill) +
+        scale_size(range = c(1, 10)) +
+        theme(legend.position="bottom", legend.direction="horizontal",
+              legend.box = "horizontal",
+              legend.key.size = unit(1, "cm"))
+p6
+```
+
+### Creating an XKCD style chart
+
+Of course, you may want to create your own themes as well. `ggplot2` allows for a very high degree of customisation, including allowing you to use imported fonts. Below is an example of a theme Mauricio was able to create which mimics the visual style of [XKCD](http://xkcd.com/). In order to create this chart, you first need to import the XKCD font, install it on your machine and load it into R using the `extrafont` package.
+These instructions are taken from [here](https://www.google.com.au/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwiWzafchdPJAhVBpJQKHe_LDT8QFggbMAA&url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fxkcd%2Fvignettes%2Fxkcd-intro.pdf&usg=AFQjCNE-KciGY14e-Q1buYIVmTFC0ht__Q&sig2=DZUwkvIHwfNWtTtkcz94jg):
+
+```{r importing_font_xkcd6, eval=FALSE}
+library(extrafont)
+
+download.file("http://simonsoftware.se/other/xkcd.ttf", 
+              dest="xkcd.ttf", mode="wb")
+system("mkdir ~/.fonts")
+system("cp xkcd.ttf  ~/.fonts")
+font_import(paths = "~/.fonts", pattern="[X/x]kcd")
+fonts()
+loadfonts()
+```
+
+You can then create your graph:
+
+```{r wscatter18, cache=TRUE}
+fill <- c("#56B4E9", "#F0E442", "violetred1")
+
+p6 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind, fill = Month)) + 
+        geom_point(shape = 21) +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)",
+             size = "Wind Speed (mph)", fill = "Months") +
+        scale_x_continuous(breaks = seq(1, 31, 5)) +
+        scale_fill_manual(values = fill) +
+        scale_size(range = c(1, 10)) +
+        theme(legend.position="bottom", legend.direction="horizontal",
+              legend.box = "horizontal",
+              legend.key.size = unit(1, "cm"),
+              axis.line = element_line(size=1, colour = "black"), 
+              panel.grid.major = element_blank(),
+              panel.grid.minor = element_blank(), 
+              panel.border = element_blank(),
+              panel.background = element_blank(),
+              plot.title=element_text(family="xkcd-Regular"), 
+              text=element_text(family="xkcd-Regular"),
+              axis.text.x=element_text(colour="black", size = 10), 
+              axis.text.y=element_text(colour="black", size = 10)) 
+p6
+```
+
+### Using 'The Economist' theme 
+
+There are a wider range of pre-built themes available as part of the `ggthemes` package (more information on these [here](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html)). Below we've applied `theme_economist()`, which approximates graphs in the Economist magazine.
+
+```{r wscatter19, cache=TRUE}
+p6 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind, fill = Month)) +
+        theme_economist() + 
+        scale_fill_economist() +
+        geom_point(shape = 21) +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)",
+             size = "Wind Speed (mph)", fill = "Months") +
+        scale_x_continuous(breaks = seq(1, 31, 5)) +
+        scale_size(range = c(1, 10)) +
+        theme(legend.position = "bottom", legend.direction = "horizontal",
+              legend.box = "horizontal",
+              legend.key.size = unit(1, "cm"),
+              plot.title = element_text(family="Tahoma"),
+              text = element_text(family = "Tahoma"),
+              axis.title = element_text(size = 12),
+              legend.text = element_text(size = 9),
+              legend.title=element_text(face = "bold", size = 9))
+p6
+```
+
+### Creating your own theme
+
+As before, you can modify your plots a lot as `ggplot2` allows many customisations. Here we present our original result shown at the top of page.
+
+```{r wscatter21, cache=TRUE}
+fill = c("steelblue", "yellowgreen", "violetred1")
+
+p6 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind, fill = Month)) +
+        geom_point(shape = 21) +
+        ggtitle("Air Quality in New York by Day") + 
+        labs(x = "Day of the month", y = "Ozone (ppb)",
+             size = "Wind Speed (mph)", fill = "Months") +
+        scale_x_continuous(breaks = seq(1, 31, 5)) +
+        scale_size(range = c(1, 10)) +
+        scale_fill_manual(values = fill) +
+        theme(legend.position = "bottom", legend.direction = "horizontal",
+              legend.box = "horizontal",
+              legend.key.size = unit(1, "cm"),
+              axis.line = element_line(size=1, colour = "black"), 
+              panel.grid.major = element_line(colour = "#d3d3d3"), 
+              panel.grid.minor = element_blank(), 
+              panel.border = element_blank(), panel.background = element_blank(),
+              plot.title = element_text(size = 14, family = "Tahoma", face = "bold"),
+              text=element_text(family="Tahoma"), 
+              axis.text.x=element_text(colour="black", size = 9), 
+              axis.text.y=element_text(colour="black", size = 9)) 
+p6
+```
+
+<!-- PART 7 --> 
+
+#Histograms
+
+The first thing to do is load in the data, as below:
+
+```{r load_in_data7, cache=TRUE}
+rm(list = ls())
+library(datasets)
+library(ggplot2)
+
+data(airquality)
+```
+
+In this tutorial, we will work towards creating the histogram below. We will take you from a basic histogram and explain all the customisations we add to the code step-by-step.
+
+```{r histogram_final, echo = FALSE}
+library(RColorBrewer)
+library(grid)
+
+airquality_trimmed <- airquality[which(airquality$Month == 5 | 
+                                       airquality$Month == 7), ]
+airquality_trimmed$Month.f <- factor(airquality_trimmed$Month, 
+                                     labels = c("May", "July"))
+
+p7 <- ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) + 
+        geom_histogram(aes(y = ..count..), binwidth = 10,
+                   position="identity", alpha=0.6) +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                              breaks = seq(0, 175, 25),
+                              limits=c(0, 175)) +
+        scale_y_continuous(name = "Count") +
+        ggtitle("Frequency histogram of mean ozone") +
+        theme_bw() +
+        theme(axis.line = element_line(size=1, colour = "black"), 
+              panel.grid.major = element_line(colour = "#d3d3d3"), 
+              panel.grid.minor = element_blank(), 
+              panel.border = element_blank(), panel.background = element_blank(),
+              plot.title = element_text(size = 14, family = "Tahoma", face = "bold"),
+              text=element_text(family="Tahoma"), 
+              axis.text.x=element_text(colour="black", size = 9), 
+              axis.text.y=element_text(colour="black", size = 9), 
+              legend.position = "bottom", legend.position = "horizontal") +
+        scale_fill_brewer(palette="Accent") +
+        labs(fill="Month")
+```
+
+### Basic histogram
+
+In order to initialise a plot we tell ggplot that `airquality` is our data, and specify that our x axis plots the `Ozone` variable. We then instruct ggplot to render this as a histogram by adding the `geom_histogram()` option.
+
+```{r histogram_1}
+p7 <- ggplot(airquality, aes(x = Ozone)) + 
+        geom_histogram()
+p7
+```
+
+## Adding a normal density curve
+
+We can overlay a normal density function curve on top of our histogram to see how closely (or not) it fits a normal distribution. In this case, we can see it deviates from a normal distribution, showing marked positive skew. In order to overlay the function curve, we add the option `stat_function(fun = dnorm)`, and specify the shape using the `mean = mean(airquality$Ozone)` and `sd = sd(airquality$Ozone)` arguments. If you have missing data like we did, make sure you pass the `na.rm = TRUE` argument to the mean and sd parameters. Finally, you can change the colour using the `colour = "red"` argument. We will discuss how to customise colours further below.
+
+One further change we must make to display the normal curve correctly is adding `aes(y = ..density..)` to the `geom_histogram` option. Note that the normal density curve will not work if you are using the frequency rather than the density, which we are changing in our next step.  
+
+```{r histogram_2}
+p7 <- ggplot(airquality, aes(x = Ozone)) + 
+        geom_histogram(aes(y = ..density..)) +
+        stat_function(fun = dnorm, colour = "red", 
+                      arg = list(mean = mean(airquality$Ozone, na.rm = TRUE), 
+                                 sd = sd(airquality$Ozone, na.rm = TRUE)))
+p7
+```
+
+## Changing from density to frequency
+
+Let's go back to the basic plot and lose the function curve. To change the y-axis from density to frequency, we add the `aes(y = ..count..)` option to `geom_histogram`.
+
+```{r histogram_3}
+p7 <- ggplot(airquality, aes(x = Ozone)) + 
+        geom_histogram(aes(y = ..count..))
+p7
+```
+
+## Adjusting binwidth
+
+To change the binwidth, we add a `binwidth` argument to `geom_histogram`. In this case, we will make binwidth 5 units of the `Ozone` variable.
+
+```{r histogram_4}
+p7 <- ggplot(airquality, aes(x = Ozone)) + 
+        geom_histogram(aes(y = ..count..), binwidth = 5)
+p7
+```
+
+## Customising axis labels
+
+### Single line labels
+
+In order to change the axis labels, we have a couple of options. In this case, we have used the `scale_x_continuous` and `scale_y_continuous` options, as these have further customisation options for the axes we will use below. In each, we add the desired name to the `name` argument as a string.
+
+```{r histogram_5}
+p7 <- ggplot(airquality, aes(x = Ozone)) + 
+        geom_histogram(aes(y = ..count..), binwidth = 5) +
+        scale_x_continuous(name = "Mean ozone in parts per billion") +
+        scale_y_continuous(name = "Count")
+p7
+```
+
+### Multiline labels
+
+ggplot also allows for the use of multiline names (in both axes and titles). Here, we've changed the x-axis label so that it goes over two lines using the `\n` character to break the line.
+
+```{r histogram_6}
+p7 <- ggplot(airquality, aes(x = Ozone)) + 
+        geom_histogram(aes(y = ..count..), binwidth = 5) +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion") +
+        scale_y_continuous(name = "Count")
+p7
+```
+
+## Changing axis ticks
+
+The next thing we will change is the axis ticks. Let's make the x-axis ticks appear at every 25 units rather than 50 using the `breaks = seq(0, 175, 25)` argument in `scale_x_continuous`. (The `seq` function is a base R function that indicates the start and endpoints and the units to increment by respectively. See `help(seq)` for more information.) We ensure that the x-axis begins and ends where we want by also adding the argument `limits = c(0, 175)` to `scale_x_continuous`.
+
+```{r histogram_7}
+p7 <- ggplot(airquality, aes(x = Ozone)) + 
+        geom_histogram(aes(y = ..count..), binwidth = 5) +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                           breaks = seq(0, 175, 25),
+                           limits=c(0, 175)) +
+        scale_y_continuous(name = "Count")
+p7
+``` 
+
+## Adding a title
+
+To add a title, we include the option `ggtitle` and include the name of the graph as a string argument.
+
+```{r histogram_8}
+p7 <- ggplot(airquality, aes(x = Ozone)) + 
+        geom_histogram(aes(y = ..count..), binwidth = 5) +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                           breaks = seq(0, 175, 25),
+                           limits=c(0, 175)) +
+        scale_y_continuous(name = "Count") +
+        ggtitle("Frequency histogram of mean ozone")
+p7
+```
+
+## Changing the colour of the bars
+
+### By colour name
+
+To change the line and fill colours of the bars, we add a valid colour to the `colour` and `fill` arguments in `geom_histogram` (note that I assigned these colours to variables outside of the plot to make it easier to change them). A list of valid colours is [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf).
+
+```{r histogram_9}
+barfill <- "gold1"
+barlines <- "goldenrod2"
+
+p7 <- ggplot(airquality, aes(x = Ozone)) + 
+        geom_histogram(aes(y = ..count..), binwidth = 5,
+                       colour = barlines, fill = barfill) +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                           breaks = seq(0, 175, 25),
+                           limits=c(0, 175)) +
+        scale_y_continuous(name = "Count") +
+        ggtitle("Frequency histogram of mean ozone")
+p7
+```
+
+### By HEX code
+
+If you want to go beyond the options in the list above, you can also specify exact HEX colours by including them as a string preceded by a hash, e.g., "#FFFFFF". Below, we have called two shades of blue for the fill and lines using their HEX codes.
+
+```{r histogram_10}
+barfill <- "#4271AE"
+barlines <- "#1F3552"
+
+p7 <- ggplot(airquality, aes(x = Ozone)) + 
+        geom_histogram(aes(y = ..count..), binwidth = 5,
+                       colour = barlines, fill = barfill) +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                           breaks = seq(0, 175, 25),
+                           limits=c(0, 175)) +
+        scale_y_continuous(name = "Count") +
+        ggtitle("Frequency histogram of mean ozone")
+p7
+```
+
+### Colour gradients
+
+You can also add a gradient to your colour scheme that varies according to the frequency of the values. Below is the default gradient colour scheme. In order to do this, you can see we have changed the `aes(y = ..count..)` argument in `geom_histogram` to `aes(fill = ..count..)`. 
+
+```{r histogram_11}
+p7 <- ggplot(airquality, aes(x = Ozone)) + 
+        geom_histogram(aes(fill = ..count..), binwidth = 5) +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                           breaks = seq(0, 175, 25),
+                           limits=c(0, 175)) +
+        scale_y_continuous(name = "Count") +
+        ggtitle("Frequency histogram of mean ozone")
+p7
+```
+
+You can customise the gradient by changing the anchoring colours for high and low. To do so, we have added the option `scale_fill_gradient` to the plot with the arguments `Count` (the name of the legend), `low` (the colour for the least frequent values) and `high` (the colour for the most frequent values).
+
+```{r histogram_12}
+p7 <- ggplot(airquality, aes(x = Ozone)) + 
+        geom_histogram(aes(fill = ..count..), binwidth = 5) +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                           breaks = seq(0, 175, 25),
+                           limits=c(0, 175)) +
+        scale_y_continuous(name = "Count") +
+        ggtitle("Frequency histogram of mean ozone") +
+        scale_fill_gradient("Count", low = "blue", high = "red")
+p7
+```
+
+### Using the white theme
+
+As explained in the previous posts, we can also change the overall look of the plot using themes. We'll start using a simple theme customisation by adding `theme_bw() ` after `ggplot()`. As you can see, we can further tweak the graph using the `theme` option, which we've used so far to change the legend.
+
+```{r histogram_13}
+barfill <- "#4271AE"
+barlines <- "#1F3552"
+
+p7 <- ggplot(airquality, aes(x = Ozone)) + 
+        geom_histogram(aes(y = ..count..), binwidth = 5,
+                       colour = barlines, fill = barfill) +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                           breaks = seq(0, 175, 25),
+                           limits=c(0, 175)) +
+        scale_y_continuous(name = "Count") +
+        ggtitle("Frequency histogram of mean ozone") +
+        theme_bw()
+p7
+```
+
+### Creating an XKCD style chart
+
+Of course, you may want to create your own themes as well. `ggplot2` allows for a very high degree of customisation, including allowing you to use imported fonts. Below is an example of a theme Mauricio was able to create which mimics the visual style of [XKCD](http://xkcd.com/). In order to create this chart, you first need to import the XKCD font, install it on your machine and load it into R using the `extrafont` package.
+These instructions are taken from [here](https://www.google.com.au/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwiWzafchdPJAhVBpJQKHe_LDT8QFggbMAA&url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fxkcd%2Fvignettes%2Fxkcd-intro.pdf&usg=AFQjCNE-KciGY14e-Q1buYIVmTFC0ht__Q&sig2=DZUwkvIHwfNWtTtkcz94jg):
+
+```{r importing_font_xkcd7, eval=FALSE}
+library(extrafont)
+
+download.file("http://simonsoftware.se/other/xkcd.ttf", 
+              dest="xkcd.ttf", mode="wb")
+system("mkdir ~/.fonts")
+system("cp xkcd.ttf  ~/.fonts")
+font_import(paths = "~/.fonts", pattern="[X/x]kcd")
+fonts()
+loadfonts()
+```
+
+You can then create your graph:
+
+```{r histogram_14, cache=TRUE}
+p7 <- ggplot(airquality, aes(x = Ozone)) + 
+        geom_histogram(aes(y = ..count..), binwidth = 10,
+                       colour = "black", fill = "#56B4E9") +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                           breaks = seq(0, 175, 25),
+                           limits=c(0, 175)) +
+        scale_y_continuous(name = "Count") +
+        ggtitle("Frequency histogram of mean ozone") + 
+        theme(axis.line = element_line(size=1, colour = "black"), 
+              panel.grid.major = element_blank(),
+              panel.grid.minor = element_blank(), 
+              panel.border = element_blank(), 
+              panel.background = element_blank(),
+              plot.title=element_text(size = 20, family="xkcd-Regular"), 
+              text=element_text(size = 16, family="xkcd-Regular"), 
+              axis.text.x=element_text(colour="black", size = 12), 
+              axis.text.y=element_text(colour="black", size = 12))
+p7
+```
+
+### Using 'The Economist' theme 
+
+There are a wider range of pre-built themes available as part of the `ggthemes` package (more information on these [here](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html)). Below we've applied `theme_economist()`, which approximates graphs in the Economist magazine.
+
+```{r histogram_15, cache=TRUE}
+library(ggthemes)
+
+barfill <- "#4271AE"
+barlines <- "#1F3552"
+
+p7 <- ggplot(airquality, aes(x = Ozone)) + 
+        geom_histogram(aes(y = ..count..), binwidth = 5,
+                   colour = barlines, fill = barfill) +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                              breaks = seq(0, 175, 25),
+                              limits=c(0, 175)) +
+        scale_y_continuous(name = "Count") +
+        ggtitle("Frequency histogram of mean ozone") +
+        theme_economist() +
+        theme(legend.position = "bottom", legend.direction = "horizontal",
+              legend.box = "horizontal",
+              legend.key.size = unit(1, "cm"),
+              plot.title = element_text(family="Tahoma"),
+              text = element_text(family = "Tahoma"),
+              axis.title = element_text(size = 12),
+              legend.text = element_text(size = 9),
+              legend.title=element_text(face = "bold", size = 9))
+p7
+```
+
+### Creating your own theme
+
+As before, you can modify your plots a lot as `ggplot2` allows many customisations. Here is a custom plot where we have modified the axes, background and font.
+
+```{r histogram_16, cache=TRUE}
+library(grid) 
+
+barfill <- "#4271AE"
+barlines <- "#1F3552"
+
+p7 <- ggplot(airquality, aes(x = Ozone)) + 
+        geom_histogram(aes(y = ..count..), binwidth = 5,
+                       colour = barlines, fill = barfill) +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                           breaks = seq(0, 175, 25),
+                           limits=c(0, 175)) +
+        scale_y_continuous(name = "Count") +
+        ggtitle("Frequency histogram of mean ozone") +
+        theme_bw() +
+        theme(axis.line = element_line(size=1, colour = "black"), 
+              panel.grid.major = element_line(colour = "#d3d3d3"), 
+              panel.grid.minor = element_blank(), 
+              panel.border = element_blank(), panel.background = element_blank(),
+              plot.title = element_text(size = 14, family = "Tahoma", face = "bold"),
+              text=element_text(family="Tahoma"), 
+              axis.text.x=element_text(colour="black", size = 9), 
+              axis.text.y=element_text(colour="black", size = 9)) 
+p7
+```
+
+## Adding lines
+
+Let's say that we want to add a cutoff value to the chart (75 parts of ozone per billion). We add the `geom_vline` option to the chart, and specify where it goes on the x-axis using the `xintercept` argument. We can customise how it looks using the `colour` and `linetype` arguments in `geom_vline`. (In the the same way, horizontal lines can be added using the `geom_hline`.)
+
+```{r histogram_17}
+barfill <- "#4271AE"
+barlines <- "#1F3552"
+
+p7 <- ggplot(airquality, aes(x = Ozone)) + 
+        geom_histogram(aes(y = ..count..), binwidth = 5,
+                       colour = barlines, fill = barfill) +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                           breaks = seq(0, 175, 25),
+                           limits=c(0, 175)) +
+        scale_y_continuous(name = "Count") +
+        ggtitle("Frequency histogram of mean ozone") +
+        theme_bw() +
+        theme(axis.line = element_line(size=1, colour = "black"), 
+              panel.grid.major = element_line(colour = "#d3d3d3"), 
+              panel.grid.minor = element_blank(), 
+              panel.border = element_blank(), panel.background = element_blank(),
+              plot.title = element_text(size = 14, family = "Tahoma", face = "bold"),
+              text=element_text(family="Tahoma"), 
+              axis.text.x=element_text(colour="black", size = 9), 
+              axis.text.y=element_text(colour="black", size = 9)) +
+        geom_vline(xintercept = 75, size = 1, colour = "#FF3721", 
+                   linetype = "dashed")
+p7
+```
+
+## Multiple histograms
+
+You can also easily create multiple histograms by the levels of another variable. There are two options, in separate (panel) plots, or in the same plot.
+
+### In panel plots
+
+We first need to do a little data wrangling. In order to make the graphs a bit clearer, we've kept only months "5" (May) and "7" (July) in a new dataset `airquality_trimmed`. We also need to convert this variable into either a character or factor variable. We have created a new factor variable `Month.f`.
+
+In order to produce a panel plot by month, we add the `facet_grid(. ~ Month.f)` option to the plot. The additional `scale = free` argument in `facet_grid` means that the y-axes of each plot do not need to be the same.
+
+```{r histogram_18}
+airquality_trimmed <- airquality[which(airquality$Month == 5 | 
+                                       airquality$Month == 7), ]
+airquality_trimmed$Month.f <- factor(airquality_trimmed$Month, 
+                                     labels = c("May", "July"))
+
+p7 <- ggplot(airquality_trimmed, aes(x = Ozone)) + 
+        geom_histogram(aes(y = ..count..), binwidth = 10,
+                       colour = barlines, fill = barfill) +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                           breaks = seq(0, 175, 25),
+                           limits=c(0, 175)) +
+        scale_y_continuous(name = "Count") +
+        ggtitle("Frequency histogram of mean ozone") +
+        theme_bw() +
+        theme(axis.line = element_line(size=1, colour = "black"), 
+              panel.grid.major = element_line(colour = "#d3d3d3"), 
+              panel.grid.minor = element_blank(), 
+              panel.border = element_blank(), panel.background = element_blank(),
+              plot.title = element_text(size = 14, family = "Tahoma", face = "bold"),
+              text=element_text(family="Tahoma"), 
+              axis.text.x=element_text(colour="black", size = 9), 
+              axis.text.y=element_text(colour="black", size = 9)) +
+        facet_grid(. ~ Month.f, scales = "free")
+p7
+```
+
+### In the same plot
+
+In order to plot the two months in the same plot, we add several things. Firstly, in the `ggplot` function, we add a `fill = Month.f` argument to `aes`. Secondly, in order to more clearly see the graph, we add two arguments to the `geom_histogram` option, `position = "identity"` and `alpha = 0.6`. This controls the position and transparency of the curves respectively. Finally, you can customise the colours of the histograms by adding the `scale_fill_brewer` to the plot from the `RColorBrewer` package. [This](http://moderndata.plot.ly/create-colorful-graphs-in-r-with-rcolorbrewer-and-plotly/) blog post describes the available packages.
+
+```{r histogram_19}
+library(RColorBrewer)
+
+p7 <- ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) + 
+        geom_histogram(aes(y = ..count..), binwidth = 10,
+                       position="identity", alpha=0.6) +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                           breaks = seq(0, 175, 25),
+                           limits=c(0, 175)) +
+        scale_y_continuous(name = "Count") +
+        ggtitle("Frequency histogram of mean ozone") +
+        theme_bw() +
+        theme(axis.line = element_line(size=1, colour = "black"), 
+              panel.grid.major = element_line(colour = "#d3d3d3"), 
+              panel.grid.minor = element_blank(), 
+              panel.border = element_blank(), panel.background = element_blank(),
+              plot.title = element_text(size = 14, family = "Tahoma", face = "bold"),
+              text=element_text(family="Tahoma"), 
+              axis.text.x=element_text(colour="black", size = 9), 
+              axis.text.y=element_text(colour="black", size = 9)) +
+        scale_fill_brewer(palette="Accent")
+p7
+```
+
+## Formatting the legend
+
+Finally, we can format the legend. Firstly, we can change the position by adding the `legend.position = "bottom"` argument to the `theme` option, which moves the legend under the plot. Secondly, we can fix the title by adding the `labs(fill="Month")` option to the plot.
+
+```{r histogram_20}
+p7 <- ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) + 
+        geom_histogram(aes(y = ..count..), binwidth = 10,
+                   position="identity", alpha=0.6) +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                              breaks = seq(0, 175, 25),
+                              limits=c(0, 175)) +
+        scale_y_continuous(name = "Count") +
+        ggtitle("Frequency histogram of mean ozone") +
+        theme_bw() +
+        theme(axis.line = element_line(size=1, colour = "black"), 
+              panel.grid.major = element_line(colour = "#d3d3d3"), 
+              panel.grid.minor = element_blank(), 
+              panel.border = element_blank(), panel.background = element_blank(),
+              plot.title = element_text(size = 14, family = "Tahoma", face = "bold"),
+              text=element_text(family="Tahoma"), 
+              axis.text.x=element_text(colour="black", size = 9), 
+              axis.text.y=element_text(colour="black", size = 9), 
+              legend.position = "bottom", legend.position = "horizontal") +
+        scale_fill_brewer(palette="Accent") +
+        labs(fill="Month")
+p7
+```
+
+<!-- PART 8 --> 
+
+#Density Plots
+
+The first thing to do is load in the data, as below:
+
+```{r load_in_data8, cache=TRUE}
+rm(list = ls())
+library(datasets)
+library(ggplot2)
+
+data(airquality)
+```
+
+In this tutorial, we will work towards creating the density plot below. We will take you from a basic density plot and explain all the customisations we add to the code step-by-step.
+
+```{r density_final, echo = FALSE}
+library(RColorBrewer)
+
+airquality_trimmed <- airquality[which(airquality$Month == 5 |
+                                       airquality$Month == 6 |
+                                       airquality$Month == 7), ]
+airquality_trimmed$Month.f <- factor(airquality_trimmed$Month, 
+                                     labels = c("May", "June", "July"))
+
+ggplot(airquality_trimmed, aes(x = Ozone, colour = Month.f)) + 
+    geom_density(position="identity", fill = NA, size = 1) +
+    scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                              breaks = seq(0, 200, 25),
+                              limits=c(0, 200)) +
+    scale_y_continuous(name = "Density") +
+    ggtitle("Density plot of mean ozone") +
+    theme_bw() +
+    theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+                text = element_text(size = 12, family = "Tahoma"),
+           legend.position = "bottom") +
+    scale_colour_brewer(palette="Accent") +
+    labs(colour = "Month")
+```
+
+### Basic density plot
+
+In order to initialise a plot we tell ggplot that `airquality` is our data, and specify that our x axis plots the `Ozone` variable. We then instruct ggplot to render this as a density plot by adding the `geom_density()` option.
+
+```{r density_1}
+p8 <- ggplot(airquality, aes(x = Ozone)) + 
+        geom_density()
+p8
+```
+
+### Customising axis labels
+
+In order to change the axis labels, we have a couple of options. In this case, we have used the `scale_x_continuous` and `scale_y_continuous` options, as these have further customisation options for the axes we will use below. In each, we add the desired name to the `name` argument as a string.
+
+```{r density_2}
+p8 <- p8 + scale_x_continuous(name = "Mean ozone in parts per billion") +
+        scale_y_continuous(name = "Density")
+p8
+```
+
+ggplot also allows for the use of multiline names (in both axes and titles). Here, we've changed the x-axis label so that it goes over two lines using the `\n` character to break the line.
+
+```{r density_3}
+p8 <- p8 + scale_x_continuous(name = "Mean ozone in\nparts per billion")
+p8
+```
+
+### Changing axis ticks
+
+The next thing we will change is the axis ticks. Let's make the x-axis ticks appear at every 25 units rather than 50 using the `breaks = seq(0, 200, 25)` argument in `scale_x_continuous`. (The `seq` function is a base R function that indicates the start and endpoints and the units to increment by respectively. See `help(seq)` for more information.) We ensure that the x-axis begins and ends where we want by also adding the argument `limits = c(0, 200)` to `scale_x_continuous`.
+
+```{r density_4}
+p8 <- p8 + scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                              breaks = seq(0, 200, 25),
+                              limits=c(0, 200))
+p8
+``` 
+
+### Adding a title
+
+To add a title, we include the option `ggtitle` and include the name of the graph as a string argument.
+
+```{r density_5}
+p8 <- p8 + ggtitle("Density plot of mean ozone")
+p8
+```
+
+### Changing the colour of the curves
+
+To change the line and fill colours of the density plot, we add a valid colour to the `colour` and `fill` arguments in `geom_density()` (note that I assigned these colours to variables outside of the plot to make it easier to change them). A list of valid colours is [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf).
+
+```{r density_6}
+fill <- "gold1"
+line <- "goldenrod2"
+
+p8 <- ggplot(airquality, aes(x = Ozone)) + 
+        geom_density(fill = fill, colour = line) +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                           breaks = seq(0, 200, 25),
+                           limits=c(0, 200)) +
+        scale_y_continuous(name = "Density") +
+        ggtitle("Density plot of mean ozone")
+p8
+```
+
+If you want to go beyond the options in the list above, you can also specify exact HEX colours by including them as a string preceded by a hash, e.g., "#FFFFFF". Below, we have called two shades of blue for the fill and lines using their HEX codes.
+
+```{r density_7}
+fill <- "#4271AE"
+line <- "#1F3552"
+
+p8 <- ggplot(airquality, aes(x = Ozone)) + 
+        geom_density(fill = fill, colour = line) +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                           breaks = seq(0, 200, 25),
+                           limits=c(0, 200)) +
+        scale_y_continuous(name = "Density") +
+        ggtitle("Density plot of mean ozone")
+p8
+```
+
+You can also specify the degree of transparency in the density fill area using the argument `alpha` in `geom_density`. This ranges from 0 to 1.
+
+```{r density_8}
+p8 <- ggplot(airquality, aes(x = Ozone)) + 
+        geom_density(fill = fill, colour = line,
+                     alpha = 0.6) +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                           breaks = seq(0, 200, 25),
+                           limits=c(0, 200)) +
+        scale_y_continuous(name = "Density") +
+        ggtitle("Density plot of mean ozone")
+p8
+```
+
+### Using the white theme
+
+As explained in the previous posts, we can also change the overall look of the plot using themes. We'll start using a simple theme customisation by adding `theme_bw() `. As you can see, we can further tweak the graph using the `theme` option, which we've used so far to change the legend.
+
+```{r density_9}
+p8 <- p8 + theme_bw()
+p8
+```
+
+### Creating an XKCD style chart
+
+Of course, you may want to create your own themes as well. `ggplot2` allows for a very high degree of customisation, including allowing you to use imported fonts. Below is an example of a theme Mauricio was able to create which mimics the visual style of [XKCD](http://xkcd.com/). In order to create this chart, you first need to import the XKCD font, install it on your machine and load it into R using the `extrafont` package.
+These instructions are taken from [here](https://www.google.com.au/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwiWzafchdPJAhVBpJQKHe_LDT8QFggbMAA&url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fxkcd%2Fvignettes%2Fxkcd-intro.pdf&usg=AFQjCNE-KciGY14e-Q1buYIVmTFC0ht__Q&sig2=DZUwkvIHwfNWtTtkcz94jg):
+
+```{r importing_font_xkcd8, eval=FALSE}
+library(extrafont)
+
+download.file("http://simonsoftware.se/other/xkcd.ttf", 
+              dest="xkcd.ttf", mode="wb")
+system("mkdir ~/.fonts")
+system("cp xkcd.ttf  ~/.fonts")
+font_import(paths = "~/.fonts", pattern="[X/x]kcd")
+fonts()
+loadfonts()
+```
+
+You can then create your graph:
+
+```{r density_10, cache=TRUE}
+p8 <- ggplot(airquality, aes(x = Ozone)) + 
+        geom_density(colour = "black", fill = "#56B4E9") +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                           breaks = seq(0, 200, 25),
+                           limits=c(0, 200)) +
+        scale_y_continuous(name = "Density") +
+        ggtitle("Density plot of mean ozone") +
+        theme(axis.line = element_line(size=1, colour = "black"), 
+              panel.grid.major = element_blank(),
+              panel.grid.minor = element_blank(), 
+              panel.border = element_blank(), 
+              panel.background = element_blank(),
+              plot.title=element_text(size = 20, family="xkcd-Regular"), 
+              text=element_text(size = 16, family="xkcd-Regular"), 
+              axis.text.x=element_text(colour="black", size = 12), 
+              axis.text.y=element_text(colour="black", size = 12))
+p8
+```
+
+### Using 'The Economist' theme 
+
+There are a wider range of pre-built themes available as part of the `ggthemes` package (more information on these [here](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html)). Below we've applied `theme_economist()`, which approximates graphs in the Economist magazine.
+
+```{r density_11, cache=TRUE}
+library(ggthemes)
+library(grid)
+
+fill <- "#4271AE"
+line <- "#1F3552"
+
+p8 <- ggplot(airquality, aes(x = Ozone)) + 
+        geom_density(fill = fill, colour = line) +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                           breaks = seq(0, 200, 25),
+                           limits=c(0, 200)) +
+        scale_y_continuous(name = "Density") +
+        ggtitle("Density plot of mean ozone") +
+        theme_economist() +
+        theme(legend.position = "bottom", legend.direction = "horizontal",
+              legend.box = "horizontal",
+              legend.key.size = unit(1, "cm"),
+              plot.title = element_text(family="Tahoma"),
+              text = element_text(family = "Tahoma"),
+              axis.title = element_text(size = 12),
+              legend.text = element_text(size = 9),
+              legend.title=element_text(face = "bold", size = 9))
+p8
+```
+
+### Creating your own theme
+
+As before, you can modify your plots a lot as `ggplot2` allows many customisations. Here is a custom plot where we have modified the axes, background and font.
+
+```{r density_12, cache=TRUE}
+library(grid) 
+
+fill <- "#4271AE"
+lines <- "#1F3552"
+
+p8 <- ggplot(airquality, aes(x = Ozone)) + 
+        geom_density(colour = lines, fill = fill,
+                 size = 1) +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                              breaks = seq(0, 200, 25),
+                              limits=c(0, 200)) +
+        scale_y_continuous(name = "Density") +
+        ggtitle("Density plot of mean ozone") +
+        theme_bw() +
+        theme(axis.line = element_line(size=1, colour = "black"), 
+              panel.grid.major = element_line(colour = "#d3d3d3"), 
+              panel.grid.minor = element_blank(), 
+              panel.border = element_blank(), panel.background = element_blank(),
+              plot.title = element_text(size = 14, family = "Tahoma", face = "bold"),
+              text=element_text(family="Tahoma"), 
+              axis.text.x=element_text(colour="black", size = 9), 
+              axis.text.y=element_text(colour="black", size = 9)) 
+p8
+```
+
+### Adding lines
+
+Let's say that we want to add a cutoff value to the chart (75 parts of ozone per billion). We add the `geom_vline` option to the chart, and specify where it goes on the x-axis using the `xintercept` argument. We can customise how it looks using the `colour` and `linetype` arguments in `geom_vline`. (In the the same way, horizontal lines can be added using the `geom_hline`.)
+
+```{r density_13}
+fill <- "#4271AE"
+line <- "#1F3552"
+
+p8 <- p8 + geom_vline(xintercept = 75, size = 1, colour = "#FF3721", 
+               linetype = "dashed")
+p8
+```
+
+### Multiple densities
+
+You can also easily create multiple density plots by the levels of another variable. There are two options, in separate (panel) plots, or in the same plot. There are also a couple of variations on these we'll discuss below.
+
+We first need to do a little data wrangling. In order to make the graphs a bit clearer, we've kept only months "5" (May), "6" (June) and "7" (July) in a new dataset `airquality_trimmed`. We also need to convert this variable into either a character or factor variable. We have created a new factor variable `Month.f`.
+
+In order to produce a panel plot by month, we add the `facet_grid(. ~ Month.f)` option to the plot. Note that we've also changed the scale of the x-axis to make it fit a little more neatly in the panel format.
+
+```{r density_14}
+airquality_trimmed <- airquality[which(airquality$Month == 5 |
+                                       airquality$Month == 6 |
+                                       airquality$Month == 7), ]
+airquality_trimmed$Month.f <- factor(airquality_trimmed$Month, 
+                                     labels = c("May", "June", "July"))
+
+p8 <- ggplot(airquality_trimmed, aes(x = Ozone)) + 
+        geom_density(fill = fill, colour = line,
+                     alpha = 0.6) +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                           breaks = seq(0, 200, 50),
+                           limits=c(0, 200)) +
+        scale_y_continuous(name = "Density") +
+        ggtitle("Density plot of mean ozone") +
+        theme_bw() +
+        theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+              text = element_text(size = 12, family = "Tahoma")) +
+        facet_grid(. ~ Month.f)
+p8
+```
+
+An alternative to a panel plot is the _volcano plot_. This plot swaps the axes (so the variable of interest is on the y-axis and the density is on the x-axis), and reflects the density. In order to create this plot, we replace `geom_density` with `stat_density`, and include the arguments `aes(ymax = ..density..,  ymin = -..density..)` and `geom = "ribbon"` to create a density plot, the usual `fill`, `colour` and `alpha` arguments, and `position = "identity"`. We also need to add a `coord_flip()` option to the plot.
+
+```{r density_15}
+p8 <- ggplot(airquality_trimmed, aes(x = Ozone)) + 
+        stat_density(aes(ymax = ..density..,  ymin = -..density..),
+                     geom = "ribbon", 
+                     fill = fill, colour = line, alpha = 0.6,
+                     position = "identity") +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                              breaks = seq(0, 200, 25),
+                              limits=c(0, 200)) +
+        scale_y_continuous(name = "Density",
+                           breaks = seq(-0.03, 0.03, 0.03)) +
+        ggtitle("Density plot of mean ozone") +
+        theme_bw() +
+        theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+              text = element_text(size = 12, family = "Tahoma")) +
+        facet_grid(. ~ Month.f) +
+        coord_flip()
+p8
+```
+
+In order to plot the three months in the same plot, we add several things. Firstly, in the `ggplot` function, we add a `fill = Month.f` argument to `aes`. Secondly, in order to more clearly see the graph, we add the argument `position = "identity"` to the `geom_density` option. This controls the position of the curves respectively. Finally, you can customise the colours of the histograms by adding the `scale_fill_brewer` to the plot from the `RColorBrewer` package. [This](http://moderndata.plot.ly/create-colorful-graphs-in-r-with-rcolorbrewer-and-plotly/) blog post describes the available packages.
+
+```{r density_16}
+library(RColorBrewer)
+
+p8 <- ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) + 
+        geom_density(position="identity", alpha=0.6) +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                           breaks = seq(0, 200, 25),
+                           limits=c(0, 200)) +
+        scale_y_continuous(name = "Density") +
+        ggtitle("Density plot of mean ozone") +
+        theme_bw() +
+        theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+              text = element_text(size = 12, family = "Tahoma")) +
+        scale_fill_brewer(palette="Accent")
+p8
+```
+
+These densities are a little hard to see. One way we can make it easier to see them is to stack the densities on top of each other. To do so, we swap `position = "stack"` for `position = "identity"` in `geom_density`.
+
+```{r density_17}
+p8 <- ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) + 
+        geom_density(position = "stack", alpha = 0.6) +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                           breaks = seq(0, 200, 25),
+                           limits=c(0, 200)) +
+        scale_y_continuous(name = "Density") +
+        ggtitle("Density plot of mean ozone") +
+        theme_bw() +
+        theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+              text = element_text(size = 12, family = "Tahoma")) +
+        scale_fill_brewer(palette="Accent")
+p8
+```
+
+Another way to make it a little easier to see the densities by dropping out the fill. To do this need a few changes. We need to swap the option `fill = Month.f` in `ggplot` for `colour = Month.f`. We add the `fill = NA` to `geom_density`, and we've also added `size = 1` to make it easier to see the lines. Finally, we change the `scale_fill_brewer()` option for `scale_colour_brewer()`.
+
+```{r density_18}
+p8 <- ggplot(airquality_trimmed, aes(x = Ozone, colour = Month.f)) + 
+        geom_density(position="identity", fill = NA, size = 1) +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                           breaks = seq(0, 200, 25),
+                           limits=c(0, 200)) +
+        scale_y_continuous(name = "Density") +
+        ggtitle("Density plot of mean ozone") +
+        theme_bw() +
+        theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+              text = element_text(size = 12, family = "Tahoma")) +
+        scale_colour_brewer(palette="Accent")
+p8
+```
+
+### Formatting the legend
+
+Finally, we can format the legend. Firstly, we can change the position by adding the `legend.position = "bottom"` argument to the `theme` option, which moves the legend under the plot. Secondly, we can fix the title by adding the `labs(fill="Month")` option to the plot.
+
+```{r density_19}
+p8 <- ggplot(airquality_trimmed, aes(x = Ozone, colour = Month.f)) + 
+        geom_density(position="identity", fill = NA, size = 1) +
+        scale_x_continuous(name = "Mean ozone in\nparts per billion",
+                           breaks = seq(0, 200, 25),
+                           limits=c(0, 200)) +
+        scale_y_continuous(name = "Density") +
+        ggtitle("Density plot of mean ozone") +
+        theme_bw() +
+        theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+              text = element_text(size = 12, family = "Tahoma"),
+              legend.position = "bottom") +
+        scale_colour_brewer(palette="Accent") +
+        labs(colour = "Month")
+p8
+```
+
+<!-- PART 9 --> 
+
+#Function Plots
+
+In this tutorial, we will work towards creating the function plot below. We will take you from a basic function plot and explain all the customisations we add to the code step-by-step.
+
+```{r function_final, echo = FALSE}
+library(ggplot2)
+library(grid) 
+
+funcShaded <- function(x) {
+    y <- dnorm(x, mean = 0.2, sd = 0.1)
+    y[x < 0.2 | x > (0.2 + 4 * 0.1)] <- NA
+    return(y)
+}
+
+p9 <- ggplot(data.frame(x = c(0, 1)), aes(x = x)) +
+        stat_function(fun = dnorm, args = list(0.2, 0.1),
+                      aes(colour = "Group 1"), size = 1.5) +
+        stat_function(fun = dnorm, args = list(0.7, 0.05),
+                      aes(colour = "Group 2"), size = 1.5) +
+        stat_function(fun=funcShaded, geom="area", fill="#84CA72", alpha=0.2) +
+        scale_x_continuous(name = "Probability",
+                              breaks = seq(0, 1, 0.2),
+                              limits=c(0, 1)) +
+        scale_y_continuous(name = "Frequency") +
+        ggtitle("Normal function curves of probabilities") +
+        scale_colour_brewer(palette="Accent") +
+        labs(colour = "Groups") +
+        theme_bw() +
+        theme(axis.line = element_line(size=1, colour = "black"), 
+              panel.grid.major = element_line(colour = "#d3d3d3"), 
+              panel.grid.minor = element_blank(), 
+              panel.border = element_blank(), panel.background = element_blank(),
+              plot.title = element_text(size = 14, family = "Tahoma", face = "bold"),
+              text=element_text(family="Tahoma"), 
+              axis.text.x=element_text(colour="black", size = 9), 
+              axis.text.y=element_text(colour="black", size = 9),
+              legend.position = "bottom") 
+p9
+```
+
+### Basic normal curve
+
+In order to create a normal curve, we create a ggplot base layer that has an x-axis range from -4 to 4 (or whatever range you want!), and assign the x-value aesthetic to this range (`aes(x = x)`). We then add the `stat_function` option and add `dnorm` to the function argument to make it a normal curve.
+
+```{r function_1}
+p9 <- ggplot(data.frame(x = c(-4, 4)), aes(x = x)) +
+        stat_function(fun = dnorm)
+p9
+```
+
+### Basic t- curve
+
+`stat_function` can draw a range of continuous [probability density functions](https://en.wikipedia.org/wiki/Probability_density_function), including t (`dt`), F (`df`) and Chi-square (`dchisq`) PDFs. Here we will plot a t-distribution. As the shape of the t-distribution changes depending on the sample size (indicated by the degrees of freedom, or df), we need to specify our df value as part of defining our curve. 
+
+```{r function_2}
+p9 <- ggplot(data.frame(x = c(-4, 4)), aes(x = x)) +
+        stat_function(fun = dt, args = list(df = 8))
+p9
+```
+
+### Plotting your own function
+
+You can also draw your own function, as long as it takes the form of a formula that converts an x-value into a y-value. Here we have plotted a curve that returns y-values that are the cube of x times a half:
+
+```{r function_3}
+cubeFun <- function(x) {
+    x^3 * 0.5
+}
+
+p9 <- ggplot(data.frame(x = c(-4, 4)), aes(x = x)) +
+        stat_function(fun = cubeFun)
+p9
+```
+
+### Plotting multiple functions on the same graph
+
+You can plot multiple functions on the same graph by simply adding another `stat_function()` for each curve. Here we have plotted two normal curves on the same graph, one with a mean of 0.2 and a standard deviation of 0.1, and one with a mean of 0.7 and a standard deviation of 0.05. (Note that the `dnorm` function has a default mean of 0 and a default standard deviation of 1, which is why we didn't need to explicitly define them in the first normal curve we plotted above.) You can also see we've changed the range of the x-axis to between 0 and 1.
+
+```{r function_4}
+p9 <- ggplot(data.frame(x = c(0, 1)), aes(x = x)) +
+        stat_function(fun = dnorm, args = list(0.2, 0.1)) +
+        stat_function(fun = dnorm, args = list(0.7, 0.05))
+p9
+```
+
+### Customising axis labels
+
+Let's move forward with this two function graph, and start tweaking the appearance. In order to change the axis labels, we have a couple of options. In this case, we have used the `scale_x_continuous` and `scale_y_continuous` options, as these have further customisation options for the axes we will use below. In each, we add the desired name to the `name` argument as a string.
+
+```{r function_5}
+p9 <- p9 + scale_x_continuous(name = "Probability") +
+        scale_y_continuous(name = "Frequency")
+p9
+```
+
+### Changing axis ticks
+
+The next thing we will change is the axis ticks. Let's make the x-axis ticks appear at every 0.2 units rather than 0.25 using the `breaks = seq(0, 1, 0.2)` argument in `scale_x_continuous`. (The `seq` function is a base R function that indicates the start and endpoints and the units to increment by respectively. See `help(seq)` for more information.) We ensure that the x-axis begins and ends where we want by also adding the argument `limits = c(0, 1)` to `scale_x_continuous`.
+
+```{r function_6}
+p9 <- p9 + scale_x_continuous(name = "Probability",
+                              breaks = seq(0, 1, 0.2),
+                              limits=c(0, 1)) +
+        scale_y_continuous(name = "Frequency")
+p9
+``` 
+
+### Adding a title
+
+To add a title, we include the option `ggtitle` and include the name of the graph as a string argument.
+
+```{r function_7}
+p9 <- p9 + ggtitle("Normal function curves of probabilities")
+p9
+```
+
+### Changing the colour of the curves
+
+To change the line colours of the curves, we add a valid colour to the `colour` arguments in `stat_function`. A list of valid colours is [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf).
+
+```{r function_8}
+p9 <- ggplot(data.frame(x = c(0, 1)), aes(x = x)) +
+        stat_function(fun = dnorm, args = list(0.2, 0.1),
+                      colour = "deeppink") +
+        stat_function(fun = dnorm, args = list(0.7, 0.05),
+                      colour = "dodgerblue3") +
+        scale_x_continuous(name = "Probability",
+                              breaks = seq(0, 1, 0.2),
+                              limits=c(0, 1)) +
+        scale_y_continuous(name = "Frequency") +
+        ggtitle("Normal function curves of probabilities")
+p9
+```
+
+If you want to go beyond the options in the list above, you can also specify exact HEX colours by including them as a string preceded by a hash, e.g., "#FFFFFF". Below, we have called two shades of blue for the lines using their HEX codes.
+
+```{r function_9}
+p9 <- ggplot(data.frame(x = c(0, 1)), aes(x = x)) +
+        stat_function(fun = dnorm, args = list(0.2, 0.1),
+                      colour = "#4271AE") +
+        stat_function(fun = dnorm, args = list(0.7, 0.05),
+                      colour = "#1F3552") +
+        scale_x_continuous(name = "Probability",
+                              breaks = seq(0, 1, 0.2),
+                              limits=c(0, 1)) +
+        scale_y_continuous(name = "Frequency") +
+        ggtitle("Normal function curves of probabilities")
+p9
+```
+
+### Adding a legend
+
+As we have added two separate commands to plot the two function curves, ggplot does not automatically recognise that it needs to create a legend. We can make a legend by swapping out the `colour` argument in each of the `stat_function` commands for `aes(colour = )`, and assigning it the name of the group. We also need to add the `scale_colour_manual` command to make the legend appear, and also assign colours and a title.
+
+```{r function_10}
+p9 <- ggplot(data.frame(x = c(0, 1)), aes(x = x)) +
+        stat_function(fun = dnorm, args = list(0.2, 0.1),
+                      aes(colour = "Group 1")) +
+        stat_function(fun = dnorm, args = list(0.7, 0.05),
+                      aes(colour = "Group 2")) +
+        scale_x_continuous(name = "Probability",
+                              breaks = seq(0, 1, 0.2),
+                              limits=c(0, 1)) +
+        scale_y_continuous(name = "Frequency") +
+        ggtitle("Normal function curves of probabilities") +
+        scale_colour_manual("Groups", values = c("deeppink", "dodgerblue3"))
+p9
+```
+
+If you want to use one of the automatic brewer palettes, you can swap `scale_colour_manual` for `scale_colour_brewer`, and call your favouite brewer colour scheme. You can see all of the brewer palettes using `display.brewer.all(5)` As this command doesn't allow you to assign a title to the legend, you can assign a title using `labs(colour = "Groups")`.
+
+```{r function_11}
+p9 <- ggplot(data.frame(x = c(0, 1)), aes(x = x)) +
+        stat_function(fun = dnorm, args = list(0.2, 0.1),
+                      aes(colour = "Group 1")) +
+        stat_function(fun = dnorm, args = list(0.7, 0.05),
+                      aes(colour = "Group 2")) +
+        scale_x_continuous(name = "Probability",
+                              breaks = seq(0, 1, 0.2),
+                              limits=c(0, 1)) +
+        scale_y_continuous(name = "Frequency") +
+        ggtitle("Normal function curves of probabilities") +
+        scale_colour_brewer(palette="Accent") +
+        labs(colour = "Groups")
+p9
+```
+
+### Changing the size of the lines
+
+As you can see, the lines are a little difficult to see. You can make them thicker (or thinner) using the argument `size` argument within `stat_function`. Here we have changed the thickness of each line to size 2.
+
+```{r function_12}
+p9 <- ggplot(data.frame(x = c(0, 1)), aes(x = x)) +
+        stat_function(fun = dnorm, args = list(0.2, 0.1),
+                      aes(colour = "Group 1"), size = 1.5) +
+        stat_function(fun = dnorm, args = list(0.7, 0.05),
+                      aes(colour = "Group 2"), size = 1.5) +
+        scale_x_continuous(name = "Probability",
+                              breaks = seq(0, 1, 0.2),
+                              limits=c(0, 1)) +
+        scale_y_continuous(name = "Frequency") +
+        ggtitle("Normal function curves of probabilities") +
+        scale_colour_brewer(palette="Accent") +
+        labs(colour = "Groups")
+p9
+```
+
+### Using the white theme
+
+As explained in the previous posts, we can also change the overall look of the plot using themes. We'll start using a simple theme customisation by adding `theme_bw() ` after `ggplot()`. As you can see, we can further tweak the graph using the `theme` option, which we've used so far to change the legend.
+
+```{r function_13}
+p9 <- p9 + theme_bw()
+p9
+```
+
+### Creating an XKCD style chart
+
+Of course, you may want to create your own themes as well. `ggplot2` allows for a very high degree of customisation, including allowing you to use imported fonts. Below is an example of a theme Mauricio was able to create which mimics the visual style of [XKCD](http://xkcd.com/). In order to create this chart, you first need to import the XKCD font, install it on your machine and load it into R using the `extrafont` package.
+These instructions are taken from [here](https://www.google.com.au/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwiWzafchdPJAhVBpJQKHe_LDT8QFggbMAA&url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fxkcd%2Fvignettes%2Fxkcd-intro.pdf&usg=AFQjCNE-KciGY14e-Q1buYIVmTFC0ht__Q&sig2=DZUwkvIHwfNWtTtkcz94jg):
+
+```{r importing_font_xkcd9, eval=FALSE}
+library(extrafont)
+
+download.file("http://simonsoftware.se/other/xkcd.ttf", 
+              dest="xkcd.ttf", mode="wb")
+system("mkdir ~/.fonts")
+system("cp xkcd.ttf  ~/.fonts")
+font_import(paths = "~/.fonts", pattern="[X/x]kcd")
+fonts()
+loadfonts()
+```
+
+You can then create your graph:
+
+```{r function_14, cache=TRUE}
+p9 <- ggplot(data.frame(x = c(0, 1)), aes(x = x)) +
+        stat_function(fun = dnorm, args = list(0.2, 0.1),
+                      aes(colour = "Group 1"), size = 1.5) +
+        stat_function(fun = dnorm, args = list(0.7, 0.05),
+                      aes(colour = "Group 2"), size = 1.5) +
+        scale_x_continuous(name = "Probability",
+                              breaks = seq(0, 1, 0.2),
+                              limits=c(0, 1)) +
+        scale_y_continuous(name = "Frequency") +
+        ggtitle("Normal function curves of probabilities") +
+        scale_colour_brewer(palette="Set1") +
+        labs(colour = "Groups") +
+        theme(axis.line = element_line(size=1, colour = "black"), 
+              panel.grid.major = element_blank(),
+              panel.grid.minor = element_blank(), 
+              panel.border = element_blank(), 
+              panel.background = element_blank(),
+              plot.title=element_text(size = 20, family="xkcd-Regular"), 
+              text=element_text(size = 16, family="xkcd-Regular"), 
+              axis.text.x=element_text(colour="black", size = 12), 
+              axis.text.y=element_text(colour="black", size = 12))
+p9
+```
+
+### Using 'The Economist' theme 
+
+There are a wider range of pre-built themes available as part of the `ggthemes` package (more information on these [here](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html)). Below we've applied `theme_economist()`, which approximates graphs in the Economist magazine.
+
+```{r function_15, cache=TRUE}
+library(ggthemes)
+
+p9 <- ggplot(data.frame(x = c(0, 1)), aes(x = x)) +
+        stat_function(fun = dnorm, args = list(0.2, 0.1),
+                      aes(colour = "Group 1"), size = 1.5) +
+        stat_function(fun = dnorm, args = list(0.7, 0.05),
+                      aes(colour = "Group 2"), size = 1.5) +
+        scale_x_continuous(name = "Probability",
+                              breaks = seq(0, 1, 0.2),
+                              limits=c(0, 1)) +
+        scale_y_continuous(name = "Frequency") +
+        ggtitle("Normal function curves of probabilities") +
+        scale_colour_manual("Groups", values = c("#4271AE", "#1F3552")) +
+        theme_economist() +
+        theme(legend.position = "bottom", legend.direction = "horizontal",
+              legend.box = "horizontal",
+              legend.key.size = unit(1, "cm"),
+              plot.title = element_text(family="Tahoma"),
+              text = element_text(family = "Tahoma"),
+              axis.title = element_text(size = 12),
+              legend.text = element_text(size = 9),
+              legend.title=element_text(face = "bold", size = 9))
+p9
+```
+
+### Creating your own theme
+
+As before, you can modify your plots a lot as `ggplot2` allows many customisations. Here is a custom plot where we have modified the axes, background and font.
+
+```{r function_16, cache=TRUE}
+library(grid) 
+
+p9 <- ggplot(data.frame(x = c(0, 1)), aes(x = x)) +
+        stat_function(fun = dnorm, args = list(0.2, 0.1),
+                      aes(colour = "Group 1"), size = 1.5) +
+        stat_function(fun = dnorm, args = list(0.7, 0.05),
+                      aes(colour = "Group 2"), size = 1.5) +
+        scale_x_continuous(name = "Probability",
+                              breaks = seq(0, 1, 0.2),
+                              limits=c(0, 1)) +
+        scale_y_continuous(name = "Frequency") +
+        ggtitle("Normal function curves of probabilities") +
+        scale_colour_brewer(palette="Accent") +
+        labs(colour = "Groups") +
+        theme_bw() +
+        theme(axis.line = element_line(size=1, colour = "black"), 
+              panel.grid.major = element_line(colour = "#d3d3d3"), 
+              panel.grid.minor = element_blank(), 
+              panel.border = element_blank(), panel.background = element_blank(),
+              plot.title = element_text(size = 14, family = "Tahoma", face = "bold"),
+              text=element_text(family="Tahoma"), 
+              axis.text.x=element_text(colour="black", size = 9), 
+              axis.text.y=element_text(colour="black", size = 9)) 
+p9
+```
+
+### Adding areas under the curve
+
+If we want to shade an area under the curve, we can do so by creating a function that generates a range of normal values with a given mean and standard deviation, and then only retains those values that lie within the desired range (by assigning NAs to everything outside of the range). In this case, we have created a shaded area under the group 1 curve which covers between the mean and 4 standard deviations above the mean (as given by `0.2 + 4 * 0.1`). We then add another `stat_function` command to the graph which plots the area specified by this function, indicates it should be an `area` plot, and makes it semi-transparent using the `alpha` argument.
+
+```{r function_17}
+funcShaded <- function(x) {
+    y <- dnorm(x, mean = 0.2, sd = 0.1)
+    y[x < 0.2 | x > (0.2 + 4 * 0.1)] <- NA
+    return(y)
+}
+
+p9 <- p9 + stat_function(fun=funcShaded, geom="area", fill="#84CA72", alpha=0.2)
+p9
+```
+
+### Formatting the legend
+
+Finally, we can format the legend by changing the position. We simply add the `legend.position = "bottom"` argument to the `theme` option, which moves the legend under the plot. 
+
+```{r function_18}
+p9 <- ggplot(data.frame(x = c(0, 1)), aes(x = x)) +
+        stat_function(fun = dnorm, args = list(0.2, 0.1),
+                      aes(colour = "Group 1"), size = 1.5) +
+        stat_function(fun = dnorm, args = list(0.7, 0.05),
+                      aes(colour = "Group 2"), size = 1.5) +
+        stat_function(fun=funcShaded, geom="area", fill="#84CA72", alpha=0.2) +
+        scale_x_continuous(name = "Probability",
+                              breaks = seq(0, 1, 0.2),
+                              limits=c(0, 1)) +
+        scale_y_continuous(name = "Frequency") +
+        ggtitle("Normal function curves of probabilities") +
+        scale_colour_brewer(palette="Accent") +
+        labs(colour = "Groups") +
+        theme_bw() +
+        theme(axis.line = element_line(size=1, colour = "black"), 
+              panel.grid.major = element_line(colour = "#d3d3d3"), 
+              panel.grid.minor = element_blank(), 
+              panel.border = element_blank(), panel.background = element_blank(),
+              plot.title = element_text(size = 14, family = "Tahoma", face = "bold"),
+              text=element_text(family="Tahoma"), 
+              axis.text.x=element_text(colour="black", size = 9), 
+              axis.text.y=element_text(colour="black", size = 9),
+              legend.position = "bottom") 
+p9
+```

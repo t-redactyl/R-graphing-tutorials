@@ -13,7 +13,7 @@ output:
 knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, fig.width=6, fig.height=5, tidy = F, cache.path = '.cache/', fig.path = 'Density plots/')
 ```
 
-This is the seventh tutorial in a series on using `ggplot2` I am creating with [Mauricio Vargas Sepúlveda](http://pachamaltese.github.io/). In this tutorial we will demonstrate some of the many options the `ggplot2` package has for creating and customising density plots. We will use R's [airquality dataset](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/airquality.html) in the `datasets` package.
+This is the eight tutorial in a series on using `ggplot2` I am creating with [Mauricio Vargas Sepúlveda](http://pachamaltese.github.io/). In this tutorial we will demonstrate some of the many options the `ggplot2` package has for creating and customising density plots. We will use R's [airquality dataset](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/airquality.html) in the `datasets` package.
 
 The first thing to do is load in the data, as below:
 
@@ -56,9 +56,9 @@ ggplot(airquality_trimmed, aes(x = Ozone, colour = Month.f)) +
 In order to initialise a plot we tell ggplot that `airquality` is our data, and specify that our x axis plots the `Ozone` variable. We then instruct ggplot to render this as a density plot by adding the `geom_density()` option.
 
 ```{r density_1}
-p1 <- ggplot(airquality, aes(x = Ozone)) + 
+p8 <- ggplot(airquality, aes(x = Ozone)) + 
         geom_density()
-p1
+p8
 ```
 
 ### Customising axis labels
@@ -66,16 +66,16 @@ p1
 In order to change the axis labels, we have a couple of options. In this case, we have used the `scale_x_continuous` and `scale_y_continuous` options, as these have further customisation options for the axes we will use below. In each, we add the desired name to the `name` argument as a string.
 
 ```{r density_2}
-p1 <- p1 + scale_x_continuous(name = "Mean ozone in parts per billion") +
+p8 <- p8 + scale_x_continuous(name = "Mean ozone in parts per billion") +
         scale_y_continuous(name = "Density")
-p1
+p8
 ```
 
 ggplot also allows for the use of multiline names (in both axes and titles). Here, we've changed the x-axis label so that it goes over two lines using the `\n` character to break the line.
 
 ```{r density_3}
-p1 <- p1 + scale_x_continuous(name = "Mean ozone in\nparts per billion")
-p1
+p8 <- p8 + scale_x_continuous(name = "Mean ozone in\nparts per billion")
+p8
 ```
 
 ### Changing axis ticks
@@ -83,10 +83,10 @@ p1
 The next thing we will change is the axis ticks. Let's make the x-axis ticks appear at every 25 units rather than 50 using the `breaks = seq(0, 200, 25)` argument in `scale_x_continuous`. (The `seq` function is a base R function that indicates the start and endpoints and the units to increment by respectively. See `help(seq)` for more information.) We ensure that the x-axis begins and ends where we want by also adding the argument `limits = c(0, 200)` to `scale_x_continuous`.
 
 ```{r density_4}
-p1 <- p1 + scale_x_continuous(name = "Mean ozone in\nparts per billion",
+p8 <- p8 + scale_x_continuous(name = "Mean ozone in\nparts per billion",
                               breaks = seq(0, 200, 25),
                               limits=c(0, 200))
-p1
+p8
 ``` 
 
 ### Adding a title
@@ -94,8 +94,8 @@ p1
 To add a title, we include the option `ggtitle` and include the name of the graph as a string argument.
 
 ```{r density_5}
-p1 <- p1 + ggtitle("Density plot of mean ozone")
-p1
+p8 <- p8 + ggtitle("Density plot of mean ozone")
+p8
 ```
 
 ### Changing the colour of the curves
@@ -106,14 +106,14 @@ To change the line and fill colours of the density plot, we add a valid colour t
 fill <- "gold1"
 line <- "goldenrod2"
 
-p1 <- ggplot(airquality, aes(x = Ozone)) + 
+p8 <- ggplot(airquality, aes(x = Ozone)) + 
         geom_density(fill = fill, colour = line) +
         scale_x_continuous(name = "Mean ozone in\nparts per billion",
                            breaks = seq(0, 200, 25),
                            limits=c(0, 200)) +
         scale_y_continuous(name = "Density") +
         ggtitle("Density plot of mean ozone")
-p1
+p8
 ```
 
 If you want to go beyond the options in the list above, you can also specify exact HEX colours by including them as a string preceded by a hash, e.g., "#FFFFFF". Below, we have called two shades of blue for the fill and lines using their HEX codes.
@@ -122,20 +122,20 @@ If you want to go beyond the options in the list above, you can also specify exa
 fill <- "#4271AE"
 line <- "#1F3552"
 
-p1 <- ggplot(airquality, aes(x = Ozone)) + 
+p8 <- ggplot(airquality, aes(x = Ozone)) + 
         geom_density(fill = fill, colour = line) +
         scale_x_continuous(name = "Mean ozone in\nparts per billion",
                            breaks = seq(0, 200, 25),
                            limits=c(0, 200)) +
         scale_y_continuous(name = "Density") +
         ggtitle("Density plot of mean ozone")
-p1
+p8
 ```
 
 You can also specify the degree of transparency in the density fill area using the argument `alpha` in `geom_density`. This ranges from 0 to 1.
 
 ```{r density_8}
-p1 <- ggplot(airquality, aes(x = Ozone)) + 
+p8 <- ggplot(airquality, aes(x = Ozone)) + 
         geom_density(fill = fill, colour = line,
                      alpha = 0.6) +
         scale_x_continuous(name = "Mean ozone in\nparts per billion",
@@ -143,7 +143,7 @@ p1 <- ggplot(airquality, aes(x = Ozone)) +
                            limits=c(0, 200)) +
         scale_y_continuous(name = "Density") +
         ggtitle("Density plot of mean ozone")
-p1
+p8
 ```
 
 ### Using the white theme
@@ -151,8 +151,8 @@ p1
 As explained in the previous posts, we can also change the overall look of the plot using themes. We'll start using a simple theme customisation by adding `theme_bw() `. As you can see, we can further tweak the graph using the `theme` option, which we've used so far to change the legend.
 
 ```{r density_9}
-p1 <- p1 + theme_bw()
-p1
+p8 <- p8 + theme_bw()
+p8
 ```
 
 ### Creating an XKCD style chart
@@ -175,7 +175,7 @@ loadfonts()
 You can then create your graph:
 
 ```{r density_10, cache=TRUE}
-p1 <- ggplot(airquality, aes(x = Ozone)) + 
+p8 <- ggplot(airquality, aes(x = Ozone)) + 
         geom_density(colour = "black", fill = "#56B4E9") +
         scale_x_continuous(name = "Mean ozone in\nparts per billion",
                            breaks = seq(0, 200, 25),
@@ -191,7 +191,7 @@ p1 <- ggplot(airquality, aes(x = Ozone)) +
               text=element_text(size = 16, family="xkcd-Regular"), 
               axis.text.x=element_text(colour="black", size = 12), 
               axis.text.y=element_text(colour="black", size = 12))
-p1
+p8
 ```
 
 ### Using 'The Economist' theme 
@@ -205,7 +205,7 @@ library(grid)
 fill <- "#4271AE"
 line <- "#1F3552"
 
-p1 <- ggplot(airquality, aes(x = Ozone)) + 
+p8 <- ggplot(airquality, aes(x = Ozone)) + 
         geom_density(fill = fill, colour = line) +
         scale_x_continuous(name = "Mean ozone in\nparts per billion",
                            breaks = seq(0, 200, 25),
@@ -221,7 +221,7 @@ p1 <- ggplot(airquality, aes(x = Ozone)) +
               axis.title = element_text(size = 12),
               legend.text = element_text(size = 9),
               legend.title=element_text(face = "bold", size = 9))
-p1
+p8
 ```
 
 ### Creating your own theme
@@ -234,7 +234,7 @@ library(grid)
 fill <- "#4271AE"
 lines <- "#1F3552"
 
-p1 <- ggplot(airquality, aes(x = Ozone)) + 
+p8 <- ggplot(airquality, aes(x = Ozone)) + 
         geom_density(colour = lines, fill = fill,
                  size = 1) +
         scale_x_continuous(name = "Mean ozone in\nparts per billion",
@@ -251,7 +251,7 @@ p1 <- ggplot(airquality, aes(x = Ozone)) +
               text=element_text(family="Tahoma"), 
               axis.text.x=element_text(colour="black", size = 9), 
               axis.text.y=element_text(colour="black", size = 9)) 
-p1
+p8
 ```
 
 ### Adding lines
@@ -262,9 +262,9 @@ Let's say that we want to add a cutoff value to the chart (75 parts of ozone per
 fill <- "#4271AE"
 line <- "#1F3552"
 
-p1 <- p1 + geom_vline(xintercept = 75, size = 1, colour = "#FF3721", 
+p8 <- p8 + geom_vline(xintercept = 75, size = 1, colour = "#FF3721", 
                linetype = "dashed")
-p1
+p8
 ```
 
 ### Multiple densities
@@ -282,7 +282,7 @@ airquality_trimmed <- airquality[which(airquality$Month == 5 |
 airquality_trimmed$Month.f <- factor(airquality_trimmed$Month, 
                                      labels = c("May", "June", "July"))
 
-p1 <- ggplot(airquality_trimmed, aes(x = Ozone)) + 
+p8 <- ggplot(airquality_trimmed, aes(x = Ozone)) + 
         geom_density(fill = fill, colour = line,
                      alpha = 0.6) +
         scale_x_continuous(name = "Mean ozone in\nparts per billion",
@@ -294,13 +294,13 @@ p1 <- ggplot(airquality_trimmed, aes(x = Ozone)) +
         theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
               text = element_text(size = 12, family = "Tahoma")) +
         facet_grid(. ~ Month.f)
-p1
+p8
 ```
 
 An alternative to a panel plot is the _volcano plot_. This plot swaps the axes (so the variable of interest is on the y-axis and the density is on the x-axis), and reflects the density. In order to create this plot, we replace `geom_density` with `stat_density`, and include the arguments `aes(ymax = ..density..,  ymin = -..density..)` and `geom = "ribbon"` to create a density plot, the usual `fill`, `colour` and `alpha` arguments, and `position = "identity"`. We also need to add a `coord_flip()` option to the plot.
 
 ```{r density_15}
-p1 <- ggplot(airquality_trimmed, aes(x = Ozone)) + 
+p8 <- ggplot(airquality_trimmed, aes(x = Ozone)) + 
         stat_density(aes(ymax = ..density..,  ymin = -..density..),
                      geom = "ribbon", 
                      fill = fill, colour = line, alpha = 0.6,
@@ -316,7 +316,7 @@ p1 <- ggplot(airquality_trimmed, aes(x = Ozone)) +
               text = element_text(size = 12, family = "Tahoma")) +
         facet_grid(. ~ Month.f) +
         coord_flip()
-p1
+p8
 ```
 
 In order to plot the three months in the same plot, we add several things. Firstly, in the `ggplot` function, we add a `fill = Month.f` argument to `aes`. Secondly, in order to more clearly see the graph, we add the argument `position = "identity"` to the `geom_density` option. This controls the position of the curves respectively. Finally, you can customise the colours of the histograms by adding the `scale_fill_brewer` to the plot from the `RColorBrewer` package. [This](http://moderndata.plot.ly/create-colorful-graphs-in-r-with-rcolorbrewer-and-plotly/) blog post describes the available packages.
@@ -324,7 +324,7 @@ In order to plot the three months in the same plot, we add several things. First
 ```{r density_16}
 library(RColorBrewer)
 
-p1 <- ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) + 
+p8 <- ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) + 
         geom_density(position="identity", alpha=0.6) +
         scale_x_continuous(name = "Mean ozone in\nparts per billion",
                            breaks = seq(0, 200, 25),
@@ -335,13 +335,13 @@ p1 <- ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) +
         theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
               text = element_text(size = 12, family = "Tahoma")) +
         scale_fill_brewer(palette="Accent")
-p1
+p8
 ```
 
 These densities are a little hard to see. One way we can make it easier to see them is to stack the densities on top of each other. To do so, we swap `position = "stack"` for `position = "identity"` in `geom_density`.
 
 ```{r density_17}
-p1 <- ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) + 
+p8 <- ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) + 
         geom_density(position = "stack", alpha = 0.6) +
         scale_x_continuous(name = "Mean ozone in\nparts per billion",
                            breaks = seq(0, 200, 25),
@@ -352,13 +352,13 @@ p1 <- ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) +
         theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
               text = element_text(size = 12, family = "Tahoma")) +
         scale_fill_brewer(palette="Accent")
-p1
+p8
 ```
 
 Another way to make it a little easier to see the densities by dropping out the fill. To do this need a few changes. We need to swap the option `fill = Month.f` in `ggplot` for `colour = Month.f`. We add the `fill = NA` to `geom_density`, and we've also added `size = 1` to make it easier to see the lines. Finally, we change the `scale_fill_brewer()` option for `scale_colour_brewer()`.
 
 ```{r density_18}
-p1 <- ggplot(airquality_trimmed, aes(x = Ozone, colour = Month.f)) + 
+p8 <- ggplot(airquality_trimmed, aes(x = Ozone, colour = Month.f)) + 
         geom_density(position="identity", fill = NA, size = 1) +
         scale_x_continuous(name = "Mean ozone in\nparts per billion",
                            breaks = seq(0, 200, 25),
@@ -369,7 +369,7 @@ p1 <- ggplot(airquality_trimmed, aes(x = Ozone, colour = Month.f)) +
         theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
               text = element_text(size = 12, family = "Tahoma")) +
         scale_colour_brewer(palette="Accent")
-p1
+p8
 ```
 
 ### Formatting the legend
@@ -377,7 +377,7 @@ p1
 Finally, we can format the legend. Firstly, we can change the position by adding the `legend.position = "bottom"` argument to the `theme` option, which moves the legend under the plot. Secondly, we can fix the title by adding the `labs(fill="Month")` option to the plot.
 
 ```{r density_19}
-p1 <- ggplot(airquality_trimmed, aes(x = Ozone, colour = Month.f)) + 
+p8 <- ggplot(airquality_trimmed, aes(x = Ozone, colour = Month.f)) + 
         geom_density(position="identity", fill = NA, size = 1) +
         scale_x_continuous(name = "Mean ozone in\nparts per billion",
                            breaks = seq(0, 200, 25),
@@ -390,7 +390,7 @@ p1 <- ggplot(airquality_trimmed, aes(x = Ozone, colour = Month.f)) +
               legend.position = "bottom") +
         scale_colour_brewer(palette="Accent") +
         labs(colour = "Month")
-p1
+p8
 ```
 
 

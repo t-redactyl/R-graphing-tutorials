@@ -74,9 +74,9 @@ aq_trim$Month <- factor(aq_trim$Month,
 In order to initialise a scatterplot we tell ggplot that `aq_trim` is our data, and specify that our x-axis plots the `Day` variable and our y-axis plots the `Ozone` variable. We then instruct ggplot to render this as a scatterplot by adding the `geom_point()` option.
 
 ```{r scatter1, cache = TRUE}
-p1 <- ggplot(aq_trim, aes(x = Day, y = Ozone)) + 
+p5 <- ggplot(aq_trim, aes(x = Day, y = Ozone)) + 
         geom_point()
-p1
+p5
 ```
 
 ### Changing the shape of the data points
@@ -84,8 +84,8 @@ p1
 Perhaps we want the data points to be a different shape than a solid circle. We can change these by adding the `shape` argument to `geom_point`. An explanation of the allowed arguments for shape are described in [this article](http://sape.inf.usi.ch/quick-reference/ggplot2/shape). In this case, we will use shape 21, which is a circle that allows different colours for the outline and fill.
 
 ```{r scatter2, cache = TRUE}
-p1 <- ggplot(aq_trim, aes(x = Day, y = Ozone)) + geom_point(shape = 21)
-p1
+p5 <- ggplot(aq_trim, aes(x = Day, y = Ozone)) + geom_point(shape = 21)
+p5
 ```
 
 ### Adjusting the axis scales
@@ -93,8 +93,8 @@ p1
 To change the x-axis tick marks, we use the `scale_x_continuous` option. Similarly, to change the y-axis we use the `scale_y_continuous` option. Here we will change the x-axis to every 5 days, rather than 10, and change the range from 1 to 31 (as 0 is not a valid value for this variable).
 
 ```{r scatter3, cache = TRUE}
-p1 <- p1 + scale_x_continuous(breaks = seq(1, 31, 5))
-p1
+p5 <- p5 + scale_x_continuous(breaks = seq(1, 31, 5))
+p5
 ```
 
 ### Adjusting axis labels & adding title
@@ -102,9 +102,9 @@ p1
 To add a title, we include the option `ggtitle` and include the name of the graph as a string argument. To change the axis names we add `x` and `y` arguments to the `labs` command.
 
 ```{r scatter4, cache = TRUE}
-p1 <- p1 + ggtitle("Air Quality in New York by Day") + 
+p5 <- p5 + ggtitle("Air Quality in New York by Day") + 
             labs(x = "Day of the month", y = "Ozone (ppb)") 
-p1
+p5
 ```
 
 ### Adjusting the colour palette
@@ -112,42 +112,42 @@ p1
 There are a few options for adjusting the colour. The most simple is to make every point one fixed colour. You can reference colours by name, with the full list of colours recognised by R [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf). Let's try making the outline `mediumvioletred` and the fill `springgreen`.
 
 ```{r scatter5, cache = TRUE}
-p1 <- ggplot(aq_trim, aes(x = Day, y = Ozone)) + 
+p5 <- ggplot(aq_trim, aes(x = Day, y = Ozone)) + 
         geom_point(shape = 21, colour = "mediumvioletred", 
                    fill = "springgreen") +
         ggtitle("Air Quality in New York by Day") + 
         labs(x = "Day of the month", y = "Ozone (ppb)") +
         scale_x_continuous(breaks = seq(1, 31, 5)) 
-p1
+p5
 ```
 
 You can change the colours using specific HEX codes instead. Here we have made the outline #000000 (black) and the fill "#40b8d0 (vivid cyan).
 
 ```{r scatter6, cache = TRUE}
-p1 <- ggplot(aq_trim, aes(x = Day, y = Ozone)) + 
+p5 <- ggplot(aq_trim, aes(x = Day, y = Ozone)) + 
         geom_point(shape = 21, colour = "#000000", fill = "#40b8d0") +
         ggtitle("Air Quality in New York by Day") + 
         labs(x = "Day of the month", y = "Ozone (ppb)") +
         scale_x_continuous(breaks = seq(1, 31, 5))
-p1
+p5
 ```
 
 You can also change the colour of the data points according to the levels of another variable. This can be done either as a continuous gradient, or as a levels of a factor variable. Let's change the colour by the values of temperature:
 
 ```{r scatter7, cache = TRUE}
-p1 <- ggplot(aq_trim, aes(x = Day, y = Ozone, fill = Temp)) + 
+p5 <- ggplot(aq_trim, aes(x = Day, y = Ozone, fill = Temp)) + 
         geom_point(shape = 21) +
         ggtitle("Air Quality in New York by Day") + 
         labs(x = "Day of the month", y = "Ozone (ppb)") +
         scale_x_continuous(breaks = seq(1, 31, 5))
-p1
+p5
 ```
 
 We can change the gradient's colours by adding the `scale_fill_continuous` option. The `low` and `high` arguments specify the range of colours the gradient should transition between.
 
 ```{r scatter8, cache = TRUE}
-p1 <-  p1 + scale_fill_continuous(low = "plum1", high = "purple4")
-p1
+p5 <-  p5 + scale_fill_continuous(low = "plum1", high = "purple4")
+p5
 ```
 
 We can see that higher temperatures seem to have higher ozone levels. 
@@ -155,12 +155,12 @@ We can see that higher temperatures seem to have higher ozone levels.
 Let's now change the colours of the data points by a factor variable, `Month`.
 
 ```{r scatter9, cache = TRUE}
-p1 <- ggplot(aq_trim, aes(x = Day, y = Ozone, fill = Month)) + 
+p5 <- ggplot(aq_trim, aes(x = Day, y = Ozone, fill = Month)) + 
         geom_point(shape = 21) +
         ggtitle("Air Quality in New York by Day") + 
         labs(x = "Day of the month", y = "Ozone (ppb)") +
         scale_x_continuous(breaks = seq(1, 31, 5))
-p1
+p5
 ```
 
 Again, we can change the colours of these data points, this time using `scale_fill_manual`.
@@ -168,8 +168,8 @@ Again, we can change the colours of these data points, this time using `scale_fi
 ```{r scatter10, cache = TRUE}
 fill = c("steelblue", "yellowgreen", "violetred1")
 
-p1 <- p1 + scale_fill_manual(values = fill)
-p1
+p5 <- p5 + scale_fill_manual(values = fill)
+p5
 ```
 
 ### Adjusting legend position
@@ -177,8 +177,8 @@ p1
 To adjust the position of the legend from the default spot of right of the graph, we add the `theme` option and specify the `legend.position = "bottom"` argument. We can also change the legend shape using the `legend.direction = "horizontal"` argument.
 
 ```{r scatter12, cache = TRUE}
-p1 <- p1 + theme(legend.position = "bottom", legend.direction = "horizontal")
-p1
+p5 <- p5 + theme(legend.position = "bottom", legend.direction = "horizontal")
+p5
 ```
 
 ### Using the white theme
@@ -186,7 +186,7 @@ p1
 As explained in the previous posts, we can also change the overall look of the plot using themes. We'll start using a simple theme customisation by adding `theme_bw() ` after `ggplot()`. As you can see, we can further tweak the graph using the `theme` option, which we've used so far to change the legend.
 
 ```{r scatter14, cache = TRUE}
-p1 <- ggplot(aq_trim, aes(x = Day, y = Ozone, fill = Month)) + 
+p5 <- ggplot(aq_trim, aes(x = Day, y = Ozone, fill = Month)) + 
         geom_point(shape = 21) +
         theme_bw() +
         theme() +
@@ -196,7 +196,7 @@ p1 <- ggplot(aq_trim, aes(x = Day, y = Ozone, fill = Month)) +
         scale_fill_manual(values = fill) +
         scale_size(range = c(1, 10)) +
         theme(legend.position="bottom", legend.direction="horizontal")
-p1
+p5
 ```
 
 ### Creating an XKCD style chart
@@ -221,7 +221,7 @@ You can then create your graph:
 ```{r scatter15, cache=TRUE}
 fill <- c("#56B4E9", "#F0E442", "violetred1")
 
-p1 <- ggplot(aq_trim, aes(x = Day, y = Ozone, fill = Month)) + 
+p5 <- ggplot(aq_trim, aes(x = Day, y = Ozone, fill = Month)) + 
         geom_point(shape = 21) +
         ggtitle("Air Quality in New York by Day") + 
         labs(x = "Day of the month", y = "Ozone (ppb)", fill = "Months") +
@@ -238,7 +238,7 @@ p1 <- ggplot(aq_trim, aes(x = Day, y = Ozone, fill = Month)) +
               text=element_text(family="xkcd-Regular"),
               axis.text.x=element_text(colour="black", size = 10), 
               axis.text.y=element_text(colour="black", size = 10)) 
-p1
+p5
 ```
 
 ### Using 'The Economist' theme 
@@ -246,7 +246,7 @@ p1
 There are a wider range of pre-built themes available as part of the `ggthemes` package (more information on these [here](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html)). Below we've applied `theme_economist()`, which approximates graphs in the Economist magazine.
 
 ```{r scatter16, cache=TRUE}
-p1 <- ggplot(aq_trim, aes(x = Day, y = Ozone, fill = Month)) +
+p5 <- ggplot(aq_trim, aes(x = Day, y = Ozone, fill = Month)) +
         theme_economist() + 
         scale_fill_economist() +
         geom_point(shape = 21) +
@@ -260,7 +260,7 @@ p1 <- ggplot(aq_trim, aes(x = Day, y = Ozone, fill = Month)) +
               axis.title = element_text(size = 12),
               legend.text = element_text(size = 9),
               legend.title=element_text(face = "bold", size = 9))
-p1
+p5
 ```
 
 ### Creating your own theme
@@ -270,7 +270,7 @@ As before, you can modify your plots a lot as `ggplot2` allows many customisatio
 ```{r scatter17, cache=TRUE}
 fill = c("steelblue", "yellowgreen", "violetred1")
 
-p1 <- ggplot(aq_trim, aes(x = Day, y = Ozone, fill = Month)) +
+p5 <- ggplot(aq_trim, aes(x = Day, y = Ozone, fill = Month)) +
         geom_point(shape = 21) +
         ggtitle("Air Quality in New York by Day") + 
         labs(x = "Day of the month", y = "Ozone (ppb)", fill = "Months") +
@@ -286,5 +286,5 @@ p1 <- ggplot(aq_trim, aes(x = Day, y = Ozone, fill = Month)) +
               text=element_text(family="Tahoma"), 
               axis.text.x=element_text(colour="black", size = 9), 
               axis.text.y=element_text(colour="black", size = 9)) 
-p1
+p5
 ```
