@@ -2,6 +2,6 @@ base
 ggplot2
 ggthemes
 extrafont
-RColorBrewer
 plyr
+RColorBrewer
 scales
