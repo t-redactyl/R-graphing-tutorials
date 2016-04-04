@@ -3,3 +3,5 @@ ggplot2
 ggthemes
 extrafont
 RColorBrewer
+plyr
+scales
