@@ -44,9 +44,9 @@ ggplot(airquality_trimmed, aes(x = Ozone, colour = Month.f)) +
       scale_colour_brewer(palette="Accent") +
       labs(colour = "Month") +
       theme_bw() +
-      theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
-            text = element_text(size = 12, family = "Tahoma"),
-            legend.position = "bottom")
+      theme(legend.position = "bottom",
+            plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+            text = element_text(size = 12, family = "Tahoma"))
 ```
 
 ### Basic density plot
@@ -385,9 +385,9 @@ p8 <- ggplot(airquality_trimmed, aes(x = Ozone, colour = Month.f)) +
       scale_colour_brewer(palette="Accent") +
       labs(colour = "Month") +
       theme_bw() +
-      theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
-            text = element_text(size = 12, family = "Tahoma"),
-            legend.position = "bottom")
+      theme(legend.position = "bottom",
+            plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+            text = element_text(size = 12, family = "Tahoma"))
 p8
 ```
 

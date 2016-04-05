@@ -327,7 +327,6 @@ p9 <- ggplot(data.frame(x = c(0, 1)), aes(x = x)) +
             axis.line.y = element_line(size=.5, colour = "black"),
             axis.text.x=element_text(colour="black", size = 9), 
             axis.text.y=element_text(colour="black", size = 9), 
-            legend.position = "bottom", legend.position = "horizontal",
             panel.grid.major = element_line(colour = "#d3d3d3"), 
             panel.grid.minor = element_blank(), 
             panel.border = element_blank(), panel.background = element_blank(),
