@@ -235,12 +235,13 @@ p1</code></pre>
 <div id="using-the-economist-theme" class="section level2">
 <h2>Using ‘The Economist’ theme</h2>
 <p>There are a wider range of pre-built themes available as part of the <code>ggthemes</code> package (more information on these <a href="https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html">here</a>). Below we’ve applied <code>theme_economist()</code>, which approximates graphs in the Economist magazine. It is also important that the font change argument inside <code>theme</code> is optional and it’s only to obtain a more similar result compared to the original. For an exact result you need ‘Officina Sans’ which is a commercial font and is available <a href="http://www.myfonts.com/fonts/itc/officina-sans/">here</a>.</p>
-<pre class="r"><code>p1 &lt;- ggplot() + theme_economist() + scale_colour_economist() +
+<pre class="r"><code>p1 &lt;- ggplot() +
   geom_line(aes(y = export, x = year, colour = product), size=1.5, data = charts.data, 
             stat=&quot;identity&quot;) + 
   scale_x_continuous(breaks=seq(2006,2014,1)) + 
   labs(x=&quot;Year&quot;, y=&quot;USD million&quot;) + 
   ggtitle(&quot;Composition of Exports to China ($)&quot;) +
+  theme_economist() + scale_colour_economist() +
   theme(axis.line.x = element_line(size=.5, colour = &quot;black&quot;), 
         axis.line.y = element_line(size=.5, colour = &quot;black&quot;),
         legend.position=&quot;bottom&quot;, 
@@ -269,7 +270,7 @@ p1 <- ggplot() + theme_fivethirtyeight() + scale_colour_fivethirtyeight() +
 p1
 ```
 
-<img src="1_Line_Plots/line9-1.png" title="" alt="" width="600" style="display: block; margin: auto;" />
+<img src="1_Line_Plots/line_10-1.png" title="" alt="" width="600" style="display: block; margin: auto;" />
 -->
 </div>
 <div id="creating-your-own-theme" class="section level2">

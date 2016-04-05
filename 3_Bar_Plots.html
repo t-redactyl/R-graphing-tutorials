@@ -228,10 +228,7 @@ font_import(paths = &quot;~/.fonts&quot;, pattern=&quot;[X/x]kcd&quot;)
 fonts()
 loadfonts()</code></pre>
 <p>You can then create your graph:</p>
-<pre class="r"><code>#font_import(pattern=&quot;[X/x]kcd&quot;)
-#fonts()
-
-fill &lt;- c(&quot;#56B4E9&quot;, &quot;#F0E442&quot;)
+<pre class="r"><code>fill &lt;- c(&quot;#56B4E9&quot;, &quot;#F0E442&quot;)
 
 p3 &lt;- ggplot() + 
   geom_bar(aes(y = export, x = year, fill = product), data = charts.data, stat=&quot;identity&quot;) + 
@@ -258,7 +255,7 @@ p3</code></pre>
 <div id="using-the-economist-theme" class="section level3">
 <h3>Using ‘The Economist’ theme</h3>
 <p>There are a wider range of pre-built themes available as part of the <code>ggthemes</code> package (more information on these <a href="https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html">here</a>). Below we’ve applied <code>theme_economist()</code>, which approximates graphs in the Economist magazine. It is also important that the font change argument inside <code>theme</code> is optional and it’s only to obtain a more similar result compared to the original. For an exact result you need ‘Officina Sans’ which is a commercial font and is available <a href="http://www.myfonts.com/fonts/itc/officina-sans/">here</a>.</p>
-<pre class="r"><code>p3 &lt;- ggplot() + theme_economist() + scale_fill_economist() +
+<pre class="r"><code>p3 &lt;- ggplot() +
   geom_bar(aes(y = export, x = year, fill = product), data = charts.data, 
            stat=&quot;identity&quot;) + 
   geom_text(data=charts.data, aes(x = year, y = pos, label = export), colour=&quot;white&quot;, size = 4,
@@ -266,6 +263,7 @@ p3</code></pre>
   scale_x_continuous(breaks=seq(2006,2014,1)) + 
   labs(x=&quot;Year&quot;, y=&quot;USD million&quot;) + 
   ggtitle(&quot;Composition of Exports to China ($)&quot;) +
+  theme_economist() + scale_fill_economist() +
   theme(axis.line.x = element_line(size=.5, colour = &quot;black&quot;), 
         axis.line.y = element_line(size=.5, colour = &quot;black&quot;),
         legend.position=&quot;bottom&quot;, 
@@ -296,7 +294,7 @@ p3 <- ggplot() + theme_fivethirtyeight() + scale_fill_fivethirtyeight() +
 p3
 ```
 
-<img src="3_Bar_Plots/bar11-1.png" title="" alt="" width="600" style="display: block; margin: auto;" />
+<img src="3_Bar_Plots/bar_12-1.png" title="" alt="" width="600" style="display: block; margin: auto;" />
 -->
 </div>
 <div id="creating-your-own-theme" class="section level3">

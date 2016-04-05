@@ -62,7 +62,7 @@ p9 <- ggplot(data.frame(x = c(-4, 4)), aes(x = x)) +
 p9
 ```
 
-### Basic t- curve
+### Basic t-curve
 
 `stat_function` can draw a range of continuous [probability density functions](https://en.wikipedia.org/wiki/Probability_density_function), including t (`dt`), F (`df`) and Chi-square (`dchisq`) PDFs. Here we will plot a t-distribution. As the shape of the t-distribution changes depending on the sample size (indicated by the degrees of freedom, or df), we need to specify our df value as part of defining our curve. 
 
@@ -233,7 +233,7 @@ p9
 Of course, you may want to create your own themes as well. `ggplot2` allows for a very high degree of customisation, including allowing you to use imported fonts. Below is an example of a theme Mauricio was able to create which mimics the visual style of [XKCD](http://xkcd.com/). In order to create this chart, you first need to import the XKCD font, install it on your machine and load it into R using the `extrafont` package.
 These instructions are taken from [here](https://www.google.com.au/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwiWzafchdPJAhVBpJQKHe_LDT8QFggbMAA&url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fxkcd%2Fvignettes%2Fxkcd-intro.pdf&usg=AFQjCNE-KciGY14e-Q1buYIVmTFC0ht__Q&sig2=DZUwkvIHwfNWtTtkcz94jg):
 
-```{r importing_font_xkcd, eval=FALSE}
+```{r function_importing_font_xkcd, eval=FALSE}
 library(extrafont)
 
 download.file("http://simonsoftware.se/other/xkcd.ttf", 

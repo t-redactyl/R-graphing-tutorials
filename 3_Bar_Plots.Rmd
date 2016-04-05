@@ -15,7 +15,7 @@ In this third tutorial I am doing with [Mauricio Vargas Sepúlveda](http://pacha
 
 In this tutorial, we will work towards creating the area plot below. We will take you from a basic bar plot and explain all the customisations we add to the code step-by-step.
 
-```{r finalresult, echo=FALSE, cache=TRUE}
+```{r bar_final, echo=FALSE, cache=TRUE}
 library(ggplot2)
 library(ggthemes)
 library(extrafont)
@@ -58,7 +58,7 @@ p3
 
 The first thing to do is load in the data and libraries, as below:
 
-```{r load_in_data, cache=TRUE}
+```{r bar_load_in_data, cache=TRUE}
 library(ggplot2)
 library(ggthemes)
 library(extrafont)
@@ -69,7 +69,7 @@ charts.data <- read.csv("copper-data-for-tutorial.csv")
 
 In order to initialise a plot we tell ggplot that `charts.data` is our data, and specify the variables on each axis. We then instruct ggplot to render this as an bar plot by adding the `geom_area` command.
 
-```{r bar1, cache=TRUE}
+```{r bar_1, cache=TRUE}
 p3 <- ggplot() + geom_bar(aes(y = export, x = year, fill = product), data = charts.data, 
                           stat="identity")
 p3
@@ -79,7 +79,7 @@ p3
 
 To label the bars according to some variable in the data, we add the `label` argument to the `ggplot(aes())` option. In this case, we have labelled the bars with numbers from the `export` variable.
 
-```{r bar2, cache=TRUE}
+```{r bar_2, cache=TRUE}
 p3 <- p3 + geom_text(data=charts.data, aes(x = year, y = export, label = export), size=4)
 p3
 ```
@@ -88,7 +88,7 @@ p3
 
 To adjust the position of the data labels from the default placement, we use the `ddply` function on the data, and create a new variable called `pos`. This variable is at the centre of each bar and can be used to specify the position of the labels by assigning it to the `y` argument in `geom_text(aes())`.
 
-```{r bar3, cache=TRUE}
+```{r bar_3, cache=TRUE}
 charts.data <- ddply(charts.data, .(year), transform, pos = cumsum(export) - (0.5 * export))
 
 p3 <- ggplot() + geom_bar(aes(y = export, x = year, fill = product), data = charts.data, 
@@ -101,7 +101,7 @@ p3
 
 To adjust the position of the legend from the default spot of right of the graph, we add the `theme` option and specify the `legend.position="bottom"` argument. We can also change the title to blank using the ` legend.title = element_blank()` argument and change the legend shape using the `legend.direction="horizontal"` argument.
 
-```{r bar4, cache=TRUE}
+```{r bar_4, cache=TRUE}
 p3 <- p3 + theme(legend.position="bottom", legend.direction="horizontal", 
                  legend.title = element_blank())
 p3
@@ -111,7 +111,7 @@ p3
 
 To change the variables' displayed name, we need to re-factor our data labels in `charts.data` data frame.
 
-```{r bar5, cache=TRUE, eval=TRUE}
+```{r bar_5, cache=TRUE, eval=TRUE}
 charts.data$product <- factor(charts.data$product, levels = c("copper","others"), 
                               labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
 
@@ -127,7 +127,7 @@ p3
 
 To change the axis tick marks, we use the `scale_x_continuous` and/or `scale_y_continuous` commands.
 
-```{r bar6, cache=TRUE}
+```{r bar_6, cache=TRUE}
 p3 <- p3 + scale_x_continuous(breaks=seq(2006,2014,1))
 p3
 ```
@@ -136,7 +136,7 @@ p3
 
 To add a title, we include the option `ggtitle` and include the name of the graph as a string argument, and to change the axis names we use the `labs` command.
 
-```{r bar7, cache=TRUE}
+```{r bar_7, cache=TRUE}
 p3 <- p3 + ggtitle("Composition of Exports to China ($)") + labs(x="Year", y="USD million") 
 p3
 ```
@@ -145,7 +145,7 @@ p3
 
 To change the colours, we use the `scale_colour_manual` command. Note that you can reference the specific colours you'd like to use with specific HEX codes. You can also reference colours by name, with the full list of colours recognised by R [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf).
 
-```{r bar8, cache=TRUE}
+```{r bar_8, cache=TRUE}
 fill <- c("#5F9EA0", "#E1B378")
 p3 <- p3 + scale_fill_manual(values=fill)
 p3
@@ -155,7 +155,7 @@ p3
 
 As explained in the previous posts, we can also change the overall look of the graph using themes. We'll start using a simple theme customisation by adding `theme_bw() ` after `ggplot()`. As you can see, we can further tweak the graph using the `theme` option, which we've used so far to change the legend.
 
-```{r bar9, cache=TRUE}
+```{r bar_9, cache=TRUE}
 p3 <- ggplot() +
   geom_bar(aes(y = export, x = year, fill = product), data = charts.data, stat="identity") + 
   geom_text(data=charts.data, aes(x = year, y = pos, label = export, size=4), show.legend = F) + 
@@ -175,7 +175,7 @@ p3
 Of course, you may want to create your own themes as well. `ggplot2` allows for a very high degree of customisation, including allowing you to use imported fonts. Below is an example of a theme Mauricio was able to create which mimics the visual style of [XKCD](http://xkcd.com/). In order to create this chart, you first need to import the XKCD font, install it on your machine and load it into R using the `extrafont` package.
 These instructions are taken from [here](https://www.google.com.au/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwiWzafchdPJAhVBpJQKHe_LDT8QFggbMAA&url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fxkcd%2Fvignettes%2Fxkcd-intro.pdf&usg=AFQjCNE-KciGY14e-Q1buYIVmTFC0ht__Q&sig2=DZUwkvIHwfNWtTtkcz94jg):
 
-```{r importing_font_xkcd, eval=FALSE}
+```{r bar_importing_font_xkcd, eval=FALSE}
 library(extrafont)
 
 download.file("http://simonsoftware.se/other/xkcd.ttf", 
@@ -189,10 +189,7 @@ loadfonts()
 
 You can then create your graph:
 
-```{r bar12, cache=TRUE}
-#font_import(pattern="[X/x]kcd")
-#fonts()
-
+```{r bar_10, cache=TRUE}
 fill <- c("#56B4E9", "#F0E442")
 
 p3 <- ggplot() + 
@@ -221,8 +218,8 @@ p3
 
 There are a wider range of pre-built themes available as part of the `ggthemes` package (more information on these [here](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html)). Below we've applied `theme_economist()`, which approximates graphs in the Economist magazine. It is also important that the font change argument inside `theme` is optional and it's only to obtain a more similar result compared to the original. For an exact result you need 'Officina Sans' which is a commercial font and is available [here](http://www.myfonts.com/fonts/itc/officina-sans/).
 
-```{r bar10, cache=TRUE}
-p3 <- ggplot() + theme_economist() + scale_fill_economist() +
+```{r bar_11, cache=TRUE}
+p3 <- ggplot() +
   geom_bar(aes(y = export, x = year, fill = product), data = charts.data, 
            stat="identity") + 
   geom_text(data=charts.data, aes(x = year, y = pos, label = export), colour="white", size = 4,
@@ -230,6 +227,7 @@ p3 <- ggplot() + theme_economist() + scale_fill_economist() +
   scale_x_continuous(breaks=seq(2006,2014,1)) + 
   labs(x="Year", y="USD million") + 
   ggtitle("Composition of Exports to China ($)") +
+  theme_economist() + scale_fill_economist() +
   theme(axis.line.x = element_line(size=.5, colour = "black"), 
         axis.line.y = element_line(size=.5, colour = "black"),
         legend.position="bottom", 
@@ -245,7 +243,7 @@ p3
 
 Below we've applied `theme_fivethirtyeight()`, which approximates graphs in the nice [FiveThirtyEight](http://fivethirtyeight.com/) website. Again, it is also important that the font change is optional and it's only to obtain a more similar result compared to the original. For an exact result you need 'Atlas Grotesk' which is a commercial font and is available [here](https://commercialtype.com/catalog/atlas).
 
-```{r bar11, cache=TRUE}
+```{r bar_12, cache=TRUE}
 p3 <- ggplot() + theme_fivethirtyeight() + scale_fill_fivethirtyeight() + 
   geom_bar(aes(y = export, x = year, fill = product), data = charts.data, stat="identity") + 
   geom_text(data=charts.data, aes(x = year, y = pos, label = export), colour="white", size = 3.5,
@@ -265,7 +263,7 @@ p3
 
 As before, you can modify your plots a lot as `ggplot2` allows many customisations. Here we present our original result shown at the top of page.
 
-```{r bar13, cache=TRUE}
+```{r bar_13, cache=TRUE}
 fill <- c("#40b8d0", "#b2d183")
 
 p3 <- ggplot() + 

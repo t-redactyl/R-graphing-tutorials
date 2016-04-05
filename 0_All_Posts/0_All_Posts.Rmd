@@ -1,0 +1,21 @@
+---
+title: "TEST - POSTS 1-3"
+author: "PACHA"
+date: '`r Sys.Date()`'
+output:
+  html_document:
+    toc: yes
+---
+
+```{r setup, cache = FALSE, echo = FALSE, message = FALSE, warning = FALSE, tidy = FALSE}
+knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, fig.width=6, fig.height=5, tidy = F, cache.path = '.cache/', fig.path = '0_all_posts/')
+```
+
+```{r child = '1_Line_Plots.Rmd'}
+```
+
+```{r child = '2_Area_Plots.Rmd'}
+```
+
+```{r child = '3_Bar_Plots.Rmd'}
+```
