@@ -1,8 +1,6 @@
 # AREA
 
-In this second tutorial I am doing with [Mauricio Vargas Sepúlveda](http://pachamaltese.github.io/), we will demonstrate some of the many options the `ggplot2` package has for creating and customising area plots. We will use the same [dataset](http://pachamaltese.github.io/stats/trade-chile-china/copper-data-for-tutorial.csv) from the [first](http://t-redactyl.github.io/blog/2015/12/creating-plots-in-r-using-ggplot2-part-1-line-plots.html) post.
-
-In this tutorial, we will work towards creating the area plot below. We will take you from a basic area plot and explain all the customisations we add to the code step-by-step.
+In this part, we will work towards creating the area plot below. We will take you from a basic area plot and explain all the customisations we add to the code step-by-step.
 
 ```{r area_final, echo=FALSE, cache=TRUE}
 library(ggplot2)
