@@ -1,5 +1,5 @@
 ---
-title: "Creating plots in R using ggplot2 - part 9: boxplots"
+title: "Creating plots in R using ggplot2 - part 10: boxplots"
 author: 
   - Jodie Burchell
   - Mauricio Vargas Sepúlveda 帕夏
@@ -97,7 +97,7 @@ p10
 
 ### Changing the colour of the boxes
 
-To change the line and fill colours of the density plot, we add a valid colour to the `colour` and `fill` arguments in `geom_boxplot()` (note that we assigned these colours to variables outside of the plot to make it easier to change them). A list of valid colours is [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf).
+To change the line and fill colours of the box plot, we add a valid colour to the `colour` and `fill` arguments in `geom_boxplot()` (note that we assigned these colours to variables outside of the plot to make it easier to change them). A list of valid colours is [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf).
 
 ```{r box_6, message = FALSE, warning = FALSE}
 fill <- "gold1"
@@ -143,7 +143,7 @@ p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) +
 p10
 ```
 
-Finally, you can change the appearance of the outliers as well, using the arguments `outlier.colour` and `outlier.shape` in `geom_boxplot` to change the colour and shape respectively. An explanation of the allowed arguments for shape are described in [this article](http://sape.inf.usi.ch/quick-reference/ggplot2/shape), although be aware that because there is no "fill" argument for outlier, you cannot create circles with separate outline and fill colours. Here will will make the outliers small solid circles (using `outlier.shape = 20`) and make them the same colour as the box lines (using `outlier.colour = "#1F3552"`). 
+Finally, you can change the appearance of the outliers as well, using the arguments `outlier.colour` and `outlier.shape` in `geom_boxplot` to change the colour and shape respectively. An explanation of the allowed arguments for shape are described in [this article](http://sape.inf.usi.ch/quick-reference/ggplot2/shape), although be aware that because there is no "fill" argument for outlier, you cannot create circles with separate outline and fill colours. Here we will make the outliers small solid circles (using `outlier.shape = 20`) and make them the same colour as the box lines (using `outlier.colour = "#1F3552"`). 
 
 ```{r box_9, message = FALSE, warning = FALSE}
 p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) + 
@@ -275,9 +275,9 @@ p10 <- p10 + geom_jitter()
 p10
 ```
  
-We can see that `Jun` has a pretty small sample, indicating that information based on this group may not be very reliable.
+We can see that June has a pretty small sample, indicating that information based on this group may not be very reliable.
 
-Another thing you can do with your boxplot is add a notch to the box where the median sits, to give a clearer visual indication of how the data are distributed. You achieve this by adding the argument `notch = TRUE` to the `geom_boxplot` option. You can see on our graph that the box for `Jun` is not presented neatly due to the very small gap between the 25th percentile and the median.
+Another thing you can do with your boxplot is add a notch to the box where the median sits to give a clearer visual indication of how the data are distributed within the IQR. You achieve this by adding the argument `notch = TRUE` to the `geom_boxplot` option. You can see on our graph that the box for June looks a bit weird due to the very small gap between the 25th percentile and the median.
 
 ```{r box_15, message = FALSE, warning = FALSE}
 p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) + 
@@ -303,11 +303,11 @@ p10
 
 ### Grouping by another variable
 
-You can also easily group box plots by the levels of another variable. There are two options, in separate (panel) plots, or in the same plot. There are also a couple of variations on these we'll discuss below.
+You can also easily group box plots by the levels of another variable. There are two options, in separate (panel) plots, or in the same plot.
 
-We first need to do a little data wrangling. In order to make the graphs a bit clearer, we've kept only months "July", "Aug" and "Sep" in a new dataset `airquality_trimmed`. We've also mean-split `Temp` so that this is also categorical, and made it into a labelled factor variable called `Temp.f`.
+We first need to do a little data wrangling. In order to make the graphs a bit clearer, we've kept only months "July", "Aug" and "Sep" in a new dataset `airquality_trimmed`. We've also mean-split `Temp` so that this is also categorical, and made it into a new labelled factor variable called `Temp.f`.
 
-In order to produce a panel plot by month, we add the `facet_grid(. ~ Month.f)` option to the plot. Note that we've also changed the scale of the x-axis to make it fit a little more neatly in the panel format.
+In order to produce a panel plot by temperature, we add the `facet_grid(. ~ Temp.f)` option to the plot.
 
 ```{r box_16, message = FALSE, warning = FALSE}
 airquality_trimmed <- airquality[which(airquality$Month == "Jul" |
@@ -333,7 +333,7 @@ p10 <- ggplot(airquality_trimmed, aes(x = Month, y = Ozone)) +
 p10
 ```
 
-In order to plot the two temperatures in the same plot, we add a couple of things. Firstly, in the `ggplot` function, we add a `fill = Temp.f` argument to `aes`. Secondly, you can customise the colours of the histograms by adding the `scale_fill_brewer` to the plot from the `RColorBrewer` package. [This](http://moderndata.plot.ly/create-colorful-graphs-in-r-with-rcolorbrewer-and-plotly/) blog post describes the available packages.
+In order to plot the two temperature levels in the same plot, we need to add a couple of things. Firstly, in the `ggplot` function, we add a `fill = Temp.f` argument to `aes`. Secondly, we customise the colours of the boxes by adding the `scale_fill_brewer` to the plot from the `RColorBrewer` package. [This](http://moderndata.plot.ly/create-colorful-graphs-in-r-with-rcolorbrewer-and-plotly/) blog post describes the available packages.
 
 ```{r box_17, message = FALSE, warning = FALSE}
 library(RColorBrewer)
