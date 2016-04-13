@@ -1,5 +1,3 @@
-# BAR
-
 In this part, we will work towards creating the area plot below. We will take you from a basic bar plot and explain all the customisations we add to the code step-by-step.
 
 ```{r bar_final, echo=FALSE, cache=TRUE}

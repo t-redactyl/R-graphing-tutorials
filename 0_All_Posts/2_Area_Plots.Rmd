@@ -1,5 +1,3 @@
-# AREA
-
 In this part, we will work towards creating the area plot below. We will take you from a basic area plot and explain all the customisations we add to the code step-by-step.
 
 ```{r area_final, echo=FALSE, cache=TRUE}

@@ -1,5 +1,3 @@
-# LINE
-
 The first thing to do is load in the data and libraries, as below:
 
 ```{r line_load, cache=TRUE}

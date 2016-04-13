@@ -17,29 +17,38 @@ I recently teamed up with [Mauricio Vargas Sepúlveda](http://pachamaltese.githu
 
 We will demonstrate some of the many options the `ggplot2` package has for creating and customising line plots. We will use an international trade [dataset](http://pachamaltese.github.io/stats/trade-chile-china/copper-data-for-tutorial.csv ) (parts 1-4) made by ourselves from different sources (Chile Customs, Central Bank of Chile and General Directorate of International Economic Relations).
 
+# Line Plots
 ```{r child = '1_Line_Plots.Rmd'}
 ```
 
+# Area Plots
 ```{r child = '2_Area_Plots.Rmd'}
 ```
 
+# Bar Plots
 ```{r child = '3_Bar_Plots.Rmd'}
 ```
 
+# Stacked Bar Plots
 ```{r child = '4_Stacked_Bar.Rmd'}
 ```
 
+# Scatter Plots
 ```{r child = '5_Scatter_Plots.Rmd'}
 ```
 
+# Weighted Scatter Plots
 ```{r child = '6_Weighted_Scatterplots.Rmd'}
 ```
 
+# Histograms
 ```{r child = '7_Histograms.Rmd'}
 ```
 
+# Density Plots
 ```{r child = '8_Density_Plots.Rmd'}
 ```
 
+# Function Plots
 ```{r child = '9_Function_Plots.Rmd'}
 ```
