@@ -4,20 +4,18 @@ author:
   - Jodie Burchell
   - Mauricio Vargas Sepúlveda 帕夏
 date: "`r Sys.Date()`"
-output: 
-      rmarkdown::html_vignette:
-        css: css/entries.css
+output: html_document
 ---
 
 ```{r setup, cache = FALSE, echo = FALSE, message = FALSE, warning = FALSE, tidy = FALSE}
-knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, fig.width=6, fig.height=5, tidy = F, cache.path = '.cache/', fig.path = 'Box plots/')
+knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, fig.width=6, fig.height=5, tidy = F, cache.path = '.cache/', fig.path = '10_Boxplots/')
 ```
 
 This is the tenth tutorial in a series on using `ggplot2` I am creating with [Mauricio Vargas Sepúlveda](http://pachamaltese.github.io/). In this tutorial we will demonstrate some of the many options the `ggplot2` package has for creating and customising boxplots. We will use R's [airquality dataset](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/airquality.html) in the `datasets` package.
 
 The first thing to do is load in the data, as below. We'll convert `Month` into a labelled factor in order to use it as our grouping variable.
 
-```{r load_in_data}
+```{r load_in_data, cache = TRUE}
 rm(list = ls())
 library(datasets)
 library(ggplot2)
@@ -29,8 +27,13 @@ airquality$Month <- factor(airquality$Month,
 
 In this tutorial, we will work towards creating the boxplot below. We will take you from a basic boxplot and explain all the customisations we add to the code step-by-step.
 
-```{r box_final, echo = FALSE}
-p10 <- ggplot(airquality_trimmed, aes(x = Month, y = Ozone, fill = Temp.f)) + 
+```{r box_final, echo = FALSE, cache = TRUE}
+airquality_trimmed2 <- airquality[which(airquality$Month == "Jul" |
+                                       airquality$Month == "Aug" |
+                                       airquality$Month == "Sep"), ]
+airquality_trimmed2$Temp.f <- factor(ifelse(airquality_trimmed2$Temp > mean(airquality_trimmed2$Temp), 1, 0),
+                                    labels = c("Low temp", "High temp"))
+p10 <- ggplot(airquality_trimmed2, aes(x = Month, y = Ozone, fill = Temp.f)) + 
         geom_boxplot(alpha=0.7) +
         scale_y_continuous(name = "Mean ozone in\nparts per billion",
                            breaks = seq(0, 175, 25),
@@ -52,7 +55,7 @@ p10
 
 In order to initialise a plot we tell ggplot that `airquality` is our data, and specify that our x-axis plots the `Month` variable and our y-axis plots the `Ozone` variable. We then instruct ggplot to render this as a boxplot by adding the `geom_boxplot()` option.
 
-```{r box_1}
+```{r box_1, cache = TRUE}
 p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) + 
         geom_boxplot()
 p10
@@ -62,7 +65,7 @@ p10
 
 In order to change the axis labels, we have a couple of options. In this case, we have used the `scale_x_discrete` and `scale_y_continuous` options, as these have further customisation options for the axes we will use below. In each, we add the desired name to the `name` argument as a string.
 
-```{r box_2, message = FALSE, warning = FALSE}
+```{r box_2, message = FALSE, warning = FALSE, cache = TRUE}
 p10 <- p10 + scale_x_discrete(name = "Month") +
         scale_y_continuous(name = "Mean ozone in parts per billion")
 p10
@@ -70,7 +73,7 @@ p10
 
 ggplot also allows for the use of multiline names (in both axes and titles). Here, we've changed the y-axis label so that it goes over two lines using the `\n` character to break the line.
 
-```{r box_3, message = FALSE, warning = FALSE}
+```{r box_3, message = FALSE, warning = FALSE, cache = TRUE}
 p10 <- p10 + scale_y_continuous(name = "Mean ozone in\nparts per billion")
 p10
 ```
@@ -79,7 +82,7 @@ p10
 
 The next thing we will change is the axis ticks. Let's make the y-axis ticks appear at every 25 units rather than 50 using the `breaks = seq(0, 175, 25)` argument in `scale_y_continuous`. (The `seq` function is a base R function that indicates the start and endpoints and the units to increment by respectively. See `help(seq)` for more information.) We ensure that the y-axis begins and ends where we want by also adding the argument `limits = c(0, 175)` to `scale_y_continuous`.
 
-```{r box_4, message = FALSE, warning = FALSE}
+```{r box_4, message = FALSE, warning = FALSE, cache = TRUE}
 p10 <- p10 + scale_y_continuous(name = "Mean ozone in\nparts per billion",
                               breaks = seq(0, 175, 25),
                               limits=c(0, 175))
@@ -90,7 +93,7 @@ p10
 
 To add a title, we include the option `ggtitle` and include the name of the graph as a string argument.
 
-```{r box_5, message = FALSE, warning = FALSE}
+```{r box_5, message = FALSE, warning = FALSE, cache = TRUE}
 p10 <- p10 + ggtitle("Boxplot of mean ozone by month")
 p10
 ```
@@ -99,7 +102,7 @@ p10
 
 To change the line and fill colours of the box plot, we add a valid colour to the `colour` and `fill` arguments in `geom_boxplot()` (note that we assigned these colours to variables outside of the plot to make it easier to change them). A list of valid colours is [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf).
 
-```{r box_6, message = FALSE, warning = FALSE}
+```{r box_6, message = FALSE, warning = FALSE, cache = TRUE}
 fill <- "gold1"
 line <- "goldenrod2"
 
@@ -115,7 +118,7 @@ p10
 
 If you want to go beyond the options in the list above, you can also specify exact HEX colours by including them as a string preceded by a hash, e.g., "#FFFFFF". Below, we have called two shades of blue for the fill and lines using their HEX codes.
 
-```{r box_7, message = FALSE, warning = FALSE}
+```{r box_7, message = FALSE, warning = FALSE, cache = TRUE}
 fill <- "#4271AE"
 line <- "#1F3552"
 
@@ -131,7 +134,7 @@ p10
 
 You can also specify the degree of transparency in the box fill area using the argument `alpha` in `geom_boxplot`. This ranges from 0 to 1.
 
-```{r box_8, message = FALSE, warning = FALSE}
+```{r box_8, message = FALSE, warning = FALSE, cache = TRUE}
 p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) + 
         geom_boxplot(fill = fill, colour = line,
                      alpha = 0.7) +
@@ -145,7 +148,7 @@ p10
 
 Finally, you can change the appearance of the outliers as well, using the arguments `outlier.colour` and `outlier.shape` in `geom_boxplot` to change the colour and shape respectively. An explanation of the allowed arguments for shape are described in [this article](http://sape.inf.usi.ch/quick-reference/ggplot2/shape), although be aware that because there is no "fill" argument for outlier, you cannot create circles with separate outline and fill colours. Here we will make the outliers small solid circles (using `outlier.shape = 20`) and make them the same colour as the box lines (using `outlier.colour = "#1F3552"`). 
 
-```{r box_9, message = FALSE, warning = FALSE}
+```{r box_9, message = FALSE, warning = FALSE, cache = TRUE}
 p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) + 
         geom_boxplot(fill = fill, colour = line, alpha = 0.7,
                      outlier.colour = "#1F3552", outlier.shape = 20) +
@@ -161,7 +164,7 @@ p10
 
 As explained in the previous posts, we can also change the overall look of the plot using themes. We'll start using a simple theme customisation by adding `theme_bw() `. As you can see, we can further tweak the graph using the `theme` option, which we've used so far to change the legend.
 
-```{r box_10, message = FALSE, warning = FALSE}
+```{r box_10, message = FALSE, warning = FALSE, cache = TRUE}
 p10 <- p10 + theme_bw()
 p10
 ```
@@ -185,7 +188,7 @@ loadfonts()
 
 You can then create your graph:
 
-```{r box_11, message = FALSE, warning = FALSE}
+```{r box_11, message = FALSE, warning = FALSE, cache = TRUE}
 p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) + 
         geom_boxplot(colour = "black", fill = "#56B4E9") +
         scale_y_continuous(name = "Mean ozone in\nparts per billion",
@@ -193,7 +196,9 @@ p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) +
                            limits=c(0, 175)) +
         scale_x_discrete(name = "Month") +
         ggtitle("Boxplot of mean ozone by month") +
-        theme(axis.line = element_line(size=1, colour = "black"), 
+        theme(axis.line.x = element_line(size = 0.5, colour = "black"), 
+              axis.line.y = element_line(size = 0.5, colour = "black"), 
+              axis.line = element_line(size=1, colour = "black"), 
               panel.grid.major = element_blank(),
               panel.grid.minor = element_blank(), 
               panel.border = element_blank(), 
@@ -209,7 +214,7 @@ p10
 
 There are a wider range of pre-built themes available as part of the `ggthemes` package (more information on these [here](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html)). Below we've applied `theme_economist()`, which approximates graphs in the Economist magazine.
 
-```{r box_12, message = FALSE, warning = FALSE}
+```{r box_12, message = FALSE, warning = FALSE, cache = TRUE}
 library(ggthemes)
 library(grid)
 
@@ -224,7 +229,9 @@ p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) +
         scale_x_discrete(name = "Month") +
         ggtitle("Boxplot of mean ozone by month") +
         theme_economist() +
-        theme(legend.position = "bottom", legend.direction = "horizontal",
+        theme(axis.line.x = element_line(size = 0.5, colour = "black"),
+              axis.line.y = element_line(size = 0.5, colour = "black"), 
+              legend.position = "bottom", legend.direction = "horizontal",
               legend.box = "horizontal",
               legend.key.size = unit(1, "cm"),
               plot.title = element_text(family="Tahoma"),
@@ -239,7 +246,7 @@ p10
 
 As before, you can modify your plots a lot as `ggplot2` allows many customisations. Here is a custom plot where we have modified the axes, background and font.
 
-```{r box_13, message = FALSE, warning = FALSE}
+```{r box_13, message = FALSE, warning = FALSE, cache = TRUE}
 library(grid) 
 
 fill <- "#4271AE"
@@ -254,7 +261,8 @@ p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) +
         scale_x_discrete(name = "Month") +
         ggtitle("Boxplot of mean ozone by month") +
         theme_bw() +
-        theme(axis.line = element_line(size = 0.75, colour = "black"), 
+        theme(axis.line.x = element_line(size = 0.5, colour = "black"), 
+              axis.line.y = element_line(size = 0.5, colour = "black"), 
               panel.grid.major = element_line(colour = "#d3d3d3"), 
               panel.grid.minor = element_blank(), 
               panel.border = element_blank(), panel.background = element_blank(),
@@ -270,7 +278,7 @@ p10
 
 An extra feature you can add to boxplots is to overlay all of the points for that group on each boxplot in order to get an idea of the sample size of the group. This can be achieved using by adding the `geom_jitter` option.
 
-```{r box_14, message = FALSE, warning = FALSE}
+```{r box_14, message = FALSE, warning = FALSE, cache = TRUE}
 p10 <- p10 + geom_jitter()
 p10
 ```
@@ -279,7 +287,7 @@ We can see that June has a pretty small sample, indicating that information base
 
 Another thing you can do with your boxplot is add a notch to the box where the median sits to give a clearer visual indication of how the data are distributed within the IQR. You achieve this by adding the argument `notch = TRUE` to the `geom_boxplot` option. You can see on our graph that the box for June looks a bit weird due to the very small gap between the 25th percentile and the median.
 
-```{r box_15, message = FALSE, warning = FALSE}
+```{r box_15, message = FALSE, warning = FALSE, cache = TRUE}
 p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) + 
         geom_boxplot(colour = lines, fill = fill,
                      size = 1, notch = TRUE) +
@@ -289,7 +297,8 @@ p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) +
         scale_x_discrete(name = "Month") +
         ggtitle("Boxplot of mean ozone by month") +
         theme_bw() +
-        theme(axis.line = element_line(size = 0.75, colour = "black"), 
+        theme(axis.line.x = element_line(size = 0.5, colour = "black"), 
+              axis.line.y = element_line(size = 0.5, colour = "black"),
               panel.grid.major = element_line(colour = "#d3d3d3"), 
               panel.grid.minor = element_blank(), 
               panel.border = element_blank(), panel.background = element_blank(),
@@ -309,7 +318,7 @@ We first need to do a little data wrangling. In order to make the graphs a bit c
 
 In order to produce a panel plot by temperature, we add the `facet_grid(. ~ Temp.f)` option to the plot.
 
-```{r box_16, message = FALSE, warning = FALSE}
+```{r box_16, message = FALSE, warning = FALSE, cache = TRUE}
 airquality_trimmed <- airquality[which(airquality$Month == "Jul" |
                                        airquality$Month == "Aug" |
                                        airquality$Month == "Sep"), ]
@@ -335,7 +344,7 @@ p10
 
 In order to plot the two temperature levels in the same plot, we need to add a couple of things. Firstly, in the `ggplot` function, we add a `fill = Temp.f` argument to `aes`. Secondly, we customise the colours of the boxes by adding the `scale_fill_brewer` to the plot from the `RColorBrewer` package. [This](http://moderndata.plot.ly/create-colorful-graphs-in-r-with-rcolorbrewer-and-plotly/) blog post describes the available packages.
 
-```{r box_17, message = FALSE, warning = FALSE}
+```{r box_17, message = FALSE, warning = FALSE, cache = TRUE}
 library(RColorBrewer)
 
 p10 <- ggplot(airquality_trimmed, aes(x = Month, y = Ozone, fill = Temp.f)) + 
@@ -358,7 +367,7 @@ p10
 
 Finally, we can format the legend. Firstly, we can change the position by adding the `legend.position = "bottom"` argument to the `theme` option, which moves the legend under the plot. Secondly, we can fix the title by adding the `labs(fill = "Temperature")` option to the plot.
 
-```{r box_18, message = FALSE, warning = FALSE}
+```{r box_18, message = FALSE, warning = FALSE, cache = TRUE}
 p10 <- ggplot(airquality_trimmed, aes(x = Month, y = Ozone, fill = Temp.f)) + 
         geom_boxplot(alpha=0.7) +
         scale_y_continuous(name = "Mean ozone in\nparts per billion",
@@ -376,5 +385,3 @@ p10 <- ggplot(airquality_trimmed, aes(x = Month, y = Ozone, fill = Temp.f)) +
         labs(fill = "Temperature")
 p10
 ```
-
-

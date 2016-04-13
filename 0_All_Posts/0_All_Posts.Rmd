@@ -52,3 +52,7 @@ We will demonstrate some of the many options the `ggplot2` package has for creat
 # Function Plots
 ```{r child = '9_Function_Plots.Rmd'}
 ```
+
+# Boxplots
+```{r child = '10_Boxplots.Rmd'}
+```
