@@ -26,8 +26,8 @@
 \usepackage{hyperref}
 \PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
 \hypersetup{unicode=true,
-            pdftitle={Creating plots in R using ggplot2 - Parts 1-9},
-            pdfauthor={Jodie Burchell; Mauricio Vargas Sepúlveda 帕夏},
+            pdftitle={Creating plots in R using ggplot2 - Parts 1-10},
+            pdfauthor={Jodie Burchell; Mauricio Vargas Sepúlveda},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
@@ -102,10 +102,10 @@
 }
 
 \setlength{\droptitle}{-2em}
-  \title{Creating plots in R using ggplot2 - Parts 1-9}
+  \title{Creating plots in R using ggplot2 - Parts 1-10}
   \pretitle{\vspace{\droptitle}\centering\huge}
   \posttitle{\par}
-  \author{Jodie Burchell \\ Mauricio Vargas Sepúlveda 帕夏}
+  \author{Jodie Burchell \\ Mauricio Vargas Sepúlveda}
   \preauthor{\centering\large\emph}
   \postauthor{\par}
   \predate{\centering\large\emph}
@@ -427,7 +427,7 @@ add to the code step-by-step.
 
 \begin{center}\includegraphics{0_all_posts_pdf/area_final-1} \end{center}
 
-\subsubsection{Basic graph}\label{basic-graph-1}
+\subsection{Basic graph}\label{basic-graph-1}
 
 The first thing to do is load in the data and libraries, as below:
 
@@ -458,8 +458,7 @@ command.
 
 \begin{center}\includegraphics{0_all_posts_pdf/area_1-1} \end{center}
 
-\subsubsection{Adjusting legend
-position}\label{adjusting-legend-position}
+\subsection{Adjusting legend position}\label{adjusting-legend-position}
 
 To adjust the position of the legend from the default spot of right of
 the graph, we add the \texttt{theme} option and specify the
@@ -479,7 +478,7 @@ and change the legend shape using the
 
 \begin{center}\includegraphics{0_all_posts_pdf/area_2-1} \end{center}
 
-\subsubsection{Changing variables
+\subsection{Changing variables
 display}\label{changing-variables-display-1}
 
 To change the variables displayed name, we need to re-factor our data
@@ -500,7 +499,7 @@ labels in \texttt{charts.data} data frame.
 
 \begin{center}\includegraphics{0_all_posts_pdf/area_3-1} \end{center}
 
-\subsubsection{Adjusting x-axis scale}\label{adjusting-x-axis-scale-1}
+\subsection{Adjusting x-axis scale}\label{adjusting-x-axis-scale-1}
 
 To change the axis tick marks, we use the \texttt{scale\_x\_continuous}
 and/or \texttt{scale\_y\_continuous} commands.
@@ -514,7 +513,7 @@ and/or \texttt{scale\_y\_continuous} commands.
 
 \begin{center}\includegraphics{0_all_posts_pdf/area_4-1} \end{center}
 
-\subsubsection{Adjusting axis labels \& adding
+\subsection{Adjusting axis labels \& adding
 title}\label{adjusting-axis-labels-adding-title-1}
 
 To add a title, we include the option \texttt{ggtitle} and include the
@@ -531,7 +530,7 @@ use the \texttt{labs} command.
 
 \begin{center}\includegraphics{0_all_posts_pdf/area_5-1} \end{center}
 
-\subsubsection{Adjusting color palette}\label{adjusting-color-palette-1}
+\subsection{Adjusting color palette}\label{adjusting-color-palette-1}
 
 To change the colours, we use the \texttt{scale\_colour\_manual}
 command. Note that you can reference the specific colours you'd like to
@@ -549,7 +548,7 @@ with the full list of colours recognised by R
 
 \begin{center}\includegraphics{0_all_posts_pdf/area_6-1} \end{center}
 
-\subsubsection{Using the white theme}\label{using-the-white-theme-1}
+\subsection{Using the white theme}\label{using-the-white-theme-1}
 
 As explained in the previous post, we can also change the overall look
 of the site using themes. We'll start using a simple theme customisation
@@ -576,7 +575,7 @@ we've used so far to change the legend.
 
 \begin{center}\includegraphics{0_all_posts_pdf/area_7-1} \end{center}
 
-\subsubsection{Creating an XKCD style
+\subsection{Creating an XKCD style
 chart}\label{creating-an-xkcd-style-chart-1}
 
 Of course, you may want to create your own themes as well.
@@ -632,7 +631,7 @@ You can then create your graph:
 
 \begin{center}\includegraphics{0_all_posts_pdf/area_8-1} \end{center}
 
-\subsubsection{\texorpdfstring{Using `The Economist'
+\subsection{\texorpdfstring{Using `The Economist'
 theme}{Using The Economist theme}}\label{using-the-economist-theme-1}
 
 There are a wider range of pre-built themes available as part of the
@@ -666,7 +665,7 @@ available \href{http://www.myfonts.com/fonts/itc/officina-sans/}{here}.
 
 \begin{center}\includegraphics{0_all_posts_pdf/area_9-1} \end{center}
 
-\subsubsection{Creating your own theme}\label{creating-your-own-theme-1}
+\subsection{Creating your own theme}\label{creating-your-own-theme-1}
 
 As before, you can modify your plots a lot as \texttt{ggplot2} allows
 many customisations. Here we present our original result shown at the
@@ -710,7 +709,7 @@ to the code step-by-step.
 
 \begin{center}\includegraphics{0_all_posts_pdf/bar_final-1} \end{center}
 
-\subsubsection{Basic graph}\label{basic-graph-2}
+\subsection{Basic graph}\label{basic-graph-2}
 
 The first thing to do is load in the data and libraries, as below:
 
@@ -740,7 +739,7 @@ command.
 
 \begin{center}\includegraphics{0_all_posts_pdf/bar_1-1} \end{center}
 
-\subsubsection{Adding data labels}\label{adding-data-labels}
+\subsection{Adding data labels}\label{adding-data-labels}
 
 To label the bars according to some variable in the data, we add the
 \texttt{label} argument to the \texttt{ggplot(aes())} option. In this
@@ -756,7 +755,7 @@ variable.
 
 \begin{center}\includegraphics{0_all_posts_pdf/bar_2-1} \end{center}
 
-\subsubsection{Adjusting data labels
+\subsection{Adjusting data labels
 position}\label{adjusting-data-labels-position}
 
 To adjust the position of the data labels from the default placement, we
@@ -778,7 +777,7 @@ be used to specify the position of the labels by assigning it to the
 
 \begin{center}\includegraphics{0_all_posts_pdf/bar_3-1} \end{center}
 
-\subsubsection{Adjusting legend
+\subsection{Adjusting legend
 position}\label{adjusting-legend-position-1}
 
 To adjust the position of the legend from the default spot of right of
@@ -798,7 +797,7 @@ and change the legend shape using the
 
 \begin{center}\includegraphics{0_all_posts_pdf/bar_4-1} \end{center}
 
-\subsubsection{Changing variables
+\subsection{Changing variables
 display}\label{changing-variables-display-2}
 
 To change the variables' displayed name, we need to re-factor our data
@@ -820,7 +819,7 @@ labels in \texttt{charts.data} data frame.
 
 \begin{center}\includegraphics{0_all_posts_pdf/bar_5-1} \end{center}
 
-\subsubsection{Adjusting x-axis scale}\label{adjusting-x-axis-scale-2}
+\subsection{Adjusting x-axis scale}\label{adjusting-x-axis-scale-2}
 
 To change the axis tick marks, we use the \texttt{scale\_x\_continuous}
 and/or \texttt{scale\_y\_continuous} commands.
@@ -834,7 +833,7 @@ and/or \texttt{scale\_y\_continuous} commands.
 
 \begin{center}\includegraphics{0_all_posts_pdf/bar_6-1} \end{center}
 
-\subsubsection{Adjusting axis labels \& adding
+\subsection{Adjusting axis labels \& adding
 title}\label{adjusting-axis-labels-adding-title-2}
 
 To add a title, we include the option \texttt{ggtitle} and include the
@@ -850,7 +849,7 @@ use the \texttt{labs} command.
 
 \begin{center}\includegraphics{0_all_posts_pdf/bar_7-1} \end{center}
 
-\subsubsection{Adjusting color palette}\label{adjusting-color-palette-2}
+\subsection{Adjusting color palette}\label{adjusting-color-palette-2}
 
 To change the colours, we use the \texttt{scale\_colour\_manual}
 command. Note that you can reference the specific colours you'd like to
@@ -868,7 +867,7 @@ with the full list of colours recognised by R
 
 \begin{center}\includegraphics{0_all_posts_pdf/bar_8-1} \end{center}
 
-\subsubsection{Using the white theme}\label{using-the-white-theme-2}
+\subsection{Using the white theme}\label{using-the-white-theme-2}
 
 As explained in the previous posts, we can also change the overall look
 of the graph using themes. We'll start using a simple theme
@@ -895,7 +894,7 @@ option, which we've used so far to change the legend.
 
 \begin{center}\includegraphics{0_all_posts_pdf/bar_9-1} \end{center}
 
-\subsubsection{Creating an XKCD style
+\subsection{Creating an XKCD style
 chart}\label{creating-an-xkcd-style-chart-2}
 
 Of course, you may want to create your own themes as well.
@@ -953,7 +952,7 @@ You can then create your graph:
 
 \begin{center}\includegraphics{0_all_posts_pdf/bar_10-1} \end{center}
 
-\subsubsection{\texorpdfstring{Using `The Economist'
+\subsection{\texorpdfstring{Using `The Economist'
 theme}{Using The Economist theme}}\label{using-the-economist-theme-2}
 
 There are a wider range of pre-built themes available as part of the
@@ -990,7 +989,7 @@ available \href{http://www.myfonts.com/fonts/itc/officina-sans/}{here}.
 
 \begin{center}\includegraphics{0_all_posts_pdf/bar_11-1} \end{center}
 
-\subsubsection{Creating your own theme}\label{creating-your-own-theme-2}
+\subsection{Creating your own theme}\label{creating-your-own-theme-2}
 
 As before, you can modify your plots a lot as \texttt{ggplot2} allows
 many customisations. Here we present our original result shown at the
@@ -1035,7 +1034,7 @@ customisations we add to the code step-by-step.
 
 \begin{center}\includegraphics{0_all_posts_pdf/stacked_finalresult-1} \end{center}
 
-\subsubsection{Basic graph}\label{basic-graph-3}
+\subsection{Basic graph}\label{basic-graph-3}
 
 In order to initialise a plot we tell ggplot that \texttt{charts.data}
 is our data, and specify the variables on each axis. We then instruct
@@ -1067,7 +1066,7 @@ The first thing to do is load in the data and libraries, as below:
 
 \begin{center}\includegraphics{0_all_posts_pdf/stacked_1-1} \end{center}
 
-\subsubsection{Adding data labels}\label{adding-data-labels-1}
+\subsection{Adding data labels}\label{adding-data-labels-1}
 
 To label the bars according to some variable in the data, we add the
 \texttt{label} argument to the \texttt{ggplot(aes())} option. In this
@@ -1084,7 +1083,7 @@ variable.
 
 \begin{center}\includegraphics{0_all_posts_pdf/stacked_2-1} \end{center}
 
-\subsubsection{Adjusting data labels
+\subsection{Adjusting data labels
 position}\label{adjusting-data-labels-position-1}
 
 To adjust the position of the data labels from the default placement, we
@@ -1107,7 +1106,7 @@ be used to specify the position of the labels by assigning it to the
 
 \begin{center}\includegraphics{0_all_posts_pdf/stacked_3-1} \end{center}
 
-\subsubsection{Adjusting legend
+\subsection{Adjusting legend
 position}\label{adjusting-legend-position-2}
 
 To adjust the position of the legend from the default spot of right of
@@ -1127,7 +1126,7 @@ and change the legend shape using the
 
 \begin{center}\includegraphics{0_all_posts_pdf/stacked_4-1} \end{center}
 
-\subsubsection{Changing variables
+\subsection{Changing variables
 display}\label{changing-variables-display-3}
 
 To change the variables' displayed name, we need to re-factor our data
@@ -1149,7 +1148,7 @@ labels in \texttt{charts.data} data frame.
 
 \begin{center}\includegraphics{0_all_posts_pdf/stacked_5-1} \end{center}
 
-\subsubsection{Adjusting x-axis scale}\label{adjusting-x-axis-scale-3}
+\subsection{Adjusting x-axis scale}\label{adjusting-x-axis-scale-3}
 
 To change the axis tick marks, we use the \texttt{scale\_x\_continuous}
 and/or \texttt{scale\_y\_continuous} commands.
@@ -1163,7 +1162,7 @@ and/or \texttt{scale\_y\_continuous} commands.
 
 \begin{center}\includegraphics{0_all_posts_pdf/stacked_6-1} \end{center}
 
-\subsubsection{Adjusting axis, title \&
+\subsection{Adjusting axis, title \&
 units}\label{adjusting-axis-title-units}
 
 To add a title, we include the option \texttt{ggtitle} and include the
@@ -1181,7 +1180,7 @@ use the \texttt{labs} command.
 
 \begin{center}\includegraphics{0_all_posts_pdf/stacked_7-1} \end{center}
 
-\subsubsection{Adjusting color palette}\label{adjusting-color-palette-3}
+\subsection{Adjusting color palette}\label{adjusting-color-palette-3}
 
 To change the colours, we use the \texttt{scale\_colour\_manual}
 command. Note that you can reference the specific colours you'd like to
@@ -1199,7 +1198,7 @@ with the full list of colours recognised by R
 
 \begin{center}\includegraphics{0_all_posts_pdf/stacked_8-1} \end{center}
 
-\subsubsection{Using the white theme}\label{using-the-white-theme-3}
+\subsection{Using the white theme}\label{using-the-white-theme-3}
 
 As explained in the previous posts, we can also change the overall look
 of the graph using themes. We'll start using a simple theme
@@ -1226,7 +1225,7 @@ option, which we've used so far to change the legend.
 
 \begin{center}\includegraphics{0_all_posts_pdf/stacked_9-1} \end{center}
 
-\subsubsection{Creating an XKCD style
+\subsection{Creating an XKCD style
 chart}\label{creating-an-xkcd-style-chart-3}
 
 Of course, you may want to create your own themes as well.
@@ -1288,7 +1287,7 @@ You can then create your graph:
 
 \begin{center}\includegraphics{0_all_posts_pdf/stacked_10-1} \end{center}
 
-\subsubsection{\texorpdfstring{Using `The Economist'
+\subsection{\texorpdfstring{Using `The Economist'
 theme}{Using The Economist theme}}\label{using-the-economist-theme-3}
 
 There are a wider range of pre-built themes available as part of the
@@ -1325,7 +1324,7 @@ available \href{http://www.myfonts.com/fonts/itc/officina-sans/}{here}.
 
 \begin{center}\includegraphics{0_all_posts_pdf/stacked_11-1} \end{center}
 
-\subsubsection{Creating your own theme}\label{creating-your-own-theme-3}
+\subsection{Creating your own theme}\label{creating-your-own-theme-3}
 
 As before, you can modify your plots a lot as \texttt{ggplot2} allows
 many customisations. Here we present our original result shown at the
@@ -1397,7 +1396,7 @@ a new dataset called \texttt{aq\_trim}.
 \end{Highlighting}
 \end{Shaded}
 
-\subsubsection{Basic scatterplot}\label{basic-scatterplot}
+\subsection{Basic scatterplot}\label{basic-scatterplot}
 
 In order to initialise a scatterplot we tell ggplot that
 \texttt{aq\_trim} is our data, and specify that our x-axis plots the
@@ -1415,7 +1414,7 @@ We then instruct ggplot to render this as a scatterplot by adding the
 
 \begin{center}\includegraphics{0_all_posts_pdf/scatter_1-1} \end{center}
 
-\subsubsection{Changing the shape of the data
+\subsection{Changing the shape of the data
 points}\label{changing-the-shape-of-the-data-points}
 
 Perhaps we want the data points to be a different shape than a solid
@@ -1435,8 +1434,7 @@ allows different colours for the outline and fill.
 
 \begin{center}\includegraphics{0_all_posts_pdf/scatter_2-1} \end{center}
 
-\subsubsection{Adjusting the axis
-scales}\label{adjusting-the-axis-scales}
+\subsection{Adjusting the axis scales}\label{adjusting-the-axis-scales}
 
 To change the x-axis tick marks, we use the
 \texttt{scale\_x\_continuous} option. Similarly, to change the y-axis we
@@ -1453,7 +1451,7 @@ x-axis to every 5 days, rather than 10, and change the range from 1 to
 
 \begin{center}\includegraphics{0_all_posts_pdf/scatter_3-1} \end{center}
 
-\subsubsection{Adjusting axis labels \& adding
+\subsection{Adjusting axis labels \& adding
 title}\label{adjusting-axis-labels-adding-title-3}
 
 To add a title, we include the option \texttt{ggtitle} and include the
@@ -1470,7 +1468,7 @@ name of the graph as a string argument. To change the axis names we add
 
 \begin{center}\includegraphics{0_all_posts_pdf/scatter_4-1} \end{center}
 
-\subsubsection{Adjusting the colour
+\subsection{Adjusting the colour
 palette}\label{adjusting-the-colour-palette}
 
 There are a few options for adjusting the colour. The most simple is to
@@ -1574,7 +1572,7 @@ Again, we can change the colours of these data points, this time using
 
 \begin{center}\includegraphics{0_all_posts_pdf/scatter_10-1} \end{center}
 
-\subsubsection{Adjusting legend
+\subsection{Adjusting legend
 position}\label{adjusting-legend-position-3}
 
 To adjust the position of the legend from the default spot of right of
@@ -1592,7 +1590,7 @@ argument.
 
 \begin{center}\includegraphics{0_all_posts_pdf/scatter_11-1} \end{center}
 
-\subsubsection{Using the white theme}\label{using-the-white-theme-4}
+\subsection{Using the white theme}\label{using-the-white-theme-4}
 
 As explained in the previous posts, we can also change the overall look
 of the plot using themes. We'll start using a simple theme customisation
@@ -1616,7 +1614,7 @@ we've used so far to change the legend.
 
 \begin{center}\includegraphics{0_all_posts_pdf/scatter_12-1} \end{center}
 
-\subsubsection{Creating an XKCD style
+\subsection{Creating an XKCD style
 chart}\label{creating-an-xkcd-style-chart-4}
 
 Of course, you may want to create your own themes as well.
@@ -1672,7 +1670,7 @@ You can then create your graph:
 
 \begin{center}\includegraphics{0_all_posts_pdf/scatter_13-1} \end{center}
 
-\subsubsection{\texorpdfstring{Using `The Economist'
+\subsection{\texorpdfstring{Using `The Economist'
 theme}{Using The Economist theme}}\label{using-the-economist-theme-4}
 
 There are a wider range of pre-built themes available as part of the
@@ -1705,7 +1703,7 @@ graphs in the Economist magazine.
 
 \begin{center}\includegraphics{0_all_posts_pdf/scatter_14-1} \end{center}
 
-\subsubsection{Creating your own theme}\label{creating-your-own-theme-4}
+\subsection{Creating your own theme}\label{creating-your-own-theme-4}
 
 As before, you can modify your plots a lot as \texttt{ggplot2} allows
 many customisations. Here we present our original result shown at the
@@ -1771,7 +1769,7 @@ customisations we add to the code step-by-step.
 
 \begin{center}\includegraphics{0_all_posts_pdf/wscatter_finalgraph-1} \end{center}
 
-\subsubsection{Basic weighted
+\subsection{Basic weighted
 scatterplot}\label{basic-weighted-scatterplot}
 
 Let's start really slowly by revisiting how to create a basic
@@ -1809,7 +1807,7 @@ You can see we already have an interesting looking pattern, where days
 with higher wind speed tend to have lower ozone (or in other words,
 better air quality). Now let's make it beautiful!
 
-\subsubsection{Changing the shape of the data
+\subsection{Changing the shape of the data
 points}\label{changing-the-shape-of-the-data-points-1}
 
 Perhaps we want the data points to be a different shape than a solid
@@ -1830,7 +1828,7 @@ allows different colours for the outline and fill.
 
 \begin{center}\includegraphics{0_all_posts_pdf/wscatter_3-1} \end{center}
 
-\subsubsection{Adjusting the axis
+\subsection{Adjusting the axis
 scales}\label{adjusting-the-axis-scales-1}
 
 To change the x-axis tick marks, we use the
@@ -1848,7 +1846,7 @@ x-axis to every 5 days, rather than 10, and change the range from 1 to
 
 \begin{center}\includegraphics{0_all_posts_pdf/wscatter_4-1} \end{center}
 
-\subsubsection{Adjusting axis labels \& adding
+\subsection{Adjusting axis labels \& adding
 title}\label{adjusting-axis-labels-adding-title-4}
 
 To add a title, we include the option \texttt{ggtitle} and include the
@@ -1865,7 +1863,7 @@ name of the graph as a string argument. To change the axis names we add
 
 \begin{center}\includegraphics{0_all_posts_pdf/wscatter_5-1} \end{center}
 
-\subsubsection{Adjusting the colour
+\subsection{Adjusting the colour
 palette}\label{adjusting-the-colour-palette-1}
 
 There are a few options for adjusting the colour. The most simple is to
@@ -1970,7 +1968,7 @@ Again, we can change the colours of these data points, this time using
 
 \begin{center}\includegraphics{0_all_posts_pdf/wscatter_11-1} \end{center}
 
-\subsubsection{Adjusting the size of the data
+\subsection{Adjusting the size of the data
 points}\label{adjusting-the-size-of-the-data-points}
 
 The default size of the the data points in a weighted scatterplot is
@@ -2007,7 +2005,7 @@ see. Another way to adjust the size of the data points is to use
 
 \begin{center}\includegraphics{0_all_posts_pdf/wscatter_13-1} \end{center}
 
-\subsubsection{Adjusting legend
+\subsection{Adjusting legend
 position}\label{adjusting-legend-position-4}
 
 To adjust the position of the legend from the default spot of right of
@@ -2025,7 +2023,7 @@ argument.
 
 \begin{center}\includegraphics{0_all_posts_pdf/wscatter_14-1} \end{center}
 
-\subsubsection{Changing the legend
+\subsection{Changing the legend
 titles}\label{changing-the-legend-titles}
 
 To change the titles of the two legends, we use the \texttt{labs}
@@ -2044,7 +2042,7 @@ so we pass these to \texttt{labs} with our new titles.
 
 \begin{center}\includegraphics{0_all_posts_pdf/wscatter_15-1} \end{center}
 
-\subsubsection{Creating horizontal
+\subsection{Creating horizontal
 legends}\label{creating-horizontal-legends}
 
 It looks a little awkward having the two titles sitting on top of each
@@ -2066,7 +2064,7 @@ to get this argument to work.
 
 \begin{center}\includegraphics{0_all_posts_pdf/wscatter_16-1} \end{center}
 
-\subsubsection{Using the white theme}\label{using-the-white-theme-5}
+\subsection{Using the white theme}\label{using-the-white-theme-5}
 
 As explained in the previous posts, we can also change the overall look
 of the plot using themes. We'll start using a simple theme customisation
@@ -2093,7 +2091,7 @@ we've used so far to change the legend.
 
 \begin{center}\includegraphics{0_all_posts_pdf/wscatter_17-1} \end{center}
 
-\subsubsection{Creating an XKCD style
+\subsection{Creating an XKCD style
 chart}\label{creating-an-xkcd-style-chart-5}
 
 Of course, you may want to create your own themes as well.
@@ -2151,7 +2149,7 @@ You can then create your graph:
 
 \begin{center}\includegraphics{0_all_posts_pdf/wscatter_18-1} \end{center}
 
-\subsubsection{\texorpdfstring{Using `The Economist'
+\subsection{\texorpdfstring{Using `The Economist'
 theme}{Using The Economist theme}}\label{using-the-economist-theme-5}
 
 There are a wider range of pre-built themes available as part of the
@@ -2184,7 +2182,7 @@ graphs in the Economist magazine.
 
 \begin{center}\includegraphics{0_all_posts_pdf/wscatter_19-1} \end{center}
 
-\subsubsection{Creating your own theme}\label{creating-your-own-theme-5}
+\subsection{Creating your own theme}\label{creating-your-own-theme-5}
 
 As before, you can modify your plots a lot as \texttt{ggplot2} allows
 many customisations. Here we present our original result shown at the
@@ -2854,7 +2852,7 @@ customisations we add to the code step-by-step.
 
 \begin{center}\includegraphics{0_all_posts_pdf/density_final-1} \end{center}
 
-\subsubsection{Basic density plot}\label{basic-density-plot}
+\subsection{Basic density plot}\label{basic-density-plot}
 
 In order to initialise a plot we tell ggplot that \texttt{airquality} is
 our data, and specify that our x axis plots the \texttt{Ozone} variable.
@@ -2870,7 +2868,7 @@ We then instruct ggplot to render this as a density plot by adding the
 
 \begin{center}\includegraphics{0_all_posts_pdf/density_1-1} \end{center}
 
-\subsubsection{Customising axis labels}\label{customising-axis-labels-1}
+\subsection{Customising axis labels}\label{customising-axis-labels-1}
 
 In order to change the axis labels, we have a couple of options. In this
 case, we have used the \texttt{scale\_x\_continuous} and
@@ -2901,7 +2899,7 @@ lines using the \texttt{\textbackslash{}n} character to break the line.
 
 \begin{center}\includegraphics{0_all_posts_pdf/density_3-1} \end{center}
 
-\subsubsection{Changing axis ticks}\label{changing-axis-ticks-1}
+\subsection{Changing axis ticks}\label{changing-axis-ticks-1}
 
 The next thing we will change is the axis ticks. Let's make the x-axis
 ticks appear at every 25 units rather than 50 using the
@@ -2924,7 +2922,7 @@ the argument \texttt{limits\ =\ c(0,\ 200)} to
 
 \begin{center}\includegraphics{0_all_posts_pdf/density_4-1} \end{center}
 
-\subsubsection{Adding a title}\label{adding-a-title-1}
+\subsection{Adding a title}\label{adding-a-title-1}
 
 To add a title, we include the option \texttt{ggtitle} and include the
 name of the graph as a string argument.
@@ -2938,7 +2936,7 @@ name of the graph as a string argument.
 
 \begin{center}\includegraphics{0_all_posts_pdf/density_5-1} \end{center}
 
-\subsubsection{Changing the colour of the
+\subsection{Changing the colour of the
 curves}\label{changing-the-colour-of-the-curves}
 
 To change the line and fill colours of the density plot, we add a valid
@@ -3009,7 +3007,7 @@ from 0 to 1.
 
 \begin{center}\includegraphics{0_all_posts_pdf/density_8-1} \end{center}
 
-\subsubsection{Using the white theme}\label{using-the-white-theme-7}
+\subsection{Using the white theme}\label{using-the-white-theme-7}
 
 As explained in the previous posts, we can also change the overall look
 of the plot using themes. We'll start using a simple theme customisation
@@ -3026,7 +3024,7 @@ the legend.
 
 \begin{center}\includegraphics{0_all_posts_pdf/density_9-1} \end{center}
 
-\subsubsection{Creating an XKCD style
+\subsection{Creating an XKCD style
 chart}\label{creating-an-xkcd-style-chart-7}
 
 Of course, you may want to create your own themes as well.
@@ -3079,7 +3077,7 @@ You can then create your graph:
 
 \begin{center}\includegraphics{0_all_posts_pdf/density_10-1} \end{center}
 
-\subsubsection{\texorpdfstring{Using `The Economist'
+\subsection{\texorpdfstring{Using `The Economist'
 theme}{Using The Economist theme}}\label{using-the-economist-theme-7}
 
 There are a wider range of pre-built themes available as part of the
@@ -3119,7 +3117,7 @@ graphs in the Economist magazine.
 
 \begin{center}\includegraphics{0_all_posts_pdf/density_11-1} \end{center}
 
-\subsubsection{Creating your own theme}\label{creating-your-own-theme-7}
+\subsection{Creating your own theme}\label{creating-your-own-theme-7}
 
 As before, you can modify your plots a lot as \texttt{ggplot2} allows
 many customisations. Here is a custom plot where we have modified the
@@ -3155,7 +3153,7 @@ axes, background and font.
 
 \begin{center}\includegraphics{0_all_posts_pdf/density_12-1} \end{center}
 
-\subsubsection{Adding lines}\label{adding-lines-1}
+\subsection{Adding lines}\label{adding-lines-1}
 
 Let's say that we want to add a cutoff value to the chart (75 parts of
 ozone per billion). We add the \texttt{geom\_vline} option to the chart,
@@ -3177,7 +3175,7 @@ way, horizontal lines can be added using the \texttt{geom\_hline}.)
 
 \begin{center}\includegraphics{0_all_posts_pdf/density_13-1} \end{center}
 
-\subsubsection{Multiple densities}\label{multiple-densities}
+\subsection{Multiple densities}\label{multiple-densities}
 
 You can also easily create multiple density plots by the levels of
 another variable. There are two options, in separate (panel) plots, or
@@ -3341,7 +3339,7 @@ it easier to see the lines. Finally, we change the
 
 \begin{center}\includegraphics{0_all_posts_pdf/density_18-1} \end{center}
 
-\subsubsection{Formatting the legend}\label{formatting-the-legend-1}
+\subsection{Formatting the legend}\label{formatting-the-legend-1}
 
 Finally, we can format the legend. Firstly, we can change the position
 by adding the \texttt{legend.position\ =\ "bottom"} argument to the
@@ -3378,7 +3376,7 @@ customisations we add to the code step-by-step.
 
 \begin{center}\includegraphics{0_all_posts_pdf/function_final-1} \end{center}
 
-\subsubsection{Basic normal curve}\label{basic-normal-curve}
+\subsection{Basic normal curve}\label{basic-normal-curve}
 
 In order to create a normal curve, we create a ggplot base layer that
 has an x-axis range from -4 to 4 (or whatever range you want!), and
@@ -3396,7 +3394,7 @@ the function argument to make it a normal curve.
 
 \begin{center}\includegraphics{0_all_posts_pdf/function_1-1} \end{center}
 
-\subsubsection{Basic t-curve}\label{basic-t-curve}
+\subsection{Basic t-curve}\label{basic-t-curve}
 
 \texttt{stat\_function} can draw a range of continuous
 \href{https://en.wikipedia.org/wiki/Probability_density_function}{probability
@@ -3416,7 +3414,7 @@ value as part of defining our curve.
 
 \begin{center}\includegraphics{0_all_posts_pdf/function_2-1} \end{center}
 
-\subsubsection{Plotting your own
+\subsection{Plotting your own
 function}\label{plotting-your-own-function}
 
 You can also draw your own function, as long as it takes the form of a
@@ -3437,7 +3435,7 @@ curve that returns y-values that are the cube of x times a half:
 
 \begin{center}\includegraphics{0_all_posts_pdf/function_3-1} \end{center}
 
-\subsubsection{Plotting multiple functions on the same
+\subsection{Plotting multiple functions on the same
 graph}\label{plotting-multiple-functions-on-the-same-graph}
 
 You can plot multiple functions on the same graph by simply adding
@@ -3461,7 +3459,7 @@ between 0 and 1.
 
 \begin{center}\includegraphics{0_all_posts_pdf/function_4-1} \end{center}
 
-\subsubsection{Customising axis labels}\label{customising-axis-labels-2}
+\subsection{Customising axis labels}\label{customising-axis-labels-2}
 
 Let's move forward with this two function graph, and start tweaking the
 appearance. In order to change the axis labels, we have a couple of
@@ -3480,7 +3478,7 @@ the desired name to the \texttt{name} argument as a string.
 
 \begin{center}\includegraphics{0_all_posts_pdf/function_5-1} \end{center}
 
-\subsubsection{Changing axis ticks}\label{changing-axis-ticks-2}
+\subsection{Changing axis ticks}\label{changing-axis-ticks-2}
 
 The next thing we will change is the axis ticks. Let's make the x-axis
 ticks appear at every 0.2 units rather than 0.25 using the
@@ -3504,7 +3502,7 @@ the argument \texttt{limits\ =\ c(0,\ 1)} to
 
 \begin{center}\includegraphics{0_all_posts_pdf/function_6-1} \end{center}
 
-\subsubsection{Adding a title}\label{adding-a-title-2}
+\subsection{Adding a title}\label{adding-a-title-2}
 
 To add a title, we include the option \texttt{ggtitle} and include the
 name of the graph as a string argument.
@@ -3518,7 +3516,7 @@ name of the graph as a string argument.
 
 \begin{center}\includegraphics{0_all_posts_pdf/function_7-1} \end{center}
 
-\subsubsection{Changing the colour of the
+\subsection{Changing the colour of the
 curves}\label{changing-the-colour-of-the-curves-1}
 
 To change the line colours of the curves, we add a valid colour to the
@@ -3567,7 +3565,7 @@ the lines using their HEX codes.
 
 \begin{center}\includegraphics{0_all_posts_pdf/function_9-1} \end{center}
 
-\subsubsection{Adding a legend}\label{adding-a-legend}
+\subsection{Adding a legend}\label{adding-a-legend}
 
 As we have added two separate commands to plot the two function curves,
 ggplot does not automatically recognise that it needs to create a
@@ -3623,7 +3621,7 @@ allow you to assign a title to the legend, you can assign a title using
 
 \begin{center}\includegraphics{0_all_posts_pdf/function_11-1} \end{center}
 
-\subsubsection{Changing the size of the
+\subsection{Changing the size of the
 lines}\label{changing-the-size-of-the-lines}
 
 As you can see, the lines are a little difficult to see. You can make
@@ -3651,7 +3649,7 @@ each line to size 2.
 
 \begin{center}\includegraphics{0_all_posts_pdf/function_12-1} \end{center}
 
-\subsubsection{Using the white theme}\label{using-the-white-theme-8}
+\subsection{Using the white theme}\label{using-the-white-theme-8}
 
 As explained in the previous posts, we can also change the overall look
 of the plot using themes. We'll start using a simple theme customisation
@@ -3668,7 +3666,7 @@ we've used so far to change the legend.
 
 \begin{center}\includegraphics{0_all_posts_pdf/function_13-1} \end{center}
 
-\subsubsection{Creating an XKCD style
+\subsection{Creating an XKCD style
 chart}\label{creating-an-xkcd-style-chart-8}
 
 Of course, you may want to create your own themes as well.
@@ -3726,7 +3724,7 @@ You can then create your graph:
 
 \begin{center}\includegraphics{0_all_posts_pdf/function_14-1} \end{center}
 
-\subsubsection{\texorpdfstring{Using `The Economist'
+\subsection{\texorpdfstring{Using `The Economist'
 theme}{Using The Economist theme}}\label{using-the-economist-theme-8}
 
 There are a wider range of pre-built themes available as part of the
@@ -3766,7 +3764,7 @@ graphs in the Economist magazine.
 
 \begin{center}\includegraphics{0_all_posts_pdf/function_15-1} \end{center}
 
-\subsubsection{Creating your own theme}\label{creating-your-own-theme-8}
+\subsection{Creating your own theme}\label{creating-your-own-theme-8}
 
 As before, you can modify your plots a lot as \texttt{ggplot2} allows
 many customisations. Here is a custom plot where we have modified the
@@ -3804,7 +3802,7 @@ axes, background and font.
 
 \begin{center}\includegraphics{0_all_posts_pdf/function_16-1} \end{center}
 
-\subsubsection{Adding areas under the
+\subsection{Adding areas under the
 curve}\label{adding-areas-under-the-curve}
 
 If we want to shade an area under the curve, we can do so by creating a
@@ -3833,7 +3831,7 @@ plot, and makes it semi-transparent using the \texttt{alpha} argument.
 
 \begin{center}\includegraphics{0_all_posts_pdf/function_17-1} \end{center}
 
-\subsubsection{Formatting the legend}\label{formatting-the-legend-2}
+\subsection{Formatting the legend}\label{formatting-the-legend-2}
 
 Finally, we can format the legend by changing the position. We simply
 add the \texttt{legend.position\ =\ "bottom"} argument to the
@@ -3895,7 +3893,7 @@ to the code step-by-step.
 
 \begin{center}\includegraphics{0_all_posts_pdf/box_final-1} \end{center}
 
-\subsubsection{Basic boxplot}\label{basic-boxplot}
+\subsection{Basic boxplot}\label{basic-boxplot}
 
 In order to initialise a plot we tell ggplot that \texttt{airquality} is
 our data, and specify that our x-axis plots the \texttt{Month} variable
@@ -3913,7 +3911,7 @@ ggplot to render this as a boxplot by adding the
 
 \begin{center}\includegraphics{0_all_posts_pdf/box_1-1} \end{center}
 
-\subsubsection{Customising axis labels}\label{customising-axis-labels-3}
+\subsection{Customising axis labels}\label{customising-axis-labels-3}
 
 In order to change the axis labels, we have a couple of options. In this
 case, we have used the \texttt{scale\_x\_discrete} and
@@ -3944,7 +3942,7 @@ lines using the \texttt{\textbackslash{}n} character to break the line.
 
 \begin{center}\includegraphics{0_all_posts_pdf/box_3-1} \end{center}
 
-\subsubsection{Changing axis ticks}\label{changing-axis-ticks-3}
+\subsection{Changing axis ticks}\label{changing-axis-ticks-3}
 
 The next thing we will change is the axis ticks. Let's make the y-axis
 ticks appear at every 25 units rather than 50 using the
@@ -3967,7 +3965,7 @@ the argument \texttt{limits\ =\ c(0,\ 175)} to
 
 \begin{center}\includegraphics{0_all_posts_pdf/box_4-1} \end{center}
 
-\subsubsection{Adding a title}\label{adding-a-title-3}
+\subsection{Adding a title}\label{adding-a-title-3}
 
 To add a title, we include the option \texttt{ggtitle} and include the
 name of the graph as a string argument.
@@ -3981,7 +3979,7 @@ name of the graph as a string argument.
 
 \begin{center}\includegraphics{0_all_posts_pdf/box_5-1} \end{center}
 
-\subsubsection{Changing the colour of the
+\subsection{Changing the colour of the
 boxes}\label{changing-the-colour-of-the-boxes}
 
 To change the line and fill colours of the box plot, we add a valid
@@ -4079,7 +4077,7 @@ lines (using \texttt{outlier.colour\ =\ "\#1F3552"}).
 
 \begin{center}\includegraphics{0_all_posts_pdf/box_9-1} \end{center}
 
-\subsubsection{Using the white theme}\label{using-the-white-theme-9}
+\subsection{Using the white theme}\label{using-the-white-theme-9}
 
 As explained in the previous posts, we can also change the overall look
 of the plot using themes. We'll start using a simple theme customisation
@@ -4096,7 +4094,7 @@ the legend.
 
 \begin{center}\includegraphics{0_all_posts_pdf/box_10-1} \end{center}
 
-\subsubsection{Creating an XKCD style
+\subsection{Creating an XKCD style
 chart}\label{creating-an-xkcd-style-chart-9}
 
 Of course, you may want to create your own themes as well.
@@ -4151,7 +4149,7 @@ You can then create your graph:
 
 \begin{center}\includegraphics{0_all_posts_pdf/box_11-1} \end{center}
 
-\subsubsection{\texorpdfstring{Using `The Economist'
+\subsection{\texorpdfstring{Using `The Economist'
 theme}{Using The Economist theme}}\label{using-the-economist-theme-9}
 
 There are a wider range of pre-built themes available as part of the
@@ -4192,7 +4190,7 @@ graphs in the Economist magazine.
 
 \begin{center}\includegraphics{0_all_posts_pdf/box_12-1} \end{center}
 
-\subsubsection{Creating your own theme}\label{creating-your-own-theme-9}
+\subsection{Creating your own theme}\label{creating-your-own-theme-9}
 
 As before, you can modify your plots a lot as \texttt{ggplot2} allows
 many customisations. Here is a custom plot where we have modified the
@@ -4230,7 +4228,7 @@ axes, background and font.
 
 \begin{center}\includegraphics{0_all_posts_pdf/box_13-1} \end{center}
 
-\subsubsection{Boxplot extras}\label{boxplot-extras}
+\subsection{Boxplot extras}\label{boxplot-extras}
 
 An extra feature you can add to boxplots is to overlay all of the points
 for that group on each boxplot in order to get an idea of the sample
@@ -4283,7 +4281,7 @@ the very small gap between the 25th percentile and the median.
 
 \begin{center}\includegraphics{0_all_posts_pdf/box_15-1} \end{center}
 
-\subsubsection{Grouping by another
+\subsection{Grouping by another
 variable}\label{grouping-by-another-variable}
 
 You can also easily group box plots by the levels of another variable.
@@ -4358,7 +4356,7 @@ blog post describes the available packages.
 
 \begin{center}\includegraphics{0_all_posts_pdf/box_17-1} \end{center}
 
-\subsubsection{Formatting the legend}\label{formatting-the-legend-3}
+\subsection{Formatting the legend}\label{formatting-the-legend-3}
 
 Finally, we can format the legend. Firstly, we can change the position
 by adding the \texttt{legend.position\ =\ "bottom"} argument to the

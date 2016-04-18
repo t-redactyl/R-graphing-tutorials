@@ -52,7 +52,7 @@ aq_trim$Month <- factor(aq_trim$Month,
 labels = c("July", "August", "September"))
 ```
 
-### Basic scatterplot
+## Basic scatterplot
 
 In order to initialise a scatterplot we tell ggplot that `aq_trim` is our data, and specify that our x-axis plots the `Day` variable and our y-axis plots the `Ozone` variable. We then instruct ggplot to render this as a scatterplot by adding the `geom_point()` option.
 
@@ -62,7 +62,7 @@ p5 <- ggplot(aq_trim, aes(x = Day, y = Ozone)) +
 p5
 ```
 
-### Changing the shape of the data points
+## Changing the shape of the data points
 
 Perhaps we want the data points to be a different shape than a solid circle. We can change these by adding the `shape` argument to `geom_point`. An explanation of the allowed arguments for shape are described in [this article](http://sape.inf.usi.ch/quick-reference/ggplot2/shape). In this case, we will use shape 21, which is a circle that allows different colours for the outline and fill.
 
@@ -71,7 +71,7 @@ p5 <- ggplot(aq_trim, aes(x = Day, y = Ozone)) + geom_point(shape = 21)
 p5
 ```
 
-### Adjusting the axis scales
+## Adjusting the axis scales
 
 To change the x-axis tick marks, we use the `scale_x_continuous` option. Similarly, to change the y-axis we use the `scale_y_continuous` option. Here we will change the x-axis to every 5 days, rather than 10, and change the range from 1 to 31 (as 0 is not a valid value for this variable).
 
@@ -80,7 +80,7 @@ p5 <- p5 + scale_x_continuous(breaks = seq(1, 31, 5))
 p5
 ```
 
-### Adjusting axis labels & adding title
+## Adjusting axis labels & adding title
 
 To add a title, we include the option `ggtitle` and include the name of the graph as a string argument. To change the axis names we add `x` and `y` arguments to the `labs` command.
 
@@ -90,7 +90,7 @@ p5 <- p5 + ggtitle("Air Quality in New York by Day") +
 p5
 ```
 
-### Adjusting the colour palette
+## Adjusting the colour palette
 
 There are a few options for adjusting the colour. The most simple is to make every point one fixed colour. You can reference colours by name, with the full list of colours recognised by R [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf). Let's try making the outline `mediumvioletred` and the fill `springgreen`.
 
@@ -154,7 +154,7 @@ p5 <- p5 + scale_fill_manual(values = fill)
 p5
 ```
 
-### Adjusting legend position
+## Adjusting legend position
 
 To adjust the position of the legend from the default spot of right of the graph, we add the `theme` option and specify the `legend.position = "bottom"` argument. We can also change the legend shape using the `legend.direction = "horizontal"` argument.
 
@@ -163,7 +163,7 @@ p5 <- p5 + theme(legend.position = "bottom", legend.direction = "horizontal")
 p5
 ```
 
-### Using the white theme
+## Using the white theme
 
 As explained in the previous posts, we can also change the overall look of the plot using themes. We'll start using a simple theme customisation by adding `theme_bw() ` after `ggplot()`. As you can see, we can further tweak the graph using the `theme` option, which we've used so far to change the legend.
 
@@ -179,7 +179,7 @@ p5 <- ggplot(aq_trim, aes(x = Day, y = Ozone, fill = Month)) + theme_bw() +
 p5
 ```
 
-### Creating an XKCD style chart
+## Creating an XKCD style chart
 
 Of course, you may want to create your own themes as well. `ggplot2` allows for a very high degree of customisation, including allowing you to use imported fonts. Below is an example of a theme Mauricio was able to create which mimics the visual style of [XKCD](http://xkcd.com/). In order to create this chart, you first need to import the XKCD font, install it on your machine and load it into R using the `extrafont` package.
 These instructions are taken from [here](https://www.google.com.au/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwiWzafchdPJAhVBpJQKHe_LDT8QFggbMAA&url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fxkcd%2Fvignettes%2Fxkcd-intro.pdf&usg=AFQjCNE-KciGY14e-Q1buYIVmTFC0ht__Q&sig2=DZUwkvIHwfNWtTtkcz94jg):
@@ -221,7 +221,7 @@ p5 <- ggplot(aq_trim, aes(x = Day, y = Ozone, fill = Month)) +
 p5
 ```
 
-### Using 'The Economist' theme 
+## Using 'The Economist' theme 
 
 There are a wider range of pre-built themes available as part of the `ggthemes` package (more information on these [here](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html)). Below we've applied `theme_economist()`, which approximates graphs in the Economist magazine.
 
@@ -245,7 +245,7 @@ p5 <- ggplot(aq_trim, aes(x = Day, y = Ozone, fill = Month)) +
 p5
 ```
 
-### Creating your own theme
+## Creating your own theme
 
 As before, you can modify your plots a lot as `ggplot2` allows many customisations. Here we present our original result shown at the top of page.
 

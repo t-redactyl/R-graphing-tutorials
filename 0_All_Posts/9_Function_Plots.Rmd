@@ -37,7 +37,7 @@ p9 <- ggplot(data.frame(x = c(0, 1)), aes(x = x)) +
 p9
 ```
 
-### Basic normal curve
+## Basic normal curve
 
 In order to create a normal curve, we create a ggplot base layer that has an x-axis range from -4 to 4 (or whatever range you want!), and assign the x-value aesthetic to this range (`aes(x = x)`). We then add the `stat_function` option and add `dnorm` to the function argument to make it a normal curve.
 
@@ -47,7 +47,7 @@ p9 <- ggplot(data.frame(x = c(-4, 4)), aes(x = x)) +
 p9
 ```
 
-### Basic t-curve
+## Basic t-curve
 
 `stat_function` can draw a range of continuous [probability density functions](https://en.wikipedia.org/wiki/Probability_density_function), including t (`dt`), F (`df`) and Chi-square (`dchisq`) PDFs. Here we will plot a t-distribution. As the shape of the t-distribution changes depending on the sample size (indicated by the degrees of freedom, or df), we need to specify our df value as part of defining our curve. 
 
@@ -57,7 +57,7 @@ p9 <- ggplot(data.frame(x = c(-4, 4)), aes(x = x)) +
 p9
 ```
 
-### Plotting your own function
+## Plotting your own function
 
 You can also draw your own function, as long as it takes the form of a formula that converts an x-value into a y-value. Here we have plotted a curve that returns y-values that are the cube of x times a half:
 
@@ -71,7 +71,7 @@ p9 <- ggplot(data.frame(x = c(-4, 4)), aes(x = x)) +
 p9
 ```
 
-### Plotting multiple functions on the same graph
+## Plotting multiple functions on the same graph
 
 You can plot multiple functions on the same graph by simply adding another `stat_function()` for each curve. Here we have plotted two normal curves on the same graph, one with a mean of 0.2 and a standard deviation of 0.1, and one with a mean of 0.7 and a standard deviation of 0.05. (Note that the `dnorm` function has a default mean of 0 and a default standard deviation of 1, which is why we didn't need to explicitly define them in the first normal curve we plotted above.) You can also see we've changed the range of the x-axis to between 0 and 1.
 
@@ -82,7 +82,7 @@ p9 <- ggplot(data.frame(x = c(0, 1)), aes(x = x)) +
 p9
 ```
 
-### Customising axis labels
+## Customising axis labels
 
 Let's move forward with this two function graph, and start tweaking the appearance. In order to change the axis labels, we have a couple of options. In this case, we have used the `scale_x_continuous` and `scale_y_continuous` options, as these have further customisation options for the axes we will use below. In each, we add the desired name to the `name` argument as a string.
 
@@ -92,7 +92,7 @@ p9 <- p9 + scale_x_continuous(name = "Probability") +
 p9
 ```
 
-### Changing axis ticks
+## Changing axis ticks
 
 The next thing we will change is the axis ticks. Let's make the x-axis ticks appear at every 0.2 units rather than 0.25 using the `breaks = seq(0, 1, 0.2)` argument in `scale_x_continuous`. (The `seq` function is a base R function that indicates the start and endpoints and the units to increment by respectively. See `help(seq)` for more information.) We ensure that the x-axis begins and ends where we want by also adding the argument `limits = c(0, 1)` to `scale_x_continuous`.
 
@@ -104,7 +104,7 @@ p9 <- p9 + scale_x_continuous(name = "Probability",
 p9
 ``` 
 
-### Adding a title
+## Adding a title
 
 To add a title, we include the option `ggtitle` and include the name of the graph as a string argument.
 
@@ -113,7 +113,7 @@ p9 <- p9 + ggtitle("Normal function curves of probabilities")
 p9
 ```
 
-### Changing the colour of the curves
+## Changing the colour of the curves
 
 To change the line colours of the curves, we add a valid colour to the `colour` arguments in `stat_function`. A list of valid colours is [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf).
 
@@ -147,7 +147,7 @@ p9 <- ggplot(data.frame(x = c(0, 1)), aes(x = x)) +
 p9
 ```
 
-### Adding a legend
+## Adding a legend
 
 As we have added two separate commands to plot the two function curves, ggplot does not automatically recognise that it needs to create a legend. We can make a legend by swapping out the `colour` argument in each of the `stat_function` commands for `aes(colour = )`, and assigning it the name of the group. We also need to add the `scale_colour_manual` command to make the legend appear, and also assign colours and a title.
 
@@ -184,7 +184,7 @@ p9 <- ggplot(data.frame(x = c(0, 1)), aes(x = x)) +
 p9
 ```
 
-### Changing the size of the lines
+## Changing the size of the lines
 
 As you can see, the lines are a little difficult to see. You can make them thicker (or thinner) using the argument `size` argument within `stat_function`. Here we have changed the thickness of each line to size 2.
 
@@ -204,7 +204,7 @@ p9 <- ggplot(data.frame(x = c(0, 1)), aes(x = x)) +
 p9
 ```
 
-### Using the white theme
+## Using the white theme
 
 As explained in the previous posts, we can also change the overall look of the plot using themes. We'll start using a simple theme customisation by adding `theme_bw() ` after `ggplot()`. As you can see, we can further tweak the graph using the `theme` option, which we've used so far to change the legend.
 
@@ -213,7 +213,7 @@ p9 <- p9 + theme_bw()
 p9
 ```
 
-### Creating an XKCD style chart
+## Creating an XKCD style chart
 
 Of course, you may want to create your own themes as well. `ggplot2` allows for a very high degree of customisation, including allowing you to use imported fonts. Below is an example of a theme Mauricio was able to create which mimics the visual style of [XKCD](http://xkcd.com/). In order to create this chart, you first need to import the XKCD font, install it on your machine and load it into R using the `extrafont` package.
 These instructions are taken from [here](https://www.google.com.au/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwiWzafchdPJAhVBpJQKHe_LDT8QFggbMAA&url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fxkcd%2Fvignettes%2Fxkcd-intro.pdf&usg=AFQjCNE-KciGY14e-Q1buYIVmTFC0ht__Q&sig2=DZUwkvIHwfNWtTtkcz94jg):
@@ -257,7 +257,7 @@ p9 <- ggplot(data.frame(x = c(0, 1)), aes(x = x)) +
 p9
 ```
 
-### Using 'The Economist' theme 
+## Using 'The Economist' theme 
 
 There are a wider range of pre-built themes available as part of the `ggthemes` package (more information on these [here](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html)). Below we've applied `theme_economist()`, which approximates graphs in the Economist magazine.
 
@@ -288,7 +288,7 @@ p9 <- ggplot(data.frame(x = c(0, 1)), aes(x = x)) +
 p9
 ```
 
-### Creating your own theme
+## Creating your own theme
 
 As before, you can modify your plots a lot as `ggplot2` allows many customisations. Here is a custom plot where we have modified the axes, background and font.
 
@@ -320,7 +320,7 @@ p9 <- ggplot(data.frame(x = c(0, 1)), aes(x = x)) +
 p9
 ```
 
-### Adding areas under the curve
+## Adding areas under the curve
 
 If we want to shade an area under the curve, we can do so by creating a function that generates a range of normal values with a given mean and standard deviation, and then only retains those values that lie within the desired range (by assigning NAs to everything outside of the range). In this case, we have created a shaded area under the group 1 curve which covers between the mean and 4 standard deviations above the mean (as given by `0.2 + 4 * 0.1`). We then add another `stat_function` command to the graph which plots the area specified by this function, indicates it should be an `area` plot, and makes it semi-transparent using the `alpha` argument.
 
@@ -335,7 +335,7 @@ p9 <- p9 + stat_function(fun=funcShaded, geom="area", fill="#84CA72", alpha=0.2)
 p9
 ```
 
-### Formatting the legend
+## Formatting the legend
 
 Finally, we can format the legend by changing the position. We simply add the `legend.position = "bottom"` argument to the `theme` option, which moves the legend under the plot. 
 

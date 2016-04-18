@@ -34,7 +34,7 @@ ggplot(airquality_trimmed, aes(x = Ozone, colour = Month.f)) +
             text = element_text(size = 12, family = "Tahoma"))
 ```
 
-### Basic density plot
+## Basic density plot
 
 In order to initialise a plot we tell ggplot that `airquality` is our data, and specify that our x axis plots the `Ozone` variable. We then instruct ggplot to render this as a density plot by adding the `geom_density()` option.
 
@@ -43,7 +43,7 @@ p8 <- ggplot(airquality, aes(x = Ozone)) + geom_density()
 p8
 ```
 
-### Customising axis labels
+## Customising axis labels
 
 In order to change the axis labels, we have a couple of options. In this case, we have used the `scale_x_continuous` and `scale_y_continuous` options, as these have further customisation options for the axes we will use below. In each, we add the desired name to the `name` argument as a string.
 
@@ -60,7 +60,7 @@ p8 <- p8 + scale_x_continuous(name = "Mean ozone in\nparts per billion")
 p8
 ```
 
-### Changing axis ticks
+## Changing axis ticks
 
 The next thing we will change is the axis ticks. Let's make the x-axis ticks appear at every 25 units rather than 50 using the `breaks = seq(0, 200, 25)` argument in `scale_x_continuous`. (The `seq` function is a base R function that indicates the start and endpoints and the units to increment by respectively. See `help(seq)` for more information.) We ensure that the x-axis begins and ends where we want by also adding the argument `limits = c(0, 200)` to `scale_x_continuous`.
 
@@ -71,7 +71,7 @@ p8 <- p8 + scale_x_continuous(name = "Mean ozone in\nparts per billion",
 p8
 ``` 
 
-### Adding a title
+## Adding a title
 
 To add a title, we include the option `ggtitle` and include the name of the graph as a string argument.
 
@@ -80,7 +80,7 @@ p8 <- p8 + ggtitle("Density plot of mean ozone")
 p8
 ```
 
-### Changing the colour of the curves
+## Changing the colour of the curves
 
 To change the line and fill colours of the density plot, we add a valid colour to the `colour` and `fill` arguments in `geom_density()` (note that I assigned these colours to variables outside of the plot to make it easier to change them). A list of valid colours is [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf).
 
@@ -128,7 +128,7 @@ p8 <- ggplot(airquality, aes(x = Ozone)) +
 p8
 ```
 
-### Using the white theme
+## Using the white theme
 
 As explained in the previous posts, we can also change the overall look of the plot using themes. We'll start using a simple theme customisation by adding `theme_bw() `. As you can see, we can further tweak the graph using the `theme` option, which we've used so far to change the legend.
 
@@ -137,7 +137,7 @@ p8 <- p8 + theme_bw()
 p8
 ```
 
-### Creating an XKCD style chart
+## Creating an XKCD style chart
 
 Of course, you may want to create your own themes as well. `ggplot2` allows for a very high degree of customisation, including allowing you to use imported fonts. Below is an example of a theme Mauricio was able to create which mimics the visual style of [XKCD](http://xkcd.com/). In order to create this chart, you first need to import the XKCD font, install it on your machine and load it into R using the `extrafont` package.
 These instructions are taken from [here](https://www.google.com.au/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwiWzafchdPJAhVBpJQKHe_LDT8QFggbMAA&url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fxkcd%2Fvignettes%2Fxkcd-intro.pdf&usg=AFQjCNE-KciGY14e-Q1buYIVmTFC0ht__Q&sig2=DZUwkvIHwfNWtTtkcz94jg):
@@ -176,7 +176,7 @@ p8 <- ggplot(airquality, aes(x = Ozone)) +
 p8
 ```
 
-### Using 'The Economist' theme 
+## Using 'The Economist' theme 
 
 There are a wider range of pre-built themes available as part of the `ggthemes` package (more information on these [here](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html)). Below we've applied `theme_economist()`, which approximates graphs in the Economist magazine.
 
@@ -207,7 +207,7 @@ p8 <- ggplot(airquality, aes(x = Ozone)) +
 p8
 ```
 
-### Creating your own theme
+## Creating your own theme
 
 As before, you can modify your plots a lot as `ggplot2` allows many customisations. Here is a custom plot where we have modified the axes, background and font.
 
@@ -237,7 +237,7 @@ p8 <- ggplot(airquality, aes(x = Ozone)) +
 p8
 ```
 
-### Adding lines
+## Adding lines
 
 Let's say that we want to add a cutoff value to the chart (75 parts of ozone per billion). We add the `geom_vline` option to the chart, and specify where it goes on the x-axis using the `xintercept` argument. We can customise how it looks using the `colour` and `linetype` arguments in `geom_vline`. (In the the same way, horizontal lines can be added using the `geom_hline`.)
 
@@ -250,7 +250,7 @@ p8 <- p8 + geom_vline(xintercept = 75, size = 1, colour = "#FF3721",
 p8
 ```
 
-### Multiple densities
+## Multiple densities
 
 You can also easily create multiple density plots by the levels of another variable. There are two options, in separate (panel) plots, or in the same plot. There are also a couple of variations on these we'll discuss below.
 
@@ -355,7 +355,7 @@ p8 <- ggplot(airquality_trimmed, aes(x = Ozone, colour = Month.f)) +
 p8
 ```
 
-### Formatting the legend
+## Formatting the legend
 
 Finally, we can format the legend. Firstly, we can change the position by adding the `legend.position = "bottom"` argument to the `theme` option, which moves the legend under the plot. Secondly, we can fix the title by adding the `labs(fill="Month")` option to the plot.
 

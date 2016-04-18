@@ -36,7 +36,7 @@ p10 <- ggplot(airquality_trimmed2, aes(x = Month, y = Ozone, fill = Temp.f)) +
 p10
 ```
 
-### Basic boxplot
+## Basic boxplot
 
 In order to initialise a plot we tell ggplot that `airquality` is our data, and specify that our x-axis plots the `Month` variable and our y-axis plots the `Ozone` variable. We then instruct ggplot to render this as a boxplot by adding the `geom_boxplot()` option.
 
@@ -46,7 +46,7 @@ p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) +
 p10
 ```
 
-### Customising axis labels
+## Customising axis labels
 
 In order to change the axis labels, we have a couple of options. In this case, we have used the `scale_x_discrete` and `scale_y_continuous` options, as these have further customisation options for the axes we will use below. In each, we add the desired name to the `name` argument as a string.
 
@@ -63,7 +63,7 @@ p10 <- p10 + scale_y_continuous(name = "Mean ozone in\nparts per billion")
 p10
 ```
 
-### Changing axis ticks
+## Changing axis ticks
 
 The next thing we will change is the axis ticks. Let's make the y-axis ticks appear at every 25 units rather than 50 using the `breaks = seq(0, 175, 25)` argument in `scale_y_continuous`. (The `seq` function is a base R function that indicates the start and endpoints and the units to increment by respectively. See `help(seq)` for more information.) We ensure that the y-axis begins and ends where we want by also adding the argument `limits = c(0, 175)` to `scale_y_continuous`.
 
@@ -74,7 +74,7 @@ p10 <- p10 + scale_y_continuous(name = "Mean ozone in\nparts per billion",
 p10
 ``` 
 
-### Adding a title
+## Adding a title
 
 To add a title, we include the option `ggtitle` and include the name of the graph as a string argument.
 
@@ -83,7 +83,7 @@ p10 <- p10 + ggtitle("Boxplot of mean ozone by month")
 p10
 ```
 
-### Changing the colour of the boxes
+## Changing the colour of the boxes
 
 To change the line and fill colours of the box plot, we add a valid colour to the `colour` and `fill` arguments in `geom_boxplot()` (note that we assigned these colours to variables outside of the plot to make it easier to change them). A list of valid colours is [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf).
 
@@ -145,7 +145,7 @@ p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) +
 p10
 ```
 
-### Using the white theme
+## Using the white theme
 
 As explained in the previous posts, we can also change the overall look of the plot using themes. We'll start using a simple theme customisation by adding `theme_bw() `. As you can see, we can further tweak the graph using the `theme` option, which we've used so far to change the legend.
 
@@ -154,7 +154,7 @@ p10 <- p10 + theme_bw()
 p10
 ```
 
-### Creating an XKCD style chart
+## Creating an XKCD style chart
 
 Of course, you may want to create your own themes as well. `ggplot2` allows for a very high degree of customisation, including allowing you to use imported fonts. Below is an example of a theme Mauricio was able to create which mimics the visual style of [XKCD](http://xkcd.com/). In order to create this chart, you first need to import the XKCD font, install it on your machine and load it into R using the `extrafont` package.
 These instructions are taken from [here](https://www.google.com.au/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwiWzafchdPJAhVBpJQKHe_LDT8QFggbMAA&url=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2Fxkcd%2Fvignettes%2Fxkcd-intro.pdf&usg=AFQjCNE-KciGY14e-Q1buYIVmTFC0ht__Q&sig2=DZUwkvIHwfNWtTtkcz94jg):
@@ -195,7 +195,7 @@ p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) +
 p10
 ```
 
-### Using 'The Economist' theme 
+## Using 'The Economist' theme 
 
 There are a wider range of pre-built themes available as part of the `ggthemes` package (more information on these [here](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html)). Below we've applied `theme_economist()`, which approximates graphs in the Economist magazine.
 
@@ -227,7 +227,7 @@ p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) +
 p10
 ```
 
-### Creating your own theme
+## Creating your own theme
 
 As before, you can modify your plots a lot as `ggplot2` allows many customisations. Here is a custom plot where we have modified the axes, background and font.
 
@@ -259,7 +259,7 @@ p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) +
 p10
 ```
 
-### Boxplot extras
+## Boxplot extras
 
 An extra feature you can add to boxplots is to overlay all of the points for that group on each boxplot in order to get an idea of the sample size of the group. This can be achieved using by adding the `geom_jitter` option.
 
@@ -295,7 +295,7 @@ p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) +
 p10
 ```
 
-### Grouping by another variable
+## Grouping by another variable
 
 You can also easily group box plots by the levels of another variable. There are two options, in separate (panel) plots, or in the same plot.
 
@@ -348,7 +348,7 @@ p10 <- ggplot(airquality_trimmed, aes(x = Month, y = Ozone, fill = Temp.f)) +
 p10
 ```
 
-### Formatting the legend
+## Formatting the legend
 
 Finally, we can format the legend. Firstly, we can change the position by adding the `legend.position = "bottom"` argument to the `theme` option, which moves the legend under the plot. Secondly, we can fix the title by adding the `labs(fill = "Temperature")` option to the plot.
 

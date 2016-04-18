@@ -1,13 +1,12 @@
 ---
-title: "Creating plots in R using ggplot2 - Parts 1-9"
+title: "Creating plots in R using ggplot2 - Parts 1-10"
 author:
 - Jodie Burchell
-- Mauricio Vargas Sepúlveda 帕夏
+- Mauricio Vargas Sepúlveda
 date: '`r Sys.Date()`'
 output:
   pdf_document:
     keep_tex: yes
-    latex_engine: xelatex
     toc: yes
 ---
 
