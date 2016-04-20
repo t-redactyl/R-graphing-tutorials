@@ -1,0 +1,25 @@
+\begin{thebibliography}{1}
+
+\bibitem{hadley_wickham_ggplot2:_2009}
+{Hadley Wickham}.
+\newblock {\em ggplot2: elegant graphics for data analysis}.
+\newblock Springer, 2009.
+
+\bibitem{jenny_bryan_all_????}
+{Jenny Bryan}.
+\newblock All the graph things.
+
+\bibitem{jenny_bryan_teaching_????}
+{Jenny Bryan}.
+\newblock Teaching materials for the {R} package ggplot2.
+
+\bibitem{r._peng_j._leek_b._caffo_exploratory_????}
+{R. Peng, J. Leek, B. Caffo}.
+\newblock Exploratory {Data} {Analysis}.
+
+\bibitem{winston_chang_r_2012}
+{Winston Chang}.
+\newblock {\em R graphics cookbook}.
+\newblock O'Reilly Media, 2012.
+
+\end{thebibliography}

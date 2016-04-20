@@ -1,0 +1,196 @@
+---
+title: "Creating plots in R using ggplot2 - part 11: linear regression plot"
+author: 
+  - Jodie Burchell
+  - Mauricio Vargas Sepúlveda 帕夏
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, cache = FALSE, echo = FALSE, message = FALSE, warning = FALSE, tidy = FALSE}
+knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, fig.width=6, fig.height=5, tidy = F, cache.path = '.cache/', fig.path = '11_Linear_Regression_Plot/')
+knitr::opts_knit$set(root.dir='11_Linear_Regression_Plot/')
+```
+
+This is the twelfth tutorial in a series on using `ggplot2` I am creating with [Mauricio Vargas Sepúlveda](http://pachamaltese.github.io/). In this tutorial we will demonstrate some of the many options the `ggplot2` package.
+
+This post will be much more than just regression plot. Here we are getting, cleaning and processing financial data from [Quandl](https://www.quandl.com/). The goal is to estimate the CAPM model $R_i = R_f + \beta_i [R_m - R_f] + e_i$ where $R_i$ is the return of an asset, $R_f$ is the risk-free return (e.g. US Treasury Bonds), $R_m$ is the return of the market portfolio (e.g. NYSE) and $\beta_i$ is  a measure of risk relative to the market (e.g. $\beta_i = 1$ means that asset is exactly as risky as the market portfolio). More on the CAPM model can be read [here](http://people.stern.nyu.edu/ashapiro/courses/B01.231103/FFL09.pdf) but we will focus on plots.
+
+The first thing to do is download and load in the data of the monthly price of Hang Seng Index (恒生指數) and Cheung Kong Holdings Hong Kong (长江实业集团香港) from 2015-03-01 to 2016-04-01. In order to work with Quandl without restrictions it is needed to create a free account and add `authcode = ...` to `Quandl` command.
+
+```{r lr_load_in_data}
+library(ggplot2);library(gridExtra);library(Quandl);library(reshape)
+```
+
+```{r lr_2, eval=FALSE}
+hsi.df <- Quandl("YAHOO/INDEX_HSI", start_date="2015-03-01", end_date="2016-04-01", 
+                collapse="monthly", type = "raw", authcode = "XXX")
+
+ckh.df <- Quandl("YAHOO/HK_0001", start_date="2015-03-01", 
+                 end_date="2016-04-01", collapse="monthly", type = "raw", authcode="XXX")
+
+saveRDS(hsi.df, "hsi.rds"); saveRDS(ckh.df,"ckh.rds")
+```
+
+Before calculating return as $R_i = \displaystyle \frac{P_t - P_{t-1}}{P_t}$ it is needed to order HSI and CKH data by dates in decreasing order.
+
+```{r lr_3, cache=TRUE}
+hsi.df <- readRDS("hsi.rds")
+colnames(hsi.df)[7] <- "Adjusted.Close"
+hsi.df <- hsi.df[order(as.Date(hsi.df$Date)),]
+```
+
+With ordered dates it is possible to obtain the correct return for each month.
+
+```{r lr_4, cache=TRUE}
+hsi.Adjusted.Close <- hsi.df$Adjusted.Close
+hsi.Return <- diff(hsi.Adjusted.Close)/hsi.Adjusted.Close[-length(hsi.Adjusted.Close)]
+hsi.Return <- c(NA,hsi.Return)
+hsi.df$Return <- hsi.Return
+hsi.df <- na.omit(hsi.df)
+hsi.Return <- hsi.df[,c("Date","Return")]
+
+ckh.df <- readRDS("ckh.rds")
+colnames(ckh.df)[7] <- "Adjusted.Close"
+ckh.df <- ckh.df[order(as.Date(ckh.df$Date)),]
+ckh.Adjusted.Close <- ckh.df$Adjusted.Close
+ckh.Return <- diff(ckh.Adjusted.Close)/ckh.Adjusted.Close[-length(ckh.Adjusted.Close)]
+ckh.Return <- c(NA,ckh.Return)
+ckh.df <- na.omit(ckh.df)
+ckh.df$Return <- ckh.Return
+ckh.Return <- ckh.df[,c("Date","Return")]
+```
+
+With correct returns and ordered by date prices it is possible to plot HSI (恒生指數) price and return.
+
+```{r lr_5, cache=TRUE}
+p1 <- ggplot(hsi.df)
+p1 <- p1 + geom_line(aes(x = Date, y = Adjusted.Close), col="darkblue")
+p1 <- p1 + labs(title = "Hang Seng Index", x = "Date", y = "Nominal Price (HKD)")
+
+p2 <- ggplot(hsi.df)
+p2 <- p2 + geom_line(aes(x = Date, y = Return), col="darkred")
+p2 <- p2 + labs(title = "", x = "Date", y = "Monthly Return (%)")
+
+grid.arrange(p1, p2, nrow=2)
+
+p3 <- ggplot(ckh.df)
+p3 <- p3 + geom_line(aes(x = Date, y = Adjusted.Close), col="darkblue")
+p3 <- p3 + labs(title = "Cheung Kong Holdings Hong Kong", x = "Date", y = "Nominal Price (HKD)")
+
+p4 <- ggplot(ckh.df)
+p4 <- p4 + geom_line(aes(x = Date, y = Return), col="darkred")
+p4 <- p4 + labs(title = "", x = "Date", y = "Monthly Return (%)")
+
+grid.arrange(p3, p4, nrow=2)
+```
+
+Before doing regression we will plot the return distribution and test normality in return distribution. In this case the test must be Shapiro-Wilk as Kolmogorov-Smirov requieres a continuous distribution.
+
+```{r lr_6, cache=TRUE}
+p5 <- ggplot(hsi.df, aes(x = Return)) + geom_density()
+p5
+
+p6 <- ggplot(ckh.df, aes(x = Return)) + geom_density()
+p6
+
+shapiro.test(hsi.df$Return)
+shapiro.test(ckh.df$Return)
+```
+
+The returns can be arranged in one data frame before doing plots and regression.
+
+```{r lr_7, cache=TRUE}
+hsi.ckh.returns <- merge(hsi.Return, ckh.Return, by='Date')
+hsi.ckh.returns <- na.omit(hsi.ckh.returns)
+colnames(hsi.ckh.returns) <- c("Date","hsi.Return","ckh.Return")
+```
+
+With the previous arrangements, now it is possible to show the returns in one plot.
+
+```{r lr_8, cache=TRUE, fig.width=8, fig.height=6}
+hsi.ckh.returns.melt <- melt(hsi.ckh.returns, id="Date")  # convert to long format
+p7 <- ggplot(data=hsi.ckh.returns.melt, aes(x=Date, y=value, colour=variable))
+p7 <- p7 + geom_point() + geom_line()
+p7 <- p7 + scale_color_manual("Variable",labels = c("HSI", "CKH"), values = c("royalblue", "red"))
+p7 <- p7 + labs(title="Index Comparison", x="Date", y="Return (%)")
+p7
+```
+
+Using [Damodaran](http://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/ctryprem.html) and [Bloomberg](http://www.bloomberg.com/markets/rates-bonds/government-bonds/us) data we can work with an estimate of HSI risk premium over risk-free rate.
+
+```{r lr_9, cache=TRUE}
+usa.risk.free <- 0.3/100
+hsi.risk.premium <- 0.6/100
+
+hsi.ckh.returns$hsi.Risk.free <- usa.risk.free + hsi.risk.premium
+hsi.ckh.returns$hsi.Risk.premium <- hsi.ckh.returns$hsi.Return - hsi.ckh.returns$hsi.Risk.free
+```
+
+Now we can fit a lineal regression. One interesting thing is that in CAPM context the regression line slope can be calculated as $\beta_i = \displaystyle \frac{\sigma_{i,m}}{\sigma_m^2}$.
+
+```{r lr_10, cache=TRUE}
+hsi.Return.vector <- as.vector(hsi.ckh.returns$hsi.Return)
+ckh.Return.vector <- as.vector(hsi.ckh.returns$ckh.Return)
+cov.hsi.ckh <- cov(ckh.Return.vector, hsi.Return.vector)
+var.hk <- var(hsi.Return.vector)
+cov.hsi.ckh/var.hk
+
+fit <- lm(ckh.Return ~ hsi.Risk.premium, data = hsi.ckh.returns) 
+summary(fit)
+```
+
+Up to this point we have all what is required to plot regressions. We will start with a basic regression plot.
+
+```{r lr_11, cache=TRUE}
+p8 <- ggplot(hsi.ckh.returns, aes(x=hsi.Risk.premium, y=ckh.Return)) + geom_point(shape=1) + geom_smooth(method=lm) 
+p8
+```
+
+`geom_point` can be customized, for example, not to include the confidence region
+
+```{r lr_12, cache=TRUE}
+p8 <- ggplot(hsi.ckh.returns, aes(x=hsi.Risk.premium, y=ckh.Return)) + geom_point(shape=1) + geom_smooth(method=lm, se=FALSE) 
+p8
+```
+
+Before continuing it is a good idea to fix the axis names and add a title
+
+```{r lr_13, cache=TRUE}
+p8 <- ggplot(hsi.ckh.returns, aes(x=hsi.Risk.premium, y=ckh.Return)) + geom_point(shape=1) + geom_smooth(method=lm, se=FALSE) + ggtitle("CKH regression line") +
+  scale_x_continuous(name = "HSI risk premium") +
+  scale_y_continuous(name = "CKH return")
+p8
+```
+
+It would be interesting to show $R^2$ and regression coefficients within the plot. This can be more trickier but it is possible.
+
+```{r lr_14, cache=TRUE}
+p8 <- ggplot(hsi.ckh.returns, aes(x=hsi.Risk.premium, y=ckh.Return)) + geom_point(shape=1) + geom_smooth(method=lm, se=FALSE) + ggtitle("CKH regression line") +
+  scale_x_continuous(name = "HSI risk premium") +
+  scale_y_continuous(name = "CKH return") + annotate("text", x=0.1, y=-0.05, label = "R^2=0.78") + annotate("text", x=0.1, y=-0.06, label = "alpha=0.00") + annotate("text", x=0.1, y=-0.07, label = "beta=0.67")
+p8
+```
+
+Now we can add the greek letters and exponents.
+
+```{r lr_15, cache=TRUE}
+p8 <- ggplot(hsi.ckh.returns, aes(x=hsi.Risk.premium, y=ckh.Return)) + geom_point(shape=1) + geom_smooth(method=lm, se=FALSE) + ggtitle("CKH regression line") +
+  scale_x_continuous(name = "HSI risk premium") +
+  scale_y_continuous(name = "CKH return") + annotate("text", x=0.1, y=-0.05, label = "R^2 == 0.78", parse=T) + annotate("text", x=0.1, y=-0.06, label = "alpha == 0.00", parse=T) + annotate("text", x=0.1, y=-0.07, label = "beta == 0.67", parse=T)
+p8
+```
+
+To make the coefficients more visible we will add some elements to increase visibility
+
+```{r lr_16, cache=TRUE}
+p8 <- ggplot(hsi.ckh.returns, aes(x=hsi.Risk.premium, y=ckh.Return)) + geom_point(shape=1) + geom_smooth(method=lm, se=FALSE) 
+p8 <- p8 + 
+  ggtitle("CKH regression line") +
+  scale_x_continuous(name = "HSI risk premium") +
+  scale_y_continuous(name = "CKH return") +
+  annotate("rect", xmin = 0.075, xmax = 0.125, ymin = -0.075, ymax = -0.045, fill="white", colour="red") + 
+  annotate("text", x=0.1, y=-0.05, label = "R^2 == 0.78", parse=T) + annotate("text", x=0.1, y=-0.06, label = "alpha == 0.00", parse=T) + 
+  annotate("text", x=0.1, y=-0.07, label = "beta == 0.67", parse=T)
+p8
+```

@@ -136,3 +136,4 @@
 \contentsline {section}{\numberline {10.10}Boxplot extras}{145}{section.10.10}
 \contentsline {section}{\numberline {10.11}Grouping by another variable}{147}{section.10.11}
 \contentsline {section}{\numberline {10.12}Formatting the legend}{149}{section.10.12}
+\contentsline {chapter}{Suggested material}{151}{chapter*.3}
