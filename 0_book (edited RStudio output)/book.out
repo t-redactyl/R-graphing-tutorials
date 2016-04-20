@@ -1,140 +1,138 @@
-\BOOKMARK [0][-]{chapter.1}{What to expect from this book}{}% 1
-\BOOKMARK [0][-]{chapter.2}{Line Plots}{}% 2
-\BOOKMARK [1][-]{section.2.1}{Basic graph}{chapter.2}% 3
-\BOOKMARK [1][-]{section.2.2}{Adjusting line width}{chapter.2}% 4
-\BOOKMARK [1][-]{section.2.3}{Changing variables display}{chapter.2}% 5
-\BOOKMARK [1][-]{section.2.4}{Adjusting x-axis scale}{chapter.2}% 6
-\BOOKMARK [1][-]{section.2.5}{Adjusting axis labels \046 adding title}{chapter.2}% 7
-\BOOKMARK [1][-]{section.2.6}{Adjusting color palette}{chapter.2}% 8
-\BOOKMARK [1][-]{section.2.7}{Using the white theme}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.8}{Creating an XKCD style chart}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.9}{Using The Economist theme}{chapter.2}% 11
-\BOOKMARK [1][-]{section.2.10}{Creating your own theme}{chapter.2}% 12
-\BOOKMARK [0][-]{chapter.3}{Area Plots}{}% 13
-\BOOKMARK [1][-]{section.3.1}{Basic graph}{chapter.3}% 14
-\BOOKMARK [1][-]{section.3.2}{Adjusting legend position}{chapter.3}% 15
-\BOOKMARK [1][-]{section.3.3}{Changing variables display}{chapter.3}% 16
-\BOOKMARK [1][-]{section.3.4}{Adjusting x-axis scale}{chapter.3}% 17
-\BOOKMARK [1][-]{section.3.5}{Adjusting axis labels \046 adding title}{chapter.3}% 18
-\BOOKMARK [1][-]{section.3.6}{Adjusting color palette}{chapter.3}% 19
-\BOOKMARK [1][-]{section.3.7}{Using the white theme}{chapter.3}% 20
-\BOOKMARK [1][-]{section.3.8}{Creating an XKCD style chart}{chapter.3}% 21
-\BOOKMARK [1][-]{section.3.9}{Using The Economist theme}{chapter.3}% 22
-\BOOKMARK [1][-]{section.3.10}{Creating your own theme}{chapter.3}% 23
-\BOOKMARK [0][-]{chapter.4}{Bar Plots}{}% 24
-\BOOKMARK [1][-]{section.4.1}{Basic graph}{chapter.4}% 25
-\BOOKMARK [1][-]{section.4.2}{Adding data labels}{chapter.4}% 26
-\BOOKMARK [1][-]{section.4.3}{Adjusting data labels position}{chapter.4}% 27
-\BOOKMARK [1][-]{section.4.4}{Adjusting legend position}{chapter.4}% 28
-\BOOKMARK [1][-]{section.4.5}{Changing variables display}{chapter.4}% 29
-\BOOKMARK [1][-]{section.4.6}{Adjusting x-axis scale}{chapter.4}% 30
-\BOOKMARK [1][-]{section.4.7}{Adjusting axis labels \046 adding title}{chapter.4}% 31
-\BOOKMARK [1][-]{section.4.8}{Adjusting color palette}{chapter.4}% 32
-\BOOKMARK [1][-]{section.4.9}{Using the white theme}{chapter.4}% 33
-\BOOKMARK [1][-]{section.4.10}{Creating an XKCD style chart}{chapter.4}% 34
-\BOOKMARK [1][-]{section.4.11}{Using The Economist theme}{chapter.4}% 35
-\BOOKMARK [1][-]{section.4.12}{Creating your own theme}{chapter.4}% 36
-\BOOKMARK [0][-]{chapter.5}{Stacked Bar Plots}{}% 37
-\BOOKMARK [1][-]{section.5.1}{Basic graph}{chapter.5}% 38
-\BOOKMARK [1][-]{section.5.2}{Adding data labels}{chapter.5}% 39
-\BOOKMARK [1][-]{section.5.3}{Adjusting data labels position}{chapter.5}% 40
-\BOOKMARK [1][-]{section.5.4}{Adjusting legend position}{chapter.5}% 41
-\BOOKMARK [1][-]{section.5.5}{Changing variables display}{chapter.5}% 42
-\BOOKMARK [1][-]{section.5.6}{Adjusting x-axis scale}{chapter.5}% 43
-\BOOKMARK [1][-]{section.5.7}{Adjusting axis, title \046 units}{chapter.5}% 44
-\BOOKMARK [1][-]{section.5.8}{Adjusting color palette}{chapter.5}% 45
-\BOOKMARK [1][-]{section.5.9}{Using the white theme}{chapter.5}% 46
-\BOOKMARK [1][-]{section.5.10}{Creating an XKCD style chart}{chapter.5}% 47
-\BOOKMARK [1][-]{section.5.11}{Using The Economist theme}{chapter.5}% 48
-\BOOKMARK [1][-]{section.5.12}{Creating your own theme}{chapter.5}% 49
-\BOOKMARK [0][-]{chapter.6}{Scatter Plots}{}% 50
-\BOOKMARK [1][-]{section.6.1}{Basic scatterplot}{chapter.6}% 51
-\BOOKMARK [1][-]{section.6.2}{Changing the shape of the data points}{chapter.6}% 52
-\BOOKMARK [1][-]{section.6.3}{Adjusting the axis scales}{chapter.6}% 53
-\BOOKMARK [1][-]{section.6.4}{Adjusting axis labels \046 adding title}{chapter.6}% 54
-\BOOKMARK [1][-]{section.6.5}{Adjusting the colour palette}{chapter.6}% 55
-\BOOKMARK [1][-]{section.6.6}{Adjusting legend position}{chapter.6}% 56
-\BOOKMARK [1][-]{section.6.7}{Using the white theme}{chapter.6}% 57
-\BOOKMARK [1][-]{section.6.8}{Creating an XKCD style chart}{chapter.6}% 58
-\BOOKMARK [1][-]{section.6.9}{Using The Economist theme}{chapter.6}% 59
-\BOOKMARK [1][-]{section.6.10}{Creating your own theme}{chapter.6}% 60
-\BOOKMARK [0][-]{chapter.7}{Weighted Scatter Plots}{}% 61
-\BOOKMARK [1][-]{section.7.1}{Basic weighted scatterplot}{chapter.7}% 62
-\BOOKMARK [1][-]{section.7.2}{Changing the shape of the data points}{chapter.7}% 63
-\BOOKMARK [1][-]{section.7.3}{Adjusting the axis scales}{chapter.7}% 64
-\BOOKMARK [1][-]{section.7.4}{Adjusting axis labels \046 adding title}{chapter.7}% 65
-\BOOKMARK [1][-]{section.7.5}{Adjusting the colour palette}{chapter.7}% 66
-\BOOKMARK [1][-]{section.7.6}{Adjusting the size of the data points}{chapter.7}% 67
-\BOOKMARK [1][-]{section.7.7}{Adjusting legend position}{chapter.7}% 68
-\BOOKMARK [1][-]{section.7.8}{Changing the legend titles}{chapter.7}% 69
-\BOOKMARK [1][-]{section.7.9}{Creating horizontal legends}{chapter.7}% 70
-\BOOKMARK [1][-]{section.7.10}{Using the white theme}{chapter.7}% 71
-\BOOKMARK [1][-]{section.7.11}{Creating an XKCD style chart}{chapter.7}% 72
-\BOOKMARK [1][-]{section.7.12}{Using The Economist theme}{chapter.7}% 73
-\BOOKMARK [1][-]{section.7.13}{Creating your own theme}{chapter.7}% 74
-\BOOKMARK [0][-]{chapter.8}{Histograms}{}% 75
-\BOOKMARK [1][-]{section.8.1}{Basic histogram}{chapter.8}% 76
-\BOOKMARK [1][-]{section.8.2}{Adding a normal density curve}{chapter.8}% 77
-\BOOKMARK [1][-]{section.8.3}{Changing from density to frequency}{chapter.8}% 78
-\BOOKMARK [1][-]{section.8.4}{Adjusting binwidth}{chapter.8}% 79
-\BOOKMARK [1][-]{section.8.5}{Customising axis labels}{chapter.8}% 80
-\BOOKMARK [1][-]{section.8.6}{Single line labels}{chapter.8}% 81
-\BOOKMARK [1][-]{section.8.7}{Multiline labels}{chapter.8}% 82
-\BOOKMARK [1][-]{section.8.8}{Changing axis ticks}{chapter.8}% 83
-\BOOKMARK [1][-]{section.8.9}{Adding a title}{chapter.8}% 84
-\BOOKMARK [1][-]{section.8.10}{Changing the colour of the bars}{chapter.8}% 85
-\BOOKMARK [1][-]{section.8.11}{By colour name}{chapter.8}% 86
-\BOOKMARK [1][-]{section.8.12}{By HEX code}{chapter.8}% 87
-\BOOKMARK [1][-]{section.8.13}{Colour gradients}{chapter.8}% 88
-\BOOKMARK [1][-]{section.8.14}{Using the white theme}{chapter.8}% 89
-\BOOKMARK [1][-]{section.8.15}{Creating an XKCD style chart}{chapter.8}% 90
-\BOOKMARK [1][-]{section.8.16}{Using The Economist theme}{chapter.8}% 91
-\BOOKMARK [1][-]{section.8.17}{Creating your own theme}{chapter.8}% 92
-\BOOKMARK [1][-]{section.8.18}{Adding lines}{chapter.8}% 93
-\BOOKMARK [1][-]{section.8.19}{Multiple histograms}{chapter.8}% 94
-\BOOKMARK [1][-]{section.8.20}{In panel plots}{chapter.8}% 95
-\BOOKMARK [1][-]{section.8.21}{In the same plot}{chapter.8}% 96
-\BOOKMARK [1][-]{section.8.22}{Formatting the legend}{chapter.8}% 97
-\BOOKMARK [0][-]{chapter.9}{Density Plots}{}% 98
-\BOOKMARK [1][-]{section.9.1}{Basic density plot}{chapter.9}% 99
-\BOOKMARK [1][-]{section.9.2}{Customising axis labels}{chapter.9}% 100
-\BOOKMARK [1][-]{section.9.3}{Changing axis ticks}{chapter.9}% 101
-\BOOKMARK [1][-]{section.9.4}{Adding a title}{chapter.9}% 102
-\BOOKMARK [1][-]{section.9.5}{Changing the colour of the curves}{chapter.9}% 103
-\BOOKMARK [1][-]{section.9.6}{Using the white theme}{chapter.9}% 104
-\BOOKMARK [1][-]{section.9.7}{Creating an XKCD style chart}{chapter.9}% 105
-\BOOKMARK [1][-]{section.9.8}{Using The Economist theme}{chapter.9}% 106
-\BOOKMARK [1][-]{section.9.9}{Creating your own theme}{chapter.9}% 107
-\BOOKMARK [1][-]{section.9.10}{Adding lines}{chapter.9}% 108
-\BOOKMARK [1][-]{section.9.11}{Multiple densities}{chapter.9}% 109
-\BOOKMARK [1][-]{section.9.12}{Formatting the legend}{chapter.9}% 110
-\BOOKMARK [0][-]{chapter.10}{Function Plots}{}% 111
-\BOOKMARK [1][-]{section.10.1}{Basic normal curve}{chapter.10}% 112
-\BOOKMARK [1][-]{section.10.2}{Basic t-curve}{chapter.10}% 113
-\BOOKMARK [1][-]{section.10.3}{Plotting your own function}{chapter.10}% 114
-\BOOKMARK [1][-]{section.10.4}{Plotting multiple functions on the same graph}{chapter.10}% 115
-\BOOKMARK [1][-]{section.10.5}{Customising axis labels}{chapter.10}% 116
-\BOOKMARK [1][-]{section.10.6}{Changing axis ticks}{chapter.10}% 117
-\BOOKMARK [1][-]{section.10.7}{Adding a title}{chapter.10}% 118
-\BOOKMARK [1][-]{section.10.8}{Changing the colour of the curves}{chapter.10}% 119
-\BOOKMARK [1][-]{section.10.9}{Adding a legend}{chapter.10}% 120
-\BOOKMARK [1][-]{section.10.10}{Changing the size of the lines}{chapter.10}% 121
-\BOOKMARK [1][-]{section.10.11}{Using the white theme}{chapter.10}% 122
-\BOOKMARK [1][-]{section.10.12}{Creating an XKCD style chart}{chapter.10}% 123
-\BOOKMARK [1][-]{section.10.13}{Using The Economist theme}{chapter.10}% 124
-\BOOKMARK [1][-]{section.10.14}{Creating your own theme}{chapter.10}% 125
-\BOOKMARK [1][-]{section.10.15}{Adding areas under the curve}{chapter.10}% 126
-\BOOKMARK [1][-]{section.10.16}{Formatting the legend}{chapter.10}% 127
-\BOOKMARK [0][-]{chapter.11}{Boxplots}{}% 128
-\BOOKMARK [1][-]{section.11.1}{Basic boxplot}{chapter.11}% 129
-\BOOKMARK [1][-]{section.11.2}{Customising axis labels}{chapter.11}% 130
-\BOOKMARK [1][-]{section.11.3}{Changing axis ticks}{chapter.11}% 131
-\BOOKMARK [1][-]{section.11.4}{Adding a title}{chapter.11}% 132
-\BOOKMARK [1][-]{section.11.5}{Changing the colour of the boxes}{chapter.11}% 133
-\BOOKMARK [1][-]{section.11.6}{Using the white theme}{chapter.11}% 134
-\BOOKMARK [1][-]{section.11.7}{Creating an XKCD style chart}{chapter.11}% 135
-\BOOKMARK [1][-]{section.11.8}{Using The Economist theme}{chapter.11}% 136
-\BOOKMARK [1][-]{section.11.9}{Creating your own theme}{chapter.11}% 137
-\BOOKMARK [1][-]{section.11.10}{Boxplot extras}{chapter.11}% 138
-\BOOKMARK [1][-]{section.11.11}{Grouping by another variable}{chapter.11}% 139
-\BOOKMARK [1][-]{section.11.12}{Formatting the legend}{chapter.11}% 140
+\BOOKMARK [0][-]{chapter*.2}{What to expect from this book}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Line Plots}{}% 2
+\BOOKMARK [1][-]{section.1.1}{Basic graph}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{Adjusting line width}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.3}{Changing variables display}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.4}{Adjusting x-axis scale}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.5}{Adjusting axis labels \046 adding title}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.6}{Adjusting color palette}{chapter.1}% 8
+\BOOKMARK [1][-]{section.1.7}{Using the white theme}{chapter.1}% 9
+\BOOKMARK [1][-]{section.1.8}{Creating an XKCD style chart}{chapter.1}% 10
+\BOOKMARK [1][-]{section.1.9}{Using The Economist theme}{chapter.1}% 11
+\BOOKMARK [1][-]{section.1.10}{Creating your own theme}{chapter.1}% 12
+\BOOKMARK [0][-]{chapter.2}{Area Plots}{}% 13
+\BOOKMARK [1][-]{section.2.1}{Basic graph}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.2}{Adjusting legend position}{chapter.2}% 15
+\BOOKMARK [1][-]{section.2.3}{Changing variables display}{chapter.2}% 16
+\BOOKMARK [1][-]{section.2.4}{Adjusting x-axis scale}{chapter.2}% 17
+\BOOKMARK [1][-]{section.2.5}{Adjusting axis labels \046 adding title}{chapter.2}% 18
+\BOOKMARK [1][-]{section.2.6}{Adjusting color palette}{chapter.2}% 19
+\BOOKMARK [1][-]{section.2.7}{Using the white theme}{chapter.2}% 20
+\BOOKMARK [1][-]{section.2.8}{Creating an XKCD style chart}{chapter.2}% 21
+\BOOKMARK [1][-]{section.2.9}{Using The Economist theme}{chapter.2}% 22
+\BOOKMARK [1][-]{section.2.10}{Creating your own theme}{chapter.2}% 23
+\BOOKMARK [0][-]{chapter.3}{Bar Plots}{}% 24
+\BOOKMARK [1][-]{section.3.1}{Basic graph}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.2}{Adding data labels}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.3}{Adjusting data labels position}{chapter.3}% 27
+\BOOKMARK [1][-]{section.3.4}{Adjusting legend position}{chapter.3}% 28
+\BOOKMARK [1][-]{section.3.5}{Changing variables display}{chapter.3}% 29
+\BOOKMARK [1][-]{section.3.6}{Adjusting x-axis scale}{chapter.3}% 30
+\BOOKMARK [1][-]{section.3.7}{Adjusting axis labels \046 adding title}{chapter.3}% 31
+\BOOKMARK [1][-]{section.3.8}{Adjusting color palette}{chapter.3}% 32
+\BOOKMARK [1][-]{section.3.9}{Using the white theme}{chapter.3}% 33
+\BOOKMARK [1][-]{section.3.10}{Creating an XKCD style chart}{chapter.3}% 34
+\BOOKMARK [1][-]{section.3.11}{Using The Economist theme}{chapter.3}% 35
+\BOOKMARK [1][-]{section.3.12}{Creating your own theme}{chapter.3}% 36
+\BOOKMARK [0][-]{chapter.4}{Stacked Bar Plots}{}% 37
+\BOOKMARK [1][-]{section.4.1}{Basic graph}{chapter.4}% 38
+\BOOKMARK [1][-]{section.4.2}{Adding data labels}{chapter.4}% 39
+\BOOKMARK [1][-]{section.4.3}{Adjusting data labels position}{chapter.4}% 40
+\BOOKMARK [1][-]{section.4.4}{Adjusting legend position}{chapter.4}% 41
+\BOOKMARK [1][-]{section.4.5}{Changing variables display}{chapter.4}% 42
+\BOOKMARK [1][-]{section.4.6}{Adjusting x-axis scale}{chapter.4}% 43
+\BOOKMARK [1][-]{section.4.7}{Adjusting axis, title \046 units}{chapter.4}% 44
+\BOOKMARK [1][-]{section.4.8}{Adjusting color palette}{chapter.4}% 45
+\BOOKMARK [1][-]{section.4.9}{Using the white theme}{chapter.4}% 46
+\BOOKMARK [1][-]{section.4.10}{Creating an XKCD style chart}{chapter.4}% 47
+\BOOKMARK [1][-]{section.4.11}{Using The Economist theme}{chapter.4}% 48
+\BOOKMARK [1][-]{section.4.12}{Creating your own theme}{chapter.4}% 49
+\BOOKMARK [0][-]{chapter.5}{Scatter Plots}{}% 50
+\BOOKMARK [1][-]{section.5.1}{Basic scatterplot}{chapter.5}% 51
+\BOOKMARK [1][-]{section.5.2}{Changing the shape of the data points}{chapter.5}% 52
+\BOOKMARK [1][-]{section.5.3}{Adjusting the axis scales}{chapter.5}% 53
+\BOOKMARK [1][-]{section.5.4}{Adjusting axis labels \046 adding title}{chapter.5}% 54
+\BOOKMARK [1][-]{section.5.5}{Adjusting the colour palette}{chapter.5}% 55
+\BOOKMARK [1][-]{section.5.6}{Adjusting legend position}{chapter.5}% 56
+\BOOKMARK [1][-]{section.5.7}{Using the white theme}{chapter.5}% 57
+\BOOKMARK [1][-]{section.5.8}{Creating an XKCD style chart}{chapter.5}% 58
+\BOOKMARK [1][-]{section.5.9}{Using The Economist theme}{chapter.5}% 59
+\BOOKMARK [1][-]{section.5.10}{Creating your own theme}{chapter.5}% 60
+\BOOKMARK [0][-]{chapter.6}{Weighted Scatter Plots}{}% 61
+\BOOKMARK [1][-]{section.6.1}{Basic weighted scatterplot}{chapter.6}% 62
+\BOOKMARK [1][-]{section.6.2}{Changing the shape of the data points}{chapter.6}% 63
+\BOOKMARK [1][-]{section.6.3}{Adjusting the axis scales}{chapter.6}% 64
+\BOOKMARK [1][-]{section.6.4}{Adjusting axis labels \046 adding title}{chapter.6}% 65
+\BOOKMARK [1][-]{section.6.5}{Adjusting the colour palette}{chapter.6}% 66
+\BOOKMARK [1][-]{section.6.6}{Adjusting the size of the data points}{chapter.6}% 67
+\BOOKMARK [1][-]{section.6.7}{Adjusting legend position}{chapter.6}% 68
+\BOOKMARK [1][-]{section.6.8}{Changing the legend titles}{chapter.6}% 69
+\BOOKMARK [1][-]{section.6.9}{Creating horizontal legends}{chapter.6}% 70
+\BOOKMARK [1][-]{section.6.10}{Using the white theme}{chapter.6}% 71
+\BOOKMARK [1][-]{section.6.11}{Creating an XKCD style chart}{chapter.6}% 72
+\BOOKMARK [1][-]{section.6.12}{Using The Economist theme}{chapter.6}% 73
+\BOOKMARK [1][-]{section.6.13}{Creating your own theme}{chapter.6}% 74
+\BOOKMARK [0][-]{chapter.7}{Histograms}{}% 75
+\BOOKMARK [1][-]{section.7.1}{Basic histogram}{chapter.7}% 76
+\BOOKMARK [1][-]{section.7.2}{Adding a normal density curve}{chapter.7}% 77
+\BOOKMARK [1][-]{section.7.3}{Changing from density to frequency}{chapter.7}% 78
+\BOOKMARK [1][-]{section.7.4}{Adjusting binwidth}{chapter.7}% 79
+\BOOKMARK [1][-]{section.7.5}{Customising axis labels}{chapter.7}% 80
+\BOOKMARK [1][-]{section.7.6}{Changing axis ticks}{chapter.7}% 81
+\BOOKMARK [1][-]{section.7.7}{Adding a title}{chapter.7}% 82
+\BOOKMARK [1][-]{section.7.8}{Changing the colour of the bars}{chapter.7}% 83
+\BOOKMARK [1][-]{section.7.9}{By colour name}{chapter.7}% 84
+\BOOKMARK [1][-]{section.7.10}{By HEX code}{chapter.7}% 85
+\BOOKMARK [1][-]{section.7.11}{Colour gradients}{chapter.7}% 86
+\BOOKMARK [1][-]{section.7.12}{Using the white theme}{chapter.7}% 87
+\BOOKMARK [1][-]{section.7.13}{Creating an XKCD style chart}{chapter.7}% 88
+\BOOKMARK [1][-]{section.7.14}{Using The Economist theme}{chapter.7}% 89
+\BOOKMARK [1][-]{section.7.15}{Creating your own theme}{chapter.7}% 90
+\BOOKMARK [1][-]{section.7.16}{Adding lines}{chapter.7}% 91
+\BOOKMARK [1][-]{section.7.17}{Multiple histograms}{chapter.7}% 92
+\BOOKMARK [1][-]{section.7.18}{In panel plots}{chapter.7}% 93
+\BOOKMARK [1][-]{section.7.19}{In the same plot}{chapter.7}% 94
+\BOOKMARK [1][-]{section.7.20}{Formatting the legend}{chapter.7}% 95
+\BOOKMARK [0][-]{chapter.8}{Density Plots}{}% 96
+\BOOKMARK [1][-]{section.8.1}{Basic density plot}{chapter.8}% 97
+\BOOKMARK [1][-]{section.8.2}{Customising axis labels}{chapter.8}% 98
+\BOOKMARK [1][-]{section.8.3}{Changing axis ticks}{chapter.8}% 99
+\BOOKMARK [1][-]{section.8.4}{Adding a title}{chapter.8}% 100
+\BOOKMARK [1][-]{section.8.5}{Changing the colour of the curves}{chapter.8}% 101
+\BOOKMARK [1][-]{section.8.6}{Using the white theme}{chapter.8}% 102
+\BOOKMARK [1][-]{section.8.7}{Creating an XKCD style chart}{chapter.8}% 103
+\BOOKMARK [1][-]{section.8.8}{Using The Economist theme}{chapter.8}% 104
+\BOOKMARK [1][-]{section.8.9}{Creating your own theme}{chapter.8}% 105
+\BOOKMARK [1][-]{section.8.10}{Adding lines}{chapter.8}% 106
+\BOOKMARK [1][-]{section.8.11}{Multiple densities}{chapter.8}% 107
+\BOOKMARK [1][-]{section.8.12}{Formatting the legend}{chapter.8}% 108
+\BOOKMARK [0][-]{chapter.9}{Function Plots}{}% 109
+\BOOKMARK [1][-]{section.9.1}{Basic normal curve}{chapter.9}% 110
+\BOOKMARK [1][-]{section.9.2}{Basic t-curve}{chapter.9}% 111
+\BOOKMARK [1][-]{section.9.3}{Plotting your own function}{chapter.9}% 112
+\BOOKMARK [1][-]{section.9.4}{Plotting multiple functions on the same graph}{chapter.9}% 113
+\BOOKMARK [1][-]{section.9.5}{Customising axis labels}{chapter.9}% 114
+\BOOKMARK [1][-]{section.9.6}{Changing axis ticks}{chapter.9}% 115
+\BOOKMARK [1][-]{section.9.7}{Adding a title}{chapter.9}% 116
+\BOOKMARK [1][-]{section.9.8}{Changing the colour of the curves}{chapter.9}% 117
+\BOOKMARK [1][-]{section.9.9}{Adding a legend}{chapter.9}% 118
+\BOOKMARK [1][-]{section.9.10}{Changing the size of the lines}{chapter.9}% 119
+\BOOKMARK [1][-]{section.9.11}{Using the white theme}{chapter.9}% 120
+\BOOKMARK [1][-]{section.9.12}{Creating an XKCD style chart}{chapter.9}% 121
+\BOOKMARK [1][-]{section.9.13}{Using The Economist theme}{chapter.9}% 122
+\BOOKMARK [1][-]{section.9.14}{Creating your own theme}{chapter.9}% 123
+\BOOKMARK [1][-]{section.9.15}{Adding areas under the curve}{chapter.9}% 124
+\BOOKMARK [1][-]{section.9.16}{Formatting the legend}{chapter.9}% 125
+\BOOKMARK [0][-]{chapter.10}{Boxplots}{}% 126
+\BOOKMARK [1][-]{section.10.1}{Basic boxplot}{chapter.10}% 127
+\BOOKMARK [1][-]{section.10.2}{Customising axis labels}{chapter.10}% 128
+\BOOKMARK [1][-]{section.10.3}{Changing axis ticks}{chapter.10}% 129
+\BOOKMARK [1][-]{section.10.4}{Adding a title}{chapter.10}% 130
+\BOOKMARK [1][-]{section.10.5}{Changing the colour of the boxes}{chapter.10}% 131
+\BOOKMARK [1][-]{section.10.6}{Using the white theme}{chapter.10}% 132
+\BOOKMARK [1][-]{section.10.7}{Creating an XKCD style chart}{chapter.10}% 133
+\BOOKMARK [1][-]{section.10.8}{Using The Economist theme}{chapter.10}% 134
+\BOOKMARK [1][-]{section.10.9}{Creating your own theme}{chapter.10}% 135
+\BOOKMARK [1][-]{section.10.10}{Boxplot extras}{chapter.10}% 136
+\BOOKMARK [1][-]{section.10.11}{Grouping by another variable}{chapter.10}% 137
+\BOOKMARK [1][-]{section.10.12}{Formatting the legend}{chapter.10}% 138

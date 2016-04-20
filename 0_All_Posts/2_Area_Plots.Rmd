@@ -140,7 +140,7 @@ loadfonts()
 You can then create your graph:
 
 ```{r area_8, cache=TRUE}
-fill <- c("#56B4E9", "#ff69b4")
+fill <- c("#56B4E9", "#ffcc00")
 
 p2 <- ggplot() + 
   geom_area(aes(y = export, x = year, fill = product), data = charts.data, stat="identity") + 

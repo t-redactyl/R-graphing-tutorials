@@ -11,7 +11,7 @@ output:
 ---
 
 ```{r setup, cache = FALSE, echo = FALSE, message = FALSE, warning = FALSE, tidy = FALSE}
-knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 150, fig.width=6, fig.height=5, tidy = F, cache.path = '.cache/', fig.path = '0_all_posts_pdf/', dev = 'png')
+knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, fig.width=6, fig.height=5, tidy = F, cache.path = '.cache/', fig.path = '0_all_posts_pdf/', dev = 'png')
 ```
 
 I recently teamed up with [Mauricio Vargas Sepúlveda](http://pachamaltese.github.io/) to create some graphing tutorials in R. In the coming weeks, we will be publishing a series of tutorials on how to use the `ggplot2` package to create beautiful and informative data visualisations. Each tutorial will explain how to create a different type of plot, and will take you step-by-step from a basic plot to a highly customised graph.

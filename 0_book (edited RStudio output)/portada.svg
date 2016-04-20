@@ -1109,7 +1109,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.72"
-     inkscape:cx="350.38039"
+     inkscape:cx="371.21372"
      inkscape:cy="408.41145"
      inkscape:current-layer="layer1-1"
      id="namedview3119"
@@ -1178,7 +1178,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1199,31 +1199,33 @@
          y="-44.37674" />
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:1.50136709px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#fbedc4;fill-opacity:1;stroke:none"
-         x="13.998806"
-         y="62.092167"
+         style="font-style:normal;font-weight:normal;font-size:1.38429141px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#fbedc4;fill-opacity:1;stroke:none"
+         x="15.202271"
+         y="57.250256"
          id="text4441"
-         sodipodi:linespacing="125%"><tspan
+         sodipodi:linespacing="125%"
+         transform="scale(0.9220206,1.0845745)"><tspan
            sodipodi:role="line"
-           x="13.998806"
-           y="62.092167"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:8.00729084px;font-family:'Arial Narrow';-inkscape-font-specification:'Arial Narrow Bold Condensed';fill:#fbedc4"
+           x="15.202271"
+           y="57.250256"
+           style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:7.38288736px;font-family:Lato;-inkscape-font-specification:'Lato Ultra-Bold';fill:#fbedc4"
            id="tspan4616">THE HITCHHIKER'S </tspan><tspan
            sodipodi:role="line"
-           x="13.998806"
-           y="72.551582"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:8.00729084px;font-family:'Arial Narrow';-inkscape-font-specification:'Arial Narrow Bold Condensed';fill:#fbedc4"
+           x="15.202271"
+           y="66.51165"
+           style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:7.38288736px;font-family:Lato;-inkscape-font-specification:'Lato Ultra-Bold';fill:#fbedc4"
            id="tspan5666">GUIDE TO GGPLOT2 IN R</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text4453"
-         y="82.202583"
-         x="14.122693"
-         style="font-style:normal;font-weight:normal;font-size:1.63072276px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:4.34859371px;font-family:'Arial Narrow';-inkscape-font-specification:'Arial Narrow Bold Condensed';fill:#fbedc4"
-           y="82.202583"
-           x="14.122693"
+         y="76.061729"
+         x="15.262303"
+         style="font-style:normal;font-weight:normal;font-size:1.50890148px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         xml:space="preserve"
+         transform="scale(0.92529612,1.0807351)"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:4.02373695px;font-family:Lato;-inkscape-font-specification:'Lato Ultra-Bold';fill:#fbedc4"
+           y="76.061729"
+           x="15.262303"
            id="tspan4455"
            sodipodi:role="line">JODIE BURCHELL &amp; MAURICIO VARGAS</tspan></text>
       <g

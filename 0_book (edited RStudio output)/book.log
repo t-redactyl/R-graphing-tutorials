@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.18)  19 APR 2016 01:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.18)  19 APR 2016 21:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -502,146 +502,52 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks29
 \@floatcapt=\box38
 )
-(/usr/local/texlive/2015basic/texmf-dist/tex/latex/tools/multicol.sty
-Package: multicol 2015/03/31 v1.8m multicolumn formatting (FMi)
-\c@tracingmulticols=\count119
-\mult@box=\box39
-\multicol@leftmargin=\dimen157
-\c@unbalance=\count120
-\c@collectmore=\count121
-\doublecol@number=\count122
-\multicoltolerance=\count123
-\multicolpretolerance=\count124
-\full@width=\dimen158
-\page@free=\dimen159
-\premulticols=\dimen160
-\postmulticols=\dimen161
-\multicolsep=\skip46
-\multicolbaselineskip=\skip47
-\partial@page=\box40
-\last@line=\box41
-\maxbalancingoverflow=\dimen162
-\mult@rightbox=\box42
-\mult@grightbox=\box43
-\mult@gfirstbox=\box44
-\mult@firstbox=\box45
-\@tempa=\box46
-\@tempa=\box47
-\@tempa=\box48
-\@tempa=\box49
-\@tempa=\box50
-\@tempa=\box51
-\@tempa=\box52
-\@tempa=\box53
-\@tempa=\box54
-\@tempa=\box55
-\@tempa=\box56
-\@tempa=\box57
-\@tempa=\box58
-\@tempa=\box59
-\@tempa=\box60
-\@tempa=\box61
-\@tempa=\box62
-\c@columnbadness=\count125
-\c@finalcolumnbadness=\count126
-\last@try=\dimen163
-\multicolovershoot=\dimen164
-\multicolundershoot=\dimen165
-\mult@nat@firstbox=\box63
-\colbreak@box=\box64
-\mc@col@check@num=\count127
-)
-(/usr/local/texlive/2015basic/texmf-dist/tex/latex/multirow/multirow.sty
-\bigstrutjot=\dimen166
-)
-(/usr/local/texlive/2015basic/texmf-dist/tex/latex/import/import.sty
-Package: import 2009/03/23  v 5.1
-)
-(/usr/local/texlive/2015basic/texmf-dist/tex/latex/tools/enumerate.sty
-Package: enumerate 2014/10/28 v3.00 enumerate extensions (DPC)
-\@enLab=\toks30
-)
-(/usr/local/texlive/2015basic/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
-Package: tcolorbox 2016/02/29 version 3.90 text color boxes
-
-(/usr/local/texlive/2015basic/texmf-dist/tex/latex/tools/verbatim.sty
-Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks31
-\verbatim@line=\toks32
-\verbatim@in@stream=\read2
-)
-(/usr/local/texlive/2015basic/texmf-dist/tex/latex/environ/environ.sty
-Package: environ 2014/05/04 v0.3 A new way to define environments
-
-(/usr/local/texlive/2015basic/texmf-dist/tex/latex/trimspaces/trimspaces.sty
-Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
-)
-\@envbody=\toks33
-)
-(/usr/local/texlive/2015basic/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2015/05/04 v2.2 e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count128
-)
-\tcb@titlebox=\box65
-\tcb@upperbox=\box66
-\tcb@lowerbox=\box67
-\tcb@phantombox=\box68
-\c@tcbbreakpart=\count129
-\c@tcblayer=\count130
-\tcolorbox@number=\count131
-\tcb@temp=\box69
-\tcb@temp=\box70
-\tcb@temp=\box71
-\tcb@temp=\box72
-\tcb@out=\write4
-\tcb@record@out=\write5
+(/usr/local/texlive/2015basic/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip46
+\f@ncyO@elh=\skip47
+\f@ncyO@erh=\skip48
+\f@ncyO@olh=\skip49
+\f@ncyO@orh=\skip50
+\f@ncyO@elf=\skip51
+\f@ncyO@erf=\skip52
+\f@ncyO@olf=\skip53
+\f@ncyO@orf=\skip54
 )
 (/usr/local/texlive/2015basic/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
-\Gm@cnth=\count132
-\Gm@cntv=\count133
-\c@Gm@tempcnt=\count134
-\Gm@bindingoffset=\dimen167
-\Gm@wd@mp=\dimen168
-\Gm@odd@mp=\dimen169
-\Gm@even@mp=\dimen170
-\Gm@layoutwidth=\dimen171
-\Gm@layoutheight=\dimen172
-\Gm@layouthoffset=\dimen173
-\Gm@layoutvoffset=\dimen174
-\Gm@dimlist=\toks34
+\Gm@cnth=\count119
+\Gm@cntv=\count120
+\c@Gm@tempcnt=\count121
+\Gm@bindingoffset=\dimen157
+\Gm@wd@mp=\dimen158
+\Gm@odd@mp=\dimen159
+\Gm@even@mp=\dimen160
+\Gm@layoutwidth=\dimen161
+\Gm@layoutheight=\dimen162
+\Gm@layouthoffset=\dimen163
+\Gm@layoutvoffset=\dimen164
+\Gm@dimlist=\toks30
 )
 (/usr/local/texlive/2015basic/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
-\ttl@box=\box73
-\beforetitleunit=\skip48
-\aftertitleunit=\skip49
-\ttl@plus=\dimen175
-\ttl@minus=\dimen176
-\ttl@toksa=\toks35
-\titlewidth=\dimen177
-\titlewidthlast=\dimen178
-\titlewidthfirst=\dimen179
-)
-(/usr/local/texlive/2015basic/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-\fancy@headwidth=\skip50
-\f@ncyO@elh=\skip51
-\f@ncyO@erh=\skip52
-\f@ncyO@olh=\skip53
-\f@ncyO@orh=\skip54
-\f@ncyO@elf=\skip55
-\f@ncyO@erf=\skip56
-\f@ncyO@olf=\skip57
-\f@ncyO@orf=\skip58
+\ttl@box=\box39
+\beforetitleunit=\skip55
+\aftertitleunit=\skip56
+\ttl@plus=\dimen165
+\ttl@minus=\dimen166
+\ttl@toksa=\toks31
+\titlewidth=\dimen167
+\titlewidthlast=\dimen168
+\titlewidthfirst=\dimen169
 )
 (/usr/local/texlive/2015basic/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2013/05/23 v2.5a Micro-typographical refinements (RS)
-\MT@toks=\toks36
-\MT@count=\count135
+\MT@toks=\toks32
+\MT@count=\count122
 LaTeX Info: Redefining \textls on input line 766.
-\MT@outer@kern=\dimen180
+\MT@outer@kern=\dimen170
 LaTeX Info: Redefining \textmicrotypecontext on input line 1285.
-\MT@listname@count=\count136
+\MT@listname@count=\count123
 
 (/usr/local/texlive/2015basic/texmf-dist/tex/latex/microtype/microtype-pdftex.d
 ef
@@ -649,7 +555,7 @@ File: microtype-pdftex.def 2013/05/23 v2.5a Definitions specific to pdftex (RS)
 
 LaTeX Info: Redefining \lsstyle on input line 915.
 LaTeX Info: Redefining \lslig on input line 915.
-\MT@outer@space=\skip59
+\MT@outer@space=\skip57
 )
 Package microtype Info: Loading configuration file microtype.cfg.
  (/usr/local/texlive/2015basic/texmf-dist/tex/latex/microtype/microtype.cfg
@@ -867,9 +773,9 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 788.
 LaTeX Font Info:    Redeclaring math symbol \mathsterling on input line 815.
 ) (/usr/local/texlive/2015basic/texmf-dist/tex/latex/tools/afterpage.sty
 Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
-\AP@output=\toks37
-\AP@partial=\box74
-\AP@footins=\box75
+\AP@output=\toks33
+\AP@partial=\box40
+\AP@footins=\box41
 )
 (/usr/local/texlive/2015basic/texmf-dist/tex/latex/wallpaper/wallpaper.sty
 Package: wallpaper 2005/01/18, v1.01 easy wallpaper formatting (MHFW)
@@ -879,133 +785,137 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 (/usr/local/texlive/2015basic/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count137
-\calc@Bcount=\count138
-\calc@Adimen=\dimen181
-\calc@Bdimen=\dimen182
-\calc@Askip=\skip60
-\calc@Bskip=\skip61
+\calc@Acount=\count124
+\calc@Bcount=\count125
+\calc@Adimen=\dimen171
+\calc@Bdimen=\dimen172
+\calc@Askip=\skip58
+\calc@Bskip=\skip59
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count139
-\calc@Cskip=\skip62
+\calc@Ccount=\count126
+\calc@Cskip=\skip60
 )
 (/usr/local/texlive/2015basic/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2015/04/20 v2.0e eso-pic (RN)
 )
-\wpXoffset=\skip63
-\wpYoffset=\skip64
-\tileXoffset=\skip65
-\tileYoffset=\skip66
-\tilewidth=\skip67
-\tileheight=\skip68
-\tileX=\skip69
-\tileY=\skip70
+\wpXoffset=\skip61
+\wpYoffset=\skip62
+\tileXoffset=\skip63
+\tileYoffset=\skip64
+\tilewidth=\skip65
+\tileheight=\skip66
+\tileX=\skip67
+\tileY=\skip68
 )
 (/usr/local/texlive/2015basic/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2013/05/02 v2.3f parameterised ToC, etc., typesetting
 Package tocloft Info: The document has chapter divisions on input line 44.
-\cftparskip=\skip71
-\cftbeforetoctitleskip=\skip72
-\cftaftertoctitleskip=\skip73
-\cftbeforepartskip=\skip74
-\cftpartnumwidth=\skip75
-\cftpartindent=\skip76
-\cftbeforechapskip=\skip77
-\cftchapindent=\skip78
-\cftchapnumwidth=\skip79
-\cftbeforesecskip=\skip80
-\cftsecindent=\skip81
-\cftsecnumwidth=\skip82
-\cftbeforesubsecskip=\skip83
-\cftsubsecindent=\skip84
-\cftsubsecnumwidth=\skip85
-\cftbeforesubsubsecskip=\skip86
-\cftsubsubsecindent=\skip87
-\cftsubsubsecnumwidth=\skip88
-\cftbeforeparaskip=\skip89
-\cftparaindent=\skip90
-\cftparanumwidth=\skip91
-\cftbeforesubparaskip=\skip92
-\cftsubparaindent=\skip93
-\cftsubparanumwidth=\skip94
-\cftbeforeloftitleskip=\skip95
-\cftafterloftitleskip=\skip96
-\cftbeforefigskip=\skip97
-\cftfigindent=\skip98
-\cftfignumwidth=\skip99
-\c@lofdepth=\count140
-\c@lotdepth=\count141
-\cftbeforelottitleskip=\skip100
-\cftafterlottitleskip=\skip101
-\cftbeforetabskip=\skip102
-\cfttabindent=\skip103
-\cfttabnumwidth=\skip104
+\cftparskip=\skip69
+\cftbeforetoctitleskip=\skip70
+\cftaftertoctitleskip=\skip71
+\cftbeforepartskip=\skip72
+\cftpartnumwidth=\skip73
+\cftpartindent=\skip74
+\cftbeforechapskip=\skip75
+\cftchapindent=\skip76
+\cftchapnumwidth=\skip77
+\cftbeforesecskip=\skip78
+\cftsecindent=\skip79
+\cftsecnumwidth=\skip80
+\cftbeforesubsecskip=\skip81
+\cftsubsecindent=\skip82
+\cftsubsecnumwidth=\skip83
+\cftbeforesubsubsecskip=\skip84
+\cftsubsubsecindent=\skip85
+\cftsubsubsecnumwidth=\skip86
+\cftbeforeparaskip=\skip87
+\cftparaindent=\skip88
+\cftparanumwidth=\skip89
+\cftbeforesubparaskip=\skip90
+\cftsubparaindent=\skip91
+\cftsubparanumwidth=\skip92
+\cftbeforeloftitleskip=\skip93
+\cftafterloftitleskip=\skip94
+\cftbeforefigskip=\skip95
+\cftfigindent=\skip96
+\cftfignumwidth=\skip97
+\c@lofdepth=\count127
+\c@lotdepth=\count128
+\cftbeforelottitleskip=\skip98
+\cftafterlottitleskip=\skip99
+\cftbeforetabskip=\skip100
+\cfttabindent=\skip101
+\cfttabnumwidth=\skip102
 )
 (/usr/local/texlive/2015basic/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
 <2008/02/07> (tvz)
-\FV@CodeLineNo=\count142
-\FV@InFile=\read3
-\FV@TabBox=\box76
-\c@FancyVerbLine=\count143
-\FV@StepNumber=\count144
-\FV@OutFile=\write6
+\FV@CodeLineNo=\count129
+\FV@InFile=\read2
+\FV@TabBox=\box42
+\c@FancyVerbLine=\count130
+\FV@StepNumber=\count131
+\FV@OutFile=\write4
 )
 (/usr/local/texlive/2015basic/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip105
-\fb@frw=\dimen183
-\fb@frh=\dimen184
-\FrameRule=\dimen185
-\FrameSep=\dimen186
+\OuterFrameSep=\skip103
+\fb@frw=\dimen173
+\fb@frh=\dimen174
+\FrameRule=\dimen175
+\FrameSep=\dimen176
 )
-\@indexfile=\write7
-\openout7 = `book.idx'.
+\@indexfile=\write5
+\openout5 = `book.idx'.
 
 
 Writing index file book.idx
-(./book.aux)
+(./book.aux (./chapter1.aux) (./chapter2.aux) (./chapter3.aux) (./chapter4.aux)
+(./chapter5.aux) (./chapter6.aux) (./chapter7.aux) (./chapter8.aux)
+(./chapter9.aux) (./chapter10.aux))
 \openout1 = `book.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 126.
-LaTeX Font Info:    ... okay on input line 126.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 126.
-LaTeX Font Info:    ... okay on input line 126.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 126.
-LaTeX Font Info:    ... okay on input line 126.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 126.
-LaTeX Font Info:    ... okay on input line 126.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 126.
-LaTeX Font Info:    ... okay on input line 126.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 126.
-LaTeX Font Info:    ... okay on input line 126.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 126.
-LaTeX Font Info:    ... okay on input line 126.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 126.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 126.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 125.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 125.
 
- (/usr/local/texlive/2015basic/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(/usr/local/texlive/2015basic/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 126.
-LaTeX Font Info:    Checking defaults for LMR/hlcm/m/n on input line 126.
-LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for LMR/hlcm/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+
 (/usr/local/texlive/2015basic/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count145
-\scratchdimen=\dimen187
-\scratchbox=\box77
-\nofMPsegments=\count146
-\nofMParguments=\count147
-\everyMPshowfont=\toks38
-\MPscratchCnt=\count148
-\MPscratchDim=\dimen188
-\MPnumerator=\count149
-\makeMPintoPDFobject=\count150
-\everyMPtoPDFconversion=\toks39
+\scratchcounter=\count132
+\scratchdimen=\dimen177
+\scratchbox=\box43
+\nofMPsegments=\count133
+\nofMParguments=\count134
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count135
+\MPscratchDim=\dimen178
+\MPnumerator=\count136
+\makeMPintoPDFobject=\count137
+\everyMPtoPDFconversion=\toks35
 ) (/usr/local/texlive/2015basic/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 (/usr/local/texlive/2015basic/texmf-dist/tex/latex/oberdiek/grfext.sty
@@ -1020,8 +930,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box78
-Package hyperref Info: Link coloring ON on input line 126.
+\AtBeginShipoutBox=\box44
+Package hyperref Info: Link coloring ON on input line 125.
  (/usr/local/texlive/2015basic/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -1029,28 +939,24 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 y
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count151
+\c@section@level=\count138
 )
-LaTeX Info: Redefining \ref on input line 126.
-LaTeX Info: Redefining \pageref on input line 126.
-LaTeX Info: Redefining \nameref on input line 126.
+LaTeX Info: Redefining \ref on input line 125.
+LaTeX Info: Redefining \pageref on input line 125.
+LaTeX Info: Redefining \nameref on input line 125.
  (./book.out) (./book.out)
-\@outlinefile=\write8
-\openout8 = `book.out'.
+\@outlinefile=\write6
+\openout6 = `book.out'.
 
  ABD: EveryShipout initializing macros
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
-
-Package geometry Warning: The marginal notes overrun the paper.
-     Add 51.86812pt and more to the right margin.
-
 *geometry* verbose mode - [ preamble ] result:
 * driver: pdftex
 * paper: letterpaper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: twoside 
+* modes: 
 * h-part:(L,W,R)=(71.13188pt, 472.03123pt, 71.13188pt)
 * v-part:(T,H,B)=(85.35826pt, 624.25346pt, 85.35826pt)
 * \paperwidth=614.295pt
@@ -1064,7 +970,7 @@ Package geometry Warning: The marginal notes overrun the paper.
 * \headsep=25.0pt
 * \topskip=11.0pt
 * \footskip=30.0pt
-* \marginparwidth=113.0pt
+* \marginparwidth=59.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
 * \skip\footins=10.0pt plus 4.0pt minus 2.0pt
@@ -1072,12 +978,12 @@ Package geometry Warning: The marginal notes overrun the paper.
 * \voffset=0.0pt
 * \mag=1000
 * \@twocolumnfalse
-* \@twosidetrue
-* \@mparswitchtrue
+* \@twosidefalse
+* \@mparswitchfalse
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 126.
+LaTeX Info: Redefining \microtypecontext on input line 125.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1091,21 +997,18 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `hlh' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Info: Redefining \longleftarrow on input line 126.
-LaTeX Info: Redefining \longrightarrow on input line 126.
-LaTeX Info: Redefining \Longleftarrow on input line 126.
-LaTeX Info: Redefining \Longrightarrow on input line 126.
-<portada.pdf, id=569, 614.295pt x 794.97pt>
+LaTeX Info: Redefining \longleftarrow on input line 125.
+LaTeX Info: Redefining \longrightarrow on input line 125.
+LaTeX Info: Redefining \Longleftarrow on input line 125.
+LaTeX Info: Redefining \Longrightarrow on input line 125.
+<portada.pdf, id=561, 614.295pt x 794.97pt>
 File: portada.pdf Graphic file (type pdf)
  <use portada.pdf>
 Package pdftex.def Info: portada.pdf used on input line 131.
 (pdftex.def)             Requested size: 614.31223pt x 794.99231pt.
  [1
 
- <./portada.pdf>] [2
-
-{/Users/pacha/Library/texlive/2015basic/texmf-var/fonts/map/pdftex/updmap/pdfte
-x.map}]
+ <./portada.pdf>]
 LaTeX Font Info:    Try loading font information for T1+hls on input line 135.
  (/Users/pacha/Library/texmf/tex/latex/lucida/t1hls.fd
 File: t1hls.fd 2005/09/15 font definitions for T1/hls (WaS/PCTeX/TUG)
@@ -1156,1630 +1059,1501 @@ LaTeX Font Info:    Font shape `LMR/hlcm/m/n' will be
 (Font)              scaled to size 7.35999pt on input line 147.
 LaTeX Font Info:    Font shape `LMR/hlcm/m/n' will be
 (Font)              scaled to size 5.76004pt on input line 147.
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.150 \end{titlepage}
-                      [1]
-LaTeX Font Info:    Font shape `T1/hlh/m/n' will be
-(Font)              scaled to size 20.89911pt on input line 155.
+                      [1
+
+{/Users/pacha/Library/texlive/2015basic/texmf-var/fonts/map/pdftex/updmap/pdfte
+x.map}]
 LaTeX Font Info:    Font shape `T1/hlh/b/n' will be
-(Font)              scaled to size 20.89911pt on input line 155.
- (./book.toc
+(Font)              scaled to size 9.74548pt on input line 156.
 LaTeX Font Info:    Font shape `T1/hlh/b/n' will be
-(Font)              scaled to size 9.74548pt on input line 1.
-pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
-been already used, duplicate ignored
+(Font)              scaled to size 10.56006pt on input line 156.
+LaTeX Font Info:    Font shape `T1/hlh/b/n' will be
+(Font)              scaled to size 17.62912pt on input line 156.
+ <leanpub.png, id=618, 180.675pt x 131.49126pt>
+File: leanpub.png Graphic file (type png)
+
+<use leanpub.png>
+Package pdftex.def Info: leanpub.png used on input line 164.
+(pdftex.def)             Requested size: 90.33727pt x 65.74545pt.
+LaTeX Font Info:    Try loading font information for TS1+hlh on input line 168.
+
+ (/Users/pacha/Library/texmf/tex/latex/lucida/ts1hlh.fd
+File: ts1hlh.fd 2005/09/15 font definitions for TS1/hlh (WaS/PCTeX/TUG)
+)
+LaTeX Font Info:    Font shape `TS1/hlh/m/n' will be
+(Font)              scaled to size 9.74548pt on input line 168.
+Package microtype Info: Loading generic settings for font family
+(microtype)             `hlh' (encoding: TS1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.36 ...Creating your own theme}{38}{section.4.12}
-                                                   [2] [3] [4])
-\tf@toc=\write9
-\openout9 = `book.toc'.
+l.170 \newpage
+               [2
 
- [5] [6]
+ <./leanpub.png>]
+LaTeX Font Info:    Font shape `T1/hlh/m/n' will be
+(Font)              scaled to size 20.89911pt on input line 171.
+LaTeX Font Info:    Font shape `T1/hlh/b/n' will be
+(Font)              scaled to size 20.89911pt on input line 171.
+ (./book.tocpdfTeX warning (ext4): destination with the same identifier (name{p
+age.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.36 ...Creating your own theme}{32}{section.3.12}
+                                                   [3]pdfTeX warning (ext4): de
+stination with the same identifier (name{page.}) has been already used, duplica
+te ignored
+<to be read again> 
+                   \relax 
+l.79 ... {7.4}Adjusting binwidth}{79}{section.7.4}
+                                                   [4]pdfTeX warning (ext4): de
+stination with the same identifier (name{page.}) has been already used, duplica
+te ignored
+<to be read again> 
+                   \relax 
+l.123 ...eating your own theme}{130}{section.9.14}
+                                                   [5])
+\tf@toc=\write7
+\openout7 = `book.toc'.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.172 \newpage
+               [6] [1
+
+]
+\openout2 = `chapter1.aux'.
+
+ (./chapter1.tex
 Chapter 1.
 LaTeX Font Info:    Font shape `T1/hlh/b/n' will be
-(Font)              scaled to size 10.56006pt on input line 177.
-LaTeX Font Info:    Font shape `T1/hlh/b/n' will be
-(Font)              scaled to size 12.52792pt on input line 177.
-LaTeX Font Info:    Font shape `T1/hlh/b/n' will be
-(Font)              scaled to size 17.62912pt on input line 177.
-LaTeX Font Info:    Try loading font information for T1+hlst on input line 182.
+(Font)              scaled to size 12.52792pt on input line 1.
+<0_all_posts_pdf/line_final-1.png, id=785, 602.25pt x 501.875pt>
+File: 0_all_posts_pdf/line_final-1.png Graphic file (type png)
+
+<use 0_all_posts_pdf/line_final-1.png>
+Package pdftex.def Info: 0_all_posts_pdf/line_final-1.png used on input line 7.
+
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+LaTeX Font Info:    Try loading font information for T1+hlst on input line 15.
 
 (/Users/pacha/Library/texmf/tex/latex/lucida/t1hlst.fd
 File: t1hlst.fd 2005/09/15 font definitions for T1/hlst (WaS/PCTeX/TUG)
 )
 LaTeX Font Info:    Font shape `T1/hlst/m/n' will be
-(Font)              scaled to size 9.74548pt on input line 182.
+(Font)              scaled to size 9.74548pt on input line 15.
 Package microtype Info: Loading generic settings for font family
 (microtype)             `hlst' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [7
-
-]
-Chapter 2.
-<0_all_posts_pdf/line_final-1.png, id=802, 903.375pt x 752.8125pt>
-File: 0_all_posts_pdf/line_final-1.png Graphic file (type png)
-
-<use 0_all_posts_pdf/line_final-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/line_final-1.png used on input line 20
-1.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
 LaTeX Font Info:    Font shape `T1/hlst/b/n' will be
-(Font)              scaled to size 9.74548pt on input line 207.
+(Font)              scaled to size 9.74548pt on input line 16.
 LaTeX Font Info:    Font shape `T1/hlh/m/n' will be
-(Font)              scaled to size 12.52792pt on input line 215.
+(Font)              scaled to size 12.52792pt on input line 24.
+ [2
 
-Underfull \vbox (badness 1540) has occurred while \output is active []
 
- [8
-
- <./0_all_posts_pdf/line_final-1.png>]
-<0_all_posts_pdf/line_1-1.png, id=810, 903.375pt x 752.8125pt>
+ <./0_all_posts_pdf/line_final-1.png>] <0_all_posts_pdf/line_1-1.png, id=794, 6
+02.25pt x 501.875pt>
 File: 0_all_posts_pdf/line_1-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/line_1-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/line_1-1.png used on input line 230.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/line_1-1.png used on input line 39.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
 
-<0_all_posts_pdf/line_2-1.png, id=811, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/line_2-1.png, id=795, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/line_2-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/line_2-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/line_2-1.png used on input line 245.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [9 <./0_all_posts_pdf/line_1-1.png>]
-<0_all_posts_pdf/line_3-1.png, id=817, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/line_2-1.png used on input line 54.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [3 <./0_all_posts_pdf/line_1-1.png>]
+<0_all_posts_pdf/line_3-1.png, id=801, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/line_3-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/line_3-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/line_3-1.png used on input line 267.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [10 <./0_all_posts_pdf/line_2-1.png>]
-<0_all_posts_pdf/line_4-1.png, id=823, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/line_3-1.png used on input line 79.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [4 <./0_all_posts_pdf/line_2-1.png>]
+<0_all_posts_pdf/line_4-1.png, id=807, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/line_4-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/line_4-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/line_4-1.png used on input line 281.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 1509) has occurred while \output is active []
-
- [11 <./0_all_posts_pdf/line_3-1.png> <./0_all_posts_pdf/line_4-1.png>]
-<0_all_posts_pdf/line_5-1.png, id=832, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/line_4-1.png used on input line 93.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [5 <./0_all_posts_pdf/line_3-1.png> <./0_all_posts_pdf/line_4-1.png>]
+<0_all_posts_pdf/line_5-1.png, id=814, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/line_5-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/line_5-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/line_5-1.png used on input line 297.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/line_5-1.png used on input line 110.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
 
-<0_all_posts_pdf/line_6-1.png, id=833, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/line_6-1.png, id=815, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/line_6-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/line_6-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/line_6-1.png used on input line 312.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [12 <./0_all_posts_pdf/line_5-1.png>]
-<0_all_posts_pdf/line_7-1.png, id=839, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/line_6-1.png used on input line 125.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [6 <./0_all_posts_pdf/line_5-1.png>]
+<0_all_posts_pdf/line_7-1.png, id=822, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/line_7-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/line_7-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/line_7-1.png used on input line 337.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [13 <./0_all_posts_pdf/line_6-1.png>] [14 <./0_all_posts_pdf/line_7-1.png>]
-<0_all_posts_pdf/line_8-1.png, id=852, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/line_7-1.png used on input line 150.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [7 <./0_all_posts_pdf/line_6-1.png>]
+[8 <./0_all_posts_pdf/line_7-1.png>]
+<0_all_posts_pdf/line_8-1.png, id=836, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/line_8-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/line_8-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/line_8-1.png used on input line 394.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [15 <./0_all_posts_pdf/line_8-1.png>]
-<0_all_posts_pdf/line_9-1.png, id=860, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/line_8-1.png used on input line 208.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [9 <./0_all_posts_pdf/line_8-1.png>]
+<0_all_posts_pdf/line_9-1.png, id=844, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/line_9-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/line_9-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/line_9-1.png used on input line 429.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [16 <./0_all_posts_pdf/line_9-1.png>]
-<0_all_posts_pdf/line_11-1.png, id=866, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/line_9-1.png used on input line 243.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [10 <./0_all_posts_pdf/line_9-1.png>]
+<0_all_posts_pdf/line_11-1.png, id=850, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/line_11-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/line_11-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/line_11-1.png used on input line 465.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [17 <./0_all_posts_pdf/line_11-1.png>]
-Chapter 3.
-<0_all_posts_pdf/area_final-1.png, id=873, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/line_11-1.png used on input line 279.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+) [11 <./0_all_posts_pdf/line_11-1.png>]
+\openout2 = `chapter2.aux'.
+
+
+(./chapter2.tex
+Chapter 2.
+<0_all_posts_pdf/area_final-1.png, id=856, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/area_final-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/area_final-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/area_final-1.png used on input line 47
-3.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [18
+Package pdftex.def Info: 0_all_posts_pdf/area_final-1.png used on input line 7.
 
- <./0_all_posts_pdf/area_final-1.png>] <0_all_posts_pdf/area_1-1.png, id=879, 9
-03.375pt x 752.8125pt>
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [12
+
+
+
+ <./0_all_posts_pdf/area_final-1.png>] <0_all_posts_pdf/area_1-1.png, id=864, 6
+02.25pt x 501.875pt>
 File: 0_all_posts_pdf/area_1-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/area_1-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/area_1-1.png used on input line 504.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-<0_all_posts_pdf/area_2-1.png, id=880, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/area_1-1.png used on input line 41.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [13 <./0_all_posts_pdf/area_1-1.png>]
+<0_all_posts_pdf/area_2-1.png, id=870, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/area_2-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/area_2-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/area_2-1.png used on input line 524.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [19 <./0_all_posts_pdf/area_1-1.png>]
-<0_all_posts_pdf/area_3-1.png, id=886, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/area_2-1.png used on input line 63.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+
+<0_all_posts_pdf/area_3-1.png, id=871, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/area_3-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/area_3-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/area_3-1.png used on input line 545.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [20 <./0_all_posts_pdf/area_2-1.png>]
-<0_all_posts_pdf/area_4-1.png, id=892, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/area_3-1.png used on input line 87.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [14 <./0_all_posts_pdf/area_2-1.png>]
+<0_all_posts_pdf/area_4-1.png, id=877, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/area_4-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/area_4-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/area_4-1.png used on input line 559.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 1509) has occurred while \output is active []
-
- [21 <./0_all_posts_pdf/area_3-1.png> <./0_all_posts_pdf/area_4-1.png>]
-<0_all_posts_pdf/area_5-1.png, id=899, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/area_4-1.png used on input line 101.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [15 <./0_all_posts_pdf/area_3-1.png> <./0_all_posts_pdf/area_4-1.png>]
+<0_all_posts_pdf/area_5-1.png, id=884, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/area_5-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/area_5-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/area_5-1.png used on input line 576.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/area_5-1.png used on input line 118.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
 
-<0_all_posts_pdf/area_6-1.png, id=901, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/area_6-1.png, id=886, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/area_6-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/area_6-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/area_6-1.png used on input line 594.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [22 <./0_all_posts_pdf/area_5-1.png>]
-<0_all_posts_pdf/area_7-1.png, id=907, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/area_6-1.png used on input line 136.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [16 <./0_all_posts_pdf/area_5-1.png>]
+<0_all_posts_pdf/area_7-1.png, id=892, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/area_7-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/area_7-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/area_7-1.png used on input line 621.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [23 <./0_all_posts_pdf/area_6-1.png>] [24 <./0_all_posts_pdf/area_7-1.png>]
-<0_all_posts_pdf/area_8-1.png, id=921, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/area_7-1.png used on input line 163.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [17 <./0_all_posts_pdf/area_6-1.png>]
+[18 <./0_all_posts_pdf/area_7-1.png>]
+<0_all_posts_pdf/area_8-1.png, id=906, 1204.5pt x 1003.75pt>
 File: 0_all_posts_pdf/area_8-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/area_8-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/area_8-1.png used on input line 677.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [25 <./0_all_posts_pdf/area_8-1.png>]
-<0_all_posts_pdf/area_9-1.png, id=929, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/area_8-1.png used on input line 221.
+(pdftex.def)             Requested size: 259.6186pt x 216.35342pt.
+ [19 <./0_all_posts_pdf/area_8-1.png>]
+<0_all_posts_pdf/area_9-1.png, id=914, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/area_9-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/area_9-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/area_9-1.png used on input line 711.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [26 <./0_all_posts_pdf/area_9-1.png>]
-<0_all_posts_pdf/area_11-1.png, id=935, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/area_9-1.png used on input line 256.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [20 <./0_all_posts_pdf/area_9-1.png>]
+<0_all_posts_pdf/area_11-1.png, id=920, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/area_11-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/area_11-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/area_11-1.png used on input line 747.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [27 <./0_all_posts_pdf/area_11-1.png>]
-Chapter 4.
-<0_all_posts_pdf/bar_final-1.png, id=941, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/area_11-1.png used on input line 292.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+) [21 <./0_all_posts_pdf/area_11-1.png>]
+\openout2 = `chapter3.aux'.
+
+
+(./chapter3.tex
+Chapter 3.
+<0_all_posts_pdf/bar_final-1.png, id=926, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/bar_final-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/bar_final-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/bar_final-1.png used on input line 755
-.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [28
+Package pdftex.def Info: 0_all_posts_pdf/bar_final-1.png used on input line 7.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [22
+
+
 
  <./0_all_posts_pdf/bar_final-1.png>]
-<0_all_posts_pdf/bar_1-1.png, id=947, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/bar_1-1.png, id=933, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/bar_1-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/bar_1-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/bar_1-1.png used on input line 785.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/bar_1-1.png used on input line 40.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
 
-<0_all_posts_pdf/bar_2-1.png, id=948, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/bar_2-1.png, id=934, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/bar_2-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/bar_2-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/bar_2-1.png used on input line 801.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [29 <./0_all_posts_pdf/bar_1-1.png>]
-<0_all_posts_pdf/bar_3-1.png, id=955, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/bar_2-1.png used on input line 57.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [23 <./0_all_posts_pdf/bar_1-1.png>]
+<0_all_posts_pdf/bar_3-1.png, id=940, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/bar_3-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/bar_3-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/bar_3-1.png used on input line 823.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [30 <./0_all_posts_pdf/bar_2-1.png>]
-<0_all_posts_pdf/bar_4-1.png, id=961, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/bar_3-1.png used on input line 81.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [24 <./0_all_posts_pdf/bar_2-1.png>]
+<0_all_posts_pdf/bar_4-1.png, id=947, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/bar_4-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/bar_4-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/bar_4-1.png used on input line 843.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [31 <./0_all_posts_pdf/bar_3-1.png> <./0_all_posts_pdf/bar_4-1.png>]
-<0_all_posts_pdf/bar_5-1.png, id=968, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/bar_4-1.png used on input line 101.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [25 <./0_all_posts_pdf/bar_3-1.png> <./0_all_posts_pdf/bar_4-1.png>]
+<0_all_posts_pdf/bar_5-1.png, id=954, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/bar_5-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/bar_5-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/bar_5-1.png used on input line 865.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/bar_5-1.png used on input line 125.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
 
-<0_all_posts_pdf/bar_6-1.png, id=969, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/bar_6-1.png, id=955, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/bar_6-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/bar_6-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/bar_6-1.png used on input line 879.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 2158) has occurred while \output is active []
-
- [32 <./0_all_posts_pdf/bar_5-1.png>]
-<0_all_posts_pdf/bar_7-1.png, id=975, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/bar_6-1.png used on input line 139.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [26 <./0_all_posts_pdf/bar_5-1.png>]
+<0_all_posts_pdf/bar_7-1.png, id=961, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/bar_7-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/bar_7-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/bar_7-1.png used on input line 895.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 1460) has occurred while \output is active []
-
- [33 <./0_all_posts_pdf/bar_6-1.png> <./0_all_posts_pdf/bar_7-1.png>]
-<0_all_posts_pdf/bar_8-1.png, id=984, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/bar_7-1.png used on input line 156.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [27 <./0_all_posts_pdf/bar_6-1.png> <./0_all_posts_pdf/bar_7-1.png>]
+<0_all_posts_pdf/bar_8-1.png, id=969, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/bar_8-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/bar_8-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/bar_8-1.png used on input line 913.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [34 <./0_all_posts_pdf/bar_8-1.png>]
-<0_all_posts_pdf/bar_9-1.png, id=990, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/bar_8-1.png used on input line 174.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [28 <./0_all_posts_pdf/bar_8-1.png>]
+<0_all_posts_pdf/bar_9-1.png, id=975, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/bar_9-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/bar_9-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/bar_9-1.png used on input line 940.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [35 <./0_all_posts_pdf/bar_9-1.png>]
-<0_all_posts_pdf/bar_10-1.png, id=999, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/bar_9-1.png used on input line 203.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [29 <./0_all_posts_pdf/bar_9-1.png>]
+<0_all_posts_pdf/bar_10-1.png, id=984, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/bar_10-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/bar_10-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/bar_10-1.png used on input line 998.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [36 <./0_all_posts_pdf/bar_10-1.png>]
-<0_all_posts_pdf/bar_11-1.png, id=1007, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/bar_10-1.png used on input line 263.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [30 <./0_all_posts_pdf/bar_10-1.png>]
+<0_all_posts_pdf/bar_11-1.png, id=993, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/bar_11-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/bar_11-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/bar_11-1.png used on input line 1035.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 8170) has occurred while \output is active []
-
- [37 <./0_all_posts_pdf/bar_11-1.png>]
-<0_all_posts_pdf/bar_13-1.png, id=1013, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/bar_11-1.png used on input line 301.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [31 <./0_all_posts_pdf/bar_11-1.png>]
+<0_all_posts_pdf/bar_13-1.png, id=999, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/bar_13-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/bar_13-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/bar_13-1.png used on input line 1072.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/bar_13-1.png used on input line 339.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [32]) [33 <./0_all_posts_pdf/bar_13-1.png>]
+\openout2 = `chapter4.aux'.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [38]
-[39 <./0_all_posts_pdf/bar_13-1.png>]
-Chapter 5.
-<0_all_posts_pdf/stacked_finalresult-1.png, id=1023, 903.375pt x 752.8125pt>
+(./chapter4.tex
+Chapter 4.
+<0_all_posts_pdf/stacked_finalresult-1.png, id=1009, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/stacked_finalresult-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/stacked_finalresult-1.png>
 Package pdftex.def Info: 0_all_posts_pdf/stacked_finalresult-1.png used on inpu
-t line 1080.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [40
+t line 7.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [34
+
+
 
  <./0_all_posts_pdf/stacked_finalresult-1.png>]
-<0_all_posts_pdf/stacked_1-1.png, id=1029, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/stacked_1-1.png, id=1016, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/stacked_1-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/stacked_1-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/stacked_1-1.png used on input line 111
-2.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/stacked_1-1.png used on input line 42.
 
-<0_all_posts_pdf/stacked_2-1.png, id=1030, 903.375pt x 752.8125pt>
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+
+<0_all_posts_pdf/stacked_2-1.png, id=1017, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/stacked_2-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/stacked_2-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/stacked_2-1.png used on input line 112
-9.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/stacked_2-1.png used on input line 59.
 
-Underfull \vbox (badness 2460) has occurred while \output is active []
-
- [41 <./0_all_posts_pdf/stacked_1-1.png>]
-<0_all_posts_pdf/stacked_3-1.png, id=1037, 903.375pt x 752.8125pt>
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [35 <./0_all_posts_pdf/stacked_1-1.png>]
+<0_all_posts_pdf/stacked_3-1.png, id=1023, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/stacked_3-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/stacked_3-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/stacked_3-1.png used on input line 115
-2.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/stacked_3-1.png used on input line 83.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [42 <./0_all_posts_pdf/stacked_2-1.png>]
-<0_all_posts_pdf/stacked_4-1.png, id=1043, 903.375pt x 752.8125pt>
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [36 <./0_all_posts_pdf/stacked_2-1.png>]
+<0_all_posts_pdf/stacked_4-1.png, id=1030, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/stacked_4-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/stacked_4-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/stacked_4-1.png used on input line 117
-2.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [43 <./0_all_posts_pdf/stacked_3-1.png> <./0_all_posts_pdf/stacked_4-1.png>]
-<0_all_posts_pdf/stacked_5-1.png, id=1050, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/stacked_4-1.png used on input line 103
+.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [37 <./0_all_posts_pdf/stacked_3-1.png> <./0_all_posts_pdf/stacked_4-1.png>]
+<0_all_posts_pdf/stacked_5-1.png, id=1037, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/stacked_5-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/stacked_5-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/stacked_5-1.png used on input line 119
-4.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-<0_all_posts_pdf/stacked_6-1.png, id=1051, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/stacked_5-1.png used on input line 129
+.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [38 <./0_all_posts_pdf/stacked_5-1.png>]
+<0_all_posts_pdf/stacked_6-1.png, id=1043, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/stacked_6-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/stacked_6-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/stacked_6-1.png used on input line 120
-8.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/stacked_6-1.png used on input line 143
+.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
 
-Underfull \vbox (badness 2158) has occurred while \output is active []
-
- [44 <./0_all_posts_pdf/stacked_5-1.png>]
-<0_all_posts_pdf/stacked_7-1.png, id=1057, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/stacked_7-1.png, id=1044, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/stacked_7-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/stacked_7-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/stacked_7-1.png used on input line 122
-6.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [45 <./0_all_posts_pdf/stacked_6-1.png> <./0_all_posts_pdf/stacked_7-1.png>]
-<0_all_posts_pdf/stacked_8-1.png, id=1065, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/stacked_7-1.png used on input line 161
+.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [39 <./0_all_posts_pdf/stacked_6-1.png>]
+<0_all_posts_pdf/stacked_8-1.png, id=1051, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/stacked_8-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/stacked_8-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/stacked_8-1.png used on input line 124
-4.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [46 <./0_all_posts_pdf/stacked_8-1.png>]
-<0_all_posts_pdf/stacked_9-1.png, id=1071, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/stacked_8-1.png used on input line 179
+.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [40 <./0_all_posts_pdf/stacked_7-1.png> <./0_all_posts_pdf/stacked_8-1.png>]
+<0_all_posts_pdf/stacked_9-1.png, id=1058, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/stacked_9-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/stacked_9-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/stacked_9-1.png used on input line 127
-1.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [47 <./0_all_posts_pdf/stacked_9-1.png>]
+Package pdftex.def Info: 0_all_posts_pdf/stacked_9-1.png used on input line 208
+.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [41 <./0_all_posts_pdf/stacked_9-1.png>]
 LaTeX Font Info:    Font shape `T1/hlst/m/it' in size <10.95> not available
-(Font)              Font shape `T1/hlst/m/sl' tried instead on input line 1304.
-
+(Font)              Font shape `T1/hlst/m/sl' tried instead on input line 241.
 LaTeX Font Info:    Font shape `T1/hlst/m/sl' will be
-(Font)              scaled to size 9.74548pt on input line 1304.
+(Font)              scaled to size 9.74548pt on input line 241.
 
-<0_all_posts_pdf/stacked_10-1.png, id=1080, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/stacked_10-1.png, id=1066, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/stacked_10-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/stacked_10-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/stacked_10-1.png used on input line 13
-33.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [48 <./0_all_posts_pdf/stacked_10-1.png>]
-<0_all_posts_pdf/stacked_11-1.png, id=1089, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/stacked_10-1.png used on input line 27
+3.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [42]
+<0_all_posts_pdf/stacked_11-1.png, id=1075, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/stacked_11-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/stacked_11-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/stacked_11-1.png used on input line 13
-70.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 8170) has occurred while \output is active []
-
- [49 <./0_all_posts_pdf/stacked_11-1.png>]
-<0_all_posts_pdf/stacked_13-1.png, id=1095, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/stacked_11-1.png used on input line 31
+2.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [43 <./0_all_posts_pdf/stacked_10-1.png>] [44 <./0_all_posts_pdf/stacked_11-1.
+png>]
+<0_all_posts_pdf/stacked_13-1.png, id=1086, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/stacked_13-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/stacked_13-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/stacked_13-1.png used on input line 14
-08.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/stacked_13-1.png used on input line 35
+2.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+) [45 <./0_all_posts_pdf/stacked_13-1.png>]
+\openout2 = `chapter5.aux'.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [50]
-[51 <./0_all_posts_pdf/stacked_13-1.png>]
-Chapter 6.
-<0_all_posts_pdf/scatter_finalgraph-1.png, id=1105, 903.375pt x 752.8125pt>
+ (./chapter5.tex
+Chapter 5.
+<0_all_posts_pdf/scatter_finalgraph-1.png, id=1092, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/scatter_finalgraph-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/scatter_finalgraph-1.png>
 Package pdftex.def Info: 0_all_posts_pdf/scatter_finalgraph-1.png used on input
- line 1416.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [52
+ line 7.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [46
+
+
 
  <./0_all_posts_pdf/scatter_finalgraph-1.png>]
-<0_all_posts_pdf/scatter_1-1.png, id=1111, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/scatter_1-1.png, id=1098, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/scatter_1-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/scatter_1-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_1-1.png used on input line 146
-0.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [53 <./0_all_posts_pdf/scatter_1-1.png>]
-<0_all_posts_pdf/scatter_2-1.png, id=1119, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/scatter_1-1.png used on input line 51.
+
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [47 <./0_all_posts_pdf/scatter_1-1.png>]
+<0_all_posts_pdf/scatter_2-1.png, id=1105, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/scatter_2-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/scatter_2-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_2-1.png used on input line 148
-0.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/scatter_2-1.png used on input line 71.
 
-<0_all_posts_pdf/scatter_3-1.png, id=1120, 903.375pt x 752.8125pt>
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+
+<0_all_posts_pdf/scatter_3-1.png, id=1106, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/scatter_3-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/scatter_3-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_3-1.png used on input line 149
-7.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/scatter_3-1.png used on input line 88.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [54 <./0_all_posts_pdf/scatter_2-1.png>]
-<0_all_posts_pdf/scatter_4-1.png, id=1126, 903.375pt x 752.8125pt>
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [48 <./0_all_posts_pdf/scatter_2-1.png>]
+<0_all_posts_pdf/scatter_4-1.png, id=1113, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/scatter_4-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/scatter_4-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_4-1.png used on input line 151
-4.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [55 <./0_all_posts_pdf/scatter_3-1.png> <./0_all_posts_pdf/scatter_4-1.png>]
-<0_all_posts_pdf/scatter_5-1.png, id=1135, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/scatter_4-1.png used on input line 105
+.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [49 <./0_all_posts_pdf/scatter_3-1.png> <./0_all_posts_pdf/scatter_4-1.png>]
+<0_all_posts_pdf/scatter_5-1.png, id=1121, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/scatter_5-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/scatter_5-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_5-1.png used on input line 153
-7.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/scatter_5-1.png used on input line 128
+.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
 
-<0_all_posts_pdf/scatter_6-1.png, id=1136, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/scatter_6-1.png, id=1122, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/scatter_6-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/scatter_6-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_6-1.png used on input line 155
-4.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 7291) has occurred while \output is active []
-
- [56 <./0_all_posts_pdf/scatter_5-1.png>]
-<0_all_posts_pdf/scatter_7-1.png, id=1142, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/scatter_6-1.png used on input line 145
+.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [50 <./0_all_posts_pdf/scatter_5-1.png>]
+<0_all_posts_pdf/scatter_7-1.png, id=1128, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/scatter_7-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/scatter_7-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_7-1.png used on input line 157
-2.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [57 <./0_all_posts_pdf/scatter_6-1.png> <./0_all_posts_pdf/scatter_7-1.png>]
-<0_all_posts_pdf/scatter_8-1.png, id=1149, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/scatter_7-1.png used on input line 163
+.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [51 <./0_all_posts_pdf/scatter_6-1.png> <./0_all_posts_pdf/scatter_7-1.png>]
+<0_all_posts_pdf/scatter_8-1.png, id=1135, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/scatter_8-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/scatter_8-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_8-1.png used on input line 158
-6.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/scatter_8-1.png used on input line 177
+.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
 
-<0_all_posts_pdf/scatter_9-1.png, id=1150, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/scatter_9-1.png, id=1136, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/scatter_9-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/scatter_9-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_9-1.png used on input line 160
-4.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [58 <./0_all_posts_pdf/scatter_8-1.png>]
-<0_all_posts_pdf/scatter_10-1.png, id=1156, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/scatter_9-1.png used on input line 195
+.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [52 <./0_all_posts_pdf/scatter_8-1.png>]
+<0_all_posts_pdf/scatter_10-1.png, id=1143, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/scatter_10-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/scatter_10-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_10-1.png used on input line 16
-18.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [59 <./0_all_posts_pdf/scatter_9-1.png> <./0_all_posts_pdf/scatter_10-1.png>]
-<0_all_posts_pdf/scatter_11-1.png, id=1164, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/scatter_10-1.png used on input line 20
+9.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [53 <./0_all_posts_pdf/scatter_9-1.png> <./0_all_posts_pdf/scatter_10-1.png>]
+<0_all_posts_pdf/scatter_11-1.png, id=1150, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/scatter_11-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/scatter_11-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_11-1.png used on input line 16
-36.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/scatter_11-1.png used on input line 22
+7.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
 
-<0_all_posts_pdf/scatter_12-1.png, id=1165, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/scatter_12-1.png, id=1151, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/scatter_12-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/scatter_12-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_12-1.png used on input line 16
-60.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [60 <./0_all_posts_pdf/scatter_11-1.png>] [61 <./0_all_posts_pdf/scatter_12-1.
+Package pdftex.def Info: 0_all_posts_pdf/scatter_12-1.png used on input line 25
+1.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [54 <./0_all_posts_pdf/scatter_11-1.png>] [55 <./0_all_posts_pdf/scatter_12-1.
 png>]
-<0_all_posts_pdf/scatter_13-1.png, id=1178, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/scatter_13-1.png, id=1165, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/scatter_13-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/scatter_13-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_13-1.png used on input line 17
-16.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [62 <./0_all_posts_pdf/scatter_13-1.png>] <0_all_posts_pdf/scatter_14-1.png, i
-d=1185, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/scatter_13-1.png used on input line 30
+8.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [56 <./0_all_posts_pdf/scatter_13-1.png>] <0_all_posts_pdf/scatter_14-1.png, i
+d=1172, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/scatter_14-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/scatter_14-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_14-1.png used on input line 17
-49.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [63 <./0_all_posts_pdf/scatter_14-1.png>] <0_all_posts_pdf/scatter_15-1.png, i
-d=1191, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/scatter_14-1.png used on input line 34
+1.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [57 <./0_all_posts_pdf/scatter_14-1.png>] <0_all_posts_pdf/scatter_15-1.png, i
+d=1178, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/scatter_15-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/scatter_15-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_15-1.png used on input line 17
-82.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [64 <./0_all_posts_pdf/scatter_15-1.png>]
-Chapter 7.
-<0_all_posts_pdf/wscatter_finalgraph-1.png, id=1197, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/scatter_15-1.png used on input line 37
+5.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+) [58 <./0_all_posts_pdf/scatter_15-1.png>]
+\openout2 = `chapter6.aux'.
+
+ (./chapter6.tex
+Chapter 6.
+<0_all_posts_pdf/wscatter_finalgraph-1.png, id=1184, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/wscatter_finalgraph-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/wscatter_finalgraph-1.png>
 Package pdftex.def Info: 0_all_posts_pdf/wscatter_finalgraph-1.png used on inpu
-t line 1815.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+t line 32.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [59
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [65
 
 ]
-<0_all_posts_pdf/wscatter_1-1.png, id=1203, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/wscatter_1-1.png, id=1189, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/wscatter_1-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/wscatter_1-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_1-1.png used on input line 18
-35.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [66 <./0_all_posts_pdf/wscatter_finalgraph-1.png> <./0_all_posts_pdf/wscatter_
+Package pdftex.def Info: 0_all_posts_pdf/wscatter_1-1.png used on input line 52
+.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [60 <./0_all_posts_pdf/wscatter_finalgraph-1.png> <./0_all_posts_pdf/wscatter_
 1-1.png>]
-<0_all_posts_pdf/wscatter_2-1.png, id=1210, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/wscatter_2-1.png, id=1197, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/wscatter_2-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/wscatter_2-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_2-1.png used on input line 18
-49.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/wscatter_2-1.png used on input line 66
+.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
 
-<0_all_posts_pdf/wscatter_3-1.png, id=1212, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/wscatter_3-1.png, id=1199, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/wscatter_3-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/wscatter_3-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_3-1.png used on input line 18
-74.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 5374) has occurred while \output is active []
-
- [67 <./0_all_posts_pdf/wscatter_2-1.png>]
-<0_all_posts_pdf/wscatter_4-1.png, id=1218, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/wscatter_3-1.png used on input line 91
+.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [61 <./0_all_posts_pdf/wscatter_2-1.png>] <0_all_posts_pdf/wscatter_4-1.png, i
+d=1205, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/wscatter_4-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/wscatter_4-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_4-1.png used on input line 18
-92.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [68 <./0_all_posts_pdf/wscatter_3-1.png> <./0_all_posts_pdf/wscatter_4-1.png>]
+Package pdftex.def Info: 0_all_posts_pdf/wscatter_4-1.png used on input line 10
+9.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [62 <./0_all_posts_pdf/wscatter_3-1.png> <./0_all_posts_pdf/wscatter_4-1.png>]
 
-<0_all_posts_pdf/wscatter_5-1.png, id=1225, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/wscatter_5-1.png, id=1212, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/wscatter_5-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/wscatter_5-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_5-1.png used on input line 19
-09.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/wscatter_5-1.png used on input line 12
+6.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
 
-<0_all_posts_pdf/wscatter_6-1.png, id=1227, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/wscatter_6-1.png, id=1214, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/wscatter_6-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/wscatter_6-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_6-1.png used on input line 19
-33.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 2197) has occurred while \output is active []
-
- [69 <./0_all_posts_pdf/wscatter_5-1.png>]
-<0_all_posts_pdf/wscatter_7-1.png, id=1233, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/wscatter_6-1.png used on input line 15
+0.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [63 <./0_all_posts_pdf/wscatter_5-1.png>] <0_all_posts_pdf/wscatter_7-1.png, i
+d=1220, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/wscatter_7-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/wscatter_7-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_7-1.png used on input line 19
-50.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [70 <./0_all_posts_pdf/wscatter_6-1.png> <./0_all_posts_pdf/wscatter_7-1.png>]
+Package pdftex.def Info: 0_all_posts_pdf/wscatter_7-1.png used on input line 16
+7.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [64 <./0_all_posts_pdf/wscatter_6-1.png> <./0_all_posts_pdf/wscatter_7-1.png>]
 
-<0_all_posts_pdf/wscatter_8-1.png, id=1240, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/wscatter_8-1.png, id=1227, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/wscatter_8-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/wscatter_8-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_8-1.png used on input line 19
-68.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/wscatter_8-1.png used on input line 18
+5.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
 
-<0_all_posts_pdf/wscatter_9-1.png, id=1241, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/wscatter_9-1.png, id=1228, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/wscatter_9-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/wscatter_9-1.png>
 Package pdftex.def Info: 0_all_posts_pdf/wscatter_9-1.png used on input line 19
-82.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [71 <./0_all_posts_pdf/wscatter_8-1.png>]
-<0_all_posts_pdf/wscatter_10-1.png, id=1248, 903.375pt x 752.8125pt>
+9.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [65 <./0_all_posts_pdf/wscatter_8-1.png>] <0_all_posts_pdf/wscatter_10-1.png, 
+id=1234, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/wscatter_10-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/wscatter_10-1.png>
 Package pdftex.def Info: 0_all_posts_pdf/wscatter_10-1.png used on input line 2
-000.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [72 <./0_all_posts_pdf/wscatter_9-1.png> <./0_all_posts_pdf/wscatter_10-1.png>
+17.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [66 <./0_all_posts_pdf/wscatter_9-1.png> <./0_all_posts_pdf/wscatter_10-1.png>
 ]
-<0_all_posts_pdf/wscatter_11-1.png, id=1255, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/wscatter_11-1.png, id=1242, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/wscatter_11-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/wscatter_11-1.png>
 Package pdftex.def Info: 0_all_posts_pdf/wscatter_11-1.png used on input line 2
-014.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+31.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
 
-<0_all_posts_pdf/wscatter_12-1.png, id=1256, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/wscatter_12-1.png, id=1243, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/wscatter_12-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/wscatter_12-1.png>
 Package pdftex.def Info: 0_all_posts_pdf/wscatter_12-1.png used on input line 2
-032.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [73 <./0_all_posts_pdf/wscatter_11-1.png>]
-<0_all_posts_pdf/wscatter_13-1.png, id=1262, 903.375pt x 752.8125pt>
+49.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [67 <./0_all_posts_pdf/wscatter_11-1.png>] <0_all_posts_pdf/wscatter_13-1.png,
+ id=1249, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/wscatter_13-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/wscatter_13-1.png>
 Package pdftex.def Info: 0_all_posts_pdf/wscatter_13-1.png used on input line 2
-051.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [74 <./0_all_posts_pdf/wscatter_12-1.png> <./0_all_posts_pdf/wscatter_13-1.png
+68.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [68 <./0_all_posts_pdf/wscatter_12-1.png> <./0_all_posts_pdf/wscatter_13-1.png
 >]
-<0_all_posts_pdf/wscatter_14-1.png, id=1269, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/wscatter_14-1.png, id=1256, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/wscatter_14-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/wscatter_14-1.png>
 Package pdftex.def Info: 0_all_posts_pdf/wscatter_14-1.png used on input line 2
-069.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+86.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
 
-<0_all_posts_pdf/wscatter_15-1.png, id=1270, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/wscatter_15-1.png, id=1257, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/wscatter_15-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/wscatter_15-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_15-1.png used on input line 2
-088.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [75 <./0_all_posts_pdf/wscatter_14-1.png>]
-<0_all_posts_pdf/wscatter_16-1.png, id=1276, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/wscatter_15-1.png used on input line 3
+05.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [69 <./0_all_posts_pdf/wscatter_14-1.png>] <0_all_posts_pdf/wscatter_16-1.png,
+ id=1263, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/wscatter_16-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/wscatter_16-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_16-1.png used on input line 2
-110.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [76 <./0_all_posts_pdf/wscatter_15-1.png>]
-<0_all_posts_pdf/wscatter_17-1.png, id=1282, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/wscatter_16-1.png used on input line 3
+27.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [70 <./0_all_posts_pdf/wscatter_15-1.png>] <0_all_posts_pdf/wscatter_17-1.png,
+ id=1269, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/wscatter_17-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/wscatter_17-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_17-1.png used on input line 2
-137.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [77 <./0_all_posts_pdf/wscatter_16-1.png>] [78 <./0_all_posts_pdf/wscatter_17-
+Package pdftex.def Info: 0_all_posts_pdf/wscatter_17-1.png used on input line 3
+55.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [71 <./0_all_posts_pdf/wscatter_16-1.png>] [72 <./0_all_posts_pdf/wscatter_17-
 1.png>]
-<0_all_posts_pdf/wscatter_18-1.png, id=1296, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/wscatter_18-1.png, id=1283, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/wscatter_18-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/wscatter_18-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_18-1.png used on input line 2
-195.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [79 <./0_all_posts_pdf/wscatter_18-1.png>] <0_all_posts_pdf/wscatter_19-1.png,
- id=1304, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/wscatter_18-1.png used on input line 4
+13.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [73 <./0_all_posts_pdf/wscatter_18-1.png>] <0_all_posts_pdf/wscatter_19-1.png,
+ id=1290, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/wscatter_19-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/wscatter_19-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_19-1.png used on input line 2
-228.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [80 <./0_all_posts_pdf/wscatter_19-1.png>] <0_all_posts_pdf/wscatter_20-1.png,
- id=1310, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/wscatter_19-1.png used on input line 4
+47.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [74 <./0_all_posts_pdf/wscatter_19-1.png>] <0_all_posts_pdf/wscatter_20-1.png,
+ id=1296, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/wscatter_20-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/wscatter_20-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_20-1.png used on input line 2
-261.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [81 <./0_all_posts_pdf/wscatter_20-1.png>]
-Chapter 8.
-<0_all_posts_pdf/histogram_final-1.png, id=1316, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/wscatter_20-1.png used on input line 4
+81.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+) [75 <./0_all_posts_pdf/wscatter_20-1.png>]
+\openout2 = `chapter7.aux'.
+
+ (./chapter7.tex
+Chapter 7.
+<0_all_posts_pdf/histogram_final-1.png, id=1302, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/histogram_final-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/histogram_final-1.png>
 Package pdftex.def Info: 0_all_posts_pdf/histogram_final-1.png used on input li
-ne 2281.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+ne 19.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [76
 
-Underfull \vbox (badness 2772) has occurred while \output is active []
 
- [82
 
- <./0_all_posts_pdf/histogram_final-1.png>]
-<0_all_posts_pdf/histogram_1-1.png, id=1322, 903.375pt x 752.8125pt>
+ <./0_all_posts_pdf/histogram_final-1.png>] <0_all_posts_pdf/histogram_1-1.png,
+ id=1309, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/histogram_1-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/histogram_1-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_1-1.png used on input line 2
-297.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/histogram_1-1.png used on input line 3
+5.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
 
-Overfull \hbox (63.35031pt too wide) in paragraph at lines 2302--2313
+Overfull \hbox (63.35031pt too wide) in paragraph at lines 40--51
 \T1/hlst/m/n/10.95 = dnorm)\T1/hlh/m/n/10.95 (-20) , and spec-ify the shape us-
 ing the \T1/hlst/m/n/10.95 mean = mean(airquality$Ozone) \T1/hlh/m/n/10.95 (-20
 ) and \T1/hlst/m/n/10.95 sd = sd(airquality$Ozone)
  []
 
 
-Overfull \hbox (18.22066pt too wide) in paragraph at lines 2314--2319
+Overfull \hbox (18.22066pt too wide) in paragraph at lines 52--57
 []\T1/hlh/m/n/10.95 (-20) One fur-ther change we must make to dis-play the nor-
 mal curve cor-rectly is adding \T1/hlst/m/n/10.95 aes(y = ..density..)
  []
 
-[83 <./0_all_posts_pdf/histogram_1-1.png>]
-<0_all_posts_pdf/histogram_2-1.png, id=1329, 903.375pt x 752.8125pt>
+[77 <./0_all_posts_pdf/histogram_1-1.png>]
+<0_all_posts_pdf/histogram_2-1.png, id=1315, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/histogram_2-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/histogram_2-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_2-1.png used on input line 2
-331.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/histogram_2-1.png used on input line 6
+9.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
 
-<0_all_posts_pdf/histogram_3-1.png, id=1330, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/histogram_3-1.png, id=1316, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/histogram_3-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/histogram_3-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_3-1.png used on input line 2
-348.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [84 <./0_all_posts_pdf/histogram_2-1.png>]
-<0_all_posts_pdf/histogram_4-1.png, id=1336, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/histogram_3-1.png used on input line 8
+6.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [78 <./0_all_posts_pdf/histogram_2-1.png>] <0_all_posts_pdf/histogram_4-1.png,
+ id=1323, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/histogram_4-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/histogram_4-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_4-1.png used on input line 2
-364.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [85 <./0_all_posts_pdf/histogram_3-1.png> <./0_all_posts_pdf/histogram_4-1.png
+Package pdftex.def Info: 0_all_posts_pdf/histogram_4-1.png used on input line 1
+02.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [79 <./0_all_posts_pdf/histogram_3-1.png> <./0_all_posts_pdf/histogram_4-1.png
 >]
-<0_all_posts_pdf/histogram_5-1.png, id=1343, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/histogram_5-1.png, id=1330, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/histogram_5-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/histogram_5-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_5-1.png used on input line 2
-386.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/histogram_5-1.png used on input line 1
+24.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
 
-<0_all_posts_pdf/histogram_6-1.png, id=1344, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/histogram_6-1.png, id=1331, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/histogram_6-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/histogram_6-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_6-1.png used on input line 2
-404.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [86 <./0_all_posts_pdf/histogram_5-1.png>] <0_all_posts_pdf/histogram_7-1.png,
- id=1350, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/histogram_6-1.png used on input line 1
+42.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [80 <./0_all_posts_pdf/histogram_5-1.png>] <0_all_posts_pdf/histogram_7-1.png,
+ id=1337, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/histogram_7-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/histogram_7-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_7-1.png used on input line 2
-430.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [87 <./0_all_posts_pdf/histogram_6-1.png>]
-<0_all_posts_pdf/histogram_8-1.png, id=1356, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/histogram_7-1.png used on input line 1
+68.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [81 <./0_all_posts_pdf/histogram_6-1.png>] <0_all_posts_pdf/histogram_8-1.png,
+ id=1343, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/histogram_8-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/histogram_8-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_8-1.png used on input line 2
-450.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [88 <./0_all_posts_pdf/histogram_7-1.png>]
-<0_all_posts_pdf/histogram_9-1.png, id=1363, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/histogram_8-1.png used on input line 1
+88.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [82 <./0_all_posts_pdf/histogram_7-1.png>] <0_all_posts_pdf/histogram_9-1.png,
+ id=1350, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/histogram_9-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/histogram_9-1.png>
 Package pdftex.def Info: 0_all_posts_pdf/histogram_9-1.png used on input line 2
-481.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [89 <./0_all_posts_pdf/histogram_8-1.png>]
-<0_all_posts_pdf/histogram_10-1.png, id=1370, 903.375pt x 752.8125pt>
+19.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [83 <./0_all_posts_pdf/histogram_8-1.png>] <0_all_posts_pdf/histogram_10-1.png
+, id=1356, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/histogram_10-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/histogram_10-1.png>
 Package pdftex.def Info: 0_all_posts_pdf/histogram_10-1.png used on input line 
-2507.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [90 <./0_all_posts_pdf/histogram_9-1.png>]
-<0_all_posts_pdf/histogram_11-1.png, id=1376, 903.375pt x 752.8125pt>
+245.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [84 <./0_all_posts_pdf/histogram_9-1.png>] <0_all_posts_pdf/histogram_11-1.png
+, id=1363, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/histogram_11-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/histogram_11-1.png>
 Package pdftex.def Info: 0_all_posts_pdf/histogram_11-1.png used on input line 
-2530.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [91 <./0_all_posts_pdf/histogram_10-1.png>]
-<0_all_posts_pdf/histogram_12-1.png, id=1382, 903.375pt x 752.8125pt>
+268.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [85 <./0_all_posts_pdf/histogram_10-1.png>] <0_all_posts_pdf/histogram_12-1.pn
+g, id=1369, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/histogram_12-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/histogram_12-1.png>
 Package pdftex.def Info: 0_all_posts_pdf/histogram_12-1.png used on input line 
-2553.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [92 <./0_all_posts_pdf/histogram_11-1.png>]
-<0_all_posts_pdf/histogram_13-1.png, id=1388, 903.375pt x 752.8125pt>
+291.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [86 <./0_all_posts_pdf/histogram_11-1.png>] <0_all_posts_pdf/histogram_13-1.pn
+g, id=1375, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/histogram_13-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/histogram_13-1.png>
 Package pdftex.def Info: 0_all_posts_pdf/histogram_13-1.png used on input line 
-2581.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [93 <./0_all_posts_pdf/histogram_12-1.png>] [94 <./0_all_posts_pdf/histogram_1
+319.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [87 <./0_all_posts_pdf/histogram_12-1.png>] [88 <./0_all_posts_pdf/histogram_1
 3-1.png>]
-<0_all_posts_pdf/histogram_14-1.png, id=1401, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/histogram_14-1.png, id=1388, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/histogram_14-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/histogram_14-1.png>
 Package pdftex.def Info: 0_all_posts_pdf/histogram_14-1.png used on input line 
-2635.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [95 <./0_all_posts_pdf/histogram_14-1.png>] <0_all_posts_pdf/histogram_15-1.pn
-g, id=1409, 903.375pt x 752.8125pt>
+373.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [89 <./0_all_posts_pdf/histogram_14-1.png>] <0_all_posts_pdf/histogram_15-1.pn
+g, id=1395, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/histogram_15-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/histogram_15-1.png>
 Package pdftex.def Info: 0_all_posts_pdf/histogram_15-1.png used on input line 
-2675.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [96 <./0_all_posts_pdf/histogram_15-1.png>] <0_all_posts_pdf/histogram_16-1.pn
-g, id=1415, 903.375pt x 752.8125pt>
+413.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [90 <./0_all_posts_pdf/histogram_15-1.png>] <0_all_posts_pdf/histogram_16-1.pn
+g, id=1402, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/histogram_16-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/histogram_16-1.png>
 Package pdftex.def Info: 0_all_posts_pdf/histogram_16-1.png used on input line 
-2711.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [97 <./0_all_posts_pdf/histogram_16-1.png>] <0_all_posts_pdf/histogram_17-1.pn
-g, id=1421, 903.375pt x 752.8125pt>
+449.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [91 <./0_all_posts_pdf/histogram_16-1.png>] <0_all_posts_pdf/histogram_17-1.pn
+g, id=1408, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/histogram_17-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/histogram_17-1.png>
 Package pdftex.def Info: 0_all_posts_pdf/histogram_17-1.png used on input line 
-2750.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [98 <./0_all_posts_pdf/histogram_17-1.png>]
-<0_all_posts_pdf/histogram_18-1.png, id=1427, 903.375pt x 752.8125pt>
+488.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [92 <./0_all_posts_pdf/histogram_17-1.png>] <0_all_posts_pdf/histogram_18-1.pn
+g, id=1414, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/histogram_18-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/histogram_18-1.png>
 Package pdftex.def Info: 0_all_posts_pdf/histogram_18-1.png used on input line 
-2800.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [99]
-[100 <./0_all_posts_pdf/histogram_18-1.png>]
-<0_all_posts_pdf/histogram_19-1.png, id=1438, 903.375pt x 752.8125pt>
+538.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [93] [94 <./0_all_posts_pdf/histogram_18-1.png>] <0_all_posts_pdf/histogram_19
+-1.png, id=1425, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/histogram_19-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/histogram_19-1.png>
 Package pdftex.def Info: 0_all_posts_pdf/histogram_19-1.png used on input line 
-2842.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [101 <./0_all_posts_pdf/histogram_19-1.png>] <0_all_posts_pdf/histogram_20-1.p
-ng, id=1445, 903.375pt x 752.8125pt>
+580.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [95 <./0_all_posts_pdf/histogram_19-1.png>] <0_all_posts_pdf/histogram_20-1.pn
+g, id=1431, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/histogram_20-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/histogram_20-1.png>
 Package pdftex.def Info: 0_all_posts_pdf/histogram_20-1.png used on input line 
-2878.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [102 <./0_all_posts_pdf/histogram_20-1.png>]
-Chapter 9.
-<0_all_posts_pdf/density_final-1.png, id=1451, 903.375pt x 752.8125pt>
+616.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+) [96 <./0_all_posts_pdf/histogram_20-1.png>]
+\openout2 = `chapter8.aux'.
+
+ (./chapter8.tex
+Chapter 8.
+<0_all_posts_pdf/density_final-1.png, id=1438, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/density_final-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/density_final-1.png>
 Package pdftex.def Info: 0_all_posts_pdf/density_final-1.png used on input line
- 2898.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+ 7.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [97
 
-Underfull \vbox (badness 2799) has occurred while \output is active []
 
- [103
 
- <./0_all_posts_pdf/density_final-1.png>]
-<0_all_posts_pdf/density_1-1.png, id=1458, 903.375pt x 752.8125pt>
+ <./0_all_posts_pdf/density_final-1.png>] <0_all_posts_pdf/density_1-1.png, id=
+1444, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/density_1-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/density_1-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_1-1.png used on input line 291
-4.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/density_1-1.png used on input line 35.
 
-<0_all_posts_pdf/density_2-1.png, id=1459, 903.375pt x 752.8125pt>
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+
+<0_all_posts_pdf/density_2-1.png, id=1445, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/density_2-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/density_2-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_2-1.png used on input line 293
-2.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/density_2-1.png used on input line 53.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [104 <./0_all_posts_pdf/density_1-1.png>]
-<0_all_posts_pdf/density_3-1.png, id=1465, 903.375pt x 752.8125pt>
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [98 <./0_all_posts_pdf/density_1-1.png>]
+<0_all_posts_pdf/density_3-1.png, id=1451, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/density_3-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/density_3-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_3-1.png used on input line 294
-5.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [105 <./0_all_posts_pdf/density_2-1.png> <./0_all_posts_pdf/density_3-1.png>]
-<0_all_posts_pdf/density_4-1.png, id=1472, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/density_3-1.png used on input line 66.
+
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [99 <./0_all_posts_pdf/density_2-1.png> <./0_all_posts_pdf/density_3-1.png>]
+<0_all_posts_pdf/density_4-1.png, id=1458, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/density_4-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/density_4-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_4-1.png used on input line 296
-8.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/density_4-1.png used on input line 89.
 
-<0_all_posts_pdf/density_5-1.png, id=1473, 903.375pt x 752.8125pt>
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+
+<0_all_posts_pdf/density_5-1.png, id=1459, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/density_5-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/density_5-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_5-1.png used on input line 298
-2.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [106 <./0_all_posts_pdf/density_4-1.png>]
-<0_all_posts_pdf/density_6-1.png, id=1480, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/density_5-1.png used on input line 103
+.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [100 <./0_all_posts_pdf/density_4-1.png>] <0_all_posts_pdf/density_6-1.png, id
+=1467, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/density_6-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/density_6-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_6-1.png used on input line 301
-0.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [107 <./0_all_posts_pdf/density_5-1.png>]
-<0_all_posts_pdf/density_7-1.png, id=1487, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/density_6-1.png used on input line 131
+.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [101 <./0_all_posts_pdf/density_5-1.png>] <0_all_posts_pdf/density_7-1.png, id
+=1473, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/density_7-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/density_7-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_7-1.png used on input line 303
-3.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [108 <./0_all_posts_pdf/density_6-1.png>]
-<0_all_posts_pdf/density_8-1.png, id=1493, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/density_7-1.png used on input line 154
+.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [102 <./0_all_posts_pdf/density_6-1.png>] <0_all_posts_pdf/density_8-1.png, id
+=1480, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/density_8-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/density_8-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_8-1.png used on input line 305
-3.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [109 <./0_all_posts_pdf/density_7-1.png>]
-<0_all_posts_pdf/density_9-1.png, id=1499, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/density_8-1.png used on input line 174
+.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [103 <./0_all_posts_pdf/density_7-1.png>] <0_all_posts_pdf/density_9-1.png, id
+=1486, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/density_9-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/density_9-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_9-1.png used on input line 307
-0.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [110 <./0_all_posts_pdf/density_8-1.png> <./0_all_posts_pdf/density_9-1.png>]
-<0_all_posts_pdf/density_10-1.png, id=1508, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/density_9-1.png used on input line 191
+.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [104 <./0_all_posts_pdf/density_8-1.png> <./0_all_posts_pdf/density_9-1.png>]
+<0_all_posts_pdf/density_10-1.png, id=1495, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/density_10-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/density_10-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_10-1.png used on input line 31
-23.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [111]
-[112 <./0_all_posts_pdf/density_10-1.png>]
-<0_all_posts_pdf/density_11-1.png, id=1519, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/density_10-1.png used on input line 24
+4.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [105] [106 <./0_all_posts_pdf/density_10-1.png>] <0_all_posts_pdf/density_11-1
+.png, id=1506, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/density_11-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/density_11-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_11-1.png used on input line 31
-63.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [113 <./0_all_posts_pdf/density_11-1.png>] <0_all_posts_pdf/density_12-1.png, 
-id=1526, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/density_11-1.png used on input line 28
+4.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [107 <./0_all_posts_pdf/density_11-1.png>] <0_all_posts_pdf/density_12-1.png, 
+id=1512, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/density_12-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/density_12-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_12-1.png used on input line 31
-99.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/density_12-1.png used on input line 32
+0.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
 
-<0_all_posts_pdf/density_13-1.png, id=1527, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/density_13-1.png, id=1513, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/density_13-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/density_13-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_13-1.png used on input line 32
-21.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [114 <./0_all_posts_pdf/density_12-1.png>] [115 <./0_all_posts_pdf/density_13-
+Package pdftex.def Info: 0_all_posts_pdf/density_13-1.png used on input line 34
+2.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [108 <./0_all_posts_pdf/density_12-1.png>] [109 <./0_all_posts_pdf/density_13-
 1.png>]
-<0_all_posts_pdf/density_14-1.png, id=1538, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/density_14-1.png, id=1525, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/density_14-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/density_14-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_14-1.png used on input line 32
-65.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/density_14-1.png used on input line 38
+6.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
 LaTeX Font Info:    Font shape `T1/hlh/m/it' will be
-(Font)              scaled to size 9.74548pt on input line 3267.
- [116 <./0_all_posts_pdf/density_14-1.png>] <0_all_posts_pdf/density_15-1.png, 
-id=1545, 903.375pt x 752.8125pt>
+(Font)              scaled to size 9.74548pt on input line 388.
+ [110 <./0_all_posts_pdf/density_14-1.png>] <0_all_posts_pdf/density_15-1.png, 
+id=1532, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/density_15-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/density_15-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_15-1.png used on input line 33
-00.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/density_15-1.png used on input line 42
+1.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
 
-<0_all_posts_pdf/density_16-1.png, id=1547, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/density_16-1.png, id=1534, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/density_16-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/density_16-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_16-1.png used on input line 33
-33.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [117 <./0_all_posts_pdf/density_15-1.png>] <0_all_posts_pdf/density_17-1.png, 
-id=1553, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/density_16-1.png used on input line 45
+4.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [111 <./0_all_posts_pdf/density_15-1.png>] <0_all_posts_pdf/density_17-1.png, 
+id=1540, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/density_17-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/density_17-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_17-1.png used on input line 33
-57.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [118 <./0_all_posts_pdf/density_16-1.png>]
-<0_all_posts_pdf/density_18-1.png, id=1559, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/density_17-1.png used on input line 47
+8.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [112 <./0_all_posts_pdf/density_16-1.png>] <0_all_posts_pdf/density_18-1.png, 
+id=1546, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/density_18-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/density_18-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_18-1.png used on input line 33
-85.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [119 <./0_all_posts_pdf/density_17-1.png>]
-<0_all_posts_pdf/density_19-1.png, id=1566, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/density_18-1.png used on input line 50
+6.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [113 <./0_all_posts_pdf/density_17-1.png>] <0_all_posts_pdf/density_19-1.png, 
+id=1552, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/density_19-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/density_19-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_19-1.png used on input line 34
-14.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/density_19-1.png used on input line 53
+5.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [114 <./0_all_posts_pdf/density_18-1.png>]) [115 <./0_all_posts_pdf/density_19
+-1.png>]
+\openout2 = `chapter9.aux'.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [120 <./0_all_posts_pdf/density_18-1.png>] [121 <./0_all_posts_pdf/density_19-
-1.png>]
-Chapter 10.
-<0_all_posts_pdf/function_final-1.png, id=1577, 903.375pt x 752.8125pt>
+ (./chapter9.tex
+Chapter 9.
+<0_all_posts_pdf/function_final-1.png, id=1564, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/function_final-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/function_final-1.png>
 Package pdftex.def Info: 0_all_posts_pdf/function_final-1.png used on input lin
-e 3422.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [122
+e 7.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [116
+
+
 
  <./0_all_posts_pdf/function_final-1.png>] <0_all_posts_pdf/function_1-1.png, i
-d=1583, 903.375pt x 752.8125pt>
+d=1570, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/function_1-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/function_1-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_1-1.png used on input line 34
-40.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/function_1-1.png used on input line 25
+.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
 
-<0_all_posts_pdf/function_2-1.png, id=1585, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/function_2-1.png, id=1572, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/function_2-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/function_2-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_2-1.png used on input line 34
-60.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [123 <./0_all_posts_pdf/function_1-1.png>]
-<0_all_posts_pdf/function_3-1.png, id=1591, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/function_2-1.png used on input line 45
+.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [117 <./0_all_posts_pdf/function_1-1.png>] <0_all_posts_pdf/function_3-1.png, 
+id=1578, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/function_3-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/function_3-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_3-1.png used on input line 34
-81.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [124 <./0_all_posts_pdf/function_2-1.png>]
-<0_all_posts_pdf/function_4-1.png, id=1597, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/function_3-1.png used on input line 66
+.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [118 <./0_all_posts_pdf/function_2-1.png>] <0_all_posts_pdf/function_4-1.png, 
+id=1584, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/function_4-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/function_4-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_4-1.png used on input line 35
-05.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [125 <./0_all_posts_pdf/function_3-1.png>]
-<0_all_posts_pdf/function_5-1.png, id=1604, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/function_4-1.png used on input line 90
+.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [119 <./0_all_posts_pdf/function_3-1.png>] <0_all_posts_pdf/function_5-1.png, 
+id=1590, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/function_5-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/function_5-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_5-1.png used on input line 35
-24.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [126 <./0_all_posts_pdf/function_4-1.png>]
-<0_all_posts_pdf/function_6-1.png, id=1610, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/function_5-1.png used on input line 10
+9.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [120 <./0_all_posts_pdf/function_4-1.png>] <0_all_posts_pdf/function_6-1.png, 
+id=1597, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/function_6-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/function_6-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_6-1.png used on input line 35
-48.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [127 <./0_all_posts_pdf/function_5-1.png>]
-<0_all_posts_pdf/function_7-1.png, id=1616, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/function_6-1.png used on input line 13
+2.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [121 <./0_all_posts_pdf/function_5-1.png>] <0_all_posts_pdf/function_7-1.png, 
+id=1603, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/function_7-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/function_7-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_7-1.png used on input line 35
-62.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 4353) has occurred while \output is active []
-
- [128 <./0_all_posts_pdf/function_6-1.png> <./0_all_posts_pdf/function_7-1.png>
+Package pdftex.def Info: 0_all_posts_pdf/function_7-1.png used on input line 14
+6.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [122 <./0_all_posts_pdf/function_6-1.png> <./0_all_posts_pdf/function_7-1.png>
 ]
-<0_all_posts_pdf/function_8-1.png, id=1625, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/function_8-1.png, id=1611, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/function_8-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/function_8-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_8-1.png used on input line 35
-88.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [129 <./0_all_posts_pdf/function_8-1.png>] <0_all_posts_pdf/function_9-1.png, 
-id=1631, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/function_8-1.png used on input line 17
+1.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [123 <./0_all_posts_pdf/function_8-1.png>] <0_all_posts_pdf/function_9-1.png, 
+id=1617, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/function_9-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/function_9-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_9-1.png used on input line 36
-11.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/function_9-1.png used on input line 19
+1.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
 
-<0_all_posts_pdf/function_10-1.png, id=1632, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/function_10-1.png, id=1618, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/function_10-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/function_10-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_10-1.png used on input line 3
-640.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [130 <./0_all_posts_pdf/function_9-1.png>] <0_all_posts_pdf/function_11-1.png,
- id=1638, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/function_10-1.png used on input line 2
+19.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [124 <./0_all_posts_pdf/function_9-1.png>] <0_all_posts_pdf/function_11-1.png,
+ id=1625, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/function_11-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/function_11-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_11-1.png used on input line 3
-667.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [131 <./0_all_posts_pdf/function_10-1.png>]
-<0_all_posts_pdf/function_12-1.png, id=1645, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/function_11-1.png used on input line 2
+45.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [125 <./0_all_posts_pdf/function_10-1.png>] <0_all_posts_pdf/function_12-1.png
+, id=1631, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/function_12-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/function_12-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_12-1.png used on input line 3
-695.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [132 <./0_all_posts_pdf/function_11-1.png>]
-<0_all_posts_pdf/function_13-1.png, id=1651, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/function_12-1.png used on input line 2
+72.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [126 <./0_all_posts_pdf/function_11-1.png>] <0_all_posts_pdf/function_13-1.png
+, id=1638, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/function_13-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/function_13-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_13-1.png used on input line 3
-712.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [133 <./0_all_posts_pdf/function_12-1.png> <./0_all_posts_pdf/function_13-1.pn
+Package pdftex.def Info: 0_all_posts_pdf/function_13-1.png used on input line 2
+89.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [127 <./0_all_posts_pdf/function_12-1.png> <./0_all_posts_pdf/function_13-1.pn
 g>]
-<0_all_posts_pdf/function_14-1.png, id=1660, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/function_14-1.png, id=1647, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/function_14-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/function_14-1.png>
 Package pdftex.def Info: 0_all_posts_pdf/function_14-1.png used on input line 3
-770.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 3439) has occurred while \output is active []
-
- [134]
-[135 <./0_all_posts_pdf/function_14-1.png>]
-<0_all_posts_pdf/function_15-1.png, id=1671, 903.375pt x 752.8125pt>
+46.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [128] [129 <./0_all_posts_pdf/function_14-1.png>] <0_all_posts_pdf/function_15
+-1.png, id=1658, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/function_15-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/function_15-1.png>
 Package pdftex.def Info: 0_all_posts_pdf/function_15-1.png used on input line 3
-810.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [136 <./0_all_posts_pdf/function_15-1.png>] <0_all_posts_pdf/function_16-1.png
-, id=1677, 903.375pt x 752.8125pt>
+85.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [130 <./0_all_posts_pdf/function_15-1.png>] <0_all_posts_pdf/function_16-1.png
+, id=1664, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/function_16-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/function_16-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_16-1.png used on input line 3
-848.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [137 <./0_all_posts_pdf/function_16-1.png>] <0_all_posts_pdf/function_17-1.png
-, id=1684, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/function_16-1.png used on input line 4
+23.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+
+<0_all_posts_pdf/function_17-1.png, id=1665, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/function_17-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/function_17-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_17-1.png used on input line 3
-877.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [138 <./0_all_posts_pdf/function_17-1.png>] <0_all_posts_pdf/function_18-1.png
-, id=1690, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/function_17-1.png used on input line 4
+52.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [131 <./0_all_posts_pdf/function_16-1.png>] [132 <./0_all_posts_pdf/function_1
+7-1.png>]
+<0_all_posts_pdf/function_18-1.png, id=1677, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/function_18-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/function_18-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_18-1.png used on input line 3
-915.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [139 <./0_all_posts_pdf/function_18-1.png>]
-Chapter 11.
-<0_all_posts_pdf/box_final-1.png, id=1696, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/function_18-1.png used on input line 4
+90.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+) [133 <./0_all_posts_pdf/function_18-1.png>]
+\openout2 = `chapter10.aux'.
+
+ (./chapter10.tex
+Chapter 10.
+<0_all_posts_pdf/box_final-1.png, id=1683, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/box_final-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/box_final-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_final-1.png used on input line 393
-9.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [140
+Package pdftex.def Info: 0_all_posts_pdf/box_final-1.png used on input line 23.
 
- <./0_all_posts_pdf/box_final-1.png>] <0_all_posts_pdf/box_1-1.png, id=1702, 90
-3.375pt x 752.8125pt>
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [134
+
+
+
+ <./0_all_posts_pdf/box_final-1.png>] <0_all_posts_pdf/box_1-1.png, id=1689, 60
+2.25pt x 501.875pt>
 File: 0_all_posts_pdf/box_1-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/box_1-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_1-1.png used on input line 3957.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/box_1-1.png used on input line 41.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
 
-<0_all_posts_pdf/box_2-1.png, id=1703, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/box_2-1.png, id=1690, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/box_2-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/box_2-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_2-1.png used on input line 3975.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [141 <./0_all_posts_pdf/box_1-1.png>]
-<0_all_posts_pdf/box_3-1.png, id=1709, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/box_2-1.png used on input line 59.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [135 <./0_all_posts_pdf/box_1-1.png>]
+<0_all_posts_pdf/box_3-1.png, id=1696, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/box_3-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/box_3-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_3-1.png used on input line 3988.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [142 <./0_all_posts_pdf/box_2-1.png> <./0_all_posts_pdf/box_3-1.png>]
-<0_all_posts_pdf/box_4-1.png, id=1716, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/box_3-1.png used on input line 72.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [136 <./0_all_posts_pdf/box_2-1.png> <./0_all_posts_pdf/box_3-1.png>]
+<0_all_posts_pdf/box_4-1.png, id=1703, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/box_4-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/box_4-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_4-1.png used on input line 4011.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/box_4-1.png used on input line 95.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
 
-<0_all_posts_pdf/box_5-1.png, id=1717, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/box_5-1.png, id=1704, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/box_5-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/box_5-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_5-1.png used on input line 4025.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [143 <./0_all_posts_pdf/box_4-1.png>]
-<0_all_posts_pdf/box_6-1.png, id=1725, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/box_5-1.png used on input line 109.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [137 <./0_all_posts_pdf/box_4-1.png>]
+<0_all_posts_pdf/box_6-1.png, id=1711, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/box_6-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/box_6-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_6-1.png used on input line 4053.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [144 <./0_all_posts_pdf/box_5-1.png>]
-<0_all_posts_pdf/box_7-1.png, id=1731, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/box_6-1.png used on input line 136.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [138 <./0_all_posts_pdf/box_5-1.png>]
+<0_all_posts_pdf/box_7-1.png, id=1718, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/box_7-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/box_7-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_7-1.png used on input line 4076.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [145 <./0_all_posts_pdf/box_6-1.png>]
-<0_all_posts_pdf/box_8-1.png, id=1737, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/box_7-1.png used on input line 158.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [139 <./0_all_posts_pdf/box_6-1.png>]
+<0_all_posts_pdf/box_8-1.png, id=1724, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/box_8-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/box_8-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_8-1.png used on input line 4096.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [146 <./0_all_posts_pdf/box_7-1.png>]
-<0_all_posts_pdf/box_9-1.png, id=1744, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/box_8-1.png used on input line 177.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [140 <./0_all_posts_pdf/box_7-1.png> <./0_all_posts_pdf/box_8-1.png>]
+<0_all_posts_pdf/box_9-1.png, id=1732, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/box_9-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/box_9-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_9-1.png used on input line 4123.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
+Package pdftex.def Info: 0_all_posts_pdf/box_9-1.png used on input line 203.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [147 <./0_all_posts_pdf/box_8-1.png>]
-<0_all_posts_pdf/box_10-1.png, id=1750, 903.375pt x 752.8125pt>
+<0_all_posts_pdf/box_10-1.png, id=1733, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/box_10-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/box_10-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_10-1.png used on input line 4140.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [148 <./0_all_posts_pdf/box_9-1.png> <./0_all_posts_pdf/box_10-1.png>]
-<0_all_posts_pdf/box_11-1.png, id=1759, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/box_10-1.png used on input line 220.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [141 <./0_all_posts_pdf/box_9-1.png>]
+[142 <./0_all_posts_pdf/box_10-1.png>]
+<0_all_posts_pdf/box_11-1.png, id=1746, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/box_11-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/box_11-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_11-1.png used on input line 4195.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [149]
-[150 <./0_all_posts_pdf/box_11-1.png>]
-<0_all_posts_pdf/box_12-1.png, id=1771, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/box_11-1.png used on input line 274.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [143 <./0_all_posts_pdf/box_11-1.png>]
+<0_all_posts_pdf/box_12-1.png, id=1753, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/box_12-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/box_12-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_12-1.png used on input line 4236.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [151 <./0_all_posts_pdf/box_12-1.png>]
-<0_all_posts_pdf/box_13-1.png, id=1778, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/box_12-1.png used on input line 314.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [144 <./0_all_posts_pdf/box_12-1.png>]
+<0_all_posts_pdf/box_13-1.png, id=1760, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/box_13-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/box_13-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_13-1.png used on input line 4274.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-<0_all_posts_pdf/box_14-1.png, id=1779, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/box_13-1.png used on input line 351.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [145 <./0_all_posts_pdf/box_13-1.png>]
+<0_all_posts_pdf/box_14-1.png, id=1766, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/box_14-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/box_14-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_14-1.png used on input line 4290.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [152 <./0_all_posts_pdf/box_13-1.png>]
-<0_all_posts_pdf/box_15-1.png, id=1785, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/box_14-1.png used on input line 367.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [146 <./0_all_posts_pdf/box_14-1.png>]
+<0_all_posts_pdf/box_15-1.png, id=1772, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/box_15-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/box_15-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_15-1.png used on input line 4327.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [153 <./0_all_posts_pdf/box_14-1.png>]
-[154 <./0_all_posts_pdf/box_15-1.png>]
-<0_all_posts_pdf/box_16-1.png, id=1796, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/box_15-1.png used on input line 404.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [147 <./0_all_posts_pdf/box_15-1.png>]
+<0_all_posts_pdf/box_16-1.png, id=1778, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/box_16-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/box_16-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_16-1.png used on input line 4370.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [155 <./0_all_posts_pdf/box_16-1.png>]
-<0_all_posts_pdf/box_17-1.png, id=1804, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/box_16-1.png used on input line 448.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [148 <./0_all_posts_pdf/box_16-1.png>]
+<0_all_posts_pdf/box_17-1.png, id=1786, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/box_17-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/box_17-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_17-1.png used on input line 4402.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
-
-<0_all_posts_pdf/box_18-1.png, id=1805, 903.375pt x 752.8125pt>
+Package pdftex.def Info: 0_all_posts_pdf/box_17-1.png used on input line 481.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ [149 <./0_all_posts_pdf/box_17-1.png>]
+<0_all_posts_pdf/box_18-1.png, id=1792, 602.25pt x 501.875pt>
 File: 0_all_posts_pdf/box_18-1.png Graphic file (type png)
 
 <use 0_all_posts_pdf/box_18-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_18-1.png used on input line 4433.
-(pdftex.def)             Requested size: 259.6186pt x 216.34575pt.
- [156 <./0_all_posts_pdf/box_17-1.png>]
-[157 <./0_all_posts_pdf/box_18-1.png>]
-\GPT@outputbox=\box79
- [158]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4452.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 4452.
- (./book.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4452.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4452.
+Package pdftex.def Info: 0_all_posts_pdf/box_18-1.png used on input line 513.
+(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+) [150 <./0_all_posts_pdf/box_18-1.png>]
+\GPT@outputbox=\box45
 
+[151
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 224.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 224.
+ (./book.aux (./chapter1.aux) (./chapter2.aux) (./chapter3.aux)
+(./chapter4.aux) (./chapter5.aux) (./chapter6.aux) (./chapter7.aux)
+(./chapter8.aux) (./chapter9.aux) (./chapter10.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 224.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 224.
 Package rerunfilecheck Info: File `book.out' has not changed.
-(rerunfilecheck)             Checksum: E82BC9A0615F316C991B232FE96EB4DD;9769.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4452.
+(rerunfilecheck)             Checksum: 879EF74FBCBD1030E4AF4961C2D4816E;9605.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 224.
  ) 
 Here is how much of TeX's memory you used:
- 22793 strings out of 494501
- 440905 string characters out of 6167030
- 503112 words of memory out of 5000000
- 25109 multiletter control sequences out of 15000+600000
- 29717 words of font info for 144 fonts, out of 8000000 for 9000
+ 20873 strings out of 494501
+ 397460 string characters out of 6167030
+ 458634 words of memory out of 5000000
+ 23154 multiletter control sequences out of 15000+600000
+ 30451 words of font info for 146 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 55i,12n,73p,944b,441s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,12n,54p,403b,397s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015basic/texmf-dist/fonts/enc/dvips/base/8r.enc}</Users/
 pacha/Library/texmf/fonts/type1/bh/lucida/lbd.pfb></Users/pacha/Library/texmf/f
 onts/type1/bh/lucida/lbi.pfb></Users/pacha/Library/texmf/fonts/type1/bh/lucida/
@@ -2787,10 +2561,10 @@ lbr.pfb></Users/pacha/Library/texmf/fonts/type1/bh/lucida/lsd.pfb></Users/pacha
 /Library/texmf/fonts/type1/bh/lucida/lsr.pfb></Users/pacha/Library/texmf/fonts/
 type1/bh/lucida/lstb.pfb></Users/pacha/Library/texmf/fonts/type1/bh/lucida/lsto
 .pfb></Users/pacha/Library/texmf/fonts/type1/bh/lucida/lstr.pfb>
-Output written on book.pdf (160 pages, 7706437 bytes).
+Output written on book.pdf (158 pages, 4735670 bytes).
 PDF statistics:
- 1920 PDF objects out of 2073 (max. 8388607)
- 1393 compressed objects within 14 object streams
- 302 named destinations out of 1000 (max. 500000)
- 23462 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 1901 PDF objects out of 2073 (max. 8388607)
+ 1374 compressed objects within 14 object streams
+ 292 named destinations out of 1000 (max. 500000)
+ 23963 words of extra memory for PDF output out of 24883 (max. 10000000)
 
