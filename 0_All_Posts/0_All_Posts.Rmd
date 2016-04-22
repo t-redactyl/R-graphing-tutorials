@@ -10,7 +10,7 @@ output:
 ---
 
 ```{r setup, cache = FALSE, echo = FALSE, message = FALSE, warning = FALSE, tidy = FALSE}
-knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, fig.width=6, fig.height=5, tidy = F, cache.path = '.cache/', fig.path = '0_all_posts/')
+knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 96, fig.width=7.5, fig.height=5, tidy = F, cache.path = '.cache/', fig.path = '0_all_posts/')
 ```
 
 I recently teamed up with [Mauricio Vargas Sepúlveda](http://pachamaltese.github.io/) to create some graphing tutorials in R. In the coming weeks, we will be publishing a series of tutorials on how to use the `ggplot2` package to create beautiful and informative data visualisations. Each tutorial will explain how to create a different type of plot, and will take you step-by-step from a basic plot to a highly customised graph.
@@ -55,4 +55,8 @@ We will demonstrate some of the many options the `ggplot2` package has for creat
 
 # Boxplots
 ```{r child = '10_Boxplots.Rmd'}
+```
+
+# Linear regression
+```{r child = '11_Linear_Regression_Plot.Rmd'}
 ```

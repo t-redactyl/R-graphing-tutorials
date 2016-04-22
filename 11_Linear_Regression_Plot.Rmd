@@ -16,24 +16,6 @@ This is the twelfth tutorial in a series on using `ggplot2` I am creating with [
 
 This post will be much more than just regression plot. Here we are getting, cleaning and processing financial data from [Quandl](https://www.quandl.com/). The goal is to estimate the CAPM model $R_i = R_f + \beta_i [R_m - R_f] + e_i$ where $R_i$ is the return of an asset, $R_f$ is the risk-free return (e.g. US Treasury Bonds), $R_m$ is the return of the market portfolio (e.g. NYSE) and $\beta_i$ is  a measure of risk relative to the market (e.g. $\beta_i = 1$ means that asset is exactly as risky as the market portfolio). More on the CAPM model can be read [here](http://people.stern.nyu.edu/ashapiro/courses/B01.231103/FFL09.pdf) but we will focus on plots.
 
-The first thing to do is download and load in the data of the monthly price of Hang Seng Index (恒生指數) and Cheung Kong Holdings Hong Kong (长江实业集团香港) from 2015-03-01 to 2016-04-01. In order to work with Quandl without restrictions it is needed to create a free account and add `authcode = ...` to `Quandl` command.
-
-```{r lr_load_in_data, cache=TRUE}
-library(ggplot2)
-library(gridExtra)
-library(Quandl)
-library(reshape)
-library(ggfortify)
-
-hsi.df <- Quandl("YAHOO/INDEX_HSI", start_date="2015-03-01", end_date="2016-04-01",
-                 collapse="monthly", type = "raw", authcode = "XXX")
-
-ckh.df <- Quandl("YAHOO/HK_0001", start_date="2015-03-01", 
-                 end_date="2016-04-01", collapse="monthly", type = "raw", authcode="XXX")
-
-saveRDS(hsi.df, "hsi.rds"); saveRDS(ckh.df,"ckh.rds")
-```
-
 In this tutorial, we will work towards creating the trend line and diagnostics plots below. We will take you from a basic density plot and explain all the customisations we add to the code step-by-step.
 
 ```{r lr_final, echo = FALSE, cache=TRUE}
@@ -102,7 +84,7 @@ p11 <- ggplot(hsi.ckh.returns, aes(x=hsi.Risk.premium, y=ckh.Return)) + geom_poi
 p11
 
 library(ggfortify)
-autoplot(fit, label.size = 3) + theme(axis.line.x = element_line(size=.5, colour = "black"),
+p12 <- autoplot(fit, label.size = 3) + theme(axis.line.x = element_line(size=.5, colour = "black"),
             axis.line.y = element_line(size=.5, colour = "black"),
             axis.text.x=element_text(colour="black", size = 9), 
             axis.text.y=element_text(colour="black", size = 9), 
@@ -112,6 +94,23 @@ autoplot(fit, label.size = 3) + theme(axis.line.x = element_line(size=.5, colour
             panel.border = element_blank(), panel.background = element_blank(),
             plot.title = element_text(size = 14, family = "Tahoma", face = "bold"),
             text=element_text(family="Tahoma"))
+p12
+```
+
+The first thing to do is download and load in the data of the monthly price of Hang Seng Index and Cheung Kong Holdings Hong Kong from 2015-03-01 to 2016-04-01.
+
+```{r lr_load_in_data, cache=TRUE, messages=FALSE, eval=FALSE}
+library(ggplot2)
+library(Quandl)
+Quandl.api_key("XXX")
+
+hsi.df <- Quandl("YAHOO/INDEX_HSI", start_date="2015-03-01", end_date="2016-04-01",
+                 collapse="monthly", type = "raw")
+
+ckh.df <- Quandl("YAHOO/HK_0001", start_date="2015-03-01", 
+                 end_date="2016-04-01", collapse="monthly", type = "raw")
+
+saveRDS(hsi.df, "hsi.rds"); saveRDS(ckh.df,"ckh.rds")
 ```
 
 Before calculating return as $R_i = \displaystyle \frac{P_t - P_{t-1}}{P_t}$ it is needed to order HSI and CKH data by dates and in decreasing order.

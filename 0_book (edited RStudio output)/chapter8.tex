@@ -4,7 +4,7 @@ In this part, we will work towards creating the density plot below. We
 will take you from a basic density plot and explain all the
 customisations we add to the code step-by-step.
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/density_final-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/density_final-1} \end{center}
 
 The first thing to do is load in the data, as below:
 
@@ -32,7 +32,7 @@ We then instruct ggplot to render this as a density plot by adding the
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/density_1-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/density_1-1} \end{center}
 
 \section{Customising axis labels}\label{customising-axis-labels-1}
 
@@ -50,7 +50,7 @@ the desired name to the \texttt{name} argument as a string.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/density_2-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/density_2-1} \end{center}
 
 ggplot also allows for the use of multiline names (in both axes and
 titles). Here, we've changed the x-axis label so that it goes over two
@@ -63,7 +63,7 @@ lines using the \texttt{\textbackslash{}n} character to break the line.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/density_3-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/density_3-1} \end{center}
 
 \section{Changing axis ticks}\label{changing-axis-ticks-1}
 
@@ -86,7 +86,7 @@ the argument \texttt{limits\ =\ c(0,\ 200)} to
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/density_4-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/density_4-1} \end{center}
 
 \section{Adding a title}\label{adding-a-title-1}
 
@@ -100,7 +100,7 @@ name of the graph as a string argument.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/density_5-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/density_5-1} \end{center}
 
 \section{Changing the colour of the
 curves}\label{changing-the-colour-of-the-curves}
@@ -128,7 +128,7 @@ of valid colours is
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/density_6-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/density_6-1} \end{center}
 
 If you want to go beyond the options in the list above, you can also
 specify exact HEX colours by including them as a string preceded by a
@@ -151,7 +151,7 @@ the fill and lines using their HEX codes.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/density_7-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/density_7-1} \end{center}
 
 You can also specify the degree of transparency in the density fill area
 using the argument \texttt{alpha} in \texttt{geom\_density}. This ranges
@@ -171,7 +171,7 @@ from 0 to 1.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/density_8-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/density_8-1} \end{center}
 
 \section{Using the white theme}\label{using-the-white-theme-7}
 
@@ -188,7 +188,7 @@ the legend.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/density_9-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/density_9-1} \end{center}
 
 \section{Creating an XKCD style
 chart}\label{creating-an-xkcd-style-chart-7}
@@ -241,7 +241,7 @@ You can then create your graph:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/density_10-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/density_10-1} \end{center}
 
 \section{\texorpdfstring{Using `The Economist'
 theme}{Using The Economist theme}}\label{using-the-economist-theme-7}
@@ -281,7 +281,7 @@ graphs in the Economist magazine.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/density_11-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/density_11-1} \end{center}
 
 \section{Creating your own theme}\label{creating-your-own-theme-7}
 
@@ -317,7 +317,7 @@ axes, background and font.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/density_12-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/density_12-1} \end{center}
 
 \section{Adding lines}\label{adding-lines-1}
 
@@ -339,7 +339,7 @@ way, horizontal lines can be added using the \texttt{geom\_hline}.)
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/density_13-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/density_13-1} \end{center}
 
 \section{Multiple densities}\label{multiple-densities}
 
@@ -383,7 +383,7 @@ little more neatly in the panel format.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/density_14-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/density_14-1} \end{center}
 
 An alternative to a panel plot is the \emph{volcano plot}. This plot
 swaps the axes (so the variable of interest is on the y-axis and the
@@ -418,7 +418,7 @@ this plot, we replace \texttt{geom\_density} with
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/density_15-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/density_15-1} \end{center}
 
 In order to plot the three months in the same plot, we add several
 things. Firstly, in the \texttt{ggplot} function, we add a
@@ -451,7 +451,7 @@ blog post describes the available packages.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/density_16-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/density_16-1} \end{center}
 
 These densities are a little hard to see. One way we can make it easier
 to see them is to stack the densities on top of each other. To do so, we
@@ -475,7 +475,7 @@ in \texttt{geom\_density}.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/density_17-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/density_17-1} \end{center}
 
 Another way to make it a little easier to see the densities by dropping
 out the fill. To do this need a few changes. We need to swap the option
@@ -503,7 +503,7 @@ it easier to see the lines. Finally, we change the
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/density_18-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/density_18-1} \end{center}
 
 \section{Formatting the legend}\label{formatting-the-legend-1}
 
@@ -532,4 +532,4 @@ the plot.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/density_19-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/density_19-1} \end{center}

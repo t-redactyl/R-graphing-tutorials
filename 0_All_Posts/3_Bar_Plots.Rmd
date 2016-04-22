@@ -10,7 +10,7 @@ library(scales)
 charts.data <- read.csv("copper-data-for-tutorial.csv")
 charts.data <- as.data.frame(charts.data)
 charts.data$product <- factor(charts.data$product, levels = c("copper","others"), 
-                              labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
+                              labels = c("Copper ","Pulp wood, Fruit, Salmon & Others"))
 charts.data <- ddply(charts.data, .(year), transform, pos = cumsum(export) - (0.5 * export))
 
 fill <- c("#40b8d0", "#b2d183")
@@ -98,7 +98,7 @@ To change the variables' displayed name, we need to re-factor our data labels in
 
 ```{r bar_5, cache=TRUE, eval=TRUE}
 charts.data$product <- factor(charts.data$product, levels = c("copper","others"), 
-                              labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
+                              labels = c("Copper ","Pulp wood, Fruit, Salmon & Others"))
 
 p3 <- ggplot() + geom_bar(aes(y = export, x = year, fill = product), data = charts.data, 
                           stat="identity") + 

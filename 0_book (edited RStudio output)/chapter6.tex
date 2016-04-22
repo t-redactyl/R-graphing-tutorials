@@ -29,7 +29,7 @@ In this part, we will work towards creating the weighted scatterplot
 below. We will take you from a basic scatterplot and explain all the
 customisations we add to the code step-by-step.
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/wscatter_finalgraph-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/wscatter_finalgraph-1} \end{center}
 
 \section{Basic weighted
 scatterplot}\label{basic-weighted-scatterplot}
@@ -49,7 +49,7 @@ We then instruct ggplot to render this as a scatterplot by adding the
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/wscatter_1-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/wscatter_1-1} \end{center}
 
 In order to turn this into a weighted scatterplot, we simply add the
 \texttt{size} argument to \texttt{ggplot(aes())}. In this case, we want
@@ -63,7 +63,7 @@ to weight the points by the \texttt{Wind} variable.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/wscatter_2-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/wscatter_2-1} \end{center}
 
 You can see we already have an interesting looking pattern, where days
 with higher wind speed tend to have lower ozone (or in other words,
@@ -88,7 +88,7 @@ allows different colours for the outline and fill.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/wscatter_3-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/wscatter_3-1} \end{center}
 
 \section{Adjusting the axis
 scales}\label{adjusting-the-axis-scales-1}
@@ -106,7 +106,7 @@ x-axis to every 5 days, rather than 10, and change the range from 1 to
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/wscatter_4-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/wscatter_4-1} \end{center}
 
 \section{Adjusting axis labels \& adding
 title}\label{adjusting-axis-labels-adding-title-4}
@@ -123,7 +123,7 @@ name of the graph as a string argument. To change the axis names we add
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/wscatter_5-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/wscatter_5-1} \end{center}
 
 \section{Adjusting the colour
 palette}\label{adjusting-the-colour-palette-1}
@@ -147,7 +147,7 @@ Let's try making the outline \texttt{mediumvioletred} and the fill
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/wscatter_6-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/wscatter_6-1} \end{center}
 
 You can change the colours using specific HEX codes instead. Here we
 have made the outline \#000000 (black) and the fill ``\#40b8d0 (vivid
@@ -164,7 +164,7 @@ cyan).
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/wscatter_7-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/wscatter_7-1} \end{center}
 
 You can also change the colour of the data points according to the
 levels of another variable. This can be done either as a continuous
@@ -182,7 +182,7 @@ by the values of temperature:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/wscatter_8-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/wscatter_8-1} \end{center}
 
 We can change the gradient's colours by adding the
 \texttt{scale\_fill\_continuous} option. The \texttt{low} and
@@ -196,7 +196,7 @@ transition between.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/wscatter_9-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/wscatter_9-1} \end{center}
 
 We can see that higher temperatures seem to have higher ozone levels.
 
@@ -214,7 +214,7 @@ Let's now change the colours of the data points by a factor variable,
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/wscatter_10-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/wscatter_10-1} \end{center}
 
 Again, we can change the colours of these data points, this time using
 \texttt{scale\_fill\_manual}.
@@ -228,7 +228,7 @@ Again, we can change the colours of these data points, this time using
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/wscatter_11-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/wscatter_11-1} \end{center}
 
 \section{Adjusting the size of the data
 points}\label{adjusting-the-size-of-the-data-points}
@@ -246,7 +246,7 @@ of 0 mph would have a value of 0), we need to use the
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/wscatter_12-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/wscatter_12-1} \end{center}
 
 For our graph, this makes the pattern for \texttt{Wind} a little hard to
 see. Another way to adjust the size of the data points is to use
@@ -265,7 +265,7 @@ see. Another way to adjust the size of the data points is to use
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/wscatter_13-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/wscatter_13-1} \end{center}
 
 \section{Adjusting legend
 position}\label{adjusting-legend-position-4}
@@ -283,7 +283,7 @@ argument.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/wscatter_14-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/wscatter_14-1} \end{center}
 
 \section{Changing the legend
 titles}\label{changing-the-legend-titles}
@@ -302,7 +302,7 @@ so we pass these to \texttt{labs} with our new titles.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/wscatter_15-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/wscatter_15-1} \end{center}
 
 \section{Creating horizontal
 legends}\label{creating-horizontal-legends}
@@ -324,7 +324,7 @@ to get this argument to work.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/wscatter_16-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/wscatter_16-1} \end{center}
 
 \section{Using the white theme}\label{using-the-white-theme-5}
 
@@ -352,7 +352,7 @@ we've used so far to change the legend.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/wscatter_17-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/wscatter_17-1} \end{center}
 
 \section{Creating an XKCD style
 chart}\label{creating-an-xkcd-style-chart-5}
@@ -410,7 +410,7 @@ You can then create your graph:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/wscatter_18-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/wscatter_18-1} \end{center}
 
 \section{\texorpdfstring{Using `The Economist'
 theme}{Using The Economist theme}}\label{using-the-economist-theme-5}
@@ -444,7 +444,7 @@ graphs in the Economist magazine.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/wscatter_19-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/wscatter_19-1} \end{center}
 
 \section{Creating your own theme}\label{creating-your-own-theme-5}
 
@@ -478,4 +478,4 @@ top of page.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/wscatter_20-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/wscatter_20-1} \end{center}

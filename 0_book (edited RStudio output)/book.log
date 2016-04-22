@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.18)  20 APR 2016 04:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.18)  22 APR 2016 18:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -879,33 +879,33 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 Writing index file book.idx
 (./book.aux (./chapter1.aux) (./chapter2.aux) (./chapter3.aux) (./chapter4.aux)
 (./chapter5.aux) (./chapter6.aux) (./chapter7.aux) (./chapter8.aux)
-(./chapter9.aux) (./chapter10.aux))
+(./chapter9.aux) (./chapter10.aux) (./chapter11.aux))
 \openout1 = `book.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 125.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 125.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 128.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 128.
 
 
 (/usr/local/texlive/2015basic/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for LMR/hlcm/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for LMR/hlcm/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
 
 (/usr/local/texlive/2015basic/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -935,7 +935,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box44
-Package hyperref Info: Link coloring ON on input line 125.
+Package hyperref Info: Link coloring ON on input line 128.
  (/usr/local/texlive/2015basic/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -945,9 +945,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count138
 )
-LaTeX Info: Redefining \ref on input line 125.
-LaTeX Info: Redefining \pageref on input line 125.
-LaTeX Info: Redefining \nameref on input line 125.
+LaTeX Info: Redefining \ref on input line 128.
+LaTeX Info: Redefining \pageref on input line 128.
+LaTeX Info: Redefining \nameref on input line 128.
  (./book.out) (./book.out)
 \@outlinefile=\write6
 \openout6 = `book.out'.
@@ -987,7 +987,7 @@ LaTeX Info: Redefining \nameref on input line 125.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 125.
+LaTeX Info: Redefining \microtypecontext on input line 128.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1001,96 +1001,96 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `hlh' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Info: Redefining \longleftarrow on input line 125.
-LaTeX Info: Redefining \longrightarrow on input line 125.
-LaTeX Info: Redefining \Longleftarrow on input line 125.
-LaTeX Info: Redefining \Longrightarrow on input line 125.
-<portada.pdf, id=565, 614.295pt x 794.97pt>
+LaTeX Info: Redefining \longleftarrow on input line 128.
+LaTeX Info: Redefining \longrightarrow on input line 128.
+LaTeX Info: Redefining \Longleftarrow on input line 128.
+LaTeX Info: Redefining \Longrightarrow on input line 128.
+<portada.pdf, id=638, 614.295pt x 794.97pt>
 File: portada.pdf Graphic file (type pdf)
  <use portada.pdf>
-Package pdftex.def Info: portada.pdf used on input line 131.
+Package pdftex.def Info: portada.pdf used on input line 134.
 (pdftex.def)             Requested size: 614.31223pt x 794.99231pt.
  [1
 
  <./portada.pdf>]
-LaTeX Font Info:    Try loading font information for T1+hls on input line 135.
+LaTeX Font Info:    Try loading font information for T1+hls on input line 138.
  (/Users/pacha/Library/texmf/tex/latex/lucida/t1hls.fd
 File: t1hls.fd 2005/09/15 font definitions for T1/hls (WaS/PCTeX/TUG)
 )
 LaTeX Font Info:    Font shape `T1/hls/m/n' will be
-(Font)              scaled to size 9.74548pt on input line 135.
+(Font)              scaled to size 9.74548pt on input line 138.
 Package microtype Info: Loading generic settings for font family
 (microtype)             `hls' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/hls/m/n' will be
-(Font)              scaled to size 17.62912pt on input line 139.
+(Font)              scaled to size 17.62912pt on input line 142.
 LaTeX Font Info:    Font shape `T1/hls/b/n' will be
-(Font)              scaled to size 17.62912pt on input line 139.
+(Font)              scaled to size 17.62912pt on input line 142.
 LaTeX Font Info:    Font shape `T1/hls/m/n' will be
-(Font)              scaled to size 10.56006pt on input line 144.
+(Font)              scaled to size 10.56006pt on input line 147.
 LaTeX Font Info:    Font shape `T1/hlh/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 147.
+(Font)              scaled to size 7.35999pt on input line 150.
 LaTeX Font Info:    Font shape `T1/hlh/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 147.
+(Font)              scaled to size 5.76004pt on input line 150.
 LaTeX Font Info:    Font shape `OML/hlcm/m/it' will be
-(Font)              scaled to size 9.74548pt on input line 147.
+(Font)              scaled to size 9.74548pt on input line 150.
 LaTeX Font Info:    Font shape `OML/hlcm/m/it' will be
-(Font)              scaled to size 7.35999pt on input line 147.
+(Font)              scaled to size 7.35999pt on input line 150.
 LaTeX Font Info:    Font shape `OML/hlcm/m/it' will be
-(Font)              scaled to size 5.76004pt on input line 147.
+(Font)              scaled to size 5.76004pt on input line 150.
 LaTeX Font Info:    Font shape `OMS/hlcy/m/n' will be
-(Font)              scaled to size 9.74548pt on input line 147.
+(Font)              scaled to size 9.74548pt on input line 150.
 LaTeX Font Info:    Font shape `OMS/hlcy/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 147.
+(Font)              scaled to size 7.35999pt on input line 150.
 LaTeX Font Info:    Font shape `OMS/hlcy/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 147.
+(Font)              scaled to size 5.76004pt on input line 150.
 LaTeX Font Info:    Font shape `OMX/hlcv/m/n' will be
-(Font)              scaled to size 9.74548pt on input line 147.
+(Font)              scaled to size 9.74548pt on input line 150.
 LaTeX Font Info:    Font shape `OMX/hlcv/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 147.
+(Font)              scaled to size 7.35999pt on input line 150.
 LaTeX Font Info:    Font shape `OMX/hlcv/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 147.
+(Font)              scaled to size 5.76004pt on input line 150.
 LaTeX Font Info:    Font shape `OML/hlcm/m/n' will be
-(Font)              scaled to size 9.74548pt on input line 147.
+(Font)              scaled to size 9.74548pt on input line 150.
 LaTeX Font Info:    Font shape `OML/hlcm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 147.
+(Font)              scaled to size 7.35999pt on input line 150.
 LaTeX Font Info:    Font shape `OML/hlcm/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 147.
+(Font)              scaled to size 5.76004pt on input line 150.
 LaTeX Font Info:    Font shape `LMR/hlcm/m/n' will be
-(Font)              scaled to size 9.74548pt on input line 147.
+(Font)              scaled to size 9.74548pt on input line 150.
 LaTeX Font Info:    Font shape `LMR/hlcm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 147.
+(Font)              scaled to size 7.35999pt on input line 150.
 LaTeX Font Info:    Font shape `LMR/hlcm/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 147.
+(Font)              scaled to size 5.76004pt on input line 150.
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.150 \end{titlepage}
+l.153 \end{titlepage}
                       [1
 
 {/Users/pacha/Library/texlive/2015basic/texmf-var/fonts/map/pdftex/updmap/pdfte
 x.map}]
 LaTeX Font Info:    Font shape `T1/hlh/b/n' will be
-(Font)              scaled to size 9.74548pt on input line 156.
+(Font)              scaled to size 9.74548pt on input line 159.
 LaTeX Font Info:    Font shape `T1/hlh/b/n' will be
-(Font)              scaled to size 10.56006pt on input line 156.
+(Font)              scaled to size 10.56006pt on input line 159.
 LaTeX Font Info:    Font shape `T1/hlh/b/n' will be
-(Font)              scaled to size 17.62912pt on input line 156.
- <leanpub.png, id=622, 180.675pt x 131.49126pt>
+(Font)              scaled to size 17.62912pt on input line 159.
+ <leanpub.png, id=694, 180.675pt x 131.49126pt>
 File: leanpub.png Graphic file (type png)
 
 <use leanpub.png>
-Package pdftex.def Info: leanpub.png used on input line 164.
+Package pdftex.def Info: leanpub.png used on input line 167.
 (pdftex.def)             Requested size: 90.33727pt x 65.74545pt.
-LaTeX Font Info:    Try loading font information for TS1+hlh on input line 168.
+LaTeX Font Info:    Try loading font information for TS1+hlh on input line 171.
 
  (/Users/pacha/Library/texmf/tex/latex/lucida/ts1hlh.fd
 File: ts1hlh.fd 2005/09/15 font definitions for TS1/hlh (WaS/PCTeX/TUG)
 )
 LaTeX Font Info:    Font shape `TS1/hlh/m/n' will be
-(Font)              scaled to size 9.74548pt on input line 168.
+(Font)              scaled to size 9.74548pt on input line 171.
 Package microtype Info: Loading generic settings for font family
 (microtype)             `hlh' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1099,14 +1099,14 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.170 \newpage
+l.173 \newpage
                [2
 
  <./leanpub.png>]
 LaTeX Font Info:    Font shape `T1/hlh/m/n' will be
-(Font)              scaled to size 20.89911pt on input line 171.
+(Font)              scaled to size 20.89911pt on input line 174.
 LaTeX Font Info:    Font shape `T1/hlh/b/n' will be
-(Font)              scaled to size 20.89911pt on input line 171.
+(Font)              scaled to size 20.89911pt on input line 174.
  (./book.tocpdfTeX warning (ext4): destination with the same identifier (name{p
 age.}) has been already used, duplicate ignored
 <to be read again> 
@@ -1117,13 +1117,13 @@ stination with the same identifier (name{page.}) has been already used, duplica
 te ignored
 <to be read again> 
                    \relax 
-l.79 ... {7.4}Adjusting binwidth}{79}{section.7.4}
+l.79 ... {7.4}Adjusting binwidth}{78}{section.7.4}
                                                    [4]pdfTeX warning (ext4): de
 stination with the same identifier (name{page.}) has been already used, duplica
 te ignored
 <to be read again> 
                    \relax 
-l.123 ...eating your own theme}{130}{section.9.14}
+l.123 ...g an XKCD style chart}{122}{section.9.12}
                                                    [5])
 \tf@toc=\write7
 \openout7 = `book.toc'.
@@ -1132,7 +1132,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.172 \newpage
+l.175 \newpage
                [6] [1
 
 ]
@@ -1142,13 +1142,12 @@ l.172 \newpage
 Chapter 1.
 LaTeX Font Info:    Font shape `T1/hlh/b/n' will be
 (Font)              scaled to size 12.52792pt on input line 1.
-<0_all_posts_pdf/line_final-1.png, id=790, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/line_final-1.png Graphic file (type png)
+<figures/line_final-1.pdf, id=881, 578.16pt x 433.62pt>
+File: figures/line_final-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/line_final-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/line_final-1.png used on input line 7.
-
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<use figures/line_final-1.pdf>
+Package pdftex.def Info: figures/line_final-1.pdf used on input line 7.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 LaTeX Font Info:    Try loading font information for T1+hlst on input line 15.
 
 (/Users/pacha/Library/texmf/tex/latex/lucida/t1hlst.fd
@@ -1167,727 +1166,662 @@ LaTeX Font Info:    Font shape `T1/hlh/m/n' will be
  [2
 
 
- <./0_all_posts_pdf/line_final-1.png>] <0_all_posts_pdf/line_1-1.png, id=799, 6
-02.25pt x 501.875pt>
-File: 0_all_posts_pdf/line_1-1.png Graphic file (type png)
+ <./figures/line_final-1.pdf>] <figures/line_1-1.pdf, id=971, 578.16pt x 433.62
+pt>
+File: figures/line_1-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/line_1-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/line_1-1.png used on input line 39.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<use figures/line_1-1.pdf>
+Package pdftex.def Info: figures/line_1-1.pdf used on input line 39.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ <figures/line_2-1.pdf, id=972, 578.16pt x 433.62pt>
+File: figures/line_2-1.pdf Graphic file (type pdf)
 
-<0_all_posts_pdf/line_2-1.png, id=800, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/line_2-1.png Graphic file (type png)
+<use figures/line_2-1.pdf>
+Package pdftex.def Info: figures/line_2-1.pdf used on input line 54.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [3 <./figures/line_1-1.pdf>]
+<figures/line_3-1.pdf, id=1045, 578.16pt x 433.62pt>
+File: figures/line_3-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/line_2-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/line_2-1.png used on input line 54.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [3 <./0_all_posts_pdf/line_1-1.png>]
-<0_all_posts_pdf/line_3-1.png, id=806, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/line_3-1.png Graphic file (type png)
+<use figures/line_3-1.pdf>
+Package pdftex.def Info: figures/line_3-1.pdf used on input line 79.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [4 <./figures/line_2-1.pdf>]
+<figures/line_4-1.pdf, id=1118, 578.16pt x 433.62pt>
+File: figures/line_4-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/line_3-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/line_3-1.png used on input line 79.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [4 <./0_all_posts_pdf/line_2-1.png>]
-<0_all_posts_pdf/line_4-1.png, id=812, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/line_4-1.png Graphic file (type png)
+<use figures/line_4-1.pdf>
+Package pdftex.def Info: figures/line_4-1.pdf used on input line 93.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [5 <./figures/line_3-1.pdf> <./figures/line_4-1.pdf>] <figures/line_5-1.pdf, i
+d=1266, 578.16pt x 433.62pt>
+File: figures/line_5-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/line_4-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/line_4-1.png used on input line 93.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [5 <./0_all_posts_pdf/line_3-1.png> <./0_all_posts_pdf/line_4-1.png>]
-<0_all_posts_pdf/line_5-1.png, id=819, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/line_5-1.png Graphic file (type png)
+<use figures/line_5-1.pdf>
+Package pdftex.def Info: figures/line_5-1.pdf used on input line 110.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/line_5-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/line_5-1.png used on input line 110.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<figures/line_6-1.pdf, id=1267, 578.16pt x 433.62pt>
+File: figures/line_6-1.pdf Graphic file (type pdf)
 
-<0_all_posts_pdf/line_6-1.png, id=820, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/line_6-1.png Graphic file (type png)
+<use figures/line_6-1.pdf>
+Package pdftex.def Info: figures/line_6-1.pdf used on input line 125.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [6 <./figures/line_5-1.pdf>]
+<figures/line_7-1.pdf, id=1356, 578.16pt x 433.62pt>
+File: figures/line_7-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/line_6-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/line_6-1.png used on input line 125.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [6 <./0_all_posts_pdf/line_5-1.png>]
-<0_all_posts_pdf/line_7-1.png, id=827, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/line_7-1.png Graphic file (type png)
+<use figures/line_7-1.pdf>
+Package pdftex.def Info: figures/line_7-1.pdf used on input line 150.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [7 <./figures/line_6-1.pdf>] [8 <./figures/line_7-1.pdf>] <figures/line_8-1.pd
+f, id=1535, 578.16pt x 433.62pt>
+File: figures/line_8-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/line_7-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/line_7-1.png used on input line 150.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [7 <./0_all_posts_pdf/line_6-1.png>]
-[8 <./0_all_posts_pdf/line_7-1.png>]
-<0_all_posts_pdf/line_8-1.png, id=841, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/line_8-1.png Graphic file (type png)
+<use figures/line_8-1.pdf>
+Package pdftex.def Info: figures/line_8-1.pdf used on input line 208.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [9 <./figures/line_8-1.pdf>]
+<figures/line_9-1.pdf, id=1624, 578.16pt x 433.62pt>
+File: figures/line_9-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/line_8-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/line_8-1.png used on input line 208.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [9 <./0_all_posts_pdf/line_8-1.png>]
-<0_all_posts_pdf/line_9-1.png, id=849, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/line_9-1.png Graphic file (type png)
+<use figures/line_9-1.pdf>
+Package pdftex.def Info: figures/line_9-1.pdf used on input line 243.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [10 <./figures/line_9-1.pdf>]
+<figures/line_11-1.pdf, id=1713, 578.16pt x 433.62pt>
+File: figures/line_11-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/line_9-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/line_9-1.png used on input line 243.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [10 <./0_all_posts_pdf/line_9-1.png>]
-<0_all_posts_pdf/line_11-1.png, id=855, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/line_11-1.png Graphic file (type png)
-
-<use 0_all_posts_pdf/line_11-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/line_11-1.png used on input line 279.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
-) [11 <./0_all_posts_pdf/line_11-1.png>]
+<use figures/line_11-1.pdf>
+Package pdftex.def Info: figures/line_11-1.pdf used on input line 279.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+) [11 <./figures/line_11-1.pdf>]
 \openout2 = `chapter2.aux'.
 
-
-(./chapter2.tex
+ (./chapter2.tex
 Chapter 2.
-<0_all_posts_pdf/area_final-1.png, id=861, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/area_final-1.png Graphic file (type png)
+<figures/area_final-1.pdf, id=1801, 578.16pt x 433.62pt>
+File: figures/area_final-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/area_final-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/area_final-1.png used on input line 7.
-
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<use figures/area_final-1.pdf>
+Package pdftex.def Info: figures/area_final-1.pdf used on input line 7.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
  [12
 
 
 
- <./0_all_posts_pdf/area_final-1.png>] <0_all_posts_pdf/area_1-1.png, id=869, 6
-02.25pt x 501.875pt>
-File: 0_all_posts_pdf/area_1-1.png Graphic file (type png)
+ <./figures/area_final-1.pdf>]
+<figures/area_1-1.pdf, id=1895, 578.16pt x 433.62pt>
+File: figures/area_1-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/area_1-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/area_1-1.png used on input line 41.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [13 <./0_all_posts_pdf/area_1-1.png>]
-<0_all_posts_pdf/area_2-1.png, id=875, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/area_2-1.png Graphic file (type png)
+<use figures/area_1-1.pdf>
+Package pdftex.def Info: figures/area_1-1.pdf used on input line 41.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [13 <./figures/area_1-1.pdf>]
+<figures/area_2-1.pdf, id=1971, 578.16pt x 433.62pt>
+File: figures/area_2-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/area_2-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/area_2-1.png used on input line 63.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<use figures/area_2-1.pdf>
+Package pdftex.def Info: figures/area_2-1.pdf used on input line 63.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<0_all_posts_pdf/area_3-1.png, id=876, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/area_3-1.png Graphic file (type png)
+<figures/area_3-1.pdf, id=1972, 578.16pt x 433.62pt>
+File: figures/area_3-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/area_3-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/area_3-1.png used on input line 87.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [14 <./0_all_posts_pdf/area_2-1.png>]
-<0_all_posts_pdf/area_4-1.png, id=882, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/area_4-1.png Graphic file (type png)
+<use figures/area_3-1.pdf>
+Package pdftex.def Info: figures/area_3-1.pdf used on input line 87.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [14 <./figures/area_2-1.pdf>]
+<figures/area_4-1.pdf, id=2045, 578.16pt x 433.62pt>
+File: figures/area_4-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/area_4-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/area_4-1.png used on input line 101.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [15 <./0_all_posts_pdf/area_3-1.png> <./0_all_posts_pdf/area_4-1.png>]
-<0_all_posts_pdf/area_5-1.png, id=889, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/area_5-1.png Graphic file (type png)
+<use figures/area_4-1.pdf>
+Package pdftex.def Info: figures/area_4-1.pdf used on input line 101.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [15 <./figures/area_3-1.pdf> <./figures/area_4-1.pdf>] <figures/area_5-1.pdf, 
+id=2201, 578.16pt x 433.62pt>
+File: figures/area_5-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/area_5-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/area_5-1.png used on input line 118.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<use figures/area_5-1.pdf>
+Package pdftex.def Info: figures/area_5-1.pdf used on input line 118.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<0_all_posts_pdf/area_6-1.png, id=891, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/area_6-1.png Graphic file (type png)
+<figures/area_6-1.pdf, id=2203, 578.16pt x 433.62pt>
+File: figures/area_6-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/area_6-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/area_6-1.png used on input line 136.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [16 <./0_all_posts_pdf/area_5-1.png>]
-<0_all_posts_pdf/area_7-1.png, id=897, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/area_7-1.png Graphic file (type png)
+<use figures/area_6-1.pdf>
+Package pdftex.def Info: figures/area_6-1.pdf used on input line 136.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [16 <./figures/area_5-1.pdf>]
+<figures/area_7-1.pdf, id=2296, 578.16pt x 433.62pt>
+File: figures/area_7-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/area_7-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/area_7-1.png used on input line 163.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [17 <./0_all_posts_pdf/area_6-1.png>]
-[18 <./0_all_posts_pdf/area_7-1.png>]
-<0_all_posts_pdf/area_8-1.png, id=911, 1204.5pt x 1003.75pt>
-File: 0_all_posts_pdf/area_8-1.png Graphic file (type png)
+<use figures/area_7-1.pdf>
+Package pdftex.def Info: figures/area_7-1.pdf used on input line 163.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [17 <./figures/area_6-1.pdf>] [18 <./figures/area_7-1.pdf>] <figures/area_8-1.
+pdf, id=2483, 578.16pt x 433.62pt>
+File: figures/area_8-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/area_8-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/area_8-1.png used on input line 221.
-(pdftex.def)             Requested size: 259.6186pt x 216.35342pt.
- [19 <./0_all_posts_pdf/area_8-1.png>]
-<0_all_posts_pdf/area_9-1.png, id=919, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/area_9-1.png Graphic file (type png)
+<use figures/area_8-1.pdf>
+Package pdftex.def Info: figures/area_8-1.pdf used on input line 221.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [19 <./figures/area_8-1.pdf>]
+<figures/area_9-1.pdf, id=2577, 578.16pt x 433.62pt>
+File: figures/area_9-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/area_9-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/area_9-1.png used on input line 256.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [20 <./0_all_posts_pdf/area_9-1.png>]
-<0_all_posts_pdf/area_11-1.png, id=925, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/area_11-1.png Graphic file (type png)
+<use figures/area_9-1.pdf>
+Package pdftex.def Info: figures/area_9-1.pdf used on input line 256.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [20 <./figures/area_9-1.pdf>]
+<figures/area_11-1.pdf, id=2669, 578.16pt x 433.62pt>
+File: figures/area_11-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/area_11-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/area_11-1.png used on input line 292.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
-) [21 <./0_all_posts_pdf/area_11-1.png>]
+<use figures/area_11-1.pdf>
+Package pdftex.def Info: figures/area_11-1.pdf used on input line 292.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+) [21 <./figures/area_11-1.pdf>]
 \openout2 = `chapter3.aux'.
 
-
-(./chapter3.tex
+ (./chapter3.tex
 Chapter 3.
-<0_all_posts_pdf/bar_final-1.png, id=931, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/bar_final-1.png Graphic file (type png)
+<figures/bar_final-1.pdf, id=2761, 578.16pt x 433.62pt>
+File: figures/bar_final-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/bar_final-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/bar_final-1.png used on input line 7.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<use figures/bar_final-1.pdf>
+Package pdftex.def Info: figures/bar_final-1.pdf used on input line 7.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
  [22
 
 
 
- <./0_all_posts_pdf/bar_final-1.png>]
-<0_all_posts_pdf/bar_1-1.png, id=938, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/bar_1-1.png Graphic file (type png)
+ <./figures/bar_final-1.pdf>]
+<figures/bar_1-1.pdf, id=2926, 578.16pt x 433.62pt>
+File: figures/bar_1-1.pdf Graphic file (type pdf)
+ <use figures/bar_1-1.pdf>
+Package pdftex.def Info: figures/bar_1-1.pdf used on input line 40.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/bar_1-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/bar_1-1.png used on input line 40.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<figures/bar_2-1.pdf, id=2927, 578.16pt x 433.62pt>
+File: figures/bar_2-1.pdf Graphic file (type pdf)
+ <use figures/bar_2-1.pdf>
+Package pdftex.def Info: figures/bar_2-1.pdf used on input line 57.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<0_all_posts_pdf/bar_2-1.png, id=939, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/bar_2-1.png Graphic file (type png)
+[23 <./figures/bar_1-1.pdf>]
+<figures/bar_3-1.pdf, id=2996, 578.16pt x 433.62pt>
+File: figures/bar_3-1.pdf Graphic file (type pdf)
+ <use figures/bar_3-1.pdf>
+Package pdftex.def Info: figures/bar_3-1.pdf used on input line 81.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/bar_2-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/bar_2-1.png used on input line 57.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [23 <./0_all_posts_pdf/bar_1-1.png>]
-<0_all_posts_pdf/bar_3-1.png, id=945, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/bar_3-1.png Graphic file (type png)
+[24 <./figures/bar_2-1.pdf>]
+<figures/bar_4-1.pdf, id=3138, 578.16pt x 433.62pt>
+File: figures/bar_4-1.pdf Graphic file (type pdf)
+ <use figures/bar_4-1.pdf>
+Package pdftex.def Info: figures/bar_4-1.pdf used on input line 101.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/bar_3-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/bar_3-1.png used on input line 81.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [24 <./0_all_posts_pdf/bar_2-1.png>]
-<0_all_posts_pdf/bar_4-1.png, id=952, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/bar_4-1.png Graphic file (type png)
+[25 <./figures/bar_3-1.pdf> <./figures/bar_4-1.pdf>]
+<figures/bar_5-1.pdf, id=3411, 578.16pt x 433.62pt>
+File: figures/bar_5-1.pdf Graphic file (type pdf)
+ <use figures/bar_5-1.pdf>
+Package pdftex.def Info: figures/bar_5-1.pdf used on input line 125.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/bar_4-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/bar_4-1.png used on input line 101.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [25 <./0_all_posts_pdf/bar_3-1.png> <./0_all_posts_pdf/bar_4-1.png>]
-<0_all_posts_pdf/bar_5-1.png, id=959, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/bar_5-1.png Graphic file (type png)
+<figures/bar_6-1.pdf, id=3412, 578.16pt x 433.62pt>
+File: figures/bar_6-1.pdf Graphic file (type pdf)
+ <use figures/bar_6-1.pdf>
+Package pdftex.def Info: figures/bar_6-1.pdf used on input line 139.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/bar_5-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/bar_5-1.png used on input line 125.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+[26 <./figures/bar_5-1.pdf>]
+<figures/bar_7-1.pdf, id=3549, 578.16pt x 433.62pt>
+File: figures/bar_7-1.pdf Graphic file (type pdf)
+ <use figures/bar_7-1.pdf>
+Package pdftex.def Info: figures/bar_7-1.pdf used on input line 156.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<0_all_posts_pdf/bar_6-1.png, id=960, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/bar_6-1.png Graphic file (type png)
+[27 <./figures/bar_6-1.pdf> <./figures/bar_7-1.pdf>]
+<figures/bar_8-1.pdf, id=3872, 578.16pt x 433.62pt>
+File: figures/bar_8-1.pdf Graphic file (type pdf)
+ <use figures/bar_8-1.pdf>
+Package pdftex.def Info: figures/bar_8-1.pdf used on input line 174.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/bar_6-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/bar_6-1.png used on input line 139.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [26 <./0_all_posts_pdf/bar_5-1.png>]
-<0_all_posts_pdf/bar_7-1.png, id=966, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/bar_7-1.png Graphic file (type png)
+[28 <./figures/bar_8-1.pdf>]
+<figures/bar_9-1.pdf, id=4037, 578.16pt x 433.62pt>
+File: figures/bar_9-1.pdf Graphic file (type pdf)
+ <use figures/bar_9-1.pdf>
+Package pdftex.def Info: figures/bar_9-1.pdf used on input line 203.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/bar_7-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/bar_7-1.png used on input line 156.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [27 <./0_all_posts_pdf/bar_6-1.png> <./0_all_posts_pdf/bar_7-1.png>]
-<0_all_posts_pdf/bar_8-1.png, id=974, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/bar_8-1.png Graphic file (type png)
+[29 <./figures/bar_9-1.pdf>]
+<figures/bar_10-1.pdf, id=4204, 578.16pt x 433.62pt>
+File: figures/bar_10-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/bar_8-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/bar_8-1.png used on input line 174.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [28 <./0_all_posts_pdf/bar_8-1.png>]
-<0_all_posts_pdf/bar_9-1.png, id=980, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/bar_9-1.png Graphic file (type png)
+<use figures/bar_10-1.pdf>
+Package pdftex.def Info: figures/bar_10-1.pdf used on input line 263.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [30 <./figures/bar_10-1.pdf>]
+<figures/bar_11-1.pdf, id=4371, 578.16pt x 433.62pt>
+File: figures/bar_11-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/bar_9-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/bar_9-1.png used on input line 203.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [29 <./0_all_posts_pdf/bar_9-1.png>]
-<0_all_posts_pdf/bar_10-1.png, id=989, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/bar_10-1.png Graphic file (type png)
+<use figures/bar_11-1.pdf>
+Package pdftex.def Info: figures/bar_11-1.pdf used on input line 301.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [31 <./figures/bar_11-1.pdf>]
+<figures/bar_13-1.pdf, id=4537, 578.16pt x 433.62pt>
+File: figures/bar_13-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/bar_10-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/bar_10-1.png used on input line 263.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [30 <./0_all_posts_pdf/bar_10-1.png>]
-<0_all_posts_pdf/bar_11-1.png, id=998, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/bar_11-1.png Graphic file (type png)
-
-<use 0_all_posts_pdf/bar_11-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/bar_11-1.png used on input line 301.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [31 <./0_all_posts_pdf/bar_11-1.png>]
-<0_all_posts_pdf/bar_13-1.png, id=1004, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/bar_13-1.png Graphic file (type png)
-
-<use 0_all_posts_pdf/bar_13-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/bar_13-1.png used on input line 339.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [32]) [33 <./0_all_posts_pdf/bar_13-1.png>]
+<use figures/bar_13-1.pdf>
+Package pdftex.def Info: figures/bar_13-1.pdf used on input line 339.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [32]) [33 <./figures/bar_13-1.pdf>]
 \openout2 = `chapter4.aux'.
 
-
-(./chapter4.tex
+ (./chapter4.tex
 Chapter 4.
-<0_all_posts_pdf/stacked_finalresult-1.png, id=1014, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/stacked_finalresult-1.png Graphic file (type png)
+<figures/stacked_finalresult-1.pdf, id=4705, 578.16pt x 433.62pt>
+File: figures/stacked_finalresult-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/stacked_finalresult-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/stacked_finalresult-1.png used on inpu
-t line 7.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<use figures/stacked_finalresult-1.pdf>
+Package pdftex.def Info: figures/stacked_finalresult-1.pdf used on input line 7
+.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
  [34
 
 
 
- <./0_all_posts_pdf/stacked_finalresult-1.png>]
-<0_all_posts_pdf/stacked_1-1.png, id=1021, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/stacked_1-1.png Graphic file (type png)
+ <./figures/stacked_finalresult-1.pdf>] <figures/stacked_1-1.pdf, id=4870, 578.
+16pt x 433.62pt>
+File: figures/stacked_1-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/stacked_1-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/stacked_1-1.png used on input line 42.
+<use figures/stacked_1-1.pdf>
+Package pdftex.def Info: figures/stacked_1-1.pdf used on input line 42.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<figures/stacked_2-1.pdf, id=4871, 578.16pt x 433.62pt>
+File: figures/stacked_2-1.pdf Graphic file (type pdf)
 
-<0_all_posts_pdf/stacked_2-1.png, id=1022, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/stacked_2-1.png Graphic file (type png)
+<use figures/stacked_2-1.pdf>
+Package pdftex.def Info: figures/stacked_2-1.pdf used on input line 59.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [35 <./figures/stacked_1-1.pdf>]
+<figures/stacked_3-1.pdf, id=4940, 578.16pt x 433.62pt>
+File: figures/stacked_3-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/stacked_2-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/stacked_2-1.png used on input line 59.
+<use figures/stacked_3-1.pdf>
+Package pdftex.def Info: figures/stacked_3-1.pdf used on input line 83.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [36 <./figures/stacked_2-1.pdf>]
+<figures/stacked_4-1.pdf, id=5082, 578.16pt x 433.62pt>
+File: figures/stacked_4-1.pdf Graphic file (type pdf)
 
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [35 <./0_all_posts_pdf/stacked_1-1.png>]
-<0_all_posts_pdf/stacked_3-1.png, id=1028, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/stacked_3-1.png Graphic file (type png)
+<use figures/stacked_4-1.pdf>
+Package pdftex.def Info: figures/stacked_4-1.pdf used on input line 103.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [37 <./figures/stacked_3-1.pdf> <./figures/stacked_4-1.pdf>] <figures/stacked_
+5-1.pdf, id=5355, 578.16pt x 433.62pt>
+File: figures/stacked_5-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/stacked_3-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/stacked_3-1.png used on input line 83.
+<use figures/stacked_5-1.pdf>
+Package pdftex.def Info: figures/stacked_5-1.pdf used on input line 129.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [36 <./0_all_posts_pdf/stacked_2-1.png>]
-<0_all_posts_pdf/stacked_4-1.png, id=1035, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/stacked_4-1.png Graphic file (type png)
+<figures/stacked_6-1.pdf, id=5356, 578.16pt x 433.62pt>
+File: figures/stacked_6-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/stacked_4-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/stacked_4-1.png used on input line 103
-.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [37 <./0_all_posts_pdf/stacked_3-1.png> <./0_all_posts_pdf/stacked_4-1.png>]
-<0_all_posts_pdf/stacked_5-1.png, id=1042, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/stacked_5-1.png Graphic file (type png)
+<use figures/stacked_6-1.pdf>
+Package pdftex.def Info: figures/stacked_6-1.pdf used on input line 143.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [38 <./figures/stacked_5-1.pdf>]
+<figures/stacked_7-1.pdf, id=5493, 578.16pt x 433.62pt>
+File: figures/stacked_7-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/stacked_5-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/stacked_5-1.png used on input line 129
-.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [38 <./0_all_posts_pdf/stacked_5-1.png>]
-<0_all_posts_pdf/stacked_6-1.png, id=1048, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/stacked_6-1.png Graphic file (type png)
+<use figures/stacked_7-1.pdf>
+Package pdftex.def Info: figures/stacked_7-1.pdf used on input line 161.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [39 <./figures/stacked_6-1.pdf> <./figures/stacked_7-1.pdf>] <figures/stacked_
+8-1.pdf, id=5815, 578.16pt x 433.62pt>
+File: figures/stacked_8-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/stacked_6-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/stacked_6-1.png used on input line 143
-.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<use figures/stacked_8-1.pdf>
+Package pdftex.def Info: figures/stacked_8-1.pdf used on input line 179.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [40 <./figures/stacked_8-1.pdf>]
+<figures/stacked_9-1.pdf, id=5981, 578.16pt x 433.62pt>
+File: figures/stacked_9-1.pdf Graphic file (type pdf)
 
-<0_all_posts_pdf/stacked_7-1.png, id=1049, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/stacked_7-1.png Graphic file (type png)
-
-<use 0_all_posts_pdf/stacked_7-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/stacked_7-1.png used on input line 161
-.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [39 <./0_all_posts_pdf/stacked_6-1.png>]
-<0_all_posts_pdf/stacked_8-1.png, id=1056, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/stacked_8-1.png Graphic file (type png)
-
-<use 0_all_posts_pdf/stacked_8-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/stacked_8-1.png used on input line 179
-.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [40 <./0_all_posts_pdf/stacked_7-1.png> <./0_all_posts_pdf/stacked_8-1.png>]
-<0_all_posts_pdf/stacked_9-1.png, id=1063, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/stacked_9-1.png Graphic file (type png)
-
-<use 0_all_posts_pdf/stacked_9-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/stacked_9-1.png used on input line 208
-.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [41 <./0_all_posts_pdf/stacked_9-1.png>]
+<use figures/stacked_9-1.pdf>
+Package pdftex.def Info: figures/stacked_9-1.pdf used on input line 208.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 LaTeX Font Info:    Font shape `T1/hlst/m/it' in size <10.95> not available
 (Font)              Font shape `T1/hlst/m/sl' tried instead on input line 241.
 LaTeX Font Info:    Font shape `T1/hlst/m/sl' will be
 (Font)              scaled to size 9.74548pt on input line 241.
+ [41 <./figures/stacked_9-1.pdf>]
+<figures/stacked_10-1.pdf, id=6148, 578.16pt x 433.62pt>
+File: figures/stacked_10-1.pdf Graphic file (type pdf)
 
-<0_all_posts_pdf/stacked_10-1.png, id=1071, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/stacked_10-1.png Graphic file (type png)
+<use figures/stacked_10-1.pdf>
+Package pdftex.def Info: figures/stacked_10-1.pdf used on input line 273.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [42 <./figures/stacked_10-1.pdf>]
+<figures/stacked_11-1.pdf, id=6316, 578.16pt x 433.62pt>
+File: figures/stacked_11-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/stacked_10-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/stacked_10-1.png used on input line 27
-3.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [42]
-<0_all_posts_pdf/stacked_11-1.png, id=1080, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/stacked_11-1.png Graphic file (type png)
+<use figures/stacked_11-1.pdf>
+Package pdftex.def Info: figures/stacked_11-1.pdf used on input line 312.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [43 <./figures/stacked_11-1.pdf>]
+<figures/stacked_13-1.pdf, id=6481, 578.16pt x 433.62pt>
+File: figures/stacked_13-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/stacked_11-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/stacked_11-1.png used on input line 31
-2.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [43 <./0_all_posts_pdf/stacked_10-1.png>] [44 <./0_all_posts_pdf/stacked_11-1.
-png>]
-<0_all_posts_pdf/stacked_13-1.png, id=1091, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/stacked_13-1.png Graphic file (type png)
-
-<use 0_all_posts_pdf/stacked_13-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/stacked_13-1.png used on input line 35
-2.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
-) [45 <./0_all_posts_pdf/stacked_13-1.png>]
+<use figures/stacked_13-1.pdf>
+Package pdftex.def Info: figures/stacked_13-1.pdf used on input line 352.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [44]) [45 <./figures/stacked_13-1.pdf>]
 \openout2 = `chapter5.aux'.
 
- (./chapter5.tex
-Chapter 5.
-<0_all_posts_pdf/scatter_finalgraph-1.png, id=1097, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/scatter_finalgraph-1.png Graphic file (type png)
 
-<use 0_all_posts_pdf/scatter_finalgraph-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_finalgraph-1.png used on input
- line 7.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+(./chapter5.tex
+Chapter 5.
+<figures/scatter_finalgraph-1.pdf, id=6650, 578.16pt x 433.62pt>
+File: figures/scatter_finalgraph-1.pdf Graphic file (type pdf)
+
+<use figures/scatter_finalgraph-1.pdf>
+Package pdftex.def Info: figures/scatter_finalgraph-1.pdf used on input line 7.
+
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
  [46
 
 
 
- <./0_all_posts_pdf/scatter_finalgraph-1.png>]
-<0_all_posts_pdf/scatter_1-1.png, id=1103, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/scatter_1-1.png Graphic file (type png)
+ <./figures/scatter_finalgraph-1.pdf>] <figures/scatter_1-1.pdf, id=6737, 578.1
+6pt x 433.62pt>
+File: figures/scatter_1-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/scatter_1-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_1-1.png used on input line 51.
+<use figures/scatter_1-1.pdf>
+Package pdftex.def Info: figures/scatter_1-1.pdf used on input line 51.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [47 <./0_all_posts_pdf/scatter_1-1.png>]
-<0_all_posts_pdf/scatter_2-1.png, id=1110, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/scatter_2-1.png Graphic file (type png)
+<figures/scatter_2-1.pdf, id=6739, 578.16pt x 433.62pt>
+File: figures/scatter_2-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/scatter_2-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_2-1.png used on input line 71.
+<use figures/scatter_2-1.pdf>
+Package pdftex.def Info: figures/scatter_2-1.pdf used on input line 71.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [47 <./figures/scatter_1-1.pdf>]
+<figures/scatter_3-1.pdf, id=6796, 578.16pt x 433.62pt>
+File: figures/scatter_3-1.pdf Graphic file (type pdf)
 
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<use figures/scatter_3-1.pdf>
+Package pdftex.def Info: figures/scatter_3-1.pdf used on input line 88.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [48 <./figures/scatter_2-1.pdf> <./figures/scatter_3-1.pdf>] <figures/scatter_
+4-1.pdf, id=6917, 578.16pt x 433.62pt>
+File: figures/scatter_4-1.pdf Graphic file (type pdf)
 
-<0_all_posts_pdf/scatter_3-1.png, id=1111, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/scatter_3-1.png Graphic file (type png)
+<use figures/scatter_4-1.pdf>
+Package pdftex.def Info: figures/scatter_4-1.pdf used on input line 105.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/scatter_3-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_3-1.png used on input line 88.
+<figures/scatter_5-1.pdf, id=6919, 578.16pt x 433.62pt>
+File: figures/scatter_5-1.pdf Graphic file (type pdf)
 
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [48 <./0_all_posts_pdf/scatter_2-1.png>]
-<0_all_posts_pdf/scatter_4-1.png, id=1118, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/scatter_4-1.png Graphic file (type png)
+<use figures/scatter_5-1.pdf>
+Package pdftex.def Info: figures/scatter_5-1.pdf used on input line 128.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [49 <./figures/scatter_4-1.pdf>]
+<figures/scatter_6-1.pdf, id=6991, 578.16pt x 433.62pt>
+File: figures/scatter_6-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/scatter_4-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_4-1.png used on input line 105
-.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [49 <./0_all_posts_pdf/scatter_3-1.png> <./0_all_posts_pdf/scatter_4-1.png>]
-<0_all_posts_pdf/scatter_5-1.png, id=1126, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/scatter_5-1.png Graphic file (type png)
+<use figures/scatter_6-1.pdf>
+Package pdftex.def Info: figures/scatter_6-1.pdf used on input line 145.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [50 <./figures/scatter_5-1.pdf> <./figures/scatter_6-1.pdf>] <figures/scatter_
+7-1.pdf, id=7131, 578.16pt x 433.62pt>
+File: figures/scatter_7-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/scatter_5-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_5-1.png used on input line 128
-.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<use figures/scatter_7-1.pdf>
+Package pdftex.def Info: figures/scatter_7-1.pdf used on input line 163.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<0_all_posts_pdf/scatter_6-1.png, id=1127, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/scatter_6-1.png Graphic file (type png)
+<figures/scatter_8-1.pdf, id=7132, 578.16pt x 433.62pt>
+File: figures/scatter_8-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/scatter_6-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_6-1.png used on input line 145
-.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [50 <./0_all_posts_pdf/scatter_5-1.png>]
-<0_all_posts_pdf/scatter_7-1.png, id=1133, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/scatter_7-1.png Graphic file (type png)
+<use figures/scatter_8-1.pdf>
+Package pdftex.def Info: figures/scatter_8-1.pdf used on input line 177.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [51 <./figures/scatter_7-1.pdf> <./figures/scatter_8-1.pdf>] <figures/scatter_
+9-1.pdf, id=7313, 578.16pt x 433.62pt>
+File: figures/scatter_9-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/scatter_7-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_7-1.png used on input line 163
-.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [51 <./0_all_posts_pdf/scatter_6-1.png> <./0_all_posts_pdf/scatter_7-1.png>]
-<0_all_posts_pdf/scatter_8-1.png, id=1141, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/scatter_8-1.png Graphic file (type png)
+<use figures/scatter_9-1.pdf>
+Package pdftex.def Info: figures/scatter_9-1.pdf used on input line 195.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/scatter_8-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_8-1.png used on input line 177
-.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<figures/scatter_10-1.pdf, id=7314, 578.16pt x 433.62pt>
+File: figures/scatter_10-1.pdf Graphic file (type pdf)
 
-<0_all_posts_pdf/scatter_9-1.png, id=1142, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/scatter_9-1.png Graphic file (type png)
+<use figures/scatter_10-1.pdf>
+Package pdftex.def Info: figures/scatter_10-1.pdf used on input line 209.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [52 <./figures/scatter_9-1.pdf>]
+<figures/scatter_11-1.pdf, id=7402, 578.16pt x 433.62pt>
+File: figures/scatter_11-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/scatter_9-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_9-1.png used on input line 195
-.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [52 <./0_all_posts_pdf/scatter_8-1.png>]
-<0_all_posts_pdf/scatter_10-1.png, id=1148, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/scatter_10-1.png Graphic file (type png)
+<use figures/scatter_11-1.pdf>
+Package pdftex.def Info: figures/scatter_11-1.pdf used on input line 227.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [53 <./figures/scatter_10-1.pdf> <./figures/scatter_11-1.pdf>] <figures/scatte
+r_12-1.pdf, id=7575, 578.16pt x 433.62pt>
+File: figures/scatter_12-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/scatter_10-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_10-1.png used on input line 20
-9.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [53 <./0_all_posts_pdf/scatter_9-1.png> <./0_all_posts_pdf/scatter_10-1.png>]
-<0_all_posts_pdf/scatter_11-1.png, id=1155, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/scatter_11-1.png Graphic file (type png)
+<use figures/scatter_12-1.pdf>
+Package pdftex.def Info: figures/scatter_12-1.pdf used on input line 251.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [54 <./figures/scatter_12-1.pdf>]
+<figures/scatter_13-1.pdf, id=7666, 578.16pt x 433.62pt>
+File: figures/scatter_13-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/scatter_11-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_11-1.png used on input line 22
-7.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<use figures/scatter_13-1.pdf>
+Package pdftex.def Info: figures/scatter_13-1.pdf used on input line 308.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [55]
+<figures/scatter_14-1.pdf, id=7672, 578.16pt x 433.62pt>
+File: figures/scatter_14-1.pdf Graphic file (type pdf)
 
-<0_all_posts_pdf/scatter_12-1.png, id=1156, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/scatter_12-1.png Graphic file (type png)
+<use figures/scatter_14-1.pdf>
+Package pdftex.def Info: figures/scatter_14-1.pdf used on input line 341.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [56 <./figures/scatter_13-1.pdf>]
+<figures/scatter_15-1.pdf, id=7760, 578.16pt x 433.62pt>
+File: figures/scatter_15-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/scatter_12-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_12-1.png used on input line 25
-1.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [54 <./0_all_posts_pdf/scatter_11-1.png>] [55 <./0_all_posts_pdf/scatter_12-1.
-png>]
-<0_all_posts_pdf/scatter_13-1.png, id=1170, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/scatter_13-1.png Graphic file (type png)
-
-<use 0_all_posts_pdf/scatter_13-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_13-1.png used on input line 30
-8.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [56 <./0_all_posts_pdf/scatter_13-1.png>] <0_all_posts_pdf/scatter_14-1.png, i
-d=1177, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/scatter_14-1.png Graphic file (type png)
-
-<use 0_all_posts_pdf/scatter_14-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_14-1.png used on input line 34
-1.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [57 <./0_all_posts_pdf/scatter_14-1.png>] <0_all_posts_pdf/scatter_15-1.png, i
-d=1183, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/scatter_15-1.png Graphic file (type png)
-
-<use 0_all_posts_pdf/scatter_15-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/scatter_15-1.png used on input line 37
-5.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
-) [58 <./0_all_posts_pdf/scatter_15-1.png>]
+<use figures/scatter_15-1.pdf>
+Package pdftex.def Info: figures/scatter_15-1.pdf used on input line 375.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [57 <./figures/scatter_14-1.pdf>]) [58 <./figures/scatter_15-1.pdf>]
 \openout2 = `chapter6.aux'.
 
  (./chapter6.tex
 Chapter 6.
-<0_all_posts_pdf/wscatter_finalgraph-1.png, id=1189, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/wscatter_finalgraph-1.png Graphic file (type png)
+<figures/wscatter_finalgraph-1.pdf, id=7935, 578.16pt x 433.62pt>
+File: figures/wscatter_finalgraph-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/wscatter_finalgraph-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_finalgraph-1.png used on inpu
-t line 32.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<use figures/wscatter_finalgraph-1.pdf>
+Package pdftex.def Info: figures/wscatter_finalgraph-1.pdf used on input line 3
+2.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
  [59
 
 
 
 ]
-<0_all_posts_pdf/wscatter_1-1.png, id=1194, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/wscatter_1-1.png Graphic file (type png)
+<figures/wscatter_1-1.pdf, id=7940, 578.16pt x 433.62pt>
+File: figures/wscatter_1-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/wscatter_1-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_1-1.png used on input line 52
-.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [60 <./0_all_posts_pdf/wscatter_finalgraph-1.png> <./0_all_posts_pdf/wscatter_
-1-1.png>]
-<0_all_posts_pdf/wscatter_2-1.png, id=1202, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/wscatter_2-1.png Graphic file (type png)
+<use figures/wscatter_1-1.pdf>
+Package pdftex.def Info: figures/wscatter_1-1.pdf used on input line 52.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [60 <./figures/wscatter_finalgraph-1.pdf> <./figures/wscatter_1-1.pdf>]
+<figures/wscatter_2-1.pdf, id=8101, 578.16pt x 433.62pt>
+File: figures/wscatter_2-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/wscatter_2-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_2-1.png used on input line 66
-.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<use figures/wscatter_2-1.pdf>
+Package pdftex.def Info: figures/wscatter_2-1.pdf used on input line 66.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<0_all_posts_pdf/wscatter_3-1.png, id=1204, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/wscatter_3-1.png Graphic file (type png)
+<figures/wscatter_3-1.pdf, id=8103, 578.16pt x 433.62pt>
+File: figures/wscatter_3-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/wscatter_3-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_3-1.png used on input line 91
-.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [61 <./0_all_posts_pdf/wscatter_2-1.png>] <0_all_posts_pdf/wscatter_4-1.png, i
-d=1210, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/wscatter_4-1.png Graphic file (type png)
+<use figures/wscatter_3-1.pdf>
+Package pdftex.def Info: figures/wscatter_3-1.pdf used on input line 91.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [61 <./figures/wscatter_2-1.pdf>]
+<figures/wscatter_4-1.pdf, id=8179, 578.16pt x 433.62pt>
+File: figures/wscatter_4-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/wscatter_4-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_4-1.png used on input line 10
-9.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [62 <./0_all_posts_pdf/wscatter_3-1.png> <./0_all_posts_pdf/wscatter_4-1.png>]
+<use figures/wscatter_4-1.pdf>
+Package pdftex.def Info: figures/wscatter_4-1.pdf used on input line 109.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [62 <./figures/wscatter_3-1.pdf> <./figures/wscatter_4-1.pdf>] <figures/wscatt
+er_5-1.pdf, id=8340, 578.16pt x 433.62pt>
+File: figures/wscatter_5-1.pdf Graphic file (type pdf)
 
-<0_all_posts_pdf/wscatter_5-1.png, id=1217, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/wscatter_5-1.png Graphic file (type png)
+<use figures/wscatter_5-1.pdf>
+Package pdftex.def Info: figures/wscatter_5-1.pdf used on input line 126.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/wscatter_5-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_5-1.png used on input line 12
-6.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<figures/wscatter_6-1.pdf, id=8342, 578.16pt x 433.62pt>
+File: figures/wscatter_6-1.pdf Graphic file (type pdf)
 
-<0_all_posts_pdf/wscatter_6-1.png, id=1219, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/wscatter_6-1.png Graphic file (type png)
+<use figures/wscatter_6-1.pdf>
+Package pdftex.def Info: figures/wscatter_6-1.pdf used on input line 150.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [63 <./figures/wscatter_5-1.pdf>]
+<figures/wscatter_7-1.pdf, id=8434, 578.16pt x 433.62pt>
+File: figures/wscatter_7-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/wscatter_6-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_6-1.png used on input line 15
-0.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [63 <./0_all_posts_pdf/wscatter_5-1.png>] <0_all_posts_pdf/wscatter_7-1.png, i
-d=1225, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/wscatter_7-1.png Graphic file (type png)
+<use figures/wscatter_7-1.pdf>
+Package pdftex.def Info: figures/wscatter_7-1.pdf used on input line 167.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [64 <./figures/wscatter_6-1.pdf> <./figures/wscatter_7-1.pdf>] <figures/wscatt
+er_8-1.pdf, id=8615, 578.16pt x 433.62pt>
+File: figures/wscatter_8-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/wscatter_7-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_7-1.png used on input line 16
-7.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [64 <./0_all_posts_pdf/wscatter_6-1.png> <./0_all_posts_pdf/wscatter_7-1.png>]
+<use figures/wscatter_8-1.pdf>
+Package pdftex.def Info: figures/wscatter_8-1.pdf used on input line 185.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<0_all_posts_pdf/wscatter_8-1.png, id=1232, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/wscatter_8-1.png Graphic file (type png)
+<figures/wscatter_9-1.pdf, id=8616, 578.16pt x 433.62pt>
+File: figures/wscatter_9-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/wscatter_8-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_8-1.png used on input line 18
-5.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<use figures/wscatter_9-1.pdf>
+Package pdftex.def Info: figures/wscatter_9-1.pdf used on input line 199.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [65 <./figures/wscatter_8-1.pdf> <./figures/wscatter_9-1.pdf>] <figures/wscatt
+er_10-1.pdf, id=8836, 578.16pt x 433.62pt>
+File: figures/wscatter_10-1.pdf Graphic file (type pdf)
 
-<0_all_posts_pdf/wscatter_9-1.png, id=1233, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/wscatter_9-1.png Graphic file (type png)
+<use figures/wscatter_10-1.pdf>
+Package pdftex.def Info: figures/wscatter_10-1.pdf used on input line 217.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/wscatter_9-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_9-1.png used on input line 19
-9.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [65 <./0_all_posts_pdf/wscatter_8-1.png>] <0_all_posts_pdf/wscatter_10-1.png, 
-id=1239, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/wscatter_10-1.png Graphic file (type png)
+<figures/wscatter_11-1.pdf, id=8837, 578.16pt x 433.62pt>
+File: figures/wscatter_11-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/wscatter_10-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_10-1.png used on input line 2
-17.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [66 <./0_all_posts_pdf/wscatter_9-1.png> <./0_all_posts_pdf/wscatter_10-1.png>
-]
-<0_all_posts_pdf/wscatter_11-1.png, id=1247, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/wscatter_11-1.png Graphic file (type png)
+<use figures/wscatter_11-1.pdf>
+Package pdftex.def Info: figures/wscatter_11-1.pdf used on input line 231.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [66 <./figures/wscatter_10-1.pdf>]
+<figures/wscatter_12-1.pdf, id=8947, 578.16pt x 433.62pt>
+File: figures/wscatter_12-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/wscatter_11-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_11-1.png used on input line 2
-31.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<use figures/wscatter_12-1.pdf>
+Package pdftex.def Info: figures/wscatter_12-1.pdf used on input line 249.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [67 <./figures/wscatter_11-1.pdf> <./figures/wscatter_12-1.pdf>] <figures/wsca
+tter_13-1.pdf, id=9160, 578.16pt x 433.62pt>
+File: figures/wscatter_13-1.pdf Graphic file (type pdf)
 
-<0_all_posts_pdf/wscatter_12-1.png, id=1248, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/wscatter_12-1.png Graphic file (type png)
+<use figures/wscatter_13-1.pdf>
+Package pdftex.def Info: figures/wscatter_13-1.pdf used on input line 268.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/wscatter_12-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_12-1.png used on input line 2
-49.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [67 <./0_all_posts_pdf/wscatter_11-1.png>] <0_all_posts_pdf/wscatter_13-1.png,
- id=1254, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/wscatter_13-1.png Graphic file (type png)
+<figures/wscatter_14-1.pdf, id=9161, 578.16pt x 433.62pt>
+File: figures/wscatter_14-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/wscatter_13-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_13-1.png used on input line 2
-68.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [68 <./0_all_posts_pdf/wscatter_12-1.png> <./0_all_posts_pdf/wscatter_13-1.png
->]
-<0_all_posts_pdf/wscatter_14-1.png, id=1261, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/wscatter_14-1.png Graphic file (type png)
+<use figures/wscatter_14-1.pdf>
+Package pdftex.def Info: figures/wscatter_14-1.pdf used on input line 286.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [68 <./figures/wscatter_13-1.pdf>]
+<figures/wscatter_15-1.pdf, id=9270, 578.16pt x 433.62pt>
+File: figures/wscatter_15-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/wscatter_14-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_14-1.png used on input line 2
-86.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<use figures/wscatter_15-1.pdf>
+Package pdftex.def Info: figures/wscatter_15-1.pdf used on input line 305.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [69 <./figures/wscatter_14-1.pdf> <./figures/wscatter_15-1.pdf>] <figures/wsca
+tter_16-1.pdf, id=9482, 578.16pt x 433.62pt>
+File: figures/wscatter_16-1.pdf Graphic file (type pdf)
 
-<0_all_posts_pdf/wscatter_15-1.png, id=1262, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/wscatter_15-1.png Graphic file (type png)
+<use figures/wscatter_16-1.pdf>
+Package pdftex.def Info: figures/wscatter_16-1.pdf used on input line 327.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [70 <./figures/wscatter_16-1.pdf>]
+<figures/wscatter_17-1.pdf, id=9591, 578.16pt x 433.62pt>
+File: figures/wscatter_17-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/wscatter_15-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_15-1.png used on input line 3
-05.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [69 <./0_all_posts_pdf/wscatter_14-1.png>] <0_all_posts_pdf/wscatter_16-1.png,
- id=1268, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/wscatter_16-1.png Graphic file (type png)
+<use figures/wscatter_17-1.pdf>
+Package pdftex.def Info: figures/wscatter_17-1.pdf used on input line 355.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [71 <./figures/wscatter_17-1.pdf>]
+<figures/wscatter_18-1.pdf, id=9702, 578.16pt x 433.62pt>
+File: figures/wscatter_18-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/wscatter_16-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_16-1.png used on input line 3
-27.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [70 <./0_all_posts_pdf/wscatter_15-1.png>] <0_all_posts_pdf/wscatter_17-1.png,
- id=1274, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/wscatter_17-1.png Graphic file (type png)
+<use figures/wscatter_18-1.pdf>
+Package pdftex.def Info: figures/wscatter_18-1.pdf used on input line 413.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [72 <./figures/wscatter_18-1.pdf>]
+<figures/wscatter_19-1.pdf, id=9812, 578.16pt x 433.62pt>
+File: figures/wscatter_19-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/wscatter_17-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_17-1.png used on input line 3
-55.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [71 <./0_all_posts_pdf/wscatter_16-1.png>] [72 <./0_all_posts_pdf/wscatter_17-
-1.png>]
-<0_all_posts_pdf/wscatter_18-1.png, id=1288, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/wscatter_18-1.png Graphic file (type png)
+<use figures/wscatter_19-1.pdf>
+Package pdftex.def Info: figures/wscatter_19-1.pdf used on input line 447.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [73 <./figures/wscatter_19-1.pdf>]
+<figures/wscatter_20-1.pdf, id=9921, 578.16pt x 433.62pt>
+File: figures/wscatter_20-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/wscatter_18-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_18-1.png used on input line 4
-13.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [73 <./0_all_posts_pdf/wscatter_18-1.png>] <0_all_posts_pdf/wscatter_19-1.png,
- id=1295, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/wscatter_19-1.png Graphic file (type png)
-
-<use 0_all_posts_pdf/wscatter_19-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_19-1.png used on input line 4
-47.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [74 <./0_all_posts_pdf/wscatter_19-1.png>] <0_all_posts_pdf/wscatter_20-1.png,
- id=1301, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/wscatter_20-1.png Graphic file (type png)
-
-<use 0_all_posts_pdf/wscatter_20-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/wscatter_20-1.png used on input line 4
-81.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
-) [75 <./0_all_posts_pdf/wscatter_20-1.png>]
+<use figures/wscatter_20-1.pdf>
+Package pdftex.def Info: figures/wscatter_20-1.pdf used on input line 481.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+) [74 <./figures/wscatter_20-1.pdf>]
 \openout2 = `chapter7.aux'.
 
- (./chapter7.tex
+
+(./chapter7.tex
 Chapter 7.
-<0_all_posts_pdf/histogram_final-1.png, id=1308, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/histogram_final-1.png Graphic file (type png)
+<figures/histogram_final-1.pdf, id=10028, 578.16pt x 433.62pt>
+File: figures/histogram_final-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/histogram_final-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_final-1.png used on input li
-ne 19.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [76
-
+<use figures/histogram_final-1.pdf>
+Package pdftex.def Info: figures/histogram_final-1.pdf used on input line 19.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [75
 
 
- <./0_all_posts_pdf/histogram_final-1.png>] <0_all_posts_pdf/histogram_1-1.png,
- id=1314, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/histogram_1-1.png Graphic file (type png)
 
-<use 0_all_posts_pdf/histogram_1-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_1-1.png used on input line 3
-5.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ <./figures/histogram_final-1.pdf>]
+<figures/histogram_1-1.pdf, id=10121, 578.16pt x 433.62pt>
+File: figures/histogram_1-1.pdf Graphic file (type pdf)
+
+<use figures/histogram_1-1.pdf>
+Package pdftex.def Info: figures/histogram_1-1.pdf used on input line 35.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 Overfull \hbox (63.35031pt too wide) in paragraph at lines 40--51
 \T1/hlst/m/n/10.95 = dnorm)\T1/hlh/m/n/10.95 (-20) , and spec-ify the shape us-
@@ -1901,675 +1835,751 @@ Overfull \hbox (18.22066pt too wide) in paragraph at lines 52--57
 mal curve cor-rectly is adding \T1/hlst/m/n/10.95 aes(y = ..density..)
  []
 
-[77 <./0_all_posts_pdf/histogram_1-1.png>]
-<0_all_posts_pdf/histogram_2-1.png, id=1320, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/histogram_2-1.png Graphic file (type png)
+[76 <./figures/histogram_1-1.pdf>]
+<figures/histogram_2-1.pdf, id=10177, 578.16pt x 433.62pt>
+File: figures/histogram_2-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/histogram_2-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_2-1.png used on input line 6
-9.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<use figures/histogram_2-1.pdf>
+Package pdftex.def Info: figures/histogram_2-1.pdf used on input line 69.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<0_all_posts_pdf/histogram_3-1.png, id=1321, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/histogram_3-1.png Graphic file (type png)
+<figures/histogram_3-1.pdf, id=10178, 578.16pt x 433.62pt>
+File: figures/histogram_3-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/histogram_3-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_3-1.png used on input line 8
-6.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [78 <./0_all_posts_pdf/histogram_2-1.png>] <0_all_posts_pdf/histogram_4-1.png,
- id=1328, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/histogram_4-1.png Graphic file (type png)
+<use figures/histogram_3-1.pdf>
+Package pdftex.def Info: figures/histogram_3-1.pdf used on input line 86.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [77 <./figures/histogram_2-1.pdf> <./figures/histogram_3-1.pdf>] <figures/hist
+ogram_4-1.pdf, id=10282, 578.16pt x 433.62pt>
+File: figures/histogram_4-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/histogram_4-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_4-1.png used on input line 1
-02.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [79 <./0_all_posts_pdf/histogram_3-1.png> <./0_all_posts_pdf/histogram_4-1.png
->]
-<0_all_posts_pdf/histogram_5-1.png, id=1335, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/histogram_5-1.png Graphic file (type png)
+<use figures/histogram_4-1.pdf>
+Package pdftex.def Info: figures/histogram_4-1.pdf used on input line 102.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+LaTeX Font Info:    Font shape `T1/hlh/m/n' will be
+(Font)              scaled to size 10.56006pt on input line 106.
 
-<use 0_all_posts_pdf/histogram_5-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_5-1.png used on input line 1
-24.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<figures/histogram_5-1.pdf, id=10283, 578.16pt x 433.62pt>
+File: figures/histogram_5-1.pdf Graphic file (type pdf)
 
-<0_all_posts_pdf/histogram_6-1.png, id=1336, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/histogram_6-1.png Graphic file (type png)
+<use figures/histogram_5-1.pdf>
+Package pdftex.def Info: figures/histogram_5-1.pdf used on input line 124.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [78 <./figures/histogram_4-1.pdf>]
+<figures/histogram_6-1.pdf, id=10337, 578.16pt x 433.62pt>
+File: figures/histogram_6-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/histogram_6-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_6-1.png used on input line 1
-42.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [80 <./0_all_posts_pdf/histogram_5-1.png>] <0_all_posts_pdf/histogram_7-1.png,
- id=1342, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/histogram_7-1.png Graphic file (type png)
+<use figures/histogram_6-1.pdf>
+Package pdftex.def Info: figures/histogram_6-1.pdf used on input line 142.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [79 <./figures/histogram_5-1.pdf> <./figures/histogram_6-1.pdf>] <figures/hist
+ogram_7-1.pdf, id=10441, 578.16pt x 433.62pt>
+File: figures/histogram_7-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/histogram_7-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_7-1.png used on input line 1
-68.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [81 <./0_all_posts_pdf/histogram_6-1.png>] <0_all_posts_pdf/histogram_8-1.png,
- id=1348, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/histogram_8-1.png Graphic file (type png)
+<use figures/histogram_7-1.pdf>
+Package pdftex.def Info: figures/histogram_7-1.pdf used on input line 168.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/histogram_8-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_8-1.png used on input line 1
-88.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [82 <./0_all_posts_pdf/histogram_7-1.png>] <0_all_posts_pdf/histogram_9-1.png,
- id=1355, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/histogram_9-1.png Graphic file (type png)
+<figures/histogram_8-1.pdf, id=10442, 578.16pt x 433.62pt>
+File: figures/histogram_8-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/histogram_9-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_9-1.png used on input line 2
-19.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [83 <./0_all_posts_pdf/histogram_8-1.png>] <0_all_posts_pdf/histogram_10-1.png
-, id=1361, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/histogram_10-1.png Graphic file (type png)
+<use figures/histogram_8-1.pdf>
+Package pdftex.def Info: figures/histogram_8-1.pdf used on input line 188.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [80 <./figures/histogram_7-1.pdf>]
+<figures/histogram_9-1.pdf, id=10515, 578.16pt x 433.62pt>
+File: figures/histogram_9-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/histogram_10-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_10-1.png used on input line 
-245.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [84 <./0_all_posts_pdf/histogram_9-1.png>] <0_all_posts_pdf/histogram_11-1.png
-, id=1368, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/histogram_11-1.png Graphic file (type png)
+<use figures/histogram_9-1.pdf>
+Package pdftex.def Info: figures/histogram_9-1.pdf used on input line 219.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [81 <./figures/histogram_8-1.pdf>]
+<figures/histogram_10-1.pdf, id=10592, 578.16pt x 433.62pt>
+File: figures/histogram_10-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/histogram_11-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_11-1.png used on input line 
-268.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [85 <./0_all_posts_pdf/histogram_10-1.png>] <0_all_posts_pdf/histogram_12-1.pn
-g, id=1374, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/histogram_12-1.png Graphic file (type png)
+<use figures/histogram_10-1.pdf>
+Package pdftex.def Info: figures/histogram_10-1.pdf used on input line 245.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [82 <./figures/histogram_9-1.pdf>]
+<figures/histogram_11-1.pdf, id=10668, 578.16pt x 433.62pt>
+File: figures/histogram_11-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/histogram_12-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_12-1.png used on input line 
-291.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [86 <./0_all_posts_pdf/histogram_11-1.png>] <0_all_posts_pdf/histogram_13-1.pn
-g, id=1380, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/histogram_13-1.png Graphic file (type png)
+<use figures/histogram_11-1.pdf>
+Package pdftex.def Info: figures/histogram_11-1.pdf used on input line 268.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [83 <./figures/histogram_10-1.pdf> <./figures/histogram_11-1.pdf>]
+<figures/histogram_12-1.pdf, id=10837, 578.16pt x 433.62pt>
+File: figures/histogram_12-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/histogram_13-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_13-1.png used on input line 
-319.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [87 <./0_all_posts_pdf/histogram_12-1.png>] [88 <./0_all_posts_pdf/histogram_1
-3-1.png>]
-<0_all_posts_pdf/histogram_14-1.png, id=1393, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/histogram_14-1.png Graphic file (type png)
+<use figures/histogram_12-1.pdf>
+Package pdftex.def Info: figures/histogram_12-1.pdf used on input line 291.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [84 <./figures/histogram_12-1.pdf>]
+<figures/histogram_13-1.pdf, id=10934, 578.16pt x 433.62pt>
+File: figures/histogram_13-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/histogram_14-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_14-1.png used on input line 
-373.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [89 <./0_all_posts_pdf/histogram_14-1.png>] <0_all_posts_pdf/histogram_15-1.pn
-g, id=1400, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/histogram_15-1.png Graphic file (type png)
+<use figures/histogram_13-1.pdf>
+Package pdftex.def Info: figures/histogram_13-1.pdf used on input line 319.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [85 <./figures/histogram_13-1.pdf>]
+<figures/histogram_14-1.pdf, id=11013, 578.16pt x 433.62pt>
+File: figures/histogram_14-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/histogram_15-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_15-1.png used on input line 
-413.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [90 <./0_all_posts_pdf/histogram_15-1.png>] <0_all_posts_pdf/histogram_16-1.pn
-g, id=1407, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/histogram_16-1.png Graphic file (type png)
+<use figures/histogram_14-1.pdf>
+Package pdftex.def Info: figures/histogram_14-1.pdf used on input line 373.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [86 <./figures/histogram_14-1.pdf>]
+<figures/histogram_15-1.pdf, id=11088, 578.16pt x 433.62pt>
+File: figures/histogram_15-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/histogram_16-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_16-1.png used on input line 
-449.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [91 <./0_all_posts_pdf/histogram_16-1.png>] <0_all_posts_pdf/histogram_17-1.pn
-g, id=1413, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/histogram_17-1.png Graphic file (type png)
+<use figures/histogram_15-1.pdf>
+Package pdftex.def Info: figures/histogram_15-1.pdf used on input line 413.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [87 <./figures/histogram_15-1.pdf>]
+<figures/histogram_16-1.pdf, id=11164, 578.16pt x 433.62pt>
+File: figures/histogram_16-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/histogram_17-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_17-1.png used on input line 
-488.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [92 <./0_all_posts_pdf/histogram_17-1.png>] <0_all_posts_pdf/histogram_18-1.pn
-g, id=1419, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/histogram_18-1.png Graphic file (type png)
+<use figures/histogram_16-1.pdf>
+Package pdftex.def Info: figures/histogram_16-1.pdf used on input line 449.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [88 <./figures/histogram_16-1.pdf>]
+<figures/histogram_17-1.pdf, id=11239, 578.16pt x 433.62pt>
+File: figures/histogram_17-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/histogram_18-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_18-1.png used on input line 
-538.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [93] [94 <./0_all_posts_pdf/histogram_18-1.png>] <0_all_posts_pdf/histogram_19
--1.png, id=1430, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/histogram_19-1.png Graphic file (type png)
+<use figures/histogram_17-1.pdf>
+Package pdftex.def Info: figures/histogram_17-1.pdf used on input line 488.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [89 <./figures/histogram_17-1.pdf>]
+<figures/histogram_18-1.pdf, id=11313, 578.16pt x 433.62pt>
+File: figures/histogram_18-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/histogram_19-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_19-1.png used on input line 
-580.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [95 <./0_all_posts_pdf/histogram_19-1.png>] <0_all_posts_pdf/histogram_20-1.pn
-g, id=1436, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/histogram_20-1.png Graphic file (type png)
+<use figures/histogram_18-1.pdf>
+Package pdftex.def Info: figures/histogram_18-1.pdf used on input line 538.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [90] [91 <./figures/histogram_18-1.pdf>]
+<figures/histogram_19-1.pdf, id=11439, 578.16pt x 433.62pt>
+File: figures/histogram_19-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/histogram_20-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/histogram_20-1.png used on input line 
-616.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
-) [96 <./0_all_posts_pdf/histogram_20-1.png>]
+<use figures/histogram_19-1.pdf>
+Package pdftex.def Info: figures/histogram_19-1.pdf used on input line 580.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [92 <./figures/histogram_19-1.pdf>]
+<figures/histogram_20-1.pdf, id=11532, 578.16pt x 433.62pt>
+File: figures/histogram_20-1.pdf Graphic file (type pdf)
+
+<use figures/histogram_20-1.pdf>
+Package pdftex.def Info: figures/histogram_20-1.pdf used on input line 616.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+) [93 <./figures/histogram_20-1.pdf>]
 \openout2 = `chapter8.aux'.
 
- (./chapter8.tex
+
+(./chapter8.tex
 Chapter 8.
-<0_all_posts_pdf/density_final-1.png, id=1443, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/density_final-1.png Graphic file (type png)
+<figures/density_final-1.pdf, id=11625, 578.16pt x 433.62pt>
+File: figures/density_final-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/density_final-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_final-1.png used on input line
- 7.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [97
-
+<use figures/density_final-1.pdf>
+Package pdftex.def Info: figures/density_final-1.pdf used on input line 7.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [94
 
 
- <./0_all_posts_pdf/density_final-1.png>] <0_all_posts_pdf/density_1-1.png, id=
-1449, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/density_1-1.png Graphic file (type png)
 
-<use 0_all_posts_pdf/density_1-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_1-1.png used on input line 35.
+ <./figures/density_final-1.pdf>]
+<figures/density_1-1.pdf, id=11721, 578.16pt x 433.62pt>
+File: figures/density_1-1.pdf Graphic file (type pdf)
 
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<use figures/density_1-1.pdf>
+Package pdftex.def Info: figures/density_1-1.pdf used on input line 35.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<0_all_posts_pdf/density_2-1.png, id=1450, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/density_2-1.png Graphic file (type png)
+<figures/density_2-1.pdf, id=11722, 578.16pt x 433.62pt>
+File: figures/density_2-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/density_2-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_2-1.png used on input line 53.
+<use figures/density_2-1.pdf>
+Package pdftex.def Info: figures/density_2-1.pdf used on input line 53.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [95 <./figures/density_1-1.pdf>]
+<figures/density_3-1.pdf, id=11779, 578.16pt x 433.62pt>
+File: figures/density_3-1.pdf Graphic file (type pdf)
 
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [98 <./0_all_posts_pdf/density_1-1.png>]
-<0_all_posts_pdf/density_3-1.png, id=1456, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/density_3-1.png Graphic file (type png)
+<use figures/density_3-1.pdf>
+Package pdftex.def Info: figures/density_3-1.pdf used on input line 66.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [96 <./figures/density_2-1.pdf> <./figures/density_3-1.pdf>] <figures/density_
+4-1.pdf, id=11892, 578.16pt x 433.62pt>
+File: figures/density_4-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/density_3-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_3-1.png used on input line 66.
+<use figures/density_4-1.pdf>
+Package pdftex.def Info: figures/density_4-1.pdf used on input line 89.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [99 <./0_all_posts_pdf/density_2-1.png> <./0_all_posts_pdf/density_3-1.png>]
-<0_all_posts_pdf/density_4-1.png, id=1464, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/density_4-1.png Graphic file (type png)
+<figures/density_5-1.pdf, id=11893, 578.16pt x 433.62pt>
+File: figures/density_5-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/density_4-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_4-1.png used on input line 89.
+<use figures/density_5-1.pdf>
+Package pdftex.def Info: figures/density_5-1.pdf used on input line 103.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [97 <./figures/density_4-1.pdf> <./figures/density_5-1.pdf>] <figures/density_
+6-1.pdf, id=12054, 578.16pt x 433.62pt>
+File: figures/density_6-1.pdf Graphic file (type pdf)
 
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<use figures/density_6-1.pdf>
+Package pdftex.def Info: figures/density_6-1.pdf used on input line 131.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [98 <./figures/density_6-1.pdf>]
+<figures/density_7-1.pdf, id=12139, 578.16pt x 433.62pt>
+File: figures/density_7-1.pdf Graphic file (type pdf)
 
-<0_all_posts_pdf/density_5-1.png, id=1465, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/density_5-1.png Graphic file (type png)
+<use figures/density_7-1.pdf>
+Package pdftex.def Info: figures/density_7-1.pdf used on input line 154.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/density_5-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_5-1.png used on input line 103
-.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [100 <./0_all_posts_pdf/density_4-1.png>] <0_all_posts_pdf/density_6-1.png, id
-=1472, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/density_6-1.png Graphic file (type png)
+<figures/density_8-1.pdf, id=12140, 578.16pt x 433.62pt>
+File: figures/density_8-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/density_6-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_6-1.png used on input line 131
-.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [101 <./0_all_posts_pdf/density_5-1.png>] <0_all_posts_pdf/density_7-1.png, id
-=1478, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/density_7-1.png Graphic file (type png)
+<use figures/density_8-1.pdf>
+Package pdftex.def Info: figures/density_8-1.pdf used on input line 174.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [99 <./figures/density_7-1.pdf>]
+<figures/density_9-1.pdf, id=12224, 578.16pt x 433.62pt>
+File: figures/density_9-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/density_7-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_7-1.png used on input line 154
-.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [102 <./0_all_posts_pdf/density_6-1.png>] <0_all_posts_pdf/density_8-1.png, id
-=1485, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/density_8-1.png Graphic file (type png)
+<use figures/density_9-1.pdf>
+Package pdftex.def Info: figures/density_9-1.pdf used on input line 191.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [100 <./figures/density_8-1.pdf> <./figures/density_9-1.pdf>] <figures/density
+_10-1.pdf, id=12392, 578.16pt x 433.62pt>
+File: figures/density_10-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/density_8-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_8-1.png used on input line 174
-.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [103 <./0_all_posts_pdf/density_7-1.png>] <0_all_posts_pdf/density_9-1.png, id
-=1491, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/density_9-1.png Graphic file (type png)
+<use figures/density_10-1.pdf>
+Package pdftex.def Info: figures/density_10-1.pdf used on input line 244.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [101] [102 <./figures/density_10-1.pdf>]
+<figures/density_11-1.pdf, id=12481, 578.16pt x 433.62pt>
+File: figures/density_11-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/density_9-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_9-1.png used on input line 191
-.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [104 <./0_all_posts_pdf/density_8-1.png> <./0_all_posts_pdf/density_9-1.png>]
-<0_all_posts_pdf/density_10-1.png, id=1500, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/density_10-1.png Graphic file (type png)
+<use figures/density_11-1.pdf>
+Package pdftex.def Info: figures/density_11-1.pdf used on input line 284.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [103 <./figures/density_11-1.pdf>]
+<figures/density_12-1.pdf, id=12565, 578.16pt x 433.62pt>
+File: figures/density_12-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/density_10-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_10-1.png used on input line 24
-4.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [105] [106 <./0_all_posts_pdf/density_10-1.png>] <0_all_posts_pdf/density_11-1
-.png, id=1511, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/density_11-1.png Graphic file (type png)
+<use figures/density_12-1.pdf>
+Package pdftex.def Info: figures/density_12-1.pdf used on input line 320.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/density_11-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_11-1.png used on input line 28
-4.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [107 <./0_all_posts_pdf/density_11-1.png>] <0_all_posts_pdf/density_12-1.png, 
-id=1517, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/density_12-1.png Graphic file (type png)
+<figures/density_13-1.pdf, id=12566, 578.16pt x 433.62pt>
+File: figures/density_13-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/density_12-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_12-1.png used on input line 32
-0.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<use figures/density_13-1.pdf>
+Package pdftex.def Info: figures/density_13-1.pdf used on input line 342.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [104 <./figures/density_12-1.pdf>] [105 <./figures/density_13-1.pdf>]
+<figures/density_14-1.pdf, id=12730, 578.16pt x 433.62pt>
+File: figures/density_14-1.pdf Graphic file (type pdf)
 
-<0_all_posts_pdf/density_13-1.png, id=1518, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/density_13-1.png Graphic file (type png)
-
-<use 0_all_posts_pdf/density_13-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_13-1.png used on input line 34
-2.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [108 <./0_all_posts_pdf/density_12-1.png>] [109 <./0_all_posts_pdf/density_13-
-1.png>]
-<0_all_posts_pdf/density_14-1.png, id=1530, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/density_14-1.png Graphic file (type png)
-
-<use 0_all_posts_pdf/density_14-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_14-1.png used on input line 38
-6.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<use figures/density_14-1.pdf>
+Package pdftex.def Info: figures/density_14-1.pdf used on input line 386.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 LaTeX Font Info:    Font shape `T1/hlh/m/it' will be
 (Font)              scaled to size 9.74548pt on input line 388.
- [110 <./0_all_posts_pdf/density_14-1.png>] <0_all_posts_pdf/density_15-1.png, 
-id=1537, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/density_15-1.png Graphic file (type png)
+ [106 <./figures/density_14-1.pdf>]
+<figures/density_15-1.pdf, id=12849, 578.16pt x 433.62pt>
+File: figures/density_15-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/density_15-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_15-1.png used on input line 42
-1.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<use figures/density_15-1.pdf>
+Package pdftex.def Info: figures/density_15-1.pdf used on input line 421.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<0_all_posts_pdf/density_16-1.png, id=1539, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/density_16-1.png Graphic file (type png)
+<figures/density_16-1.pdf, id=12851, 578.16pt x 433.62pt>
+File: figures/density_16-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/density_16-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_16-1.png used on input line 45
-4.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [111 <./0_all_posts_pdf/density_15-1.png>] <0_all_posts_pdf/density_17-1.png, 
-id=1545, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/density_17-1.png Graphic file (type png)
+<use figures/density_16-1.pdf>
+Package pdftex.def Info: figures/density_16-1.pdf used on input line 454.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [107 <./figures/density_15-1.pdf>]
+<figures/density_17-1.pdf, id=12969, 578.16pt x 433.62pt>
+File: figures/density_17-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/density_17-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_17-1.png used on input line 47
-8.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [112 <./0_all_posts_pdf/density_16-1.png>] <0_all_posts_pdf/density_18-1.png, 
-id=1551, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/density_18-1.png Graphic file (type png)
+<use figures/density_17-1.pdf>
+Package pdftex.def Info: figures/density_17-1.pdf used on input line 478.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [108 <./figures/density_16-1.pdf>]
+<figures/density_18-1.pdf, id=13068, 578.16pt x 433.62pt>
+File: figures/density_18-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/density_18-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_18-1.png used on input line 50
-6.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [113 <./0_all_posts_pdf/density_17-1.png>] <0_all_posts_pdf/density_19-1.png, 
-id=1557, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/density_19-1.png Graphic file (type png)
+<use figures/density_18-1.pdf>
+Package pdftex.def Info: figures/density_18-1.pdf used on input line 506.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [109 <./figures/density_17-1.pdf>]
+<figures/density_19-1.pdf, id=13169, 578.16pt x 433.62pt>
+File: figures/density_19-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/density_19-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/density_19-1.png used on input line 53
-5.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [114 <./0_all_posts_pdf/density_18-1.png>]) [115 <./0_all_posts_pdf/density_19
--1.png>]
+<use figures/density_19-1.pdf>
+Package pdftex.def Info: figures/density_19-1.pdf used on input line 535.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [110 <./figures/density_18-1.pdf>]) [111 <./figures/density_19-1.pdf>]
 \openout2 = `chapter9.aux'.
 
  (./chapter9.tex
 Chapter 9.
-<0_all_posts_pdf/function_final-1.png, id=1569, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/function_final-1.png Graphic file (type png)
+<figures/function_final-1.pdf, id=13362, 578.16pt x 433.62pt>
+File: figures/function_final-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/function_final-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_final-1.png used on input lin
-e 7.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [116
+<use figures/function_final-1.pdf>
+Package pdftex.def Info: figures/function_final-1.pdf used on input line 7.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+
+<figures/function_1-1.pdf, id=13363, 578.16pt x 433.62pt>
+File: figures/function_1-1.pdf Graphic file (type pdf)
+
+<use figures/function_1-1.pdf>
+Package pdftex.def Info: figures/function_1-1.pdf used on input line 25.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [112
 
 
 
- <./0_all_posts_pdf/function_final-1.png>] <0_all_posts_pdf/function_1-1.png, i
-d=1575, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/function_1-1.png Graphic file (type png)
+ <./figures/function_final-1.pdf>]
+<figures/function_2-1.pdf, id=13448, 578.16pt x 433.62pt>
+File: figures/function_2-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/function_1-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_1-1.png used on input line 25
-.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<use figures/function_2-1.pdf>
+Package pdftex.def Info: figures/function_2-1.pdf used on input line 45.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [113 <./figures/function_1-1.pdf> <./figures/function_2-1.pdf>] <figures/funct
+ion_3-1.pdf, id=13572, 578.16pt x 433.62pt>
+File: figures/function_3-1.pdf Graphic file (type pdf)
 
-<0_all_posts_pdf/function_2-1.png, id=1577, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/function_2-1.png Graphic file (type png)
+<use figures/function_3-1.pdf>
+Package pdftex.def Info: figures/function_3-1.pdf used on input line 66.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/function_2-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_2-1.png used on input line 45
-.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [117 <./0_all_posts_pdf/function_1-1.png>] <0_all_posts_pdf/function_3-1.png, 
-id=1583, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/function_3-1.png Graphic file (type png)
+<figures/function_4-1.pdf, id=13573, 578.16pt x 433.62pt>
+File: figures/function_4-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/function_3-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_3-1.png used on input line 66
-.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [118 <./0_all_posts_pdf/function_2-1.png>] <0_all_posts_pdf/function_4-1.png, 
-id=1589, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/function_4-1.png Graphic file (type png)
+<use figures/function_4-1.pdf>
+Package pdftex.def Info: figures/function_4-1.pdf used on input line 90.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [114 <./figures/function_3-1.pdf>]
+<figures/function_5-1.pdf, id=13631, 578.16pt x 433.62pt>
+File: figures/function_5-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/function_4-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_4-1.png used on input line 90
-.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [119 <./0_all_posts_pdf/function_3-1.png>] <0_all_posts_pdf/function_5-1.png, 
-id=1595, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/function_5-1.png Graphic file (type png)
+<use figures/function_5-1.pdf>
+Package pdftex.def Info: figures/function_5-1.pdf used on input line 109.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [115 <./figures/function_4-1.pdf> <./figures/function_5-1.pdf>] <figures/funct
+ion_6-1.pdf, id=13755, 578.16pt x 433.62pt>
+File: figures/function_6-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/function_5-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_5-1.png used on input line 10
-9.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [120 <./0_all_posts_pdf/function_4-1.png>] <0_all_posts_pdf/function_6-1.png, 
-id=1602, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/function_6-1.png Graphic file (type png)
+<use figures/function_6-1.pdf>
+Package pdftex.def Info: figures/function_6-1.pdf used on input line 132.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/function_6-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_6-1.png used on input line 13
-2.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [121 <./0_all_posts_pdf/function_5-1.png>] <0_all_posts_pdf/function_7-1.png, 
-id=1608, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/function_7-1.png Graphic file (type png)
+<figures/function_7-1.pdf, id=13756, 578.16pt x 433.62pt>
+File: figures/function_7-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/function_7-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_7-1.png used on input line 14
-6.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [122 <./0_all_posts_pdf/function_6-1.png> <./0_all_posts_pdf/function_7-1.png>
-]
-<0_all_posts_pdf/function_8-1.png, id=1616, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/function_8-1.png Graphic file (type png)
+<use figures/function_7-1.pdf>
+Package pdftex.def Info: figures/function_7-1.pdf used on input line 146.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [116 <./figures/function_6-1.pdf>]
+<figures/function_8-1.pdf, id=13825, 578.16pt x 433.62pt>
+File: figures/function_8-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/function_8-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_8-1.png used on input line 17
-1.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [123 <./0_all_posts_pdf/function_8-1.png>] <0_all_posts_pdf/function_9-1.png, 
-id=1622, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/function_9-1.png Graphic file (type png)
+<use figures/function_8-1.pdf>
+Package pdftex.def Info: figures/function_8-1.pdf used on input line 171.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [117 <./figures/function_7-1.pdf>]
+<figures/function_9-1.pdf, id=13898, 578.16pt x 433.62pt>
+File: figures/function_9-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/function_9-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_9-1.png used on input line 19
-1.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<use figures/function_9-1.pdf>
+Package pdftex.def Info: figures/function_9-1.pdf used on input line 191.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [118 <./figures/function_8-1.pdf> <./figures/function_9-1.pdf>] <figures/funct
+ion_10-1.pdf, id=14038, 578.16pt x 433.62pt>
+File: figures/function_10-1.pdf Graphic file (type pdf)
 
-<0_all_posts_pdf/function_10-1.png, id=1623, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/function_10-1.png Graphic file (type png)
+<use figures/function_10-1.pdf>
+Package pdftex.def Info: figures/function_10-1.pdf used on input line 219.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [119 <./figures/function_10-1.pdf>]
+<figures/function_11-1.pdf, id=14123, 578.16pt x 433.62pt>
+File: figures/function_11-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/function_10-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_10-1.png used on input line 2
-19.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [124 <./0_all_posts_pdf/function_9-1.png>] <0_all_posts_pdf/function_11-1.png,
- id=1630, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/function_11-1.png Graphic file (type png)
+<use figures/function_11-1.pdf>
+Package pdftex.def Info: figures/function_11-1.pdf used on input line 245.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/function_11-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_11-1.png used on input line 2
-45.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [125 <./0_all_posts_pdf/function_10-1.png>] <0_all_posts_pdf/function_12-1.png
-, id=1636, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/function_12-1.png Graphic file (type png)
+Overfull \vbox (0.50174pt too high) detected at line 270
+ []
 
-<use 0_all_posts_pdf/function_12-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_12-1.png used on input line 2
-72.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [126 <./0_all_posts_pdf/function_11-1.png>] <0_all_posts_pdf/function_13-1.png
-, id=1643, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/function_13-1.png Graphic file (type png)
+[120 <./figures/function_11-1.pdf>]
+<figures/function_12-1.pdf, id=14208, 578.16pt x 433.62pt>
+File: figures/function_12-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/function_13-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_13-1.png used on input line 2
-89.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [127 <./0_all_posts_pdf/function_12-1.png> <./0_all_posts_pdf/function_13-1.pn
-g>]
-<0_all_posts_pdf/function_14-1.png, id=1652, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/function_14-1.png Graphic file (type png)
+<use figures/function_12-1.pdf>
+Package pdftex.def Info: figures/function_12-1.pdf used on input line 272.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/function_14-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_14-1.png used on input line 3
-46.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [128] [129 <./0_all_posts_pdf/function_14-1.png>] <0_all_posts_pdf/function_15
--1.png, id=1663, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/function_15-1.png Graphic file (type png)
+<figures/function_13-1.pdf, id=14209, 578.16pt x 433.62pt>
+File: figures/function_13-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/function_15-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_15-1.png used on input line 3
-85.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [130 <./0_all_posts_pdf/function_15-1.png>] <0_all_posts_pdf/function_16-1.png
-, id=1669, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/function_16-1.png Graphic file (type png)
+<use figures/function_13-1.pdf>
+Package pdftex.def Info: figures/function_13-1.pdf used on input line 289.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [121 <./figures/function_12-1.pdf> <./figures/function_13-1.pdf>] <figures/fun
+ction_14-1.pdf, id=14376, 578.16pt x 433.62pt>
+File: figures/function_14-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/function_16-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_16-1.png used on input line 4
-23.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<use figures/function_14-1.pdf>
+Package pdftex.def Info: figures/function_14-1.pdf used on input line 346.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [122] [123 <./figures/function_14-1.pdf>]
+<figures/function_15-1.pdf, id=14464, 578.16pt x 433.62pt>
+File: figures/function_15-1.pdf Graphic file (type pdf)
 
-<0_all_posts_pdf/function_17-1.png, id=1670, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/function_17-1.png Graphic file (type png)
+<use figures/function_15-1.pdf>
+Package pdftex.def Info: figures/function_15-1.pdf used on input line 385.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [124 <./figures/function_15-1.pdf>]
+<figures/function_16-1.pdf, id=14548, 578.16pt x 433.62pt>
+File: figures/function_16-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/function_17-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_17-1.png used on input line 4
-52.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [131 <./0_all_posts_pdf/function_16-1.png>] [132 <./0_all_posts_pdf/function_1
-7-1.png>]
-<0_all_posts_pdf/function_18-1.png, id=1682, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/function_18-1.png Graphic file (type png)
+<use figures/function_16-1.pdf>
+Package pdftex.def Info: figures/function_16-1.pdf used on input line 423.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/function_18-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/function_18-1.png used on input line 4
-90.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
-) [133 <./0_all_posts_pdf/function_18-1.png>]
+<figures/function_17-1.pdf, id=14549, 578.16pt x 433.62pt>
+File: figures/function_17-1.pdf Graphic file (type pdf)
+
+<use figures/function_17-1.pdf>
+Package pdftex.def Info: figures/function_17-1.pdf used on input line 452.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [125 <./figures/function_16-1.pdf>] [126 <./figures/function_17-1.pdf>]
+<figures/function_18-1.pdf, id=14717, 578.16pt x 433.62pt>
+File: figures/function_18-1.pdf Graphic file (type pdf)
+
+<use figures/function_18-1.pdf>
+Package pdftex.def Info: figures/function_18-1.pdf used on input line 490.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+) [127 <./figures/function_18-1.pdf>]
 \openout2 = `chapter10.aux'.
 
- (./chapter10.tex
+
+(./chapter10.tex
 Chapter 10.
-<0_all_posts_pdf/box_final-1.png, id=1688, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/box_final-1.png Graphic file (type png)
+<figures/box_final-1.pdf, id=14802, 578.16pt x 433.62pt>
+File: figures/box_final-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/box_final-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_final-1.png used on input line 23.
-
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [134
-
+<use figures/box_final-1.pdf>
+Package pdftex.def Info: figures/box_final-1.pdf used on input line 23.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [128
 
 
- <./0_all_posts_pdf/box_final-1.png>] <0_all_posts_pdf/box_1-1.png, id=1694, 60
-2.25pt x 501.875pt>
-File: 0_all_posts_pdf/box_1-1.png Graphic file (type png)
 
-<use 0_all_posts_pdf/box_1-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_1-1.png used on input line 41.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+ <./figures/box_final-1.pdf>]
+<figures/box_1-1.pdf, id=14893, 578.16pt x 433.62pt>
+File: figures/box_1-1.pdf Graphic file (type pdf)
+ <use figures/box_1-1.pdf>
+Package pdftex.def Info: figures/box_1-1.pdf used on input line 41.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<0_all_posts_pdf/box_2-1.png, id=1695, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/box_2-1.png Graphic file (type png)
+<figures/box_2-1.pdf, id=14894, 578.16pt x 433.62pt>
+File: figures/box_2-1.pdf Graphic file (type pdf)
+ <use figures/box_2-1.pdf>
+Package pdftex.def Info: figures/box_2-1.pdf used on input line 59.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/box_2-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_2-1.png used on input line 59.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [135 <./0_all_posts_pdf/box_1-1.png>]
-<0_all_posts_pdf/box_3-1.png, id=1701, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/box_3-1.png Graphic file (type png)
+[129 <./figures/box_1-1.pdf>]
+<figures/box_3-1.pdf, id=14954, 578.16pt x 433.62pt>
+File: figures/box_3-1.pdf Graphic file (type pdf)
+ <use figures/box_3-1.pdf>
+Package pdftex.def Info: figures/box_3-1.pdf used on input line 72.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/box_3-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_3-1.png used on input line 72.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [136 <./0_all_posts_pdf/box_2-1.png> <./0_all_posts_pdf/box_3-1.png>]
-<0_all_posts_pdf/box_4-1.png, id=1708, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/box_4-1.png Graphic file (type png)
+[130 <./figures/box_2-1.pdf> <./figures/box_3-1.pdf>]
+<figures/box_4-1.pdf, id=15074, 578.16pt x 433.62pt>
+File: figures/box_4-1.pdf Graphic file (type pdf)
+ <use figures/box_4-1.pdf>
+Package pdftex.def Info: figures/box_4-1.pdf used on input line 95.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/box_4-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_4-1.png used on input line 95.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<figures/box_5-1.pdf, id=15075, 578.16pt x 433.62pt>
+File: figures/box_5-1.pdf Graphic file (type pdf)
+ <use figures/box_5-1.pdf>
+Package pdftex.def Info: figures/box_5-1.pdf used on input line 109.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<0_all_posts_pdf/box_5-1.png, id=1709, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/box_5-1.png Graphic file (type png)
+[131 <./figures/box_4-1.pdf> <./figures/box_5-1.pdf>]
+<figures/box_6-1.pdf, id=15236, 578.16pt x 433.62pt>
+File: figures/box_6-1.pdf Graphic file (type pdf)
+ <use figures/box_6-1.pdf>
+Package pdftex.def Info: figures/box_6-1.pdf used on input line 136.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/box_5-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_5-1.png used on input line 109.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [137 <./0_all_posts_pdf/box_4-1.png>]
-<0_all_posts_pdf/box_6-1.png, id=1716, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/box_6-1.png Graphic file (type png)
+[132 <./figures/box_6-1.pdf>]
+<figures/box_7-1.pdf, id=15322, 578.16pt x 433.62pt>
+File: figures/box_7-1.pdf Graphic file (type pdf)
+ <use figures/box_7-1.pdf>
+Package pdftex.def Info: figures/box_7-1.pdf used on input line 158.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/box_6-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_6-1.png used on input line 136.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [138 <./0_all_posts_pdf/box_5-1.png>]
-<0_all_posts_pdf/box_7-1.png, id=1723, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/box_7-1.png Graphic file (type png)
+<figures/box_8-1.pdf, id=15323, 578.16pt x 433.62pt>
+File: figures/box_8-1.pdf Graphic file (type pdf)
+ <use figures/box_8-1.pdf>
+Package pdftex.def Info: figures/box_8-1.pdf used on input line 177.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/box_7-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_7-1.png used on input line 158.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [139 <./0_all_posts_pdf/box_6-1.png>]
-<0_all_posts_pdf/box_8-1.png, id=1729, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/box_8-1.png Graphic file (type png)
+[133 <./figures/box_7-1.pdf>]
+<figures/box_9-1.pdf, id=15409, 578.16pt x 433.62pt>
+File: figures/box_9-1.pdf Graphic file (type pdf)
+ <use figures/box_9-1.pdf>
+Package pdftex.def Info: figures/box_9-1.pdf used on input line 203.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/box_8-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_8-1.png used on input line 177.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [140 <./0_all_posts_pdf/box_7-1.png> <./0_all_posts_pdf/box_8-1.png>]
-<0_all_posts_pdf/box_9-1.png, id=1737, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/box_9-1.png Graphic file (type png)
+[134 <./figures/box_8-1.pdf>]
+<figures/box_10-1.pdf, id=15495, 578.16pt x 433.62pt>
+File: figures/box_10-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/box_9-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_9-1.png used on input line 203.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
+<use figures/box_10-1.pdf>
+Package pdftex.def Info: figures/box_10-1.pdf used on input line 220.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [135 <./figures/box_9-1.pdf> <./figures/box_10-1.pdf>] <figures/box_11-1.pdf, 
+id=15666, 578.16pt x 433.62pt>
+File: figures/box_11-1.pdf Graphic file (type pdf)
 
-<0_all_posts_pdf/box_10-1.png, id=1738, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/box_10-1.png Graphic file (type png)
+<use figures/box_11-1.pdf>
+Package pdftex.def Info: figures/box_11-1.pdf used on input line 274.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [136] [137 <./figures/box_11-1.pdf>]
+<figures/box_12-1.pdf, id=15753, 578.16pt x 433.62pt>
+File: figures/box_12-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/box_10-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_10-1.png used on input line 220.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [141 <./0_all_posts_pdf/box_9-1.png>]
-[142 <./0_all_posts_pdf/box_10-1.png>]
-<0_all_posts_pdf/box_11-1.png, id=1751, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/box_11-1.png Graphic file (type png)
+<use figures/box_12-1.pdf>
+Package pdftex.def Info: figures/box_12-1.pdf used on input line 314.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [138 <./figures/box_12-1.pdf>]
+<figures/box_13-1.pdf, id=15839, 578.16pt x 433.62pt>
+File: figures/box_13-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/box_11-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_11-1.png used on input line 274.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [143 <./0_all_posts_pdf/box_11-1.png>]
-<0_all_posts_pdf/box_12-1.png, id=1758, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/box_12-1.png Graphic file (type png)
+<use figures/box_13-1.pdf>
+Package pdftex.def Info: figures/box_13-1.pdf used on input line 351.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/box_12-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_12-1.png used on input line 314.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [144 <./0_all_posts_pdf/box_12-1.png>]
-<0_all_posts_pdf/box_13-1.png, id=1765, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/box_13-1.png Graphic file (type png)
+<figures/box_14-1.pdf, id=15840, 578.16pt x 433.62pt>
+File: figures/box_14-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/box_13-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_13-1.png used on input line 351.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [145 <./0_all_posts_pdf/box_13-1.png>]
-<0_all_posts_pdf/box_14-1.png, id=1771, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/box_14-1.png Graphic file (type png)
+<use figures/box_14-1.pdf>
+Package pdftex.def Info: figures/box_14-1.pdf used on input line 367.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [139 <./figures/box_13-1.pdf>]
+<figures/box_15-1.pdf, id=15922, 578.16pt x 433.62pt>
+File: figures/box_15-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/box_14-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_14-1.png used on input line 367.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [146 <./0_all_posts_pdf/box_14-1.png>]
-<0_all_posts_pdf/box_15-1.png, id=1777, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/box_15-1.png Graphic file (type png)
+<use figures/box_15-1.pdf>
+Package pdftex.def Info: figures/box_15-1.pdf used on input line 404.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [140 <./figures/box_14-1.pdf>] [141 <./figures/box_15-1.pdf>] <figures/box_16-
+1.pdf, id=16087, 578.16pt x 433.62pt>
+File: figures/box_16-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/box_15-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_15-1.png used on input line 404.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [147 <./0_all_posts_pdf/box_15-1.png>]
-<0_all_posts_pdf/box_16-1.png, id=1783, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/box_16-1.png Graphic file (type png)
+<use figures/box_16-1.pdf>
+Package pdftex.def Info: figures/box_16-1.pdf used on input line 448.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<use 0_all_posts_pdf/box_16-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_16-1.png used on input line 448.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [148 <./0_all_posts_pdf/box_16-1.png>]
-<0_all_posts_pdf/box_17-1.png, id=1791, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/box_17-1.png Graphic file (type png)
+<figures/box_17-1.pdf, id=16089, 578.16pt x 433.62pt>
+File: figures/box_17-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/box_17-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_17-1.png used on input line 481.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
- [149 <./0_all_posts_pdf/box_17-1.png>]
-<0_all_posts_pdf/box_18-1.png, id=1797, 602.25pt x 501.875pt>
-File: 0_all_posts_pdf/box_18-1.png Graphic file (type png)
+<use figures/box_17-1.pdf>
+Package pdftex.def Info: figures/box_17-1.pdf used on input line 481.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [142 <./figures/box_16-1.pdf>]
+<figures/box_18-1.pdf, id=16171, 578.16pt x 433.62pt>
+File: figures/box_18-1.pdf Graphic file (type pdf)
 
-<use 0_all_posts_pdf/box_18-1.png>
-Package pdftex.def Info: 0_all_posts_pdf/box_18-1.png used on input line 513.
-(pdftex.def)             Requested size: 259.6186pt x 216.35341pt.
-) [150 <./0_all_posts_pdf/box_18-1.png>]
-[151
+<use figures/box_18-1.pdf>
+Package pdftex.def Info: figures/box_18-1.pdf used on input line 513.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [143 <./figures/box_17-1.pdf>]) [144 <./figures/box_18-1.pdf>]
+\openout2 = `chapter11.aux'.
+
+ (./chapter11.tex
+Chapter 11.
+<figures/lr_final-1.pdf, id=16355, 578.16pt x 433.62pt>
+File: figures/lr_final-1.pdf Graphic file (type pdf)
+
+<use figures/lr_final-1.pdf>
+Package pdftex.def Info: figures/lr_final-1.pdf used on input line 17.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+
+<figures/lr_final-2.pdf, id=16356, 578.16pt x 433.62pt>
+File: figures/lr_final-2.pdf Graphic file (type pdf)
+
+<use figures/lr_final-2.pdf>
+Package pdftex.def Info: figures/lr_final-2.pdf used on input line 19.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [145
+
+
+
+ <./figures/lr_final-1.pdf>] [146 <./figures/lr_final-2.pdf>] [147] <figures/lr
+_6-1.pdf, id=17603, 578.16pt x 433.62pt>
+File: figures/lr_6-1.pdf Graphic file (type pdf)
+
+<use figures/lr_6-1.pdf>
+Package pdftex.def Info: figures/lr_6-1.pdf used on input line 155.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+ [148 <./figures/lr_6-1.pdf>]
+<figures/lr_7-1.pdf, id=17669, 578.16pt x 433.62pt>
+File: figures/lr_7-1.pdf Graphic file (type pdf)
+ <use figures/lr_7-1.pdf>
+Package pdftex.def Info: figures/lr_7-1.pdf used on input line 168.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+
+<figures/lr_8-1.pdf, id=17670, 578.16pt x 433.62pt>
+File: figures/lr_8-1.pdf Graphic file (type pdf)
+ <use figures/lr_8-1.pdf>
+Package pdftex.def Info: figures/lr_8-1.pdf used on input line 183.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+
+[149 <./figures/lr_7-1.pdf> <./figures/lr_8-1.pdf>]
+<figures/lr_9-1.pdf, id=17785, 578.16pt x 433.62pt>
+File: figures/lr_9-1.pdf Graphic file (type pdf)
+ <use figures/lr_9-1.pdf>
+Package pdftex.def Info: figures/lr_9-1.pdf used on input line 194.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+
+<figures/lr_10-1.pdf, id=17786, 578.16pt x 433.62pt>
+File: figures/lr_10-1.pdf Graphic file (type pdf)
+ <use figures/lr_10-1.pdf>
+Package pdftex.def Info: figures/lr_10-1.pdf used on input line 211.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+
+[150 <./figures/lr_9-1.pdf>]
+<figures/lr_11-1.pdf, id=17852, 578.16pt x 433.62pt>
+File: figures/lr_11-1.pdf Graphic file (type pdf)
+ <use figures/lr_11-1.pdf>
+Package pdftex.def Info: figures/lr_11-1.pdf used on input line 229.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+
+[151 <./figures/lr_10-1.pdf> <./figures/lr_11-1.pdf>]
+<figures/lr_12-1.pdf, id=18034, 578.16pt x 433.62pt>
+File: figures/lr_12-1.pdf Graphic file (type pdf)
+ <use figures/lr_12-1.pdf>
+Package pdftex.def Info: figures/lr_12-1.pdf used on input line 250.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+
+[152 <./figures/lr_12-1.pdf>]
+<figures/lr_13-1.pdf, id=18144, 578.16pt x 433.62pt>
+File: figures/lr_13-1.pdf Graphic file (type pdf)
+ <use figures/lr_13-1.pdf>
+Package pdftex.def Info: figures/lr_13-1.pdf used on input line 280.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+
+<figures/lr_14-1.pdf, id=18145, 578.16pt x 433.62pt>
+File: figures/lr_14-1.pdf Graphic file (type pdf)
+ <use figures/lr_14-1.pdf>
+Package pdftex.def Info: figures/lr_14-1.pdf used on input line 291.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+
+[153 <./figures/lr_13-1.pdf> <./figures/lr_14-1.pdf>]
+<figures/lr_15-1.pdf, id=20002, 578.16pt x 433.62pt>
+File: figures/lr_15-1.pdf Graphic file (type pdf)
+ <use figures/lr_15-1.pdf>
+Package pdftex.def Info: figures/lr_15-1.pdf used on input line 345.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+
+[154] [155 <./figures/lr_15-1.pdf>]
+<figures/lr_16-1.pdf, id=20935, 578.16pt x 433.62pt>
+File: figures/lr_16-1.pdf Graphic file (type pdf)
+ <use figures/lr_16-1.pdf>
+Package pdftex.def Info: figures/lr_16-1.pdf used on input line 386.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+
+[156 <./figures/lr_16-1.pdf>]
+<figures/lr_17-1.pdf, id=21865, 578.16pt x 433.62pt>
+File: figures/lr_17-1.pdf Graphic file (type pdf)
+ <use figures/lr_17-1.pdf>
+Package pdftex.def Info: figures/lr_17-1.pdf used on input line 424.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+
+<figures/lr_18-1.pdf, id=21866, 578.16pt x 433.62pt>
+File: figures/lr_18-1.pdf Graphic file (type pdf)
+ <use figures/lr_18-1.pdf>
+Package pdftex.def Info: figures/lr_18-1.pdf used on input line 442.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+
+[157 <./figures/lr_17-1.pdf>]
+<figures/lr_19-1.pdf, id=22794, 578.16pt x 433.62pt>
+File: figures/lr_19-1.pdf Graphic file (type pdf)
+ <use figures/lr_19-1.pdf>
+Package pdftex.def Info: figures/lr_19-1.pdf used on input line 452.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+
+[158 <./figures/lr_18-1.pdf> <./figures/lr_19-1.pdf>]
+<figures/lr_20-1.pdf, id=23417, 578.16pt x 433.62pt>
+File: figures/lr_20-1.pdf Graphic file (type pdf)
+ <use figures/lr_20-1.pdf>
+Package pdftex.def Info: figures/lr_20-1.pdf used on input line 472.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+
+<figures/lr_21-1.pdf, id=23418, 578.16pt x 433.62pt>
+File: figures/lr_21-1.pdf Graphic file (type pdf)
+ <use figures/lr_21-1.pdf>
+Package pdftex.def Info: figures/lr_21-1.pdf used on input line 492.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+
+[159 <./figures/lr_20-1.pdf>]
+<figures/lr_22-1.pdf, id=23731, 578.16pt x 433.62pt>
+File: figures/lr_22-1.pdf Graphic file (type pdf)
+ <use figures/lr_22-1.pdf>
+Package pdftex.def Info: figures/lr_22-1.pdf used on input line 513.
+(pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
+
+[160 <./figures/lr_21-1.pdf>]) [161 <./figures/lr_22-1.pdf>] [162
 
 
 ]
 \GPT@outputbox=\box45
- [152]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 238.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 238.
- (./book.aux (./chapter1.aux) (./chapter2.aux) (./chapter3.aux)
-(./chapter4.aux) (./chapter5.aux) (./chapter6.aux) (./chapter7.aux)
-(./chapter8.aux) (./chapter9.aux) (./chapter10.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 238.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 238.
+ [163]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 242.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 242.
+
+(./book.aux (./chapter1.aux) (./chapter2.aux) (./chapter3.aux) (./chapter4.aux)
+(./chapter5.aux) (./chapter6.aux) (./chapter7.aux) (./chapter8.aux)
+(./chapter9.aux) (./chapter10.aux) (./chapter11.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 242.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 242.
 Package rerunfilecheck Info: File `book.out' has not changed.
-(rerunfilecheck)             Checksum: 8267B478383B3F22EA1AFCC77360603E;9661.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 238.
+(rerunfilecheck)             Checksum: 0B6F84300CB41076055283153E5E4DB5;11086.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 242.
  ) 
 Here is how much of TeX's memory you used:
- 20900 strings out of 494501
- 397812 string characters out of 6167030
- 458988 words of memory out of 5000000
- 23172 multiletter control sequences out of 15000+600000
- 30451 words of font info for 146 fonts, out of 8000000 for 9000
+ 21080 strings out of 494501
+ 396038 string characters out of 6167030
+ 460106 words of memory out of 5000000
+ 23291 multiletter control sequences out of 15000+600000
+ 31811 words of font info for 151 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 55i,12n,54p,403b,397s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,12n,54p,403b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015basic/texmf-dist/fonts/enc/dvips/base/8r.enc}</Users/
 pacha/Library/texmf/fonts/type1/bh/lucida/lbd.pfb></Users/pacha/Library/texmf/f
 onts/type1/bh/lucida/lbi.pfb></Users/pacha/Library/texmf/fonts/type1/bh/lucida/
-lbr.pfb></Users/pacha/Library/texmf/fonts/type1/bh/lucida/lsd.pfb></Users/pacha
-/Library/texmf/fonts/type1/bh/lucida/lsr.pfb></Users/pacha/Library/texmf/fonts/
-type1/bh/lucida/lstb.pfb></Users/pacha/Library/texmf/fonts/type1/bh/lucida/lsto
-.pfb></Users/pacha/Library/texmf/fonts/type1/bh/lucida/lstr.pfb>
-Output written on book.pdf (159 pages, 4744603 bytes).
+lbmo.pfb></Users/pacha/Library/texmf/fonts/type1/bh/lucida/lbms.pfb></Users/pac
+ha/Library/texmf/fonts/type1/bh/lucida/lbr.pfb></Users/pacha/Library/texmf/font
+s/type1/bh/lucida/lsd.pfb></Users/pacha/Library/texmf/fonts/type1/bh/lucida/lsr
+.pfb></Users/pacha/Library/texmf/fonts/type1/bh/lucida/lstb.pfb></Users/pacha/L
+ibrary/texmf/fonts/type1/bh/lucida/lsto.pfb></Users/pacha/Library/texmf/fonts/t
+ype1/bh/lucida/lstr.pfb>
+Output written on book.pdf (170 pages, 23712515 bytes).
 PDF statistics:
- 1921 PDF objects out of 2073 (max. 8388607)
- 1393 compressed objects within 14 object streams
- 299 named destinations out of 1000 (max. 500000)
- 23971 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 24486 PDF objects out of 26593 (max. 8388607)
+ 18589 compressed objects within 186 object streams
+ 328 named destinations out of 1000 (max. 500000)
+ 26258 words of extra memory for PDF output out of 29859 (max. 10000000)
 

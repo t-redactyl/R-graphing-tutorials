@@ -16,7 +16,7 @@ In this part, we will work towards creating the histogram below. We will
 take you from a basic histogram and explain all the customisations we
 add to the code step-by-step.
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/histogram_final-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/histogram_final-1} \end{center}
 
 \section{Basic histogram}\label{basic-histogram}
 
@@ -32,7 +32,7 @@ We then instruct ggplot to render this as a histogram by adding the
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/histogram_1-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/histogram_1-1} \end{center}
 
 \section{Adding a normal density
 curve}\label{adding-a-normal-density-curve}
@@ -66,7 +66,7 @@ our next step.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/histogram_2-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/histogram_2-1} \end{center}
 
 \section{Changing from density to
 frequency}\label{changing-from-density-to-frequency}
@@ -83,7 +83,7 @@ the y-axis from density to frequency, we add the
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/histogram_3-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/histogram_3-1} \end{center}
 
 \section{Adjusting binwidth}\label{adjusting-binwidth}
 
@@ -99,11 +99,11 @@ the \texttt{Ozone} variable.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/histogram_4-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/histogram_4-1} \end{center}
 
 \section{Customising axis labels}\label{customising-axis-labels}
 
-\section*{Single line labels}\label{single-line-labels}
+\subsection{Single line labels}\label{single-line-labels}
 
 In order to change the axis labels, we have a couple of options. In this
 case, we have used the \texttt{scale\_x\_continuous} and
@@ -121,9 +121,9 @@ the desired name to the \texttt{name} argument as a string.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/histogram_5-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/histogram_5-1} \end{center}
 
-\section*{Multiline labels}\label{multiline-labels}
+\subsection{Multiline labels}\label{multiline-labels}
 
 ggplot also allows for the use of multiline names (in both axes and
 titles). Here, we've changed the x-axis label so that it goes over two
@@ -139,7 +139,7 @@ lines using the \texttt{\textbackslash{}n} character to break the line.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/histogram_6-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/histogram_6-1} \end{center}
 
 \section{Changing axis ticks}\label{changing-axis-ticks}
 
@@ -165,7 +165,7 @@ the argument \texttt{limits\ =\ c(0,\ 175)} to
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/histogram_7-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/histogram_7-1} \end{center}
 
 \section{Adding a title}\label{adding-a-title}
 
@@ -185,12 +185,12 @@ name of the graph as a string argument.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/histogram_8-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/histogram_8-1} \end{center}
 
 \section{Changing the colour of the
 bars}\label{changing-the-colour-of-the-bars}
 
-\section{By colour name}\label{by-colour-name}
+\subsection{By colour name}\label{by-colour-name}
 
 To change the line and fill colours of the bars, we add a valid colour
 to the \texttt{colour} and \texttt{fill} arguments in
@@ -216,9 +216,9 @@ of valid colours is
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/histogram_9-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/histogram_9-1} \end{center}
 
-\section{By HEX code}\label{by-hex-code}
+\subsection{By HEX code}\label{by-hex-code}
 
 If you want to go beyond the options in the list above, you can also
 specify exact HEX colours by including them as a string preceded by a
@@ -242,9 +242,9 @@ the fill and lines using their HEX codes.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/histogram_10-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/histogram_10-1} \end{center}
 
-\section{Colour gradients}\label{colour-gradients}
+\subsection{Colour gradients}\label{colour-gradients}
 
 You can also add a gradient to your colour scheme that varies according
 to the frequency of the values. Below is the default gradient colour
@@ -265,7 +265,7 @@ scheme. In order to do this, you can see we have changed the
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/histogram_11-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/histogram_11-1} \end{center}
 
 You can customise the gradient by changing the anchoring colours for
 high and low. To do so, we have added the option
@@ -288,7 +288,7 @@ frequent values).
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/histogram_12-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/histogram_12-1} \end{center}
 
 \section{Using the white theme}\label{using-the-white-theme-6}
 
@@ -316,7 +316,7 @@ we've used so far to change the legend.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/histogram_13-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/histogram_13-1} \end{center}
 
 \section{Creating an XKCD style
 chart}\label{creating-an-xkcd-style-chart-6}
@@ -370,7 +370,7 @@ You can then create your graph:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/histogram_14-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/histogram_14-1} \end{center}
 
 \section{\texorpdfstring{Using `The Economist'
 theme}{Using The Economist theme}}\label{using-the-economist-theme-6}
@@ -410,7 +410,7 @@ graphs in the Economist magazine.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/histogram_15-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/histogram_15-1} \end{center}
 
 \section{Creating your own theme}\label{creating-your-own-theme-6}
 
@@ -446,7 +446,7 @@ axes, background and font.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/histogram_16-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/histogram_16-1} \end{center}
 
 \section{Adding lines}\label{adding-lines}
 
@@ -485,7 +485,7 @@ way, horizontal lines can be added using the \texttt{geom\_hline}.)
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/histogram_17-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/histogram_17-1} \end{center}
 
 \section{Multiple histograms}\label{multiple-histograms}
 
@@ -493,7 +493,7 @@ You can also easily create multiple histograms by the levels of another
 variable. There are two options, in separate (panel) plots, or in the
 same plot.
 
-\section{In panel plots}\label{in-panel-plots}
+\subsection{In panel plots}\label{in-panel-plots}
 
 We first need to do a little data wrangling. In order to make the graphs
 a bit clearer, we've kept only months ``5'' (May) and ``7'' (July) in a
@@ -535,9 +535,9 @@ means that the y-axes of each plot do not need to be the same.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/histogram_18-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/histogram_18-1} \end{center}
 
-\section{In the same plot}\label{in-the-same-plot}
+\subsection{In the same plot}\label{in-the-same-plot}
 
 In order to plot the two months in the same plot, we add several things.
 Firstly, in the \texttt{ggplot} function, we add a
@@ -577,7 +577,7 @@ blog post describes the available packages.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/histogram_19-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/histogram_19-1} \end{center}
 
 \section{Formatting the legend}\label{formatting-the-legend}
 
@@ -613,4 +613,4 @@ the plot.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/histogram_20-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/histogram_20-1} \end{center}

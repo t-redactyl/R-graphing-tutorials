@@ -1,10 +1,10 @@
 base
 ggplot2
-gridExtra
 zoo
 xts
 Quandl
-reshape
 proto
 ggfortify
 ggthemes
+gridExtra
+reshape

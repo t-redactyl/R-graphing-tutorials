@@ -1,0 +1,12 @@
+base
+ggplot2
+extrafont
+ggthemes
+plyr
+scales
+RColorBrewer
+proto
+ggfortify
+zoo
+xts
+Quandl

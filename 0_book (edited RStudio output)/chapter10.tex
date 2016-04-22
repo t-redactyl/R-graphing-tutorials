@@ -20,7 +20,7 @@ In this part, we will work towards creating the boxplot below. We will
 take you from a basic boxplot and explain all the customisations we add
 to the code step-by-step.
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/box_final-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/box_final-1} \end{center}
 
 \section{Basic boxplot}\label{basic-boxplot}
 
@@ -38,7 +38,7 @@ ggplot to render this as a boxplot by adding the
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/box_1-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/box_1-1} \end{center}
 
 \section{Customising axis labels}\label{customising-axis-labels-3}
 
@@ -56,7 +56,7 @@ the desired name to the \texttt{name} argument as a string.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/box_2-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/box_2-1} \end{center}
 
 ggplot also allows for the use of multiline names (in both axes and
 titles). Here, we've changed the y-axis label so that it goes over two
@@ -69,7 +69,7 @@ lines using the \texttt{\textbackslash{}n} character to break the line.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/box_3-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/box_3-1} \end{center}
 
 \section{Changing axis ticks}\label{changing-axis-ticks-3}
 
@@ -92,7 +92,7 @@ the argument \texttt{limits\ =\ c(0,\ 175)} to
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/box_4-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/box_4-1} \end{center}
 
 \section{Adding a title}\label{adding-a-title-3}
 
@@ -106,7 +106,7 @@ name of the graph as a string argument.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/box_5-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/box_5-1} \end{center}
 
 \section{Changing the colour of the
 boxes}\label{changing-the-colour-of-the-boxes}
@@ -133,7 +133,7 @@ of valid colours is
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/box_6-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/box_6-1} \end{center}
 
 If you want to go beyond the options in the list above, you can also
 specify exact HEX colours by including them as a string preceded by a
@@ -155,7 +155,7 @@ the fill and lines using their HEX codes.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/box_7-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/box_7-1} \end{center}
 
 You can also specify the degree of transparency in the box fill area
 using the argument \texttt{alpha} in \texttt{geom\_boxplot}. This ranges
@@ -174,7 +174,7 @@ from 0 to 1.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/box_8-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/box_8-1} \end{center}
 
 Finally, you can change the appearance of the outliers as well, using
 the arguments \texttt{outlier.colour} and \texttt{outlier.shape} in
@@ -200,7 +200,7 @@ lines (using \texttt{outlier.colour\ =\ "\#1F3552"}).
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/box_9-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/box_9-1} \end{center}
 
 \section{Using the white theme}\label{using-the-white-theme-9}
 
@@ -217,7 +217,7 @@ the legend.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/box_10-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/box_10-1} \end{center}
 
 \section{Creating an XKCD style
 chart}\label{creating-an-xkcd-style-chart-9}
@@ -271,7 +271,7 @@ You can then create your graph:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/box_11-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/box_11-1} \end{center}
 
 \section{\texorpdfstring{Using `The Economist'
 theme}{Using The Economist theme}}\label{using-the-economist-theme-9}
@@ -311,7 +311,7 @@ graphs in the Economist magazine.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/box_12-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/box_12-1} \end{center}
 
 \section{Creating your own theme}\label{creating-your-own-theme-9}
 
@@ -348,7 +348,7 @@ axes, background and font.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/box_13-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/box_13-1} \end{center}
 
 \section{Boxplot extras}\label{boxplot-extras}
 
@@ -364,7 +364,7 @@ size of the group. This can be achieved using by adding the
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/box_14-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/box_14-1} \end{center}
 
 We can see that June has a pretty small sample, indicating that
 information based on this group may not be very reliable.
@@ -401,7 +401,7 @@ the very small gap between the 25th percentile and the median.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/box_15-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/box_15-1} \end{center}
 
 \section{Grouping by another
 variable}\label{grouping-by-another-variable}
@@ -445,7 +445,7 @@ In order to produce a panel plot by temperature, we add the
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/box_16-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/box_16-1} \end{center}
 
 In order to plot the two temperature levels in the same plot, we need to
 add a couple of things. Firstly, in the \texttt{ggplot} function, we add
@@ -478,7 +478,7 @@ blog post describes the available packages.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/box_17-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/box_17-1} \end{center}
 
 \section{Formatting the legend}\label{formatting-the-legend-3}
 
@@ -510,4 +510,4 @@ option to the plot.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.55\linewidth]{0_all_posts_pdf/box_18-1} \end{center}
+\begin{center}\includegraphics[width=0.55\linewidth]{figures/box_18-1} \end{center}

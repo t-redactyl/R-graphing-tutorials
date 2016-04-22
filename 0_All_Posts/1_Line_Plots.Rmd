@@ -19,12 +19,12 @@ library(extrafont)
 charts.data.2 <- read.csv("copper-data-for-tutorial.csv")
 charts.data.2 <- as.data.frame(charts.data.2)
 charts.data.2$product <- factor(charts.data.2$product, levels = c("copper","others"), 
-                              labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
+                              labels = c("Copper ","Pulp wood, Fruit, Salmon & Others"))
 
 colour <- c("#40b8d0", "#b2d183")
 
 p1 <- ggplot() + 
-  geom_line(aes(y = export, x = year, colour = product), size=1.5, data = charts.data, 
+  geom_line(aes(y = export, x = year, colour = product), size=1.5, data = charts.data.2, 
             stat="identity") + 
   scale_x_continuous(breaks=seq(2006,2014,1)) + 
   labs(x="Year", y="USD million") + 
@@ -37,8 +37,10 @@ p1 <- ggplot() +
         legend.key=element_rect(fill="white", colour="white"),
         legend.position="bottom", legend.direction="horizontal", 
         legend.title = element_blank(),
-        panel.grid.major = element_line(colour = "#d3d3d3"), panel.grid.minor = element_blank(), 
-        panel.border = element_blank(), panel.background = element_blank(),
+        panel.grid.major = element_line(colour = "#d3d3d3"), 
+        panel.grid.minor = element_blank(), 
+        panel.border = element_blank(), 
+        panel.background = element_blank(),
         plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
         text=element_text(family="Tahoma")) 
 p1
@@ -68,7 +70,7 @@ To change the variables displayed name, we need to re-factor our data labels in 
 ```{r line_3, cache=TRUE}
 charts.data <- as.data.frame(charts.data)
 charts.data$product <- factor(charts.data$product, levels = c("copper","others"), 
-                              labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
+                              labels = c("Copper ","Pulp wood, Fruit, Salmon & Others"))
 
 p1 <- ggplot() + 
   geom_line(aes(y = export, x = year, colour = product), size=1.5, data = charts.data, stat="identity") +

@@ -108,7 +108,10 @@
 }
 \makeatother
 
-\setlength{\cftsecnumwidth}{4em}% Set length of number width in ToC for \section
+\setlength{\cftsecnumwidth}{3.5em}% Set length of number width in ToC for \section
+\setlength{\cftsubsecnumwidth}{3.5em}% Make subsection numwidth the same as section
+\setlength{\cftsubsecindent}{6em}% Make subsection indent the same as section
+
 \makeatother
 
 \makeindex
@@ -203,6 +206,7 @@ We invite you to stay in touch and read the authors' blogs where they publish ar
 \include{chapter8}
 \include{chapter9}
 \include{chapter10}
+\include{chapter11}
 
 \chapter*{Suggested material}
 \addcontentsline{toc}{chapter}{Suggested material}
