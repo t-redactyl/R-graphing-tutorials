@@ -18,13 +18,15 @@ This post will be much more than just regression plot. Here we are getting, clea
 
 The first thing to do is download and load in the data of the monthly price of Hang Seng Index (恒生指數) and Cheung Kong Holdings Hong Kong (长江实业集团香港) from 2015-03-01 to 2016-04-01. In order to work with Quandl without restrictions it is needed to create a free account and add `authcode = ...` to `Quandl` command.
 
-```{r lr_load_in_data}
-library(ggplot2);library(gridExtra);library(Quandl);library(reshape)
-```
+```{r lr_load_in_data, cache=TRUE}
+library(ggplot2)
+library(gridExtra)
+library(Quandl)
+library(reshape)
+library(ggfortify)
 
-```{r lr_1, eval=FALSE}
-hsi.df <- Quandl("YAHOO/INDEX_HSI", start_date="2015-03-01", end_date="2016-04-01", 
-                collapse="monthly", type = "raw", authcode = "XXX")
+hsi.df <- Quandl("YAHOO/INDEX_HSI", start_date="2015-03-01", end_date="2016-04-01",
+                 collapse="monthly", type = "raw", authcode = "XXX")
 
 ckh.df <- Quandl("YAHOO/HK_0001", start_date="2015-03-01", 
                  end_date="2016-04-01", collapse="monthly", type = "raw", authcode="XXX")
@@ -32,9 +34,89 @@ ckh.df <- Quandl("YAHOO/HK_0001", start_date="2015-03-01",
 saveRDS(hsi.df, "hsi.rds"); saveRDS(ckh.df,"ckh.rds")
 ```
 
+In this tutorial, we will work towards creating the trend line and diagnostics plots below. We will take you from a basic density plot and explain all the customisations we add to the code step-by-step.
+
+```{r lm_final, echo = FALSE, cache=TRUE}
+hsi.df <- readRDS("hsi.rds")
+colnames(hsi.df)[7] <- "Adjusted.Close"
+hsi.df <- hsi.df[order(as.Date(hsi.df$Date)),]
+
+hsi.Adjusted.Close <- hsi.df$Adjusted.Close
+hsi.Return <- diff(hsi.Adjusted.Close)/hsi.Adjusted.Close[-length(hsi.Adjusted.Close)]
+hsi.Return <- c(NA,hsi.Return)
+hsi.df$Return <- hsi.Return
+hsi.df <- na.omit(hsi.df)
+hsi.Return <- hsi.df[,c("Date","Return")]
+
+ckh.df <- readRDS("ckh.rds")
+colnames(ckh.df)[7] <- "Adjusted.Close"
+ckh.df <- ckh.df[order(as.Date(ckh.df$Date)),]
+ckh.Adjusted.Close <- ckh.df$Adjusted.Close
+ckh.Return <- diff(ckh.Adjusted.Close)/ckh.Adjusted.Close[-length(ckh.Adjusted.Close)]
+ckh.Return <- c(NA,ckh.Return)
+ckh.df <- na.omit(ckh.df)
+ckh.df$Return <- ckh.Return
+ckh.Return <- ckh.df[,c("Date","Return")]
+
+hsi.ckh.returns <- merge(hsi.Return, ckh.Return, by='Date')
+hsi.ckh.returns <- na.omit(hsi.ckh.returns)
+colnames(hsi.ckh.returns) <- c("Date","hsi.Return","ckh.Return")
+
+usa.risk.free <- 0.3/100
+hsi.risk.premium <- 0.6/100
+
+hsi.ckh.returns$hsi.Risk.free <- usa.risk.free + hsi.risk.premium
+hsi.ckh.returns$hsi.Risk.premium <- hsi.ckh.returns$hsi.Return - hsi.ckh.returns$hsi.Risk.free
+
+fit <- lm(ckh.Return ~ hsi.Risk.premium, data = hsi.ckh.returns) 
+
+equation = function(x) {
+  lm_coef <- list(a = round(coef(x)[1], digits = 2),
+                  b = round(coef(x)[2], digits = 2),
+                  r2 = round(summary(x)$r.squared, digits = 2));
+  lm_eq <- substitute(italic(y) == a + b %.% italic(x)*","~~italic(R)^2~"="~r2,lm_coef)
+  as.character(as.expression(lm_eq));                 
+}
+
+library(grid) 
+
+fill <- "#4271AE"
+lines <- "#1F3552"
+
+p11 <- ggplot(hsi.ckh.returns, aes(x=hsi.Risk.premium, y=ckh.Return)) + geom_point(shape=1) + geom_smooth(method=lm, se=FALSE) +
+      ggtitle("CKH regression line") +
+      scale_x_continuous(name = "HSI risk premium") +
+      scale_y_continuous(name = "CKH return") +
+      annotate("rect", xmin = 0.00, xmax = 0.1, ymin = -0.056, ymax = -0.044, fill="white", colour="red") + 
+      geom_text(x = 0.05, y = -0.05, label = equation(fit), parse = TRUE) + 
+      theme(axis.line.x = element_line(size=.5, colour = "black"),
+            axis.line.y = element_line(size=.5, colour = "black"),
+            axis.text.x=element_text(colour="black", size = 9), 
+            axis.text.y=element_text(colour="black", size = 9), 
+            legend.position = "bottom", legend.position = "horizontal",
+            panel.grid.major = element_line(colour = "#d3d3d3"), 
+            panel.grid.minor = element_blank(), 
+            panel.border = element_blank(), panel.background = element_blank(),
+            plot.title = element_text(size = 14, family = "Tahoma", face = "bold"),
+            text=element_text(family="Tahoma"))
+p11
+
+library(ggfortify)
+autoplot(fit, label.size = 3) + theme(axis.line.x = element_line(size=.5, colour = "black"),
+            axis.line.y = element_line(size=.5, colour = "black"),
+            axis.text.x=element_text(colour="black", size = 9), 
+            axis.text.y=element_text(colour="black", size = 9), 
+            legend.position = "bottom", legend.position = "horizontal",
+            panel.grid.major = element_line(colour = "#d3d3d3"), 
+            panel.grid.minor = element_blank(), 
+            panel.border = element_blank(), panel.background = element_blank(),
+            plot.title = element_text(size = 14, family = "Tahoma", face = "bold"),
+            text=element_text(family="Tahoma"))
+```
+
 Before calculating return as $R_i = \displaystyle \frac{P_t - P_{t-1}}{P_t}$ it is needed to order HSI and CKH data by dates and in decreasing order.
 
-```{r lr_2, cache=TRUE}
+```{r lr_1, cache=TRUE}
 hsi.df <- readRDS("hsi.rds")
 colnames(hsi.df)[7] <- "Adjusted.Close"
 hsi.df <- hsi.df[order(as.Date(hsi.df$Date)),]
@@ -42,7 +124,7 @@ hsi.df <- hsi.df[order(as.Date(hsi.df$Date)),]
 
 With ordered dates it is possible to obtain the correct return for each month.
 
-```{r lr_3, cache=TRUE}
+```{r lr_2, cache=TRUE}
 hsi.Adjusted.Close <- hsi.df$Adjusted.Close
 hsi.Return <- diff(hsi.Adjusted.Close)/hsi.Adjusted.Close[-length(hsi.Adjusted.Close)]
 hsi.Return <- c(NA,hsi.Return)
@@ -63,7 +145,7 @@ ckh.Return <- ckh.df[,c("Date","Return")]
 
 The returns can be arranged in one data frame before doing plots and regression.
 
-```{r lr_4, cache=TRUE}
+```{r lr_3, cache=TRUE}
 hsi.ckh.returns <- merge(hsi.Return, ckh.Return, by='Date')
 hsi.ckh.returns <- na.omit(hsi.ckh.returns)
 colnames(hsi.ckh.returns) <- c("Date","hsi.Return","ckh.Return")
@@ -71,24 +153,25 @@ colnames(hsi.ckh.returns) <- c("Date","hsi.Return","ckh.Return")
 
 Using [Damodaran](http://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/ctryprem.html) and [Bloomberg](http://www.bloomberg.com/markets/rates-bonds/government-bonds/us) data we can work with an estimate of HSI risk premium over risk-free rate.
 
-```{r lr_5, cache=TRUE}
+```{r lr_4, cache=TRUE}
 usa.risk.free <- 0.3/100
 hsi.risk.premium <- 0.6/100
-
-hsi.ckh.returns$hsi.Risk.free <- usa.risk.free + hsi.risk.premium
-hsi.ckh.returns$hsi.Risk.premium <- hsi.ckh.returns$hsi.Return - hsi.ckh.returns$hsi.Risk.free
 ```
 
-### Basic regression plot
+## Trend line plot
+
+### Basic trend line plot
 
 Now we can fit a linear regression. One interesting thing is that in CAPM context the regression line slope can be calculated as $\beta_i = \displaystyle \frac{\sigma_{i,m}}{\sigma_m^2}$.
 
-```{r lr_6, cache=TRUE}
+```{r lr_5, cache=TRUE}
+hsi.ckh.returns$hsi.Risk.free <- usa.risk.free + hsi.risk.premium
+hsi.ckh.returns$hsi.Risk.premium <- hsi.ckh.returns$hsi.Return - hsi.ckh.returns$hsi.Risk.free
 hsi.Return.vector <- as.vector(hsi.ckh.returns$hsi.Return)
 ckh.Return.vector <- as.vector(hsi.ckh.returns$ckh.Return)
 cov.hsi.ckh <- cov(ckh.Return.vector, hsi.Return.vector)
 var.hk <- var(hsi.Return.vector)
-cov.hsi.ckh/var.hk
+capm_beta = cov.hsi.ckh/var.hk
 
 fit <- lm(ckh.Return ~ hsi.Risk.premium, data = hsi.ckh.returns) 
 summary(fit)
@@ -96,14 +179,14 @@ summary(fit)
 
 Up to this point we have all what is required to plot regressions. We will start with a basic regression plot.
 
-```{r lr_7, cache=TRUE}
+```{r lr_6, cache=TRUE}
 p11 <- ggplot(hsi.ckh.returns, aes(x=hsi.Risk.premium, y=ckh.Return)) + geom_point(shape=1) + geom_smooth(method=lm) 
 p11
 ```
 
 `geom_point` can be customized, for example, not to include the confidence region
 
-```{r lr_8, cache=TRUE}
+```{r lr_7, cache=TRUE}
 p11 <- ggplot(hsi.ckh.returns, aes(x=hsi.Risk.premium, y=ckh.Return)) + geom_point(shape=1) + geom_smooth(method=lm, se=FALSE) 
 p11
 ```
@@ -112,7 +195,7 @@ Before continuing it is a good idea to fix the axis labels and add a title.
 
 ### Customising axis labels
 
-```{r lr_9, cache=TRUE}
+```{r lr_8, cache=TRUE}
 p11 <- p11 + scale_x_continuous(name = "HSI risk premium") + 
       scale_y_continuous(name = "CKH return")
 p11
@@ -120,7 +203,7 @@ p11
 
 ### Adding a title
 
-```{r lr_10, cache=TRUE}
+```{r lr_9, cache=TRUE}
 p11 <- p11 + ggtitle("CKH regression line")
 p11
 ```
@@ -129,7 +212,7 @@ p11
 
 It would be interesting to show $R^2$ and regression coefficients within the plot.
 
-```{r lr_11, cache=TRUE}
+```{r lr_10, cache=TRUE}
 p11 <- p11 + annotate("text", x=0.1, y=-0.05, label = "R^2=0.78") + 
       annotate("text", x=0.1, y=-0.06, label = "alpha=0.00") + 
       annotate("text", x=0.1, y=-0.07, label = "beta=0.67")
@@ -138,7 +221,7 @@ p11
 
 Another option would be to add greek letters and exponents.
 
-```{r lr_12, cache=TRUE}
+```{r lr_11, cache=TRUE}
 p11 <- ggplot(hsi.ckh.returns, aes(x=hsi.Risk.premium, y=ckh.Return)) + geom_point(shape=1) + 
       geom_smooth(method=lm, se=FALSE) + ggtitle("CKH regression line") +
       scale_x_continuous(name = "HSI risk premium") +
@@ -151,7 +234,7 @@ p11
 
 To make the coefficients more visible we will add some elements to increase visibility
 
-```{r lr_13, cache=TRUE}
+```{r lr_12, cache=TRUE}
 p11 <- ggplot(hsi.ckh.returns, aes(x=hsi.Risk.premium, y=ckh.Return)) + 
       geom_point(shape=1) + geom_smooth(method=lm, se=FALSE) +
       ggtitle("CKH regression line") +
@@ -165,7 +248,7 @@ p11
 
 Another customization could be to show the trend line using rounded digits (or even significative digits) from regression coefficients. This requires us to write a function and is not as easy to obtain as the last plot. 
 
-```{r lr_14, cache=TRUE}
+```{r lr_13, cache=TRUE}
 equation = function(x) {
   lm_coef <- list(a = round(coef(x)[1], digits = 2),
                   b = round(coef(x)[2], digits = 2),
@@ -185,7 +268,7 @@ p11
 
 ### Using the white theme
 
-```{r lr_15, cache=TRUE}
+```{r lr_14, cache=TRUE}
 p11 <- p11 + theme_bw()
 p11
 ```
@@ -209,7 +292,7 @@ loadfonts()
 
 You can then create your graph:
 
-```{r lr_16, cache=TRUE}
+```{r lr_15, cache=TRUE}
 p11 <- ggplot(hsi.ckh.returns, aes(x=hsi.Risk.premium, y=ckh.Return)) + geom_point(shape=1) + geom_smooth(method=lm, se=FALSE) +
       ggtitle("CKH regression line") +
       scale_x_continuous(name = "HSI risk premium") +
@@ -232,7 +315,7 @@ p11
 
 There are a wider range of pre-built themes available as part of the `ggthemes` package (more information on these [here](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html)). Below we've applied `theme_economist()`, which approximates graphs in the Economist magazine.
 
-```{r density_11, cache=TRUE}
+```{r lr_16, cache=TRUE}
 library(ggthemes)
 library(grid)
 
@@ -262,7 +345,7 @@ p11
 
 As before, you can modify your plots a lot as `ggplot2` allows many customisations. Here is a custom plot where we have modified the axes, background and font.
 
-```{r density_12, cache=TRUE}
+```{r lr_17, cache=TRUE}
 library(grid) 
 
 fill <- "#4271AE"
@@ -285,4 +368,66 @@ p11 <- ggplot(hsi.ckh.returns, aes(x=hsi.Risk.premium, y=ckh.Return)) + geom_poi
             plot.title = element_text(size = 14, family = "Tahoma", face = "bold"),
             text=element_text(family="Tahoma"))
 p11
+```
+
+## Regression diagnostics plots
+
+### Basic diagnostics plots
+
+`ggfortify` lets `ggplot2` know how to interpret `lm` objects.
+
+```{r lr_18, cache=TRUE}
+# install.packages("ggfortify")
+library(ggfortify)
+autoplot(fit, label.size = 3)
+```
+
+### Using the white theme
+
+```{r lr_19, cache=TRUE}
+autoplot(fit, label.size = 3) + theme_bw()
+```
+
+### Creating an XKCD style chart
+
+```{r lr_20, cache=TRUE}
+autoplot(fit, label.size = 3) + theme(axis.line.x = element_line(size=.5, colour = "black"),
+            axis.line.y = element_line(size=.5, colour = "black"), 
+            axis.text.x=element_text(colour="black", size = 9), 
+            axis.text.y=element_text(colour="black", size = 9),
+            panel.grid.major = element_line(colour = "#d3d3d3"), 
+            panel.grid.minor = element_blank(), 
+            panel.border = element_blank(), panel.background = element_blank(),
+            plot.title = element_text(family = "xkcd-Regular"),
+            text=element_text(family="xkcd-Regular"))
+```
+
+### Using 'The Economist' theme 
+
+```{r lr_21, cache=TRUE}
+autoplot(fit, label.size = 3) + theme_economist() +
+      theme(axis.line.x = element_line(size=.5, colour = "black"),
+            axis.line.y = element_line(size=.5, colour = "black"), 
+            axis.text.x=element_text(colour="black", size = 9), 
+            axis.text.y=element_text(colour="black", size = 9),
+            panel.grid.major = element_line(colour = "#d3d3d3"), 
+            panel.grid.minor = element_blank(), 
+            panel.border = element_blank(), panel.background = element_blank(),
+            plot.title = element_text(family = "OfficinaSanITC-Book"),
+            text=element_text(family="OfficinaSanITC-Book"))
+```
+
+### Creating your own theme
+
+```{r lr_22, cache=TRUE}
+autoplot(fit, label.size = 3) + theme(axis.line.x = element_line(size=.5, colour = "black"),
+            axis.line.y = element_line(size=.5, colour = "black"),
+            axis.text.x=element_text(colour="black", size = 9), 
+            axis.text.y=element_text(colour="black", size = 9), 
+            legend.position = "bottom", legend.position = "horizontal",
+            panel.grid.major = element_line(colour = "#d3d3d3"), 
+            panel.grid.minor = element_blank(), 
+            panel.border = element_blank(), panel.background = element_blank(),
+            plot.title = element_text(size = 14, family = "Tahoma", face = "bold"),
+            text=element_text(family="Tahoma"))
 ```
