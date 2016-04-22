@@ -36,7 +36,7 @@ saveRDS(hsi.df, "hsi.rds"); saveRDS(ckh.df,"ckh.rds")
 
 In this tutorial, we will work towards creating the trend line and diagnostics plots below. We will take you from a basic density plot and explain all the customisations we add to the code step-by-step.
 
-```{r lm_final, echo = FALSE, cache=TRUE}
+```{r lr_final, echo = FALSE, cache=TRUE}
 hsi.df <- readRDS("hsi.rds")
 colnames(hsi.df)[7] <- "Adjusted.Close"
 hsi.df <- hsi.df[order(as.Date(hsi.df$Date)),]
