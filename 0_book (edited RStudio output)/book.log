@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.18)  22 APR 2016 18:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.18)  22 APR 2016 21:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2432,113 +2432,113 @@ _6-1.pdf, id=17603, 578.16pt x 433.62pt>
 File: figures/lr_6-1.pdf Graphic file (type pdf)
 
 <use figures/lr_6-1.pdf>
-Package pdftex.def Info: figures/lr_6-1.pdf used on input line 155.
+Package pdftex.def Info: figures/lr_6-1.pdf used on input line 153.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
  [148 <./figures/lr_6-1.pdf>]
 <figures/lr_7-1.pdf, id=17669, 578.16pt x 433.62pt>
 File: figures/lr_7-1.pdf Graphic file (type pdf)
  <use figures/lr_7-1.pdf>
-Package pdftex.def Info: figures/lr_7-1.pdf used on input line 168.
+Package pdftex.def Info: figures/lr_7-1.pdf used on input line 166.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 <figures/lr_8-1.pdf, id=17670, 578.16pt x 433.62pt>
 File: figures/lr_8-1.pdf Graphic file (type pdf)
  <use figures/lr_8-1.pdf>
-Package pdftex.def Info: figures/lr_8-1.pdf used on input line 183.
+Package pdftex.def Info: figures/lr_8-1.pdf used on input line 181.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 [149 <./figures/lr_7-1.pdf> <./figures/lr_8-1.pdf>]
 <figures/lr_9-1.pdf, id=17785, 578.16pt x 433.62pt>
 File: figures/lr_9-1.pdf Graphic file (type pdf)
  <use figures/lr_9-1.pdf>
-Package pdftex.def Info: figures/lr_9-1.pdf used on input line 194.
+Package pdftex.def Info: figures/lr_9-1.pdf used on input line 192.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 <figures/lr_10-1.pdf, id=17786, 578.16pt x 433.62pt>
 File: figures/lr_10-1.pdf Graphic file (type pdf)
  <use figures/lr_10-1.pdf>
-Package pdftex.def Info: figures/lr_10-1.pdf used on input line 211.
+Package pdftex.def Info: figures/lr_10-1.pdf used on input line 209.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 [150 <./figures/lr_9-1.pdf>]
 <figures/lr_11-1.pdf, id=17852, 578.16pt x 433.62pt>
 File: figures/lr_11-1.pdf Graphic file (type pdf)
  <use figures/lr_11-1.pdf>
-Package pdftex.def Info: figures/lr_11-1.pdf used on input line 229.
+Package pdftex.def Info: figures/lr_11-1.pdf used on input line 227.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 [151 <./figures/lr_10-1.pdf> <./figures/lr_11-1.pdf>]
 <figures/lr_12-1.pdf, id=18034, 578.16pt x 433.62pt>
 File: figures/lr_12-1.pdf Graphic file (type pdf)
  <use figures/lr_12-1.pdf>
-Package pdftex.def Info: figures/lr_12-1.pdf used on input line 250.
+Package pdftex.def Info: figures/lr_12-1.pdf used on input line 248.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 [152 <./figures/lr_12-1.pdf>]
 <figures/lr_13-1.pdf, id=18144, 578.16pt x 433.62pt>
 File: figures/lr_13-1.pdf Graphic file (type pdf)
  <use figures/lr_13-1.pdf>
-Package pdftex.def Info: figures/lr_13-1.pdf used on input line 280.
+Package pdftex.def Info: figures/lr_13-1.pdf used on input line 278.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 <figures/lr_14-1.pdf, id=18145, 578.16pt x 433.62pt>
 File: figures/lr_14-1.pdf Graphic file (type pdf)
  <use figures/lr_14-1.pdf>
-Package pdftex.def Info: figures/lr_14-1.pdf used on input line 291.
+Package pdftex.def Info: figures/lr_14-1.pdf used on input line 289.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 [153 <./figures/lr_13-1.pdf> <./figures/lr_14-1.pdf>]
 <figures/lr_15-1.pdf, id=20002, 578.16pt x 433.62pt>
 File: figures/lr_15-1.pdf Graphic file (type pdf)
  <use figures/lr_15-1.pdf>
-Package pdftex.def Info: figures/lr_15-1.pdf used on input line 345.
+Package pdftex.def Info: figures/lr_15-1.pdf used on input line 343.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 [154] [155 <./figures/lr_15-1.pdf>]
 <figures/lr_16-1.pdf, id=20935, 578.16pt x 433.62pt>
 File: figures/lr_16-1.pdf Graphic file (type pdf)
  <use figures/lr_16-1.pdf>
-Package pdftex.def Info: figures/lr_16-1.pdf used on input line 386.
+Package pdftex.def Info: figures/lr_16-1.pdf used on input line 384.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 [156 <./figures/lr_16-1.pdf>]
 <figures/lr_17-1.pdf, id=21865, 578.16pt x 433.62pt>
 File: figures/lr_17-1.pdf Graphic file (type pdf)
  <use figures/lr_17-1.pdf>
-Package pdftex.def Info: figures/lr_17-1.pdf used on input line 424.
+Package pdftex.def Info: figures/lr_17-1.pdf used on input line 422.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 <figures/lr_18-1.pdf, id=21866, 578.16pt x 433.62pt>
 File: figures/lr_18-1.pdf Graphic file (type pdf)
  <use figures/lr_18-1.pdf>
-Package pdftex.def Info: figures/lr_18-1.pdf used on input line 442.
+Package pdftex.def Info: figures/lr_18-1.pdf used on input line 440.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 [157 <./figures/lr_17-1.pdf>]
 <figures/lr_19-1.pdf, id=22794, 578.16pt x 433.62pt>
 File: figures/lr_19-1.pdf Graphic file (type pdf)
  <use figures/lr_19-1.pdf>
-Package pdftex.def Info: figures/lr_19-1.pdf used on input line 452.
+Package pdftex.def Info: figures/lr_19-1.pdf used on input line 450.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 [158 <./figures/lr_18-1.pdf> <./figures/lr_19-1.pdf>]
 <figures/lr_20-1.pdf, id=23417, 578.16pt x 433.62pt>
 File: figures/lr_20-1.pdf Graphic file (type pdf)
  <use figures/lr_20-1.pdf>
-Package pdftex.def Info: figures/lr_20-1.pdf used on input line 472.
+Package pdftex.def Info: figures/lr_20-1.pdf used on input line 470.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 <figures/lr_21-1.pdf, id=23418, 578.16pt x 433.62pt>
 File: figures/lr_21-1.pdf Graphic file (type pdf)
  <use figures/lr_21-1.pdf>
-Package pdftex.def Info: figures/lr_21-1.pdf used on input line 492.
+Package pdftex.def Info: figures/lr_21-1.pdf used on input line 490.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 [159 <./figures/lr_20-1.pdf>]
 <figures/lr_22-1.pdf, id=23731, 578.16pt x 433.62pt>
 File: figures/lr_22-1.pdf Graphic file (type pdf)
  <use figures/lr_22-1.pdf>
-Package pdftex.def Info: figures/lr_22-1.pdf used on input line 513.
+Package pdftex.def Info: figures/lr_22-1.pdf used on input line 511.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 [160 <./figures/lr_21-1.pdf>]) [161 <./figures/lr_22-1.pdf>] [162
@@ -2576,7 +2576,7 @@ s/type1/bh/lucida/lsd.pfb></Users/pacha/Library/texmf/fonts/type1/bh/lucida/lsr
 .pfb></Users/pacha/Library/texmf/fonts/type1/bh/lucida/lstb.pfb></Users/pacha/L
 ibrary/texmf/fonts/type1/bh/lucida/lsto.pfb></Users/pacha/Library/texmf/fonts/t
 ype1/bh/lucida/lstr.pfb>
-Output written on book.pdf (170 pages, 23712515 bytes).
+Output written on book.pdf (170 pages, 23712024 bytes).
 PDF statistics:
  24486 PDF objects out of 26593 (max. 8388607)
  18589 compressed objects within 186 object streams
