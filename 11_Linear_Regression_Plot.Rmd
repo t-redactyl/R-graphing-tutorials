@@ -12,11 +12,11 @@ knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.ali
 knitr::opts_knit$set(root.dir='11_Linear_Regression_Plot/')
 ```
 
-This is the twelfth tutorial in a series on using `ggplot2` I am creating with [Mauricio Vargas Sepúlveda](http://pachamaltese.github.io/). In this tutorial we will demonstrate some of the many options the `ggplot2` package.
+This is the eleventh tutorial in a series on using `ggplot2` I am creating with [Mauricio Vargas Sepúlveda](http://pachamaltese.github.io/). In this tutorial we will demonstrate some of the many options the `ggplot2` package.
 
-This post will be much more than just regression plot. Here we are getting, cleaning and processing financial data from [Quandl](https://www.quandl.com/). The goal is to estimate the CAPM model $R_i = R_f + \beta_i [R_m - R_f] + e_i$ where $R_i$ is the return of an asset, $R_f$ is the risk-free return (e.g. US Treasury Bonds), $R_m$ is the return of the market portfolio (e.g. NYSE) and $\beta_i$ is  a measure of risk relative to the market (e.g. $\beta_i = 1$ means that asset is exactly as risky as the market portfolio). More on the CAPM model can be read [here](http://people.stern.nyu.edu/ashapiro/courses/B01.231103/FFL09.pdf) but we will focus on plots.
+This post will be much more than showing you how to create regression plots. Here we are extracting, cleaning and processing financial data from [Quandl](https://www.quandl.com/). The goal is to estimate the CAPM model $R_i = R_f + \beta_i [R_m - R_f] + e_i$ where $R_i$ is the return of an asset, $R_f$ is the risk-free return (e.g. US Treasury Bonds), $R_m$ is the return of the market portfolio (e.g. NYSE) and $\beta_i$ is  a measure of risk relative to the market (e.g. $\beta_i = 1$ means that asset is exactly as risky as the market portfolio). More on the CAPM model can be read [here](http://people.stern.nyu.edu/ashapiro/courses/B01.231103/FFL09.pdf), but in this tutorial we will focus on plotting.
 
-In this tutorial, we will work towards creating the trend line and diagnostics plots below. We will take you from a basic density plot and explain all the customisations we add to the code step-by-step.
+In this tutorial, we will work towards creating the trend line and diagnostics plots below. We will take you from a basic regression plot and explain all the customisations we add to the code step-by-step.
 
 ```{r lr_final, echo = FALSE, cache=TRUE}
 hsi.df <- readRDS("hsi.rds")
@@ -97,7 +97,7 @@ p12 <- autoplot(fit, label.size = 3) + theme(axis.line.x = element_line(size=.5,
 p12
 ```
 
-The first thing to do is download and load in the data of the monthly price of Hang Seng Index and Cheung Kong Holdings Hong Kong from 2015-03-01 to 2016-04-01.
+The first thing to do is download and load in the data of the monthly price of Hang Seng Index and Cheung Kong Holdings Hong Kong from 2015-03-01 to 2016-04-01. 
 
 ```{r lr_load_in_data, cache=TRUE, messages=FALSE, eval=FALSE}
 library(ggplot2)
@@ -113,7 +113,7 @@ ckh.df <- Quandl("YAHOO/HK_0001", start_date="2015-03-01",
 saveRDS(hsi.df, "hsi.rds"); saveRDS(ckh.df,"ckh.rds")
 ```
 
-Before calculating return as $R_i = \displaystyle \frac{P_t - P_{t-1}}{P_t}$ it is needed to order HSI and CKH data by dates and in decreasing order.
+Before calculating return as $R_i = \displaystyle \frac{P_t - P_{t-1}}{P_t}$ we need to order HSI and CKH data by dates and in decreasing order.
 
 ```{r lr_1, cache=TRUE}
 hsi.df <- readRDS("hsi.rds")
@@ -176,14 +176,14 @@ fit <- lm(ckh.Return ~ hsi.Risk.premium, data = hsi.ckh.returns)
 summary(fit)
 ```
 
-Up to this point we have all what is required to plot regressions. We will start with a basic regression plot.
+Up to this point we have all we need to plot regressions. We will start with a basic regression plot.
 
 ```{r lr_6, cache=TRUE}
 p11 <- ggplot(hsi.ckh.returns, aes(x=hsi.Risk.premium, y=ckh.Return)) + geom_point(shape=1) + geom_smooth(method=lm) 
 p11
 ```
 
-`geom_point` can be customized, for example, not to include the confidence region
+`geom_smooth` can be customized, for example, not to include the confidence region
 
 ```{r lr_7, cache=TRUE}
 p11 <- ggplot(hsi.ckh.returns, aes(x=hsi.Risk.premium, y=ckh.Return)) + geom_point(shape=1) + geom_smooth(method=lm, se=FALSE) 
@@ -194,6 +194,8 @@ Before continuing it is a good idea to fix the axis labels and add a title.
 
 ### Customising axis labels
 
+We can change the text of the axis labels using the `scale_x_continuous` and `scale_y_continuous` options, with the names passed as a string to the `name` arguments in each.
+
 ```{r lr_8, cache=TRUE}
 p11 <- p11 + scale_x_continuous(name = "HSI risk premium") + 
       scale_y_continuous(name = "CKH return")
@@ -202,6 +204,8 @@ p11
 
 ### Adding a title
 
+Similarly, we can add a title using the `ggtitle` option.
+
 ```{r lr_9, cache=TRUE}
 p11 <- p11 + ggtitle("CKH regression line")
 p11
@@ -209,7 +213,7 @@ p11
 
 ### Including regression coefficients
 
-It would be interesting to show $R^2$ and regression coefficients within the plot.
+We can also include more information about the regression line itself. It would be interesting to show $R^2$ and regression coefficients within the plot.
 
 ```{r lr_10, cache=TRUE}
 p11 <- p11 + annotate("text", x=0.1, y=-0.05, label = "R^2=0.78") + 
@@ -231,7 +235,7 @@ p11 <- ggplot(hsi.ckh.returns, aes(x=hsi.Risk.premium, y=ckh.Return)) + geom_poi
 p11
 ```
 
-To make the coefficients more visible we will add some elements to increase visibility
+To make the coefficients more clear we will add some elements to increase visibility.
 
 ```{r lr_12, cache=TRUE}
 p11 <- ggplot(hsi.ckh.returns, aes(x=hsi.Risk.premium, y=ckh.Return)) + 
@@ -245,7 +249,7 @@ p11 <- ggplot(hsi.ckh.returns, aes(x=hsi.Risk.premium, y=ckh.Return)) +
 p11
 ```
 
-Another customization could be to show the trend line using rounded digits (or even significative digits) from regression coefficients. This requires us to write a function and is not as easy to obtain as the last plot. 
+Another customization could be to show the trend line using rounded digits (or even significant digits) from regression coefficients. This requires us to write a function and is not as easy to obtain as the last plot. 
 
 ```{r lr_13, cache=TRUE}
 equation = function(x) {
@@ -266,6 +270,8 @@ p11
 ```
 
 ### Using the white theme
+
+As explained in the previous posts, we can also change the overall look of the plot using themes. We'll start using a simple theme customisation by adding `theme_bw() `. As you can see, we can further tweak the graph using the `theme` option, which we've used so far to change the legend.
 
 ```{r lr_14, cache=TRUE}
 p11 <- p11 + theme_bw()
@@ -373,7 +379,7 @@ p11
 
 ### Basic diagnostics plots
 
-`ggfortify` lets `ggplot2` know how to interpret `lm` objects.
+An important part of creating regression models is evaluating how well they fit the data. We can use the package `ggfortify` to let `ggplot2` interpret `lm` objects and create diagnostic plots.
 
 ```{r lr_18, cache=TRUE}
 # install.packages("ggfortify")
@@ -383,11 +389,15 @@ autoplot(fit, label.size = 3)
 
 ### Using the white theme
 
+We can also customise the appearance of our diagnostic plots. Let's first use the white theme by again adding `theme_bw()`.
+
 ```{r lr_19, cache=TRUE}
 autoplot(fit, label.size = 3) + theme_bw()
 ```
 
 ### Creating an XKCD style chart
+
+We can of course apply our other themes as well. Let's try the XKCD theme.
 
 ```{r lr_20, cache=TRUE}
 autoplot(fit, label.size = 3) + theme(axis.line.x = element_line(size=.5, colour = "black"),
@@ -403,6 +413,8 @@ autoplot(fit, label.size = 3) + theme(axis.line.x = element_line(size=.5, colour
 
 ### Using 'The Economist' theme 
 
+And now the Economist theme.
+
 ```{r lr_21, cache=TRUE}
 autoplot(fit, label.size = 3) + theme_economist() +
       theme(axis.line.x = element_line(size=.5, colour = "black"),
@@ -417,6 +429,8 @@ autoplot(fit, label.size = 3) + theme_economist() +
 ```
 
 ### Creating your own theme
+
+Finally, we can also fully customise the diagnostic plots to match our regression plot simply by applying all of the same theme options.
 
 ```{r lr_22, cache=TRUE}
 autoplot(fit, label.size = 3) + theme(axis.line.x = element_line(size=.5, colour = "black"),
