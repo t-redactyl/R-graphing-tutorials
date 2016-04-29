@@ -3,8 +3,6 @@ ggplot2
 zoo
 xts
 Quandl
+ggthemes
 proto
 ggfortify
-ggthemes
-gridExtra
-reshape
