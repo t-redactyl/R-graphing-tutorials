@@ -41,13 +41,14 @@ p10 <- ggplot(airquality_trimmed2, aes(x = Month, y = Ozone, fill = Temp.f)) +
         scale_x_discrete(name = "Month") +
         ggtitle("Boxplot of mean ozone by month") +
         theme_bw() +
-        theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+        theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"),
+              panel.border = element_rect(colour = "black", fill=NA, size=.5),
               text = element_text(size = 12, family = "Tahoma"),
               axis.title = element_text(face="bold"),
               axis.text.x=element_text(size = 11),
               legend.position = "bottom") +
         scale_fill_brewer(palette = "Accent") +
-        labs(fill = "Temperature")
+        labs(fill = "Temperature ")
 p10
 ```
 
@@ -196,8 +197,7 @@ p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) +
                            limits=c(0, 175)) +
         scale_x_discrete(name = "Month") +
         ggtitle("Boxplot of mean ozone by month") +
-        theme(axis.line.x = element_line(size = 0.5, colour = "black"), 
-              axis.line.y = element_line(size = 0.5, colour = "black"), 
+        theme(panel.border = element_rect(colour = "black", fill=NA, size=.5),
               axis.line = element_line(size=1, colour = "black"), 
               panel.grid.major = element_blank(),
               panel.grid.minor = element_blank(), 
@@ -229,13 +229,12 @@ p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) +
         scale_x_discrete(name = "Month") +
         ggtitle("Boxplot of mean ozone by month") +
         theme_economist() +
-        theme(axis.line.x = element_line(size = 0.5, colour = "black"),
-              axis.line.y = element_line(size = 0.5, colour = "black"), 
+        theme(panel.border = element_rect(colour = "black", fill=NA, size=.5),
               legend.position = "bottom", legend.direction = "horizontal",
               legend.box = "horizontal",
               legend.key.size = unit(1, "cm"),
-              plot.title = element_text(family="Tahoma"),
-              text = element_text(family = "Tahoma"),
+              plot.title = element_text(family="OfficinaSanITC-Book"),
+              text = element_text(family = "OfficinaSanITC-Book"),
               axis.title = element_text(size = 12),
               legend.text = element_text(size = 9),
               legend.title=element_text(face = "bold", size = 9))
@@ -261,8 +260,7 @@ p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) +
         scale_x_discrete(name = "Month") +
         ggtitle("Boxplot of mean ozone by month") +
         theme_bw() +
-        theme(axis.line.x = element_line(size = 0.5, colour = "black"), 
-              axis.line.y = element_line(size = 0.5, colour = "black"), 
+        theme(panel.border = element_rect(colour = "black", fill=NA, size=.5),
               panel.grid.major = element_line(colour = "#d3d3d3"), 
               panel.grid.minor = element_blank(), 
               panel.border = element_blank(), panel.background = element_blank(),
@@ -297,8 +295,7 @@ p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) +
         scale_x_discrete(name = "Month") +
         ggtitle("Boxplot of mean ozone by month") +
         theme_bw() +
-        theme(axis.line.x = element_line(size = 0.5, colour = "black"), 
-              axis.line.y = element_line(size = 0.5, colour = "black"),
+        theme(panel.border = element_rect(colour = "black", fill=NA, size=.5),
               panel.grid.major = element_line(colour = "#d3d3d3"), 
               panel.grid.minor = element_blank(), 
               panel.border = element_blank(), panel.background = element_blank(),
@@ -316,7 +313,7 @@ You can also easily group box plots by the levels of another variable. There are
 
 We first need to do a little data wrangling. In order to make the graphs a bit clearer, we've kept only months "July", "Aug" and "Sep" in a new dataset `airquality_trimmed`. We've also mean-split `Temp` so that this is also categorical, and made it into a new labelled factor variable called `Temp.f`.
 
-In order to produce a panel plot by temperature, we add the `facet_grid(. ~ Temp.f)` option to the plot.
+In order to produce a panel plot by Temperature , we add the `facet_grid(. ~ Temp.f)` option to the plot.
 
 ```{r box_16, message = FALSE, warning = FALSE, cache = TRUE}
 airquality_trimmed <- airquality[which(airquality$Month == "Jul" |
@@ -334,7 +331,8 @@ p10 <- ggplot(airquality_trimmed, aes(x = Month, y = Ozone)) +
         scale_x_discrete(name = "Month") +
         ggtitle("Boxplot of mean ozone by month") +
         theme_bw() +
-        theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+        theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"),
+              panel.border = element_rect(colour = "black", fill=NA, size=.5),
               text = element_text(size = 12, family = "Tahoma"),
               axis.title = element_text(face="bold"),
               axis.text.x=element_text(size = 11)) +
@@ -342,7 +340,7 @@ p10 <- ggplot(airquality_trimmed, aes(x = Month, y = Ozone)) +
 p10
 ```
 
-In order to plot the two temperature levels in the same plot, we need to add a couple of things. Firstly, in the `ggplot` function, we add a `fill = Temp.f` argument to `aes`. Secondly, we customise the colours of the boxes by adding the `scale_fill_brewer` to the plot from the `RColorBrewer` package. [This](http://moderndata.plot.ly/create-colorful-graphs-in-r-with-rcolorbrewer-and-plotly/) blog post describes the available packages.
+In order to plot the two Temperature  levels in the same plot, we need to add a couple of things. Firstly, in the `ggplot` function, we add a `fill = Temp.f` argument to `aes`. Secondly, we customise the colours of the boxes by adding the `scale_fill_brewer` to the plot from the `RColorBrewer` package. [This](http://moderndata.plot.ly/create-colorful-graphs-in-r-with-rcolorbrewer-and-plotly/) blog post describes the available packages.
 
 ```{r box_17, message = FALSE, warning = FALSE, cache = TRUE}
 library(RColorBrewer)
@@ -355,7 +353,8 @@ p10 <- ggplot(airquality_trimmed, aes(x = Month, y = Ozone, fill = Temp.f)) +
         scale_x_discrete(name = "Month") +
         ggtitle("Boxplot of mean ozone by month") +
         theme_bw() +
-        theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+        theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"),
+              panel.border = element_rect(colour = "black", fill=NA, size=.5),
               text = element_text(size = 12, family = "Tahoma"),
               axis.title = element_text(face="bold"),
               axis.text.x=element_text(size = 11)) +
@@ -365,7 +364,7 @@ p10
 
 ### Formatting the legend
 
-Finally, we can format the legend. Firstly, we can change the position by adding the `legend.position = "bottom"` argument to the `theme` option, which moves the legend under the plot. Secondly, we can fix the title by adding the `labs(fill = "Temperature")` option to the plot.
+Finally, we can format the legend. Firstly, we can change the position by adding the `legend.position = "bottom"` argument to the `theme` option, which moves the legend under the plot. Secondly, we can fix the title by adding the `labs(fill = "Temperature ")` option to the plot.
 
 ```{r box_18, message = FALSE, warning = FALSE, cache = TRUE}
 p10 <- ggplot(airquality_trimmed, aes(x = Month, y = Ozone, fill = Temp.f)) + 
@@ -377,11 +376,12 @@ p10 <- ggplot(airquality_trimmed, aes(x = Month, y = Ozone, fill = Temp.f)) +
         ggtitle("Boxplot of mean ozone by month") +
         theme_bw() +
         theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+              panel.border = element_rect(colour = "black", fill=NA, size=.5),
               text = element_text(size = 12, family = "Tahoma"),
               axis.title = element_text(face="bold"),
               axis.text.x=element_text(size = 11),
               legend.position = "bottom") +
         scale_fill_brewer(palette = "Accent") +
-        labs(fill = "Temperature")
+        labs(fill = "Temperature ")
 p10
 ```

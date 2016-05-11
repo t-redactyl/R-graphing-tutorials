@@ -25,7 +25,7 @@ library(scales)
 charts.data <- read.csv("copper-data-for-tutorial.csv")
 charts.data <- as.data.frame(charts.data)
 charts.data$product <- factor(charts.data$product, levels = c("copper","others"), 
-                              labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
+                              labels = c("Copper ","Pulp wood, Fruit, Salmon & Others"))
 charts.data <- ddply(charts.data, .(year), transform, pos = cumsum(export) - (0.5 * export))
 
 fill <- c("#40b8d0", "#b2d183")
@@ -38,8 +38,7 @@ p3 <- ggplot() +
   labs(x="Year", y="USD million") + 
   ggtitle("Composition of Exports to China ($)") + 
   scale_fill_manual(values=fill) + 
-  theme(axis.line.x = element_line(size=.5, colour = "black"), 
-        axis.line.y = element_line(size=.5, colour = "black"), 
+  theme(panel.border = element_rect(colour = "black", fill=NA, size=.5), 
         axis.text.x=element_text(colour="black", size = 10), 
         axis.text.y=element_text(colour="black", size = 10),
         legend.key=element_rect(fill="white", colour="white"),
@@ -113,7 +112,7 @@ To change the variables' displayed name, we need to re-factor our data labels in
 
 ```{r bar_5, cache=TRUE, eval=TRUE}
 charts.data$product <- factor(charts.data$product, levels = c("copper","others"), 
-                              labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
+                              labels = c("Copper ","Pulp wood, Fruit, Salmon & Others"))
 
 p3 <- ggplot() + geom_bar(aes(y = export, x = year, fill = product), data = charts.data, 
                           stat="identity") + 
@@ -202,8 +201,7 @@ p3 <- ggplot() +
   scale_fill_manual(values=fill) + 
   theme(axis.text.x=element_text(colour="black", size = 10), 
         axis.text.y=element_text(colour="black", size = 10),
-        axis.line.x = element_line(size=.5, colour = "black"),
-        axis.line.y = element_line(size=.5, colour = "black"),
+        panel.border = element_rect(colour = "black", fill=NA, size=.5),
         legend.key=element_rect(fill="white", colour="white"),
         legend.position="bottom", legend.direction="horizontal", 
         legend.title = element_blank(),
@@ -228,8 +226,7 @@ p3 <- ggplot() +
   labs(x="Year", y="USD million") + 
   ggtitle("Composition of Exports to China ($)") +
   theme_economist() + scale_fill_economist() +
-  theme(axis.line.x = element_line(size=.5, colour = "black"), 
-        axis.line.y = element_line(size=.5, colour = "black"),
+  theme(panel.border = element_rect(colour = "black", fill=NA, size=.5), 
         legend.position="bottom", 
         legend.direction="horizontal", 
         legend.title = element_blank(),
@@ -274,8 +271,7 @@ p3 <- ggplot() +
   labs(x="Year", y="USD million") + 
   ggtitle("Composition of Exports to China ($)") + 
   scale_fill_manual(values=fill) + 
-  theme(axis.line.x = element_line(size=.5, colour = "black"), 
-        axis.line.y = element_line(size=.5, colour = "black"), 
+  theme(panel.border = element_rect(colour = "black", fill=NA, size=.5), 
         axis.text.x=element_text(colour="black", size = 10), 
         axis.text.y=element_text(colour="black", size = 10),
         legend.key=element_rect(fill="white", colour="white"),

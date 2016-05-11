@@ -43,9 +43,8 @@ p7 <- ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) +
       scale_y_continuous(name = "Count") +
       ggtitle("Frequency histogram of mean ozone") +
       scale_fill_brewer(palette="Accent") +
-      labs(fill="Month") +
-      theme(axis.line.x = element_line(size=.5, colour = "black"),
-            axis.line.y = element_line(size=.5, colour = "black"),
+      labs(fill="Month ") +
+      theme(panel.border = element_rect(colour = "black", fill=NA, size=.5),
             axis.text.x=element_text(colour="black", size = 9), 
             axis.text.y=element_text(colour="black", size = 9), 
             legend.position = "bottom", legend.position = "horizontal",
@@ -273,8 +272,7 @@ p7 <- ggplot(airquality, aes(x = Ozone)) +
                          limits=c(0, 175)) +
       scale_y_continuous(name = "Count") +
       ggtitle("Frequency histogram of mean ozone") + 
-      theme(axis.line.x = element_line(size=.5, colour = "black"),
-            axis.line.y = element_line(size=.5, colour = "black"), 
+      theme(panel.border = element_rect(colour = "black", fill=NA, size=.5),
             axis.text.x=element_text(colour="black", size = 9), 
             axis.text.y=element_text(colour="black", size = 9),
             panel.grid.major = element_line(colour = "#d3d3d3"), 
@@ -304,12 +302,9 @@ p7 <- ggplot(airquality, aes(x = Ozone)) +
       scale_y_continuous(name = "Count") +
       ggtitle("Frequency histogram of mean ozone") +
       theme_economist() +
-      theme(axis.line.x = element_line(size=.5, colour = "black"),
-            axis.line.y = element_line(size=.5, colour = "black"), 
+      theme(panel.border = element_rect(colour = "black", fill=NA, size=.5),
             axis.text.x=element_text(colour="black", size = 9), 
             axis.text.y=element_text(colour="black", size = 9),
-            panel.grid.major = element_line(colour = "#d3d3d3"), 
-            panel.grid.minor = element_blank(), 
             panel.border = element_blank(), panel.background = element_blank(),
             plot.title = element_text(family = "OfficinaSanITC-Book"),
             text=element_text(family="OfficinaSanITC-Book"))
@@ -334,8 +329,7 @@ p7 <- ggplot(airquality, aes(x = Ozone)) +
                          limits=c(0, 175)) +
       scale_y_continuous(name = "Count") +
       ggtitle("Frequency histogram of mean ozone") +
-      theme(axis.line.x = element_line(size=.5, colour = "black"),
-            axis.line.y = element_line(size=.5, colour = "black"), 
+      theme(panel.border = element_rect(colour = "black", fill=NA, size=.5),
             axis.text.x=element_text(colour="black", size = 9), 
             axis.text.y=element_text(colour="black", size = 9),
             panel.grid.major = element_line(colour = "#d3d3d3"), 
@@ -364,8 +358,7 @@ p7 <- ggplot(airquality, aes(x = Ozone)) +
       ggtitle("Frequency histogram of mean ozone") +
       geom_vline(xintercept = 75, size = 1, colour = "#FF3721", 
                  linetype = "dashed") +
-      theme(axis.line.x = element_line(size=.5, colour = "black"),
-            axis.line.y = element_line(size=.5, colour = "black"), 
+      theme(panel.border = element_rect(colour = "black", fill=NA, size=.5),
             axis.text.x=element_text(colour="black", size = 9), 
             axis.text.y=element_text(colour="black", size = 9),
             panel.grid.major = element_line(colour = "#d3d3d3"), 
@@ -401,8 +394,7 @@ p7 <- ggplot(airquality_trimmed, aes(x = Ozone)) +
       scale_y_continuous(name = "Count") +
       ggtitle("Frequency histogram of mean ozone") +
       facet_grid(. ~ Month.f, scales = "free") +
-      theme(axis.line.x = element_line(size=.5, colour = "black"),
-            axis.line.y = element_line(size=.5, colour = "black"), 
+      theme(panel.border = element_rect(colour = "black", fill=NA, size=.5),
             axis.text.x=element_text(colour="black", size = 9), 
             axis.text.y=element_text(colour="black", size = 9),
             panel.grid.major = element_line(colour = "#d3d3d3"), 
@@ -429,8 +421,7 @@ p7 <- ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) +
       scale_y_continuous(name = "Count") +
       ggtitle("Frequency histogram of mean ozone") +
       scale_fill_brewer(palette="Accent") +
-      theme(axis.line.x = element_line(size=.5, colour = "black"), 
-            axis.line.y = element_line(size=.5, colour = "black"),
+      theme(panel.border = element_rect(colour = "black", fill=NA, size=.5), 
             axis.text.x=element_text(colour="black", size = 9), 
             axis.text.y=element_text(colour="black", size = 9),
             panel.grid.major = element_line(colour = "#d3d3d3"), 
@@ -443,7 +434,7 @@ p7
 
 ## Formatting the legend
 
-Finally, we can format the legend. Firstly, we can change the position by adding the `legend.position = "bottom"` argument to the `theme` option, which moves the legend under the plot. Secondly, we can fix the title by adding the `labs(fill="Month")` option to the plot.
+Finally, we can format the legend. Firstly, we can change the position by adding the `legend.position = "bottom"` argument to the `theme` option, which moves the legend under the plot. Secondly, we can fix the title by adding the `labs(fill="Month ")` option to the plot.
 
 ```{r histogram_20, cache=TRUE}
 p7 <- ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) + 
@@ -455,9 +446,8 @@ p7 <- ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) +
       scale_y_continuous(name = "Count") +
       ggtitle("Frequency histogram of mean ozone") +
       scale_fill_brewer(palette="Accent") +
-      labs(fill="Month") +
-      theme(axis.line.x = element_line(size=.5, colour = "black"),
-            axis.line.y = element_line(size=.5, colour = "black"),
+      labs(fill="Month ") +
+      theme(panel.border = element_rect(colour = "black", fill=NA, size=.5),
             axis.text.x=element_text(colour="black", size = 9), 
             axis.text.y=element_text(colour="black", size = 9), 
             legend.position = "bottom", legend.position = "horizontal",

@@ -42,9 +42,10 @@ ggplot(airquality_trimmed, aes(x = Ozone, colour = Month.f)) +
       scale_y_continuous(name = "Density") +
       ggtitle("Density plot of mean ozone") +
       scale_colour_brewer(palette="Accent") +
-      labs(colour = "Month") +
+      labs(colour = "Month ") +
       theme_bw() +
       theme(legend.position = "bottom",
+            panel.border = element_rect(colour = "black", fill=NA, size=.5),
             plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
             text = element_text(size = 12, family = "Tahoma"))
 ```
@@ -179,8 +180,7 @@ p8 <- ggplot(airquality, aes(x = Ozone)) +
                          limits=c(0, 200)) +
       scale_y_continuous(name = "Density") +
       ggtitle("Density plot of mean ozone") +
-      theme(axis.line.x = element_line(size=.5, colour = "black"),
-            axis.line.y = element_line(size=.5, colour = "black"), 
+      theme(panel.border = element_rect(colour = "black", fill=NA, size=.5),
             axis.text.x=element_text(colour="black", size = 9), 
             axis.text.y=element_text(colour="black", size = 9),
             panel.grid.major = element_line(colour = "#d3d3d3"), 
@@ -210,12 +210,9 @@ p8 <- ggplot(airquality, aes(x = Ozone)) +
       scale_y_continuous(name = "Density") +
       ggtitle("Density plot of mean ozone") +
       theme_economist() +
-      theme(axis.line.x = element_line(size=.5, colour = "black"),
-            axis.line.y = element_line(size=.5, colour = "black"), 
+      theme(panel.border = element_rect(colour = "black", fill=NA, size=.5),
             axis.text.x=element_text(colour="black", size = 9), 
             axis.text.y=element_text(colour="black", size = 9),
-            panel.grid.major = element_line(colour = "#d3d3d3"), 
-            panel.grid.minor = element_blank(), 
             panel.border = element_blank(), panel.background = element_blank(),
             plot.title = element_text(family = "OfficinaSanITC-Book"),
             text=element_text(family="OfficinaSanITC-Book"))
@@ -239,8 +236,7 @@ p8 <- ggplot(airquality, aes(x = Ozone)) +
                             limits=c(0, 200)) +
       scale_y_continuous(name = "Density") +
       ggtitle("Density plot of mean ozone") +
-      theme(axis.line.x = element_line(size=.5, colour = "black"),
-            axis.line.y = element_line(size=.5, colour = "black"),
+      theme(panel.border = element_rect(colour = "black", fill=NA, size=.5),
             axis.text.x=element_text(colour="black", size = 9), 
             axis.text.y=element_text(colour="black", size = 9), 
             legend.position = "bottom", legend.position = "horizontal",
@@ -290,7 +286,8 @@ p8 <- ggplot(airquality_trimmed, aes(x = Ozone)) +
       ggtitle("Density plot of mean ozone") +
       facet_grid(. ~ Month.f) +
       theme_bw() +
-      theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+      theme(panel.border = element_rect(colour = "black", fill=NA, size=.5),
+            plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
             text = element_text(size = 12, family = "Tahoma"))
 p8
 ```
@@ -312,7 +309,8 @@ p8 <- ggplot(airquality_trimmed, aes(x = Ozone)) +
       facet_grid(. ~ Month.f) +
       coord_flip() +
       theme_bw() +
-      theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+      theme(panel.border = element_rect(colour = "black", fill=NA, size=.5),
+            plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
             text = element_text(size = 12, family = "Tahoma"))
 p8
 ```
@@ -331,7 +329,8 @@ p8 <- ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) +
       ggtitle("Density plot of mean ozone") +
       scale_fill_brewer(palette="Accent") +
       theme_bw() +
-      theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+      theme(panel.border = element_rect(colour = "black", fill=NA, size=.5),
+            plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
             text = element_text(size = 12, family = "Tahoma"))
 p8
 ```
@@ -348,7 +347,8 @@ p8 <- ggplot(airquality_trimmed, aes(x = Ozone, fill = Month.f)) +
       ggtitle("Density plot of mean ozone") +
       scale_fill_brewer(palette="Accent") +
       theme_bw() +
-      theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+      theme(panel.border = element_rect(colour = "black", fill=NA, size=.5),
+            plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
             text = element_text(size = 12, family = "Tahoma"))
 p8
 ```
@@ -365,14 +365,15 @@ p8 <- ggplot(airquality_trimmed, aes(x = Ozone, colour = Month.f)) +
       ggtitle("Density plot of mean ozone") +
       scale_colour_brewer(palette="Accent") +
       theme_bw() +
-      theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+      theme(panel.border = element_rect(colour = "black", fill=NA, size=.5),
+            plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
             text = element_text(size = 12, family = "Tahoma"))
 p8
 ```
 
 ### Formatting the legend
 
-Finally, we can format the legend. Firstly, we can change the position by adding the `legend.position = "bottom"` argument to the `theme` option, which moves the legend under the plot. Secondly, we can fix the title by adding the `labs(fill="Month")` option to the plot.
+Finally, we can format the legend. Firstly, we can change the position by adding the `legend.position = "bottom"` argument to the `theme` option, which moves the legend under the plot. Secondly, we can fix the title by adding the `labs(fill="Month ")` option to the plot.
 
 ```{r density_19, cache=TRUE}
 p8 <- ggplot(airquality_trimmed, aes(x = Ozone, colour = Month.f)) + 
@@ -383,9 +384,10 @@ p8 <- ggplot(airquality_trimmed, aes(x = Ozone, colour = Month.f)) +
       scale_y_continuous(name = "Density") +
       ggtitle("Density plot of mean ozone") +
       scale_colour_brewer(palette="Accent") +
-      labs(colour = "Month") +
+      labs(colour = "Month ") +
       theme_bw() +
       theme(legend.position = "bottom",
+            panel.border = element_rect(colour = "black", fill=NA, size=.5),
             plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
             text = element_text(size = 12, family = "Tahoma"))
 p8

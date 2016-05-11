@@ -44,12 +44,11 @@ p6 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind, fill = Month)) +
       geom_point(shape = 21) +
       ggtitle("Air Quality in New York by Day") + 
       labs(x = "Day of the month", y = "Ozone (ppb)",
-       size = "Wind Speed (mph)", fill = "Months") +
+       size = "Wind Speed (mph) ", fill = "Months ") +
       scale_x_continuous(breaks = seq(1, 31, 5)) +
       scale_size(range = c(1, 10)) +
       scale_fill_manual(values = fill) +
-      theme(axis.line.x = element_line(size=.5, colour = "black"), 
-            axis.line.y = element_line(size=.5, colour = "black"), 
+      theme(panel.border = element_rect(colour = "black", fill=NA, size=.5), 
             axis.text.x=element_text(colour="black", size = 9), 
             axis.text.y=element_text(colour="black", size = 9),
             legend.position = "bottom", legend.direction = "horizontal",
@@ -211,7 +210,7 @@ p6
 To change the titles of the two legends, we use the `labs` option. In order to tell ggplot2 exactly what legend you're referring to, just have a look in the `ggplot` option and see what argument you used to create the legend in the first place. In this case we used the `size` argument for "Wind" and `fill` for "Month", so we pass these to `labs` with our new titles.
 
 ```{r wscatter_15, cache=TRUE}
-p6 <- p6 + labs(size = "Wind Speed (mph)", fill = "Months")
+p6 <- p6 + labs(size = "Wind Speed (mph) ", fill = "Months ")
 p6
 ```
 
@@ -234,7 +233,7 @@ p6 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind, fill = Month)) + them
       geom_point(shape = 21) +
       ggtitle("Air Quality in New York by Day") + 
       labs(x = "Day of the month", y = "Ozone (ppb)",
-       size = "Wind Speed (mph)", fill = "Months") +
+       size = "Wind Speed (mph) ", fill = "Months ") +
       scale_x_continuous(breaks = seq(1, 31, 5)) +
       scale_fill_manual(values = fill) +
       scale_size(range = c(1, 10)) +
@@ -270,12 +269,11 @@ p6 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind, fill = Month)) +
       geom_point(shape = 21) +
       ggtitle("Air Quality in New York by Day") + 
       labs(x = "Day of the month", y = "Ozone (ppb)",
-       size = "Wind Speed (mph)", fill = "Months") +
+       size = "Wind Speed (mph) ", fill = "Months ") +
       scale_x_continuous(breaks = seq(1, 31, 5)) +
       scale_fill_manual(values = fill) +
       scale_size(range = c(1, 10)) +
-      theme(axis.line.x = element_line(size=1, colour = "black"),
-            axis.line.y = element_line(size=1, colour = "black"),
+      theme(panel.border = element_rect(colour = "black", fill=NA, size=.5),
             axis.text.x=element_text(colour="black", size = 10), 
             axis.text.y=element_text(colour="black", size = 10), 
             legend.position="bottom", legend.direction="horizontal",
@@ -297,18 +295,17 @@ p6 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind, fill = Month)) +
       scale_fill_economist() +
       geom_point(shape = 21) +
       ggtitle("Air Quality in New York by Day") + 
-      labs(x = "Day of the month", y = "Ozone (ppb)", size = "Wind Speed (mph)", fill = "Months") +
+      labs(x = "Day of the month", y = "Ozone (ppb)", size = "Wind Speed (mph) ", fill = "Months ") +
       scale_x_continuous(breaks = seq(1, 31, 5)) +
       scale_size(range = c(1, 10)) +
       theme_economist() + 
-      theme(axis.line.x = element_line(size=.5, colour = "black"), 
-            axis.line.y = element_line(size=.5, colour = "black"), 
+      theme(panel.border = element_rect(colour = "black", fill=NA, size=.5), 
             axis.title = element_text(size = 12),
             legend.position = "bottom", legend.direction = "horizontal",
             legend.text = element_text(size = 9),
             legend.title=element_text(face = "bold", size = 9),
-            text = element_text(family = "Tahoma"),
-            plot.title = element_text(family="Tahoma"))
+            text = element_text(family = "OfficinaSanITC-Book"),
+            plot.title = element_text(family="OfficinaSanITC-Book"))
 p6
 ```
 
@@ -322,12 +319,11 @@ fill = c("steelblue", "yellowgreen", "violetred1")
 p6 <- ggplot(aq_trim, aes(x = Day, y = Ozone, size = Wind, fill = Month)) +
       geom_point(shape = 21) +
       ggtitle("Air Quality in New York by Day") + 
-      labs(x = "Day of the month", y = "Ozone (ppb)", size = "Wind Speed (mph)", fill = "Months") +
+      labs(x = "Day of the month", y = "Ozone (ppb)", size = "Wind Speed (mph) ", fill = "Months ") +
       scale_x_continuous(breaks = seq(1, 31, 5)) +
       scale_size(range = c(1, 10)) +
       scale_fill_manual(values = fill) +
-      theme(axis.line.x = element_line(size=.5, colour = "black"), 
-            axis.line.y = element_line(size=.5, colour = "black"), 
+      theme(panel.border = element_rect(colour = "black", fill=NA, size=.5), 
             axis.text.x=element_text(colour="black", size = 9), 
             axis.text.y=element_text(colour="black", size = 9),
             legend.position = "bottom", legend.direction = "horizontal",

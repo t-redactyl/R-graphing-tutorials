@@ -23,26 +23,29 @@ library(extrafont)
 charts.data.2 <- read.csv("copper-data-for-tutorial.csv")
 charts.data.2 <- as.data.frame(charts.data.2)
 charts.data.2$product <- factor(charts.data.2$product, levels = c("copper","others"), 
-                              labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
+                              labels = c("Copper ","Pulp wood, Fruit, Salmon & Others"))
 
 fill <- c("#40b8d0", "#b2d183")
 
 p2 <- ggplot() + 
   geom_area(aes(y = export, x = year, fill = product), data = charts.data.2, 
             stat="identity") + 
-  theme(legend.position="bottom", legend.direction="horizontal", 
-        legend.title = element_blank()) + 
   scale_x_continuous(breaks=seq(2006,2014,1)) + 
   labs(x="Year", y="USD million") + 
   ggtitle("Composition of Exports to China ($)") + 
   scale_fill_manual(values=fill) + 
-  theme(axis.line = element_line(size=.5, colour = "black"), 
-        panel.grid.major = element_line(colour = "#d3d3d3"), panel.grid.minor = element_blank(), 
-        panel.border = element_blank(), panel.background = element_blank()) + 
-  theme(plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
-        text=element_text(family="Tahoma"), 
+  theme(panel.border = element_rect(colour = "black", fill=NA, size=.5), 
         axis.text.x=element_text(colour="black", size = 10), 
-        axis.text.y=element_text(colour="black", size = 10)) 
+        axis.text.y=element_text(colour="black", size = 10),
+        legend.key=element_rect(fill="white", colour="white"),
+        legend.position="bottom", legend.direction="horizontal", 
+        legend.title = element_blank(),
+        panel.grid.major = element_line(colour = "#d3d3d3"), 
+        panel.grid.minor = element_blank(), 
+        panel.border = element_blank(), 
+        panel.background = element_blank(),
+        plot.title = element_text(size = 14, family = "Tahoma", face = "bold"), 
+        text=element_text(family="Tahoma"))
 p2
 ```
 
@@ -84,7 +87,7 @@ To change the variables displayed name, we need to re-factor our data labels in 
 ```{r area_3, cache=TRUE}
 charts.data <- as.data.frame(charts.data)
 charts.data$product <- factor(charts.data$product, levels = c("copper","others"), 
-                              labels = c("Copper","Pulp wood, Fruit, Salmon & Others"))
+                              labels = c("Copper ","Pulp wood, Fruit, Salmon & Others"))
 
 p2 <- ggplot() + 
   geom_area(aes(y = export, x = year, fill = product), data = charts.data, stat="identity") + 
@@ -165,8 +168,7 @@ p2 <- ggplot() +
   scale_fill_manual(values=fill) + 
   theme(axis.text.x=element_text(colour="black", size = 10), 
         axis.text.y=element_text(colour="black", size = 10),
-        axis.line.x = element_line(size=.5, colour = "black"),
-        axis.line.y = element_line(size=.5, colour = "black"),
+        panel.border = element_rect(colour = "black", fill=NA, size=.5),
         legend.key=element_rect(fill="white", colour="white"),
         legend.position="bottom", legend.direction="horizontal", 
         legend.title = element_blank(),
@@ -187,8 +189,7 @@ p2 <- ggplot() +
   labs(x="Year", y="USD million") + 
   ggtitle("Composition of Exports to China ($)") +
   theme_economist() + scale_fill_economist() +
-  theme(axis.line.x = element_line(size=.5, colour = "black"), 
-        axis.line.y = element_line(size=.5, colour = "black"),
+  theme(panel.border = element_rect(colour = "black", fill=NA, size=.5), 
         legend.position="bottom", 
         legend.direction="horizontal", 
         legend.title = element_blank(),
@@ -229,8 +230,7 @@ p2 <- ggplot() +
   labs(x="Year", y="USD million") + 
   ggtitle("Composition of Exports to China ($)") + 
   scale_fill_manual(values=fill) + 
-  theme(axis.line.x = element_line(size=.5, colour = "black"), 
-        axis.line.y = element_line(size=.5, colour = "black"), 
+  theme(panel.border = element_rect(colour = "black", fill=NA, size=.5), 
         axis.text.x=element_text(colour="black", size = 10), 
         axis.text.y=element_text(colour="black", size = 10),
         legend.key=element_rect(fill="white", colour="white"),

@@ -1,0 +1,13 @@
+\contentsline {chapter}{What to expect from this book}{1}{chapter*.2}
+\contentsline {chapter}{\numberline {1}Line plots}{2}{chapter.1}
+\contentsline {section}{\numberline {1.1}Basic graph}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}Adjusting line width}{4}{section.1.2}
+\contentsline {section}{\numberline {1.3}Changing variables display}{4}{section.1.3}
+\contentsline {section}{\numberline {1.4}Adjusting x-axis scale}{5}{section.1.4}
+\contentsline {section}{\numberline {1.5}Adjusting axis labels \& adding title}{6}{section.1.5}
+\contentsline {section}{\numberline {1.6}Adjusting color palette}{6}{section.1.6}
+\contentsline {section}{\numberline {1.7}Using the white theme}{7}{section.1.7}
+\contentsline {section}{\numberline {1.8}Creating an XKCD style chart}{8}{section.1.8}
+\contentsline {section}{\numberline {1.9}Using `The Economist' theme}{9}{section.1.9}
+\contentsline {section}{\numberline {1.10}Creating your own theme}{10}{section.1.10}
+\contentsline {chapter}{Suggested material}{12}{chapter*.3}
