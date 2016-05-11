@@ -11,7 +11,7 @@ output:
 ---
 
 ```{r setup, cache = FALSE, echo = FALSE, message = FALSE, warning = FALSE, tidy = FALSE}
-knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 96, fig.width=8, fig.height=6, tidy = F, cache.path = '.cache/', fig.path = '0_all_posts_pdf/', dev = 'quartz_pdf', dev.args=list(pointsize=12))
+knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 96, fig.width=8, fig.height=6, tidy = F, cache.path = '.cache_pdf/', fig.path = '0_all_posts_pdf/', dev = 'quartz_pdf', dev.args=list(pointsize=12))
 ```
 
 I recently teamed up with [Mauricio Vargas Sepúlveda](http://pachamaltese.github.io/) to create some graphing tutorials in R. In the coming weeks, we will be publishing a series of tutorials on how to use the `ggplot2` package to create beautiful and informative data visualisations. Each tutorial will explain how to create a different type of plot, and will take you step-by-step from a basic plot to a highly customised graph.
@@ -59,5 +59,5 @@ We will demonstrate some of the many options the `ggplot2` package has for creat
 ```
 
 # Linear regression
-```{r child = '11_Linear_Regression_Plot.Rmd', cache=TRUE}
+```{r child = '12_Linear_Regression_Plot.Rmd', cache=TRUE}
 ```

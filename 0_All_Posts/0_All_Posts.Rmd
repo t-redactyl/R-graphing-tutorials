@@ -58,5 +58,5 @@ We will demonstrate some of the many options the `ggplot2` package has for creat
 ```
 
 # Linear regression
-```{r child = '11_Linear_Regression_Plot.Rmd'}
+```{r child = '12_Linear_Regression_Plot.Rmd'}
 ```

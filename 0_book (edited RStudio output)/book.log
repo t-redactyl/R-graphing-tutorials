@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.18)  10 MAY 2016 23:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.18)  11 MAY 2016 00:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2428,117 +2428,117 @@ Package pdftex.def Info: figures/lr_final-2.pdf used on input line 19.
 
 
  <./figures/lr_final-1.pdf>] [146 <./figures/lr_final-2.pdf>] [147] <figures/lr
-_6-1.pdf, id=17603, 578.16pt x 433.62pt>
+_6-1.pdf, id=16805, 578.16pt x 433.62pt>
 File: figures/lr_6-1.pdf Graphic file (type pdf)
 
 <use figures/lr_6-1.pdf>
 Package pdftex.def Info: figures/lr_6-1.pdf used on input line 153.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
  [148 <./figures/lr_6-1.pdf>]
-<figures/lr_7-1.pdf, id=17669, 578.16pt x 433.62pt>
+<figures/lr_7-1.pdf, id=16871, 578.16pt x 433.62pt>
 File: figures/lr_7-1.pdf Graphic file (type pdf)
  <use figures/lr_7-1.pdf>
 Package pdftex.def Info: figures/lr_7-1.pdf used on input line 166.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<figures/lr_8-1.pdf, id=17670, 578.16pt x 433.62pt>
+<figures/lr_8-1.pdf, id=16872, 578.16pt x 433.62pt>
 File: figures/lr_8-1.pdf Graphic file (type pdf)
  <use figures/lr_8-1.pdf>
 Package pdftex.def Info: figures/lr_8-1.pdf used on input line 181.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 [149 <./figures/lr_7-1.pdf> <./figures/lr_8-1.pdf>]
-<figures/lr_9-1.pdf, id=17785, 578.16pt x 433.62pt>
+<figures/lr_9-1.pdf, id=16988, 578.16pt x 433.62pt>
 File: figures/lr_9-1.pdf Graphic file (type pdf)
  <use figures/lr_9-1.pdf>
 Package pdftex.def Info: figures/lr_9-1.pdf used on input line 192.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<figures/lr_10-1.pdf, id=17786, 578.16pt x 433.62pt>
+<figures/lr_10-1.pdf, id=16989, 578.16pt x 433.62pt>
 File: figures/lr_10-1.pdf Graphic file (type pdf)
  <use figures/lr_10-1.pdf>
 Package pdftex.def Info: figures/lr_10-1.pdf used on input line 209.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 [150 <./figures/lr_9-1.pdf>]
-<figures/lr_11-1.pdf, id=17852, 578.16pt x 433.62pt>
+<figures/lr_11-1.pdf, id=17054, 578.16pt x 433.62pt>
 File: figures/lr_11-1.pdf Graphic file (type pdf)
  <use figures/lr_11-1.pdf>
 Package pdftex.def Info: figures/lr_11-1.pdf used on input line 227.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 [151 <./figures/lr_10-1.pdf> <./figures/lr_11-1.pdf>]
-<figures/lr_12-1.pdf, id=18034, 578.16pt x 433.62pt>
+<figures/lr_12-1.pdf, id=17236, 578.16pt x 433.62pt>
 File: figures/lr_12-1.pdf Graphic file (type pdf)
  <use figures/lr_12-1.pdf>
 Package pdftex.def Info: figures/lr_12-1.pdf used on input line 248.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 [152 <./figures/lr_12-1.pdf>]
-<figures/lr_13-1.pdf, id=18144, 578.16pt x 433.62pt>
+<figures/lr_13-1.pdf, id=17346, 578.16pt x 433.62pt>
 File: figures/lr_13-1.pdf Graphic file (type pdf)
  <use figures/lr_13-1.pdf>
-Package pdftex.def Info: figures/lr_13-1.pdf used on input line 278.
+Package pdftex.def Info: figures/lr_13-1.pdf used on input line 279.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<figures/lr_14-1.pdf, id=18145, 578.16pt x 433.62pt>
+<figures/lr_14-1.pdf, id=17347, 578.16pt x 433.62pt>
 File: figures/lr_14-1.pdf Graphic file (type pdf)
  <use figures/lr_14-1.pdf>
-Package pdftex.def Info: figures/lr_14-1.pdf used on input line 289.
+Package pdftex.def Info: figures/lr_14-1.pdf used on input line 290.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 [153 <./figures/lr_13-1.pdf> <./figures/lr_14-1.pdf>]
-<figures/lr_15-1.pdf, id=20002, 578.16pt x 433.62pt>
+<figures/lr_15-1.pdf, id=17608, 578.16pt x 433.62pt>
 File: figures/lr_15-1.pdf Graphic file (type pdf)
  <use figures/lr_15-1.pdf>
-Package pdftex.def Info: figures/lr_15-1.pdf used on input line 343.
+Package pdftex.def Info: figures/lr_15-1.pdf used on input line 345.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 [154] [155 <./figures/lr_15-1.pdf>]
-<figures/lr_16-1.pdf, id=20935, 578.16pt x 433.62pt>
+<figures/lr_16-1.pdf, id=17743, 578.16pt x 433.62pt>
 File: figures/lr_16-1.pdf Graphic file (type pdf)
  <use figures/lr_16-1.pdf>
-Package pdftex.def Info: figures/lr_16-1.pdf used on input line 384.
+Package pdftex.def Info: figures/lr_16-1.pdf used on input line 387.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 [156 <./figures/lr_16-1.pdf>]
-<figures/lr_17-1.pdf, id=21865, 578.16pt x 433.62pt>
+<figures/lr_17-1.pdf, id=17875, 578.16pt x 433.62pt>
 File: figures/lr_17-1.pdf Graphic file (type pdf)
  <use figures/lr_17-1.pdf>
-Package pdftex.def Info: figures/lr_17-1.pdf used on input line 422.
+Package pdftex.def Info: figures/lr_17-1.pdf used on input line 425.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<figures/lr_18-1.pdf, id=21866, 578.16pt x 433.62pt>
+<figures/lr_18-1.pdf, id=17876, 578.16pt x 433.62pt>
 File: figures/lr_18-1.pdf Graphic file (type pdf)
  <use figures/lr_18-1.pdf>
-Package pdftex.def Info: figures/lr_18-1.pdf used on input line 440.
+Package pdftex.def Info: figures/lr_18-1.pdf used on input line 443.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 [157 <./figures/lr_17-1.pdf>]
-<figures/lr_19-1.pdf, id=22794, 578.16pt x 433.62pt>
+<figures/lr_19-1.pdf, id=18006, 578.16pt x 433.62pt>
 File: figures/lr_19-1.pdf Graphic file (type pdf)
  <use figures/lr_19-1.pdf>
-Package pdftex.def Info: figures/lr_19-1.pdf used on input line 450.
+Package pdftex.def Info: figures/lr_19-1.pdf used on input line 453.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 [158 <./figures/lr_18-1.pdf> <./figures/lr_19-1.pdf>]
-<figures/lr_20-1.pdf, id=23417, 578.16pt x 433.62pt>
+<figures/lr_20-1.pdf, id=18630, 578.16pt x 433.62pt>
 File: figures/lr_20-1.pdf Graphic file (type pdf)
  <use figures/lr_20-1.pdf>
-Package pdftex.def Info: figures/lr_20-1.pdf used on input line 470.
+Package pdftex.def Info: figures/lr_20-1.pdf used on input line 473.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
-<figures/lr_21-1.pdf, id=23418, 578.16pt x 433.62pt>
+<figures/lr_21-1.pdf, id=18631, 578.16pt x 433.62pt>
 File: figures/lr_21-1.pdf Graphic file (type pdf)
  <use figures/lr_21-1.pdf>
-Package pdftex.def Info: figures/lr_21-1.pdf used on input line 490.
+Package pdftex.def Info: figures/lr_21-1.pdf used on input line 493.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 [159 <./figures/lr_20-1.pdf>]
-<figures/lr_22-1.pdf, id=23731, 578.16pt x 433.62pt>
+<figures/lr_22-1.pdf, id=18943, 578.16pt x 433.62pt>
 File: figures/lr_22-1.pdf Graphic file (type pdf)
  <use figures/lr_22-1.pdf>
-Package pdftex.def Info: figures/lr_22-1.pdf used on input line 511.
+Package pdftex.def Info: figures/lr_22-1.pdf used on input line 514.
 (pdftex.def)             Requested size: 259.6186pt x 194.71036pt.
 
 [160 <./figures/lr_21-1.pdf>]) [161 <./figures/lr_22-1.pdf>] [162
@@ -2562,7 +2562,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 242.
 Here is how much of TeX's memory you used:
  21080 strings out of 494501
  396038 string characters out of 6167030
- 460106 words of memory out of 5000000
+ 460120 words of memory out of 5000000
  23291 multiletter control sequences out of 15000+600000
  31811 words of font info for 151 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
@@ -2576,10 +2576,10 @@ s/type1/bh/lucida/lsd.pfb></Users/pacha/Library/texmf/fonts/type1/bh/lucida/lsr
 .pfb></Users/pacha/Library/texmf/fonts/type1/bh/lucida/lstb.pfb></Users/pacha/L
 ibrary/texmf/fonts/type1/bh/lucida/lsto.pfb></Users/pacha/Library/texmf/fonts/t
 ype1/bh/lucida/lstr.pfb>
-Output written on book.pdf (170 pages, 23525501 bytes).
+Output written on book.pdf (170 pages, 20387778 bytes).
 PDF statistics:
- 24486 PDF objects out of 26593 (max. 8388607)
- 18589 compressed objects within 186 object streams
+ 19699 PDF objects out of 22161 (max. 8388607)
+ 15061 compressed objects within 151 object streams
  328 named destinations out of 1000 (max. 500000)
  26258 words of extra memory for PDF output out of 29859 (max. 10000000)
 

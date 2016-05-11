@@ -110,7 +110,7 @@
   \postauthor{\par}
   \predate{\centering\large\emph}
   \postdate{\par}
-  \date{2016-05-10}
+  \date{2016-05-11}
 
 
 
@@ -4389,21 +4389,35 @@ option to the plot.
 
 \section{Linear regression}\label{linear-regression}
 
-This chapter will be much more than just regression plot. Here we are
-getting, cleaning and processing financial data from
-\href{https://www.quandl.com/}{Quandl}. The goal is to estimate the CAPM
-model \(R_i = R_f + \beta_i [R_m - R_f] + e_i\) where \(R_i\) is the
-return of an asset, \(R_f\) is the risk-free return (e.g.~US Treasury
-Bonds), \(R_m\) is the return of the market portfolio (e.g.~NYSE) and
+This is the eleventh tutorial in a series on using \texttt{ggplot2} I am
+creating with \href{http://pachamaltese.github.io/}{Mauricio Vargas
+Sepúlveda}. In this tutorial we will demonstrate some of the many
+options the \texttt{ggplot2} package.
+
+This post will be much more than showing you how to create regression
+plots. Here we are extracting, cleaning and processing financial data
+from \href{https://www.quandl.com/}{Quandl}.
+
+Before going ahead, we strongly suggest to create a
+\href{https://www.quandl.com/}{Quandl} account in order to obtain an
+\href{https://www.quandl.com/account/api}{API key} that allows you to
+download data without restrictions. It is even possible to log into
+Quandl using Github or Linkedin accounts. Quandl's website has complete
+instruction and they have an API that is 100\% R compatible.
+
+The goal is to estimate the CAPM model
+\(R_i = R_f + \beta_i [R_m - R_f] + e_i\) where \(R_i\) is the return of
+an asset, \(R_f\) is the risk-free return (e.g.~US Treasury Bonds),
+\(R_m\) is the return of the market portfolio (e.g.~NYSE) and
 \(\beta_i\) is a measure of risk relative to the market (e.g.
 \(\beta_i = 1\) means that asset is exactly as risky as the market
 portfolio). More on the CAPM model can be read
-\href{http://people.stern.nyu.edu/ashapiro/courses/B01.231103/FFL09.pdf}{here}
-but we will focus on plots.
+\href{http://people.stern.nyu.edu/ashapiro/courses/B01.231103/FFL09.pdf}{here},
+but in this tutorial we will focus on plotting.
 
-In this chapter, we will work towards creating the trend line and
-diagnostics plots below. We will take you from a basic density plot and
-explain all the customisations we add to the code step-by-step.
+In this tutorial, we will work towards creating the trend line and
+diagnostics plots below. We will take you from a basic regression plot
+and explain all the customisations we add to the code step-by-step.
 
 \begin{center}\includegraphics{0_all_posts_pdf/lr_final-1} \end{center}
 
@@ -4430,8 +4444,8 @@ price of Hang Seng Index and Cheung Kong Holdings Hong Kong from
 \end{Shaded}
 
 Before calculating return as
-\(R_i = \displaystyle \frac{P_t - P_{t-1}}{P_t}\) it is needed to order
-HSI and CKH data by dates and in decreasing order.
+\(R_i = \displaystyle \frac{P_t - P_{t-1}}{P_t}\) we need to order HSI
+and CKH data by dates and in decreasing order.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4534,8 +4548,8 @@ Multiple R-squared:    0.8, Adjusted R-squared:  0.7818
 F-statistic:    44 on 1 and 11 DF,  p-value: 3.692e-05
 \end{verbatim}
 
-Up to this point we have all what is required to plot regressions. We
-will start with a basic regression plot.
+Up to this point we have all we need to plot regressions. We will start
+with a basic regression plot.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4546,7 +4560,7 @@ will start with a basic regression plot.
 
 \begin{center}\includegraphics{0_all_posts_pdf/lr_6-1} \end{center}
 
-\texttt{geom\_point} can be customized, for example, not to include the
+\texttt{geom\_smooth} can be customized, for example, not to include the
 confidence region
 
 \begin{Shaded}
@@ -4563,6 +4577,11 @@ title.
 
 \subsubsection{Customising axis labels}\label{customising-axis-labels-4}
 
+We can change the text of the axis labels using the
+\texttt{scale\_x\_continuous} and \texttt{scale\_y\_continuous} options,
+with the names passed as a string to the \texttt{name} arguments in
+each.
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{p11 <-}\StringTok{ }\NormalTok{p11 +}\StringTok{ }\KeywordTok{scale_x_continuous}\NormalTok{(}\DataTypeTok{name =} \StringTok{"HSI risk premium"}\NormalTok{) +}\StringTok{ }
@@ -4574,6 +4593,8 @@ title.
 \begin{center}\includegraphics{0_all_posts_pdf/lr_8-1} \end{center}
 
 \subsubsection{Adding a title}\label{adding-a-title-4}
+
+Similarly, we can add a title using the \texttt{ggtitle} option.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4587,6 +4608,7 @@ title.
 \subsubsection{Including regression
 coefficients}\label{including-regression-coefficients}
 
+We can also include more information about the regression line itself.
 It would be interesting to show \(R^2\) and regression coefficients
 within the plot.
 
@@ -4618,8 +4640,8 @@ Another option would be to add greek letters and exponents.
 
 \begin{center}\includegraphics{0_all_posts_pdf/lr_11-1} \end{center}
 
-To make the coefficients more visible we will add some elements to
-increase visibility
+To make the coefficients more clear we will add some elements to
+increase visibility.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4638,7 +4660,7 @@ increase visibility
 \begin{center}\includegraphics{0_all_posts_pdf/lr_12-1} \end{center}
 
 Another customization could be to show the trend line using rounded
-digits (or even significative digits) from regression coefficients. This
+digits (or even significant digits) from regression coefficients. This
 requires us to write a function and is not as easy to obtain as the last
 plot.
 
@@ -4657,7 +4679,7 @@ plot.
 \StringTok{      }\KeywordTok{scale_x_continuous}\NormalTok{(}\DataTypeTok{name =} \StringTok{"HSI risk premium"}\NormalTok{) +}
 \StringTok{      }\KeywordTok{scale_y_continuous}\NormalTok{(}\DataTypeTok{name =} \StringTok{"CKH return"}\NormalTok{) +}
 \StringTok{      }\KeywordTok{annotate}\NormalTok{(}\StringTok{"rect"}\NormalTok{, }\DataTypeTok{xmin =} \FloatTok{0.00}\NormalTok{, }\DataTypeTok{xmax =} \FloatTok{0.1}\NormalTok{, }\DataTypeTok{ymin =} \NormalTok{-}\FloatTok{0.056}\NormalTok{, }\DataTypeTok{ymax =} \NormalTok{-}\FloatTok{0.044}\NormalTok{, }\DataTypeTok{fill=}\StringTok{"white"}\NormalTok{, }\DataTypeTok{colour=}\StringTok{"red"}\NormalTok{) +}\StringTok{ }
-\StringTok{      }\KeywordTok{geom_text}\NormalTok{(}\DataTypeTok{x =} \FloatTok{0.05}\NormalTok{, }\DataTypeTok{y =} \NormalTok{-}\FloatTok{0.05}\NormalTok{, }\DataTypeTok{label =} \KeywordTok{equation}\NormalTok{(fit), }\DataTypeTok{family=}\StringTok{"sans"}\NormalTok{, }\DataTypeTok{size=}\DecValTok{5}\NormalTok{, }\DataTypeTok{parse =} \OtherTok{TRUE}\NormalTok{)}
+\StringTok{      }\KeywordTok{annotate}\NormalTok{(}\StringTok{"text"}\NormalTok{, }\DataTypeTok{x =} \FloatTok{0.05}\NormalTok{, }\DataTypeTok{y =} \NormalTok{-}\FloatTok{0.05}\NormalTok{, }\DataTypeTok{label =} \KeywordTok{equation}\NormalTok{(fit), }\DataTypeTok{parse =} \OtherTok{TRUE}\NormalTok{)}
 \NormalTok{p11}
 \end{Highlighting}
 \end{Shaded}
@@ -4665,6 +4687,12 @@ plot.
 \begin{center}\includegraphics{0_all_posts_pdf/lr_13-1} \end{center}
 
 \subsubsection{Using the white theme}\label{using-the-white-theme-10}
+
+As explained in the previous posts, we can also change the overall look
+of the plot using themes. We'll start using a simple theme customisation
+by adding \texttt{theme\_bw()}. As you can see, we can further tweak the
+graph using the \texttt{theme} option, which we've used so far to change
+the legend.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4711,7 +4739,7 @@ You can then create your graph:
 \StringTok{      }\KeywordTok{scale_x_continuous}\NormalTok{(}\DataTypeTok{name =} \StringTok{"HSI risk premium"}\NormalTok{) +}
 \StringTok{      }\KeywordTok{scale_y_continuous}\NormalTok{(}\DataTypeTok{name =} \StringTok{"CKH return"}\NormalTok{) +}
 \StringTok{      }\KeywordTok{annotate}\NormalTok{(}\StringTok{"rect"}\NormalTok{, }\DataTypeTok{xmin =} \FloatTok{0.00}\NormalTok{, }\DataTypeTok{xmax =} \FloatTok{0.1}\NormalTok{, }\DataTypeTok{ymin =} \NormalTok{-}\FloatTok{0.056}\NormalTok{, }\DataTypeTok{ymax =} \NormalTok{-}\FloatTok{0.044}\NormalTok{, }\DataTypeTok{fill=}\StringTok{"white"}\NormalTok{, }\DataTypeTok{colour=}\StringTok{"red"}\NormalTok{) +}\StringTok{ }
-\StringTok{      }\KeywordTok{geom_text}\NormalTok{(}\DataTypeTok{x =} \FloatTok{0.05}\NormalTok{, }\DataTypeTok{y =} \NormalTok{-}\FloatTok{0.05}\NormalTok{, }\DataTypeTok{label =} \KeywordTok{equation}\NormalTok{(fit), }\DataTypeTok{family=}\StringTok{"sans"}\NormalTok{, }\DataTypeTok{size=}\DecValTok{5}\NormalTok{, }\DataTypeTok{parse =} \OtherTok{TRUE}\NormalTok{) +}\StringTok{ }
+\StringTok{      }\KeywordTok{annotate}\NormalTok{(}\StringTok{"text"}\NormalTok{, }\DataTypeTok{x =} \FloatTok{0.05}\NormalTok{, }\DataTypeTok{y =} \NormalTok{-}\FloatTok{0.05}\NormalTok{, }\DataTypeTok{label =} \KeywordTok{equation}\NormalTok{(fit), }\DataTypeTok{parse =} \OtherTok{TRUE}\NormalTok{) +}\StringTok{ }
 \StringTok{      }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{axis.line.x =} \KeywordTok{element_line}\NormalTok{(}\DataTypeTok{size=}\NormalTok{.}\DecValTok{5}\NormalTok{, }\DataTypeTok{colour =} \StringTok{"black"}\NormalTok{),}
             \DataTypeTok{axis.line.y =} \KeywordTok{element_line}\NormalTok{(}\DataTypeTok{size=}\NormalTok{.}\DecValTok{5}\NormalTok{, }\DataTypeTok{colour =} \StringTok{"black"}\NormalTok{), }
             \DataTypeTok{axis.text.x=}\KeywordTok{element_text}\NormalTok{(}\DataTypeTok{colour=}\StringTok{"black"}\NormalTok{, }\DataTypeTok{size =} \DecValTok{9}\NormalTok{), }
@@ -4748,8 +4776,8 @@ graphs in the Economist magazine.
 \StringTok{      }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"CKH regression line"}\NormalTok{) +}
 \StringTok{      }\KeywordTok{scale_x_continuous}\NormalTok{(}\DataTypeTok{name =} \StringTok{"HSI risk premium"}\NormalTok{) +}
 \StringTok{      }\KeywordTok{scale_y_continuous}\NormalTok{(}\DataTypeTok{name =} \StringTok{"CKH return"}\NormalTok{) +}
-\StringTok{      }\KeywordTok{annotate}\NormalTok{(}\StringTok{"rect"}\NormalTok{, }\DataTypeTok{xmin =} \FloatTok{0.00}\NormalTok{, }\DataTypeTok{xmax =} \FloatTok{0.1}\NormalTok{, }\DataTypeTok{ymin =} \NormalTok{-}\FloatTok{0.056}\NormalTok{, }\DataTypeTok{ymax =} \NormalTok{-}\FloatTok{0.044}\NormalTok{, }\DataTypeTok{fill=}\StringTok{"white"}\NormalTok{, }\DataTypeTok{colour=}\StringTok{"red"}\NormalTok{) +}\StringTok{ }
-\StringTok{      }\KeywordTok{geom_text}\NormalTok{(}\DataTypeTok{x =} \FloatTok{0.05}\NormalTok{, }\DataTypeTok{y =} \NormalTok{-}\FloatTok{0.05}\NormalTok{, }\DataTypeTok{label =} \KeywordTok{equation}\NormalTok{(fit), }\DataTypeTok{family=}\StringTok{"sans"}\NormalTok{, }\DataTypeTok{size=}\DecValTok{5}\NormalTok{, }\DataTypeTok{parse =} \OtherTok{TRUE}\NormalTok{) +}\StringTok{ }
+\StringTok{      }\KeywordTok{annotate}\NormalTok{(}\StringTok{"rect"}\NormalTok{, }\DataTypeTok{xmin =} \NormalTok{-}\FloatTok{0.002}\NormalTok{, }\DataTypeTok{xmax =} \FloatTok{0.102}\NormalTok{, }\DataTypeTok{ymin =} \NormalTok{-}\FloatTok{0.056}\NormalTok{, }\DataTypeTok{ymax =} \NormalTok{-}\FloatTok{0.044}\NormalTok{, }\DataTypeTok{fill=}\StringTok{"white"}\NormalTok{, }\DataTypeTok{colour=}\StringTok{"red"}\NormalTok{) +}\StringTok{ }
+\StringTok{      }\KeywordTok{annotate}\NormalTok{(}\StringTok{"text"}\NormalTok{, }\DataTypeTok{x =} \FloatTok{0.05}\NormalTok{, }\DataTypeTok{y =} \NormalTok{-}\FloatTok{0.05}\NormalTok{, }\DataTypeTok{label =} \KeywordTok{equation}\NormalTok{(fit), }\DataTypeTok{parse =} \OtherTok{TRUE}\NormalTok{) +}\StringTok{ }
 \StringTok{      }\KeywordTok{theme_economist}\NormalTok{() +}
 \StringTok{      }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{axis.line.x =} \KeywordTok{element_line}\NormalTok{(}\DataTypeTok{size=}\NormalTok{.}\DecValTok{5}\NormalTok{, }\DataTypeTok{colour =} \StringTok{"black"}\NormalTok{),}
             \DataTypeTok{axis.line.y =} \KeywordTok{element_line}\NormalTok{(}\DataTypeTok{size=}\NormalTok{.}\DecValTok{5}\NormalTok{, }\DataTypeTok{colour =} \StringTok{"black"}\NormalTok{), }
@@ -4785,7 +4813,7 @@ axes, background and font.
 \StringTok{      }\KeywordTok{scale_x_continuous}\NormalTok{(}\DataTypeTok{name =} \StringTok{"HSI risk premium"}\NormalTok{) +}
 \StringTok{      }\KeywordTok{scale_y_continuous}\NormalTok{(}\DataTypeTok{name =} \StringTok{"CKH return"}\NormalTok{) +}
 \StringTok{      }\KeywordTok{annotate}\NormalTok{(}\StringTok{"rect"}\NormalTok{, }\DataTypeTok{xmin =} \FloatTok{0.00}\NormalTok{, }\DataTypeTok{xmax =} \FloatTok{0.1}\NormalTok{, }\DataTypeTok{ymin =} \NormalTok{-}\FloatTok{0.056}\NormalTok{, }\DataTypeTok{ymax =} \NormalTok{-}\FloatTok{0.044}\NormalTok{, }\DataTypeTok{fill=}\StringTok{"white"}\NormalTok{, }\DataTypeTok{colour=}\StringTok{"red"}\NormalTok{) +}\StringTok{ }
-\StringTok{      }\KeywordTok{geom_text}\NormalTok{(}\DataTypeTok{x =} \FloatTok{0.05}\NormalTok{, }\DataTypeTok{y =} \NormalTok{-}\FloatTok{0.05}\NormalTok{, }\DataTypeTok{label =} \KeywordTok{equation}\NormalTok{(fit), }\DataTypeTok{family=}\StringTok{"sans"}\NormalTok{, }\DataTypeTok{size=}\DecValTok{5}\NormalTok{, }\DataTypeTok{parse =} \OtherTok{TRUE}\NormalTok{) +}\StringTok{ }
+\StringTok{      }\KeywordTok{annotate}\NormalTok{(}\StringTok{"text"}\NormalTok{, }\DataTypeTok{x =} \FloatTok{0.05}\NormalTok{, }\DataTypeTok{y =} \NormalTok{-}\FloatTok{0.05}\NormalTok{, }\DataTypeTok{label =} \KeywordTok{equation}\NormalTok{(fit), }\DataTypeTok{parse =} \OtherTok{TRUE}\NormalTok{) +}\StringTok{ }
 \StringTok{      }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{axis.line.x =} \KeywordTok{element_line}\NormalTok{(}\DataTypeTok{size=}\NormalTok{.}\DecValTok{5}\NormalTok{, }\DataTypeTok{colour =} \StringTok{"black"}\NormalTok{),}
             \DataTypeTok{axis.line.y =} \KeywordTok{element_line}\NormalTok{(}\DataTypeTok{size=}\NormalTok{.}\DecValTok{5}\NormalTok{, }\DataTypeTok{colour =} \StringTok{"black"}\NormalTok{),}
             \DataTypeTok{axis.text.x=}\KeywordTok{element_text}\NormalTok{(}\DataTypeTok{colour=}\StringTok{"black"}\NormalTok{, }\DataTypeTok{size =} \DecValTok{9}\NormalTok{), }
@@ -4807,8 +4835,10 @@ plots}\label{regression-diagnostics-plots}
 
 \subsubsection{Basic diagnostics plots}\label{basic-diagnostics-plots}
 
-\texttt{ggfortify} lets \texttt{ggplot2} know how to interpret
-\texttt{lm} objects.
+An important part of creating regression models is evaluating how well
+they fit the data. We can use the package \texttt{ggfortify} to let
+\texttt{ggplot2} interpret \texttt{lm} objects and create diagnostic
+plots.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4822,6 +4852,9 @@ plots}\label{regression-diagnostics-plots}
 
 \subsubsection{Using the white theme}\label{using-the-white-theme-11}
 
+We can also customise the appearance of our diagnostic plots. Let's
+first use the white theme by again adding \texttt{theme\_bw()}.
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{autoplot}\NormalTok{(fit, }\DataTypeTok{label.size =} \DecValTok{3}\NormalTok{) +}\StringTok{ }\KeywordTok{theme_bw}\NormalTok{()}
@@ -4832,6 +4865,9 @@ plots}\label{regression-diagnostics-plots}
 
 \subsubsection{Creating an XKCD style
 chart}\label{creating-an-xkcd-style-chart-11}
+
+We can of course apply our other themes as well. Let's try the XKCD
+theme.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4852,6 +4888,8 @@ chart}\label{creating-an-xkcd-style-chart-11}
 \subsubsection{\texorpdfstring{Using `The Economist'
 theme}{Using The Economist theme}}\label{using-the-economist-theme-11}
 
+And now the Economist theme.
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{autoplot}\NormalTok{(fit, }\DataTypeTok{label.size =} \DecValTok{3}\NormalTok{) +}\StringTok{ }\KeywordTok{theme_economist}\NormalTok{() +}
@@ -4871,6 +4909,9 @@ theme}{Using The Economist theme}}\label{using-the-economist-theme-11}
 
 \subsubsection{Creating your own
 theme}\label{creating-your-own-theme-11}
+
+Finally, we can also fully customise the diagnostic plots to match our
+regression plot simply by applying all of the same theme options.
 
 \begin{Shaded}
 \begin{Highlighting}[]
