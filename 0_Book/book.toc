@@ -1,7 +1,7 @@
 \contentsline {chapter}{What to expect from this book}{1}{chapter*.2}
 \contentsline {chapter}{\numberline {1}Line plots}{2}{chapter.1}
 \contentsline {section}{\numberline {1.1}Basic graph}{3}{section.1.1}
-\contentsline {section}{\numberline {1.2}Adjusting line width}{4}{section.1.2}
+\contentsline {section}{\numberline {1.2}Adjusting line width}{3}{section.1.2}
 \contentsline {section}{\numberline {1.3}Changing variables display}{4}{section.1.3}
 \contentsline {section}{\numberline {1.4}Adjusting x-axis scale}{5}{section.1.4}
 \contentsline {section}{\numberline {1.5}Adjusting axis labels \& adding title}{6}{section.1.5}
@@ -9,5 +9,161 @@
 \contentsline {section}{\numberline {1.7}Using the white theme}{7}{section.1.7}
 \contentsline {section}{\numberline {1.8}Creating an XKCD style chart}{8}{section.1.8}
 \contentsline {section}{\numberline {1.9}Using `The Economist' theme}{9}{section.1.9}
-\contentsline {section}{\numberline {1.10}Creating your own theme}{10}{section.1.10}
-\contentsline {chapter}{Suggested material}{12}{chapter*.3}
+\contentsline {section}{\numberline {1.10}Using `Five Thirty Eight' theme}{10}{section.1.10}
+\contentsline {section}{\numberline {1.11}Creating your own theme}{11}{section.1.11}
+\contentsline {chapter}{\numberline {2}Area plots}{13}{chapter.2}
+\contentsline {section}{\numberline {2.1}Basic graph}{13}{section.2.1}
+\contentsline {section}{\numberline {2.2}Adjusting legend position}{14}{section.2.2}
+\contentsline {section}{\numberline {2.3}Changing variables display}{15}{section.2.3}
+\contentsline {section}{\numberline {2.4}Adjusting x-axis scale}{16}{section.2.4}
+\contentsline {section}{\numberline {2.5}Adjusting axis labels \& adding title}{17}{section.2.5}
+\contentsline {section}{\numberline {2.6}Adjusting color palette}{17}{section.2.6}
+\contentsline {section}{\numberline {2.7}Using the white theme}{18}{section.2.7}
+\contentsline {section}{\numberline {2.8}Creating an XKCD style chart}{19}{section.2.8}
+\contentsline {section}{\numberline {2.9}Using `The Economist' theme}{20}{section.2.9}
+\contentsline {section}{\numberline {2.10}Using `Five Thirty Eight' theme}{21}{section.2.10}
+\contentsline {section}{\numberline {2.11}Creating your own theme}{22}{section.2.11}
+\contentsline {chapter}{\numberline {3}Bar plots}{24}{chapter.3}
+\contentsline {section}{\numberline {3.1}Basic graph}{24}{section.3.1}
+\contentsline {section}{\numberline {3.2}Adding data labels}{25}{section.3.2}
+\contentsline {section}{\numberline {3.3}Adjusting data labels position}{26}{section.3.3}
+\contentsline {section}{\numberline {3.4}Adjusting legend position}{27}{section.3.4}
+\contentsline {section}{\numberline {3.5}Changing variables display}{28}{section.3.5}
+\contentsline {section}{\numberline {3.6}Adjusting x-axis scale}{29}{section.3.6}
+\contentsline {section}{\numberline {3.7}Adjusting axis labels \& adding title}{30}{section.3.7}
+\contentsline {section}{\numberline {3.8}Adjusting color palette}{30}{section.3.8}
+\contentsline {section}{\numberline {3.9}Using the white theme}{31}{section.3.9}
+\contentsline {section}{\numberline {3.10}Creating an XKCD style chart}{32}{section.3.10}
+\contentsline {section}{\numberline {3.11}Using `The Economist' theme}{33}{section.3.11}
+\contentsline {section}{\numberline {3.12}Using `Five Thirty Eight' theme}{34}{section.3.12}
+\contentsline {section}{\numberline {3.13}Creating your own theme}{35}{section.3.13}
+\contentsline {chapter}{\numberline {4}Stacked bar plots}{37}{chapter.4}
+\contentsline {section}{\numberline {4.1}Basic graph}{37}{section.4.1}
+\contentsline {section}{\numberline {4.2}Adding data labels}{38}{section.4.2}
+\contentsline {section}{\numberline {4.3}Adjusting data labels position}{39}{section.4.3}
+\contentsline {section}{\numberline {4.4}Adjusting legend position}{40}{section.4.4}
+\contentsline {section}{\numberline {4.5}Changing variables display}{41}{section.4.5}
+\contentsline {section}{\numberline {4.6}Adjusting x-axis scale}{42}{section.4.6}
+\contentsline {section}{\numberline {4.7}Adjusting axis, title \& units}{43}{section.4.7}
+\contentsline {section}{\numberline {4.8}Adjusting color palette}{43}{section.4.8}
+\contentsline {section}{\numberline {4.9}Using the white theme}{44}{section.4.9}
+\contentsline {section}{\numberline {4.10}Creating an XKCD style chart}{45}{section.4.10}
+\contentsline {section}{\numberline {4.11}Using `The Economist' theme}{46}{section.4.11}
+\contentsline {section}{\numberline {4.12}Using `Five Thirty Eight' theme}{47}{section.4.12}
+\contentsline {section}{\numberline {4.13}Creating your own theme}{48}{section.4.13}
+\contentsline {chapter}{\numberline {5}Scatterplots}{50}{chapter.5}
+\contentsline {section}{\numberline {5.1}Basic scatterplot}{51}{section.5.1}
+\contentsline {section}{\numberline {5.2}Changing the shape of the data points}{51}{section.5.2}
+\contentsline {section}{\numberline {5.3}Adjusting the axis scales}{52}{section.5.3}
+\contentsline {section}{\numberline {5.4}Adjusting axis labels \& adding title}{53}{section.5.4}
+\contentsline {section}{\numberline {5.5}Adjusting the colour palette}{54}{section.5.5}
+\contentsline {section}{\numberline {5.6}Adjusting legend position}{59}{section.5.6}
+\contentsline {section}{\numberline {5.7}Using the white theme}{60}{section.5.7}
+\contentsline {section}{\numberline {5.8}Creating an XKCD style chart}{61}{section.5.8}
+\contentsline {section}{\numberline {5.9}Using `The Economist' theme}{62}{section.5.9}
+\contentsline {section}{\numberline {5.10}Using `Five Thirty Eight' theme}{63}{section.5.10}
+\contentsline {section}{\numberline {5.11}Creating your own theme}{64}{section.5.11}
+\contentsline {chapter}{\numberline {6}Weighted scatterplots}{66}{chapter.6}
+\contentsline {section}{\numberline {6.1}Basic weighted scatterplot}{67}{section.6.1}
+\contentsline {section}{\numberline {6.2}Changing the shape of the data points}{68}{section.6.2}
+\contentsline {section}{\numberline {6.3}Adjusting the axis scales}{69}{section.6.3}
+\contentsline {section}{\numberline {6.4}Adjusting axis labels \& adding title}{69}{section.6.4}
+\contentsline {section}{\numberline {6.5}Adjusting the colour palette}{70}{section.6.5}
+\contentsline {section}{\numberline {6.6}Adjusting the size of the data points}{73}{section.6.6}
+\contentsline {section}{\numberline {6.7}Adjusting legend position}{74}{section.6.7}
+\contentsline {section}{\numberline {6.8}Changing the legend titles}{75}{section.6.8}
+\contentsline {section}{\numberline {6.9}Creating horizontal legends}{75}{section.6.9}
+\contentsline {section}{\numberline {6.10}Using the white theme}{76}{section.6.10}
+\contentsline {section}{\numberline {6.11}Creating an XKCD style chart}{77}{section.6.11}
+\contentsline {section}{\numberline {6.12}Using `The Economist' theme}{78}{section.6.12}
+\contentsline {section}{\numberline {6.13}Using `Five Thirty Eight' theme}{79}{section.6.13}
+\contentsline {section}{\numberline {6.14}Creating your own theme}{80}{section.6.14}
+\contentsline {chapter}{\numberline {7}Histograms}{82}{chapter.7}
+\contentsline {section}{\numberline {7.1}Basic histogram}{83}{section.7.1}
+\contentsline {section}{\numberline {7.2}Adding a normal density curve}{83}{section.7.2}
+\contentsline {section}{\numberline {7.3}Changing from density to frequency}{84}{section.7.3}
+\contentsline {section}{\numberline {7.4}Adjusting binwidth}{85}{section.7.4}
+\contentsline {section}{\numberline {7.5}Customising axis labels}{86}{section.7.5}
+\contentsline {subsection}{\numberline {7.5.1}Single line labels}{86}{subsection.7.5.1}
+\contentsline {subsection}{\numberline {7.5.2}Multiline labels}{87}{subsection.7.5.2}
+\contentsline {section}{\numberline {7.6}Changing axis ticks}{88}{section.7.6}
+\contentsline {section}{\numberline {7.7}Adding a title}{89}{section.7.7}
+\contentsline {section}{\numberline {7.8}Changing the colour of the bars}{90}{section.7.8}
+\contentsline {subsection}{\numberline {7.8.1}By colour name}{90}{subsection.7.8.1}
+\contentsline {subsection}{\numberline {7.8.2}By HEX code}{91}{subsection.7.8.2}
+\contentsline {section}{\numberline {7.9}Colour gradients}{92}{section.7.9}
+\contentsline {section}{\numberline {7.10}Using the white theme}{94}{section.7.10}
+\contentsline {section}{\numberline {7.11}Creating an XKCD style chart}{95}{section.7.11}
+\contentsline {section}{\numberline {7.12}Using `The Economist' theme}{96}{section.7.12}
+\contentsline {section}{\numberline {7.13}Using `Five Thirty Eight' theme}{97}{section.7.13}
+\contentsline {section}{\numberline {7.14}Creating your own theme}{98}{section.7.14}
+\contentsline {section}{\numberline {7.15}Adding lines}{99}{section.7.15}
+\contentsline {section}{\numberline {7.16}Multiple histograms}{100}{section.7.16}
+\contentsline {section}{\numberline {7.17}In panel plots}{100}{section.7.17}
+\contentsline {section}{\numberline {7.18}In the same plot}{102}{section.7.18}
+\contentsline {section}{\numberline {7.19}Formatting the legend}{103}{section.7.19}
+\contentsline {chapter}{\numberline {8}Density plots}{105}{chapter.8}
+\contentsline {section}{\numberline {8.1}Basic density plot}{106}{section.8.1}
+\contentsline {section}{\numberline {8.2}Customising axis labels}{106}{section.8.2}
+\contentsline {section}{\numberline {8.3}Changing axis ticks}{108}{section.8.3}
+\contentsline {section}{\numberline {8.4}Adding a title}{108}{section.8.4}
+\contentsline {section}{\numberline {8.5}Changing the colour of the curves}{109}{section.8.5}
+\contentsline {section}{\numberline {8.6}Using the white theme}{112}{section.8.6}
+\contentsline {section}{\numberline {8.7}Creating an XKCD style chart}{113}{section.8.7}
+\contentsline {section}{\numberline {8.8}Using `The Economist' theme}{114}{section.8.8}
+\contentsline {section}{\numberline {8.9}Using `Five Thirty Eight' theme}{115}{section.8.9}
+\contentsline {section}{\numberline {8.10}Creating your own theme}{116}{section.8.10}
+\contentsline {section}{\numberline {8.11}Adding lines}{117}{section.8.11}
+\contentsline {section}{\numberline {8.12}Multiple densities}{118}{section.8.12}
+\contentsline {section}{\numberline {8.13}Formatting the legend}{123}{section.8.13}
+\contentsline {chapter}{\numberline {9}Function plots}{125}{chapter.9}
+\contentsline {section}{\numberline {9.1}Basic normal curve}{126}{section.9.1}
+\contentsline {section}{\numberline {9.2}Basic t-curve}{126}{section.9.2}
+\contentsline {section}{\numberline {9.3}Plotting your own function}{127}{section.9.3}
+\contentsline {section}{\numberline {9.4}Plotting multiple functions on the same graph}{128}{section.9.4}
+\contentsline {section}{\numberline {9.5}Customising axis labels}{129}{section.9.5}
+\contentsline {section}{\numberline {9.6}Changing axis ticks}{130}{section.9.6}
+\contentsline {section}{\numberline {9.7}Adding a title}{131}{section.9.7}
+\contentsline {section}{\numberline {9.8}Changing the colour of the curves}{132}{section.9.8}
+\contentsline {section}{\numberline {9.9}Adding a legend}{133}{section.9.9}
+\contentsline {section}{\numberline {9.10}Changing the size of the lines}{135}{section.9.10}
+\contentsline {section}{\numberline {9.11}Using the white theme}{136}{section.9.11}
+\contentsline {section}{\numberline {9.12}Creating an XKCD style chart}{137}{section.9.12}
+\contentsline {section}{\numberline {9.13}Using `The Economist' theme}{138}{section.9.13}
+\contentsline {section}{\numberline {9.14}Using `Five Thirty Eight' theme}{139}{section.9.14}
+\contentsline {section}{\numberline {9.15}Creating your own theme}{140}{section.9.15}
+\contentsline {section}{\numberline {9.16}Adding areas under the curve}{141}{section.9.16}
+\contentsline {section}{\numberline {9.17}Formatting the legend}{142}{section.9.17}
+\contentsline {chapter}{\numberline {10}Boxplots}{144}{chapter.10}
+\contentsline {section}{\numberline {10.1}Basic boxplot}{145}{section.10.1}
+\contentsline {section}{\numberline {10.2}Customising axis labels}{145}{section.10.2}
+\contentsline {section}{\numberline {10.3}Changing axis ticks}{147}{section.10.3}
+\contentsline {section}{\numberline {10.4}Adding a title}{147}{section.10.4}
+\contentsline {section}{\numberline {10.5}Changing the colour of the boxes}{148}{section.10.5}
+\contentsline {section}{\numberline {10.6}Using the white theme}{152}{section.10.6}
+\contentsline {section}{\numberline {10.7}Creating an XKCD style chart}{153}{section.10.7}
+\contentsline {section}{\numberline {10.8}Using `The Economist' theme}{154}{section.10.8}
+\contentsline {section}{\numberline {10.9}Using `Five Thirty Eight' theme}{155}{section.10.9}
+\contentsline {section}{\numberline {10.10}Creating your own theme}{156}{section.10.10}
+\contentsline {section}{\numberline {10.11}Boxplot extras}{157}{section.10.11}
+\contentsline {section}{\numberline {10.12}Grouping by another variable}{159}{section.10.12}
+\contentsline {section}{\numberline {10.13}Formatting the legend}{161}{section.10.13}
+\contentsline {chapter}{\numberline {11}Linear regression plots}{163}{chapter.11}
+\contentsline {section}{\numberline {11.1}Trend line plot}{166}{section.11.1}
+\contentsline {subsection}{\numberline {11.1.1}Basic trend line plot}{166}{subsection.11.1.1}
+\contentsline {subsection}{\numberline {11.1.2}Customising axis labels}{168}{subsection.11.1.2}
+\contentsline {subsection}{\numberline {11.1.3}Adding a title}{169}{subsection.11.1.3}
+\contentsline {subsection}{\numberline {11.1.4}Including regression coefficients}{170}{subsection.11.1.4}
+\contentsline {subsection}{\numberline {11.1.5}Using the white theme}{173}{subsection.11.1.5}
+\contentsline {subsection}{\numberline {11.1.6}Creating an XKCD style chart}{174}{subsection.11.1.6}
+\contentsline {subsection}{\numberline {11.1.7}Using `The Economist' theme}{175}{subsection.11.1.7}
+\contentsline {subsection}{\numberline {11.1.8}Using `Five Thirty Eight' theme}{176}{subsection.11.1.8}
+\contentsline {subsection}{\numberline {11.1.9}Creating your own theme}{177}{subsection.11.1.9}
+\contentsline {section}{\numberline {11.2}Regression diagnostics plots}{178}{section.11.2}
+\contentsline {subsection}{\numberline {11.2.1}Basic diagnostics plots}{178}{subsection.11.2.1}
+\contentsline {subsection}{\numberline {11.2.2}Using the white theme}{179}{subsection.11.2.2}
+\contentsline {subsection}{\numberline {11.2.3}Creating an XKCD style chart}{180}{subsection.11.2.3}
+\contentsline {subsection}{\numberline {11.2.4}Using `The Economist' theme}{180}{subsection.11.2.4}
+\contentsline {subsection}{\numberline {11.2.5}Using `Five Thirty Eight' theme}{181}{subsection.11.2.5}
+\contentsline {subsection}{\numberline {11.2.6}Creating your own theme}{182}{subsection.11.2.6}
+\contentsline {chapter}{Suggested material}{184}{chapter*.3}

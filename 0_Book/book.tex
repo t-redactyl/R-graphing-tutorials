@@ -4,7 +4,7 @@
 %
 % ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ %
 
-\documentclass[10pt, oneside]{report}
+\documentclass[11pt, oneside]{report}
 
 %PAQUETES PACHA
 \usepackage{graphicx}
@@ -180,33 +180,38 @@ This is a Leanpub book. Leanpub empowers authors and publishers with the Lean Pu
 %
 % ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ %
 
-%%%% CONTENIDO DEL TEX GENERADO POR RSTUDIO %%%
-
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
 \chapter*{What to expect from this book}
 \addcontentsline{toc}{chapter}{What to expect from this book}
 
-This is a technical book. The scope of the book is to go straight to the point and the writing style is similar to recipe with detailed instructions. It is assumed that you know the basics of R and that you want to learn to create beautiful plots. 
+This is a technical book. The scope of the book is to go straight to the point and the writing style is similar to a recipe with detailed instructions. It is assumed that you know the basics of R and that you want to learn to create beautiful plots. 
 
 Each chapter will explain how to create a different type of plot, and will take you step-by-step from a basic plot to a highly customised graph. The chapters order is by difficult degree.
 
 Every chapter is independent from the others. You can read the whole book or go to a section of your interest and we are sure that it will be easy to understand the instructions and reproduce our examples without reading the first chapters.
 
+Chapters 1-4 are based in an international trade
+\href{http://pachamaltese.github.io/stats/trade-chile-china/copper-data-for-chapter.csv}{dataset}
+made by ourselves from different sources (Chile Customs, Central Bank of
+Chile and General Directorate of International Economic Relations). The rest of the chapters are based in R's datasets and datasets obtained from \href{https://www.quandl.com/}{Quandl's API}.
+
 We invite you to stay in touch and read the authors' blogs where they publish articles about R and Statistics. Jodie's blog is \href{http://t-redactyl.io/}{Standard error} and Mauricio's blog is \href{http://pachamaltese.github.io/}{Reimagined Invention}.
 
-\include{chapter1}
-\include{chapter2}
-\include{chapter3}
-\include{chapter4}
-\include{chapter5}
-\include{chapter6}
-\include{chapter7}
-\include{chapter8}
-\include{chapter9}
-\include{chapter10}
-\include{chapter11}
+%%%% CONTENIDO MODIFICADO DEL TEX GENERADO POR RSTUDIO %%%
+
+\include{1_Line_Plots_pdf}
+\include{2_Area_Plots_pdf}
+\include{3_Bar_Plots_pdf}
+\include{4_Stacked_Bar_pdf}
+\include{5_Scatter_Plots_pdf}
+\include{6_Weighted_Scatterplots_pdf}
+\include{7_Histograms_pdf}
+\include{8_Density_Plots_pdf}
+\include{9_Function_Plots_pdf}
+\include{10_Boxplots_pdf}
+\include{11_Linear_Regression_Plot_pdf}
 
 \chapter*{Suggested material}
 \addcontentsline{toc}{chapter}{Suggested material}
