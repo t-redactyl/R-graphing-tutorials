@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.18)  13 MAY 2016 20:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.18)  13 MAY 2016 22:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -3103,22 +3103,22 @@ ion_Plot_pdf/lr_24-1.pdf>]
 ]
 \GPT@outputbox=\box45
  [185]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 247.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 247.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 255.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 255.
  (./book.aux (./1_Line_Plots_pdf.aux) (./2_Area_Plots_pdf.aux)
 (./3_Bar_Plots_pdf.aux) (./4_Stacked_Bar_pdf.aux) (./5_Scatter_Plots_pdf.aux)
 (./6_Weighted_Scatterplots_pdf.aux) (./7_Histograms_pdf.aux)
 (./8_Density_Plots_pdf.aux) (./9_Function_Plots_pdf.aux) (./10_Boxplots_pdf.aux
 ) (./11_Linear_Regression_Plot_pdf.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 247.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 247.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 255.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 255.
 Package rerunfilecheck Info: File `book.out' has not changed.
 (rerunfilecheck)             Checksum: 1A47660B20CE6C58AA1733AADB3029EC;12022.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 247.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 255.
  ) 
 Here is how much of TeX's memory you used:
  21112 strings out of 494501
@@ -3136,7 +3136,7 @@ ha/Library/texmf/fonts/type1/bh/lucida/lbr.pfb></Users/pacha/Library/texmf/font
 s/type1/bh/lucida/lsd.pfb></Users/pacha/Library/texmf/fonts/type1/bh/lucida/lsr
 .pfb></Users/pacha/Library/texmf/fonts/type1/bh/lucida/lstb.pfb></Users/pacha/L
 ibrary/texmf/fonts/type1/bh/lucida/lstr.pfb>
-Output written on book.pdf (192 pages, 20891492 bytes).
+Output written on book.pdf (192 pages, 20891494 bytes).
 PDF statistics:
  21338 PDF objects out of 22161 (max. 8388607)
  16321 compressed objects within 164 object streams
