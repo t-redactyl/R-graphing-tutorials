@@ -83,95 +83,166 @@ You can see that we've managed to explain an additional 5% of variance in ozone 
 # Customising axis labels
 Now that we've established the rationale for using them, let's get down to customising our basic LOWESS plot.
 
+In order to change the axis labels, we have a couple of options. In this case, we have used the `scale_x_continuous` and `scale_y_continuous` options, as these have further customisation options for the axes we will use below. In each, we add the desired name to the `name` argument as a string.
 
-In order to change the axis labels, we have a couple of options. In this case, we have used the `scale_x_discrete` and `scale_y_continuous` options, as these have further customisation options for the axes we will use below. In each, we add the desired name to the `name` argument as a string.
-
-```{r box_2, message = FALSE, warning = FALSE, cache = TRUE}
-p10 <- p10 + scale_x_discrete(name = "Month") +
+```{r lowess_4, message = FALSE, warning = FALSE, cache = TRUE}
+p12 <- ggplot(airquality, aes(x = Temp, y = Ozone)) + 
+  geom_point() + 
+  stat_smooth() +
+  scale_x_continuous(name = "Temperature") +
   scale_y_continuous(name = "Mean ozone in parts per billion")
-p10
+p12
 ```
 
 ggplot also allows for the use of multiline names (in both axes and titles). Here, we've changed the y-axis label so that it goes over two lines using the `\n` character to break the line.
 
-```{r box_3, message = FALSE, warning = FALSE, cache = TRUE}
-p10 <- p10 + scale_y_continuous(name = "Mean ozone in\nparts per billion")
-p10
+```{r lowess_5, message = FALSE, warning = FALSE, cache = TRUE}
+p12 <- p12 + scale_y_continuous(name = "Mean ozone in\nparts per billion")
+p12
 ```
 
 # Changing axis ticks
 
-The next thing we will change is the axis ticks. Let's make the y-axis ticks appear at every 25 units rather than 50 using the `breaks = seq(0, 175, 25)` argument in `scale_y_continuous`. (The `seq` function is a base R function that indicates the start and endpoints and the units to increment by respectively. See `help(seq)` for more information.) We ensure that the y-axis begins and ends where we want by also adding the argument `limits = c(0, 175)` to `scale_y_continuous`.
+The next thing we will change is the axis ticks. Let's make the y-axis ticks appear at every 25 units rather than 50 using the `breaks = seq(0, 150, 25)` argument in `scale_y_continuous`. (The `seq` function is a base R function that indicates the start and endpoints and the units to increment by respectively. See `help(seq)` for more information.) We ensure that the y-axis begins and ends where we want by also adding the argument `limits = c(0, 150)` to `scale_y_continuous`.
 
-```{r box_4, message = FALSE, warning = FALSE, cache = TRUE}
-p10 <- p10 + scale_y_continuous(name = "Mean ozone in\nparts per billion",
-    breaks = seq(0, 175, 25), limits=c(0, 175))
-p10
+```{r lowess_6, message = FALSE, warning = FALSE, cache = TRUE}
+p12 <- p12 + scale_y_continuous(name = "Mean ozone in\nparts per billion",
+                                breaks = seq(0, 150, 25), limits=c(0, 150))
+p12
 ``` 
 
 # Adding a title
 
 To add a title, we include the option `ggtitle` and include the name of the graph as a string argument.
 
-```{r box_5, message = FALSE, warning = FALSE, cache = TRUE}
-p10 <- p10 + ggtitle("Boxplot of mean ozone by month")
-p10
+```{r lowess_7, message = FALSE, warning = FALSE, cache = TRUE}
+p12 <- p12 + ggtitle("Boxplot of mean ozone by month")
+p12
 ```
 
-# Changing the colour of the boxes
+# Changing the colour and size of the LOWESS curve
 
-To change the line and fill colours of the box plot, we add a valid colour to the `colour` and `fill` arguments in `geom_boxplot()` (note that we assigned these colours to variables outside of the plot to make it easier to change them). A list of valid colours is [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf).
+To change the colour of the LOWESS curve, we add a valid colour to the `colour` argument in `geom_smooth()` (note that we assigned this colour to variables outside of the plot to make it easier to change them). A list of valid colours is [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf).
 
 ```{r box_6, message = FALSE, warning = FALSE, cache = TRUE}
-fill <- "gold1"; line <- "goldenrod2"
+fill <- "gold1"
 
-p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) + 
-  geom_boxplot(fill = fill, colour = line) +
+p12 <- ggplot(airquality, aes(x = Temp, y = Ozone)) + 
+  geom_point() + 
+  geom_smooth(colour = fill) +
+  scale_x_continuous(name = "Temperature") +
   scale_y_continuous(name = "Mean ozone in\nparts per billion",
-    breaks = seq(0, 175, 25), limits=c(0, 175)) +
-  scale_x_discrete(name = "Month") +
+                     breaks = seq(0, 150, 25), limits=c(0, 150)) +
   ggtitle("Boxplot of mean ozone by month")
-p10
+p12
 ```
 
-If you want to go beyond the options in the list above, you can also specify exact HEX colours by including them as a string preceded by a hash, e.g., "#FFFFFF". Below, we have called two shades of blue for the fill and lines using their HEX codes.
+If you want to go beyond the options in the list above, you can also specify exact HEX colours by including them as a string preceded by a hash, e.g., "#FFFFFF". Below, we have called a shade of blue for the line using its HEX code.
 
 ```{r box_7, message = FALSE, warning = FALSE, cache = TRUE}
-fill <- "#4271AE"; line <- "#1F3552"
+fill <- "#4271AE"
 
-p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) + 
-  geom_boxplot(fill = fill, colour = line) +
+p12 <- ggplot(airquality, aes(x = Temp, y = Ozone)) + 
+  geom_point() + 
+  geom_smooth(colour = fill) +
+  scale_x_continuous(name = "Temperature") +
   scale_y_continuous(name = "Mean ozone in\nparts per billion",
-    breaks = seq(0, 175, 25), limits=c(0, 175)) +
-  scale_x_discrete(name = "Month") +
+                     breaks = seq(0, 150, 25), limits=c(0, 150)) +
   ggtitle("Boxplot of mean ozone by month")
-p10
+p12
 ```
 
-You can also specify the degree of transparency in the box fill area using the argument `alpha` in `geom_boxplot`. This ranges from 0 to 1.
+We can also increase the thickness of the line using the `size` option in `geom_smooth()`.
 
-```{r box_8, message = FALSE, warning = FALSE, cache = TRUE}
-p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) + 
-  geom_boxplot(fill = fill, colour = line,
-    alpha = 0.7) +
+```{r box_7, message = FALSE, warning = FALSE, cache = TRUE}
+fill <- "#4271AE"
+
+p12 <- ggplot(airquality, aes(x = Temp, y = Ozone)) + 
+  geom_point() + 
+  geom_smooth(colour = fill, size = 1.5) +
+  scale_x_continuous(name = "Temperature") +
   scale_y_continuous(name = "Mean ozone in\nparts per billion",
-    breaks = seq(0, 175, 25), limits=c(0, 175)) +
-  scale_x_discrete(name = "Month") +
+                     breaks = seq(0, 150, 25), limits=c(0, 150)) +
   ggtitle("Boxplot of mean ozone by month")
-p10
+p12
 ```
 
-Finally, you can change the appearance of the outliers as well, using the arguments `outlier.colour` and `outlier.shape` in `geom_boxplot` to change the colour and shape respectively. An explanation of the allowed arguments for shape are described in [this article](http://sape.inf.usi.ch/quick-reference/ggplot2/shape), although be aware that because there is no "fill" argument for outlier, you cannot create circles with separate outline and fill colours. Here we will make the outliers small solid circles (using `outlier.shape = 20`) and make them the same colour as the box lines (using `outlier.colour = "#1F3552"`). 
+# Changing the appearance of the confidence interval 
 
-```{r box_9, message = FALSE, warning = FALSE, cache = TRUE}
-p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) + 
-  geom_boxplot(fill = fill, colour = line, alpha = 0.7,
-    outlier.colour = "#1F3552", outlier.shape = 20) +
+We can also alter how the confidence interval around the LOWESS curve looks. We can change the transparency using the argument `alpha` in `geom_smooth()`. This ranges from 0 to 1. Here we will increase the transparency of the confidence interval.
+
+```{r box_7, message = FALSE, warning = FALSE, cache = TRUE}
+fill <- "#4271AE"
+
+p12 <- ggplot(airquality, aes(x = Temp, y = Ozone)) + 
+  geom_point() + 
+  geom_smooth(colour = fill, size = 1.5, alpha = 0.2) +
+  scale_x_continuous(name = "Temperature") +
   scale_y_continuous(name = "Mean ozone in\nparts per billion",
-    breaks = seq(0, 175, 25), limits=c(0, 175)) +
-  scale_x_discrete(name = "Month") +
+                     breaks = seq(0, 150, 25), limits=c(0, 150)) +
   ggtitle("Boxplot of mean ozone by month")
-p10
+p12
+```
+
+We can also change the colour of the confidence interval from the default grey using the argument `fill`, also within `geom_smooth()`. Let's change it to the same blue as our LOWESS curve.
+
+```{r box_7, message = FALSE, warning = FALSE, cache = TRUE}
+fill <- "#4271AE"
+
+p12 <- ggplot(airquality, aes(x = Temp, y = Ozone)) + 
+  geom_point() + 
+  geom_smooth(colour = fill, size = 1.5, alpha = 0.2, fill = fill) +
+  scale_x_continuous(name = "Temperature") +
+  scale_y_continuous(name = "Mean ozone in\nparts per billion",
+                     breaks = seq(0, 150, 25), limits=c(0, 150)) +
+  ggtitle("Boxplot of mean ozone by month")
+p12
+```
+
+Finally, you can also turn off the confidence altogether by adding the argument `se = FALSE` to `geom_smooth()`.
+
+```{r box_7, message = FALSE, warning = FALSE, cache = TRUE}
+fill <- "#4271AE"
+
+p12 <- ggplot(airquality, aes(x = Temp, y = Ozone)) + 
+  geom_point() + 
+  geom_smooth(colour = fill, size = 1.5, se = FALSE) +
+  scale_x_continuous(name = "Temperature") +
+  scale_y_continuous(name = "Mean ozone in\nparts per billion",
+                     breaks = seq(0, 150, 25), limits=c(0, 150)) +
+  ggtitle("Boxplot of mean ozone by month")
+p12
+```
+
+# Changing the appearance of the scatterplot
+
+Of course, the LOWESS curve is not the only part of this plot. We can also customise the appearance of the scatterplot underlying the curve. Let's change the circles to shape 21, which is a circle that allows different colours for the outline and fill, and change the colour of the outline to dark blue. We can do this by adding the `shape` and `colour` arguments to `geom_point()` respectively.
+
+```{r box_7, message = FALSE, warning = FALSE, cache = TRUE}
+fill <- "#4271AE"
+
+p12 <- ggplot(airquality, aes(x = Temp, y = Ozone)) + 
+  geom_point(shape = 21, colour = "darkblue") + 
+  geom_smooth(colour = fill, size = 1.5, alpha = 0.2, fill = fill) +
+  scale_x_continuous(name = "Temperature") +
+  scale_y_continuous(name = "Mean ozone in\nparts per billion",
+                     breaks = seq(0, 150, 25), limits=c(0, 150)) +
+  ggtitle("Boxplot of mean ozone by month")
+p12
+```
+
+You can also get rid of the scatterplot points altogether by removing the `geom_point()` option. You can see we have also changed the range of the y-axis in `scale_y_continuous()` so the graph sits closer to the top of the LOWESS curve.
+
+```{r box_7, message = FALSE, warning = FALSE, cache = TRUE}
+fill <- "#4271AE"
+
+p12 <- ggplot(airquality, aes(x = Temp, y = Ozone)) + 
+  geom_smooth(colour = fill, size = 1.5, alpha = 0.2, fill = fill) +
+  scale_x_continuous(name = "Temperature") +
+  scale_y_continuous(name = "Mean ozone in\nparts per billion",
+                     breaks = seq(0, 125, 25), limits=c(0, 125)) +
+  ggtitle("Boxplot of mean ozone by month")
+p12
 ```
 
 # Using the white theme
@@ -179,20 +250,43 @@ p10
 As explained in the previous posts, we can also change the overall look of the plot using themes. We'll start using a simple theme customisation by adding `theme_bw() `. As you can see, we can further tweak the graph using the `theme` option, which we've used so far to change the legend.
 
 ```{r box_10, message = FALSE, warning = FALSE, cache = TRUE}
-p10 <- p10 + theme_bw()
-p10
+fill <- "#4271AE"
+
+p12 <- ggplot(airquality, aes(x = Temp, y = Ozone)) + 
+  geom_point(shape = 21, colour = "darkblue") + 
+  geom_smooth(colour = fill, size = 1.5, alpha = 0.2, fill = fill) +
+  scale_x_continuous(name = "Temperature") +
+  scale_y_continuous(name = "Mean ozone in\nparts per billion",
+                     breaks = seq(0, 150, 25), limits=c(0, 150)) +
+  ggtitle("Boxplot of mean ozone by month") +
+  theme_bw()
+p12
 ```
 
 # Creating an XKCD style chart
 
 Of course, you may want to create your own themes as well. `ggplot2` allows for a very high degree of customisation, including allowing you to use imported fonts. Below is an example of a theme Mauricio was able to create which mimics the visual style of [XKCD](http://xkcd.com/). In order to create this chart, you first need to import the XKCD font, and load it into R using the `extrafont` package.
 
+```{r load_xkcd_font, eval = FALSE}
+library(extrafont)
+
+download.file("http://simonsoftware.se/other/xkcd.ttf", 
+              dest="xkcd.ttf", mode="wb")
+system("mkdir ~/.fonts")
+system("cp xkcd.ttf  ~/.fonts")
+font_import(paths = "~/.fonts", pattern="[X/x]kcd")
+fonts()
+loadfonts()
+```
+
+
 ```{r box_11, message = FALSE, warning = FALSE, cache = TRUE}
-p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) + 
-  geom_boxplot(colour = "black", fill = "#56B4E9") +
+p12 <- ggplot(airquality, aes(x = Temp, y = Ozone)) + 
+  geom_point(shape = 21, colour = "darkblue") + 
+  geom_smooth(colour = fill, size = 1.5, alpha = 0.2, fill = fill) +
+  scale_x_continuous(name = "Temperature") +
   scale_y_continuous(name = "Mean ozone in\nparts per billion",
-    breaks = seq(0, 175, 25), limits=c(0, 175)) +
-  scale_x_discrete(name = "Month") +
+                     breaks = seq(0, 150, 25), limits=c(0, 150)) +
   ggtitle("Boxplot of mean ozone by month") +
   theme(axis.line.x = element_line(size=.5, colour = "black"), 
     axis.line.y = element_line(size=.5, colour = "black"),     
@@ -208,7 +302,14 @@ p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) +
     panel.background = element_blank(),
     plot.title=element_text(family="xkcd-Regular"), 
     text=element_text(family="xkcd-Regular")) 
-p10
+p12
+```
+
+```{r install_officina_font, eval = FALSE}
+library(sysfonts)
+font.files()
+font.add("OfficinaSanITC-Book", regular = "Officina Sans ITC Book.ttf")
+font.families()
 ```
 
 # Using 'The Economist' theme 
@@ -216,11 +317,12 @@ p10
 There are a wider range of pre-built themes available as part of the `ggthemes` package (more information on these [here](https://cran.r-project.org/web/packages/ggthemes/vignettes/ggthemes.html)). Below we've applied `theme_economist()`, which approximates graphs in the Economist magazine.
 
 ```{r box_12, message = FALSE, warning = FALSE, cache = TRUE}
-p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) + 
-  geom_boxplot(fill = fill, colour = line) +
+p12 <- ggplot(airquality, aes(x = Temp, y = Ozone)) + 
+  geom_point(shape = 21, colour = "darkblue") + 
+  geom_smooth(colour = fill, size = 1.5, alpha = 0.2, fill = fill) +
+  scale_x_continuous(name = "Temperature") +
   scale_y_continuous(name = "Mean ozone in\nparts per billion",
-    breaks = seq(0, 175, 25), limits=c(0, 175)) +
-  scale_x_discrete(name = "Month") +
+                     breaks = seq(0, 150, 25), limits=c(0, 150)) +
   ggtitle("Boxplot of mean ozone by month") +
   theme_economist() + scale_fill_economist() +
   theme(axis.line.x = element_line(size=.5, colour = "black"),
@@ -231,7 +333,7 @@ p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) +
     legend.text = element_text(size = 10),
     text = element_text(family = "OfficinaSanITC-Book"),
     plot.title = element_text(family="OfficinaSanITC-Book"))
-p10
+p12
 ```
 
 # Using 'Five Thirty Eight' theme
@@ -239,7 +341,7 @@ p10
 Below we've applied `theme_fivethirtyeight()`, which approximates graphs in the nice [FiveThirtyEight](http://fivethirtyeight.com/) website. Again, it is also important that the font change is optional and it's only to obtain a more similar result compared to the original. For an exact result you need 'Atlas Grotesk' and 'Decima Mono Pro' which are commercial font and are available [here](https://commercialtype.com/catalog/atlas) and [here](https://www.myfonts.com/fonts/tipografiaramis/decima-mono-pro/). 
 
 ```{r box_13, message = FALSE, warning = FALSE, cache = TRUE}
-p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) + 
+p12 <- ggplot(airquality, aes(x = Month, y = Ozone)) + 
   geom_boxplot(fill = fill, colour = line) +
   scale_y_continuous(name = "Mean ozone in\nparts per billion",
     breaks = seq(0, 175, 25), limits=c(0, 175)) +
@@ -254,7 +356,7 @@ p10 <- ggplot(airquality, aes(x = Month, y = Ozone)) +
     legend.text=element_text(family="Atlas Grotesk Regular", size = 10),
     plot.title=element_text(family="Atlas Grotesk Medium"), 
     text=element_text(family="DecimaMonoPro")) 
-p10
+p12
 ```
 
 # Creating your own theme
