@@ -8,7 +8,7 @@ output: html_document
 ---
 
 ```{r setup, cache = FALSE, echo = FALSE, message = FALSE, warning = FALSE, tidy = FALSE}
-knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, fig.width=6, fig.height=5, tidy = F)
+knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, fig.width=6, fig.height=5, tidy = F, cache.path = '12_Lowess_Plots_cache/', fig.path = '12_Lowess_Plot/')
 ```
 
 This is the twelfth and final tutorial in a series on using `ggplot2` I am creating with [Mauricio Vargas Sepúlveda](http://pachamaltese.github.io/). In this tutorial we will demonstrate some of the many options the `ggplot2` package has for creating and customising lowess plots. [LOWESS](https://en.wikipedia.org/wiki/Local_regression), or _lo_cally _we_ighted _s_catterplot _s_moothing, is a form of regression that creates different models for different subsets of the data. LOWESS plots represent this graphically by breaking down a continuous x-variable into a number of small bins and plotting the relationship with the y-variable individually for each subsection. Even if you don't intend to fit a LOWESS model, LOWESS plots are really useful for getting an initial feel for the relationship between your outcome and predictor, especially when you think that relationship isn't linear.
