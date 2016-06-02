@@ -4,7 +4,9 @@ author:
 - Jodie Burchell
 - Mauricio Vargas Sepúlveda
 date: '`r Sys.Date()`'
-output: pdf_document
+output: 
+  pdf_document: 
+    keep_tex: yes
 ---
 
 ```{r setup, cache = FALSE, echo = FALSE, message = FALSE, warning = FALSE, tidy = FALSE}
